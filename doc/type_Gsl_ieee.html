@@ -1,0 +1,95 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Gsl_error" rel="Chapter" href="Gsl_error.html">
+<link title="Gsl_ieee" rel="Chapter" href="Gsl_ieee.html">
+<link title="Gsl_math" rel="Chapter" href="Gsl_math.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_vector" rel="Chapter" href="Gsl_vector.html">
+<link title="Gsl_vector_flat" rel="Chapter" href="Gsl_vector_flat.html">
+<link title="Gsl_vector_complex" rel="Chapter" href="Gsl_vector_complex.html">
+<link title="Gsl_vector_complex_flat" rel="Chapter" href="Gsl_vector_complex_flat.html">
+<link title="Gsl_matrix" rel="Chapter" href="Gsl_matrix.html">
+<link title="Gsl_matrix_flat" rel="Chapter" href="Gsl_matrix_flat.html">
+<link title="Gsl_matrix_complex" rel="Chapter" href="Gsl_matrix_complex.html">
+<link title="Gsl_matrix_complex_flat" rel="Chapter" href="Gsl_matrix_complex_flat.html">
+<link title="Gsl_vectmat" rel="Chapter" href="Gsl_vectmat.html">
+<link title="Gsl_blas" rel="Chapter" href="Gsl_blas.html">
+<link title="Gsl_blas_flat" rel="Chapter" href="Gsl_blas_flat.html">
+<link title="Gsl_blas_gen" rel="Chapter" href="Gsl_blas_gen.html">
+<link title="Gsl_fun" rel="Chapter" href="Gsl_fun.html">
+<link title="Gsl_permut" rel="Chapter" href="Gsl_permut.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Gsl_linalg" rel="Chapter" href="Gsl_linalg.html">
+<link title="Gsl_eigen" rel="Chapter" href="Gsl_eigen.html">
+<link title="Gsl_poly" rel="Chapter" href="Gsl_poly.html">
+<link title="Gsl_interp" rel="Chapter" href="Gsl_interp.html">
+<link title="Gsl_rng" rel="Chapter" href="Gsl_rng.html">
+<link title="Gsl_qrng" rel="Chapter" href="Gsl_qrng.html">
+<link title="Gsl_randist" rel="Chapter" href="Gsl_randist.html">
+<link title="Gsl_integration" rel="Chapter" href="Gsl_integration.html">
+<link title="Gsl_fit" rel="Chapter" href="Gsl_fit.html">
+<link title="Gsl_multifit" rel="Chapter" href="Gsl_multifit.html">
+<link title="Gsl_multifit_nlin" rel="Chapter" href="Gsl_multifit_nlin.html">
+<link title="Gsl_root" rel="Chapter" href="Gsl_root.html">
+<link title="Gsl_multiroot" rel="Chapter" href="Gsl_multiroot.html">
+<link title="Gsl_min" rel="Chapter" href="Gsl_min.html">
+<link title="Gsl_multimin" rel="Chapter" href="Gsl_multimin.html">
+<link title="Gsl_diff" rel="Chapter" href="Gsl_diff.html">
+<link title="Gsl_cheb" rel="Chapter" href="Gsl_cheb.html">
+<link title="Gsl_sum" rel="Chapter" href="Gsl_sum.html">
+<link title="Gsl_fft" rel="Chapter" href="Gsl_fft.html">
+<link title="Gsl_monte" rel="Chapter" href="Gsl_monte.html">
+<link title="Gsl_siman" rel="Chapter" href="Gsl_siman.html">
+<link title="Gsl_odeiv" rel="Chapter" href="Gsl_odeiv.html">
+<link title="Gsl_histo" rel="Chapter" href="Gsl_histo.html">
+<link title="Gsl_stats" rel="Chapter" href="Gsl_stats.html">
+<link title="Gsl_wavelet" rel="Chapter" href="Gsl_wavelet.html">
+<link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
+<link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
+<link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_ieee</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;ieee_type&nbsp;=&nbsp;<span class="constructor">NAN</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">INF</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">NORMAL</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DENORMAL</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ZERO</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;float_rep&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sign&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mantissa&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exponent&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ieee_type&nbsp;:&nbsp;<span class="constructor">Gsl_ieee</span>.ieee_type;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;rep_of_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_ieee</span>.float_rep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_ieee_double_to_rep"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;precision&nbsp;=&nbsp;<span class="constructor">SINGLE</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DOUBLE</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EXTENDED</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;rounding&nbsp;=&nbsp;<span class="constructor">TO_NEAREST</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DOWN</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">UP</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TO_ZERO</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;exceptions&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MASK_INVALID</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_DENORMALIZED</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_DIVISION_BY_ZERO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_OVERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_UNDERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_ALL</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TRAP_INEXACT</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_mode&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?precision:<span class="constructor">Gsl_ieee</span>.precision&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?rounding:<span class="constructor">Gsl_ieee</span>.rounding&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_ieee</span>.exceptions&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_ieee_set_mode"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;env_setup&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_ieee_env_setup"</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;excepts&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">FE_INEXACT</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_DIVBYZERO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_UNDERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_OVERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_INVALID</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_ALL_EXCEPT</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clear_except&nbsp;:&nbsp;<span class="constructor">Gsl_ieee</span>.excepts&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_feclearexcept"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;test_except&nbsp;:&nbsp;<span class="constructor">Gsl_ieee</span>.excepts&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_ieee</span>.excepts&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_fetestexcept"</span><br>
+<span class="keyword">end</span></code></body></html>

@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Gsl_poly.html">
+<link rel="next" href="Gsl_rng.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Gsl_error" rel="Chapter" href="Gsl_error.html">
+<link title="Gsl_ieee" rel="Chapter" href="Gsl_ieee.html">
+<link title="Gsl_math" rel="Chapter" href="Gsl_math.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_vector" rel="Chapter" href="Gsl_vector.html">
+<link title="Gsl_vector_flat" rel="Chapter" href="Gsl_vector_flat.html">
+<link title="Gsl_vector_complex" rel="Chapter" href="Gsl_vector_complex.html">
+<link title="Gsl_vector_complex_flat" rel="Chapter" href="Gsl_vector_complex_flat.html">
+<link title="Gsl_matrix" rel="Chapter" href="Gsl_matrix.html">
+<link title="Gsl_matrix_flat" rel="Chapter" href="Gsl_matrix_flat.html">
+<link title="Gsl_matrix_complex" rel="Chapter" href="Gsl_matrix_complex.html">
+<link title="Gsl_matrix_complex_flat" rel="Chapter" href="Gsl_matrix_complex_flat.html">
+<link title="Gsl_vectmat" rel="Chapter" href="Gsl_vectmat.html">
+<link title="Gsl_blas" rel="Chapter" href="Gsl_blas.html">
+<link title="Gsl_blas_flat" rel="Chapter" href="Gsl_blas_flat.html">
+<link title="Gsl_blas_gen" rel="Chapter" href="Gsl_blas_gen.html">
+<link title="Gsl_fun" rel="Chapter" href="Gsl_fun.html">
+<link title="Gsl_permut" rel="Chapter" href="Gsl_permut.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Gsl_linalg" rel="Chapter" href="Gsl_linalg.html">
+<link title="Gsl_eigen" rel="Chapter" href="Gsl_eigen.html">
+<link title="Gsl_poly" rel="Chapter" href="Gsl_poly.html">
+<link title="Gsl_interp" rel="Chapter" href="Gsl_interp.html">
+<link title="Gsl_rng" rel="Chapter" href="Gsl_rng.html">
+<link title="Gsl_qrng" rel="Chapter" href="Gsl_qrng.html">
+<link title="Gsl_randist" rel="Chapter" href="Gsl_randist.html">
+<link title="Gsl_integration" rel="Chapter" href="Gsl_integration.html">
+<link title="Gsl_fit" rel="Chapter" href="Gsl_fit.html">
+<link title="Gsl_multifit" rel="Chapter" href="Gsl_multifit.html">
+<link title="Gsl_multifit_nlin" rel="Chapter" href="Gsl_multifit_nlin.html">
+<link title="Gsl_root" rel="Chapter" href="Gsl_root.html">
+<link title="Gsl_multiroot" rel="Chapter" href="Gsl_multiroot.html">
+<link title="Gsl_min" rel="Chapter" href="Gsl_min.html">
+<link title="Gsl_multimin" rel="Chapter" href="Gsl_multimin.html">
+<link title="Gsl_diff" rel="Chapter" href="Gsl_diff.html">
+<link title="Gsl_cheb" rel="Chapter" href="Gsl_cheb.html">
+<link title="Gsl_sum" rel="Chapter" href="Gsl_sum.html">
+<link title="Gsl_fft" rel="Chapter" href="Gsl_fft.html">
+<link title="Gsl_monte" rel="Chapter" href="Gsl_monte.html">
+<link title="Gsl_siman" rel="Chapter" href="Gsl_siman.html">
+<link title="Gsl_odeiv" rel="Chapter" href="Gsl_odeiv.html">
+<link title="Gsl_histo" rel="Chapter" href="Gsl_histo.html">
+<link title="Gsl_stats" rel="Chapter" href="Gsl_stats.html">
+<link title="Gsl_wavelet" rel="Chapter" href="Gsl_wavelet.html">
+<link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
+<link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
+<link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="Higher level functions" rel="Section" href="#3_Higherlevelfunctions">
+<title>ocamlgsl 0.6.0 : Gsl_interp</title>
+</head>
+<body>
+<div class="navbar"><a href="Gsl_poly.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Gsl_rng.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Gsl_interp.html">Gsl_interp</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Gsl_interp: <code class="code">sig</code> <a href="Gsl_interp.html">..</a> <code class="code">end</code></pre>Interpolation<br>
+<hr width="100%">
+<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+
+<pre><span class="keyword">type</span> <a name="TYPEaccel"></a><code class="type"></code>accel </pre>
+
+<br><code><span class="keyword">type</span> <a name="TYPEinterp_type"></a><code class="type"></code>interp_type = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">LINEAR</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">POLYNOMIAL</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">CSPLINE</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">CSPLINE_PERIODIC</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">AKIMA</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">AKIMA_PERIODIC</span></code></td>
+
+</tr></table>
+
+
+<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a> -> int -> <a href="Gsl_interp.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALinit"></a>init : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> float array -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALmin_size"></a>min_size : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALmake_accel"></a>make_accel : <code class="type">unit -> <a href="Gsl_interp.html#TYPEaccel">accel</a></code></pre><pre><span class="keyword">val</span> <a name="VALi_eval"></a>i_eval : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALi_eval_deriv"></a>i_eval_deriv : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALi_eval_deriv2"></a>i_eval_deriv2 : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALi_eval_integ"></a>i_eval_integ : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><br>
+<a name="3_Higherlevelfunctions"></a>
+<h3>Higher level functions</h3><br>
+<br><code><span class="keyword">type</span> <a name="TYPEinterp"></a><code class="type"></code>interp = {</code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>interp&nbsp;: <code class="type"><a href="Gsl_interp.html#TYPEt">t</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>accel&nbsp;: <code class="type"><a href="Gsl_interp.html#TYPEaccel">accel</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>xa&nbsp;: <code class="type">float array</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>ya&nbsp;: <code class="type">float array</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>size&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code>i_type&nbsp;: <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a></code>;</code></td>
+
+</tr></table>
+}
+
+
+<pre><span class="keyword">val</span> <a name="VALmake_interp"></a>make_interp : <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a> -> float array -> float array -> <a href="Gsl_interp.html#TYPEinterp">interp</a></code></pre><pre><span class="keyword">val</span> <a name="VALeval"></a>eval : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALeval_array"></a>eval_array : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float array -> float array -> unit</code></pre><div class="info">
+<code class="code">eval_array interp x_a y_a</code> fills the array <code class="code">y_a</code> with the 
+   evaluation of the interpolation function <code class="code">interp</code> for each point
+   of array <code class="code">x_a</code>. <code class="code">x_a</code> and <code class="code">y_a</code> must have the same length.<br>
+</div>
+<pre><span class="keyword">val</span> <a name="VALeval_deriv"></a>eval_deriv : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALeval_deriv2"></a>eval_deriv2 : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALeval_integ"></a>eval_integ : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float -> float</code></pre></body></html>

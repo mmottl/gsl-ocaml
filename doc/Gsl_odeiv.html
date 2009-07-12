@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Gsl_siman.html">
+<link rel="next" href="Gsl_histo.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Gsl_error" rel="Chapter" href="Gsl_error.html">
+<link title="Gsl_ieee" rel="Chapter" href="Gsl_ieee.html">
+<link title="Gsl_math" rel="Chapter" href="Gsl_math.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_vector" rel="Chapter" href="Gsl_vector.html">
+<link title="Gsl_vector_flat" rel="Chapter" href="Gsl_vector_flat.html">
+<link title="Gsl_vector_complex" rel="Chapter" href="Gsl_vector_complex.html">
+<link title="Gsl_vector_complex_flat" rel="Chapter" href="Gsl_vector_complex_flat.html">
+<link title="Gsl_matrix" rel="Chapter" href="Gsl_matrix.html">
+<link title="Gsl_matrix_flat" rel="Chapter" href="Gsl_matrix_flat.html">
+<link title="Gsl_matrix_complex" rel="Chapter" href="Gsl_matrix_complex.html">
+<link title="Gsl_matrix_complex_flat" rel="Chapter" href="Gsl_matrix_complex_flat.html">
+<link title="Gsl_vectmat" rel="Chapter" href="Gsl_vectmat.html">
+<link title="Gsl_blas" rel="Chapter" href="Gsl_blas.html">
+<link title="Gsl_blas_flat" rel="Chapter" href="Gsl_blas_flat.html">
+<link title="Gsl_blas_gen" rel="Chapter" href="Gsl_blas_gen.html">
+<link title="Gsl_fun" rel="Chapter" href="Gsl_fun.html">
+<link title="Gsl_permut" rel="Chapter" href="Gsl_permut.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Gsl_linalg" rel="Chapter" href="Gsl_linalg.html">
+<link title="Gsl_eigen" rel="Chapter" href="Gsl_eigen.html">
+<link title="Gsl_poly" rel="Chapter" href="Gsl_poly.html">
+<link title="Gsl_interp" rel="Chapter" href="Gsl_interp.html">
+<link title="Gsl_rng" rel="Chapter" href="Gsl_rng.html">
+<link title="Gsl_qrng" rel="Chapter" href="Gsl_qrng.html">
+<link title="Gsl_randist" rel="Chapter" href="Gsl_randist.html">
+<link title="Gsl_integration" rel="Chapter" href="Gsl_integration.html">
+<link title="Gsl_fit" rel="Chapter" href="Gsl_fit.html">
+<link title="Gsl_multifit" rel="Chapter" href="Gsl_multifit.html">
+<link title="Gsl_multifit_nlin" rel="Chapter" href="Gsl_multifit_nlin.html">
+<link title="Gsl_root" rel="Chapter" href="Gsl_root.html">
+<link title="Gsl_multiroot" rel="Chapter" href="Gsl_multiroot.html">
+<link title="Gsl_min" rel="Chapter" href="Gsl_min.html">
+<link title="Gsl_multimin" rel="Chapter" href="Gsl_multimin.html">
+<link title="Gsl_diff" rel="Chapter" href="Gsl_diff.html">
+<link title="Gsl_cheb" rel="Chapter" href="Gsl_cheb.html">
+<link title="Gsl_sum" rel="Chapter" href="Gsl_sum.html">
+<link title="Gsl_fft" rel="Chapter" href="Gsl_fft.html">
+<link title="Gsl_monte" rel="Chapter" href="Gsl_monte.html">
+<link title="Gsl_siman" rel="Chapter" href="Gsl_siman.html">
+<link title="Gsl_odeiv" rel="Chapter" href="Gsl_odeiv.html">
+<link title="Gsl_histo" rel="Chapter" href="Gsl_histo.html">
+<link title="Gsl_stats" rel="Chapter" href="Gsl_stats.html">
+<link title="Gsl_wavelet" rel="Chapter" href="Gsl_wavelet.html">
+<link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
+<link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
+<link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_odeiv</title>
+</head>
+<body>
+<div class="navbar"><a href="Gsl_siman.html">Previous</a>
+&nbsp;<a href="index.html">Up</a>
+&nbsp;<a href="Gsl_histo.html">Next</a>
+</div>
+<center><h1>Module <a href="type_Gsl_odeiv.html">Gsl_odeiv</a></h1></center>
+<br>
+<pre><span class="keyword">module</span> Gsl_odeiv: <code class="code">sig</code> <a href="Gsl_odeiv.html">..</a> <code class="code">end</code></pre>Ordinary Differential Equations<br>
+<hr width="100%">
+<pre><span class="keyword">type</span> <a name="TYPEsystem"></a><code class="type"></code>system </pre>
+
+<pre><span class="keyword">val</span> <a name="VALmake_system"></a>make_system : <code class="type">(float -> float array -> float array -> unit) -><br>       ?jac:(float -> float array -> <a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> float array -> unit) -><br>       int -> <a href="Gsl_odeiv.html#TYPEsystem">system</a></code></pre><pre><span class="keyword">type</span> <a name="TYPEstep"></a><code class="type"></code>step </pre>
+
+<br><code><span class="keyword">type</span> <a name="TYPEstep_kind"></a><code class="type"></code>step_kind = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RK2</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RK4</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RKF45</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RKCK</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RK8PD</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RK2IMP</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RK2SIMP</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">RK4IMP</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">BSIMP</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">GEAR1</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">GEAR2</span></code></td>
+
+</tr></table>
+
+
+<pre><span class="keyword">val</span> <a name="VALmake_step"></a>make_step : <code class="type"><a href="Gsl_odeiv.html#TYPEstep_kind">step_kind</a> -> dim:int -> <a href="Gsl_odeiv.html#TYPEstep">step</a></code></pre><pre><span class="keyword">val</span> <a name="VALstep_reset"></a>step_reset : <code class="type"><a href="Gsl_odeiv.html#TYPEstep">step</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALstep_name"></a>step_name : <code class="type"><a href="Gsl_odeiv.html#TYPEstep">step</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALstep_order"></a>step_order : <code class="type"><a href="Gsl_odeiv.html#TYPEstep">step</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALstep_apply"></a>step_apply : <code class="type"><a href="Gsl_odeiv.html#TYPEstep">step</a> -><br>       t:float -><br>       h:float -><br>       y:float array -><br>       yerr:float array -><br>       ?dydt_in:float array -> ?dydt_out:float array -> <a href="Gsl_odeiv.html#TYPEsystem">system</a> -> unit</code></pre><pre><span class="keyword">type</span> <a name="TYPEcontrol"></a><code class="type"></code>control </pre>
+
+<pre><span class="keyword">val</span> <a name="VALmake_control_standard_new"></a>make_control_standard_new : <code class="type">eps_abs:float -><br>       eps_rel:float -> a_y:float -> a_dydt:float -> <a href="Gsl_odeiv.html#TYPEcontrol">control</a></code></pre><pre><span class="keyword">val</span> <a name="VALmake_control_y_new"></a>make_control_y_new : <code class="type">eps_abs:float -> eps_rel:float -> <a href="Gsl_odeiv.html#TYPEcontrol">control</a></code></pre><pre><span class="keyword">val</span> <a name="VALmake_control_yp_new"></a>make_control_yp_new : <code class="type">eps_abs:float -> eps_rel:float -> <a href="Gsl_odeiv.html#TYPEcontrol">control</a></code></pre><pre><span class="keyword">val</span> <a name="VALmake_control_scaled_new"></a>make_control_scaled_new : <code class="type">eps_abs:float -><br>       eps_rel:float -><br>       a_y:float -> a_dydt:float -> scale_abs:float array -> <a href="Gsl_odeiv.html#TYPEcontrol">control</a></code></pre><pre><span class="keyword">val</span> <a name="VALcontrol_name"></a>control_name : <code class="type"><a href="Gsl_odeiv.html#TYPEcontrol">control</a> -> string</code></pre><br><code><span class="keyword">type</span> <a name="TYPEhadjust"></a><code class="type"></code>hadjust = </code><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">HADJ_DEC</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">HADJ_NIL</span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span class="constructor">HADJ_INC</span></code></td>
+
+</tr></table>
+
+
+<pre><span class="keyword">val</span> <a name="VALcontrol_hadjust"></a>control_hadjust : <code class="type"><a href="Gsl_odeiv.html#TYPEcontrol">control</a> -><br>       <a href="Gsl_odeiv.html#TYPEstep">step</a> -><br>       y:float array -><br>       yerr:float array -> dydt:float array -> h:float -> <a href="Gsl_odeiv.html#TYPEhadjust">hadjust</a> * float</code></pre><pre><span class="keyword">type</span> <a name="TYPEevolve"></a><code class="type"></code>evolve </pre>
+
+<pre><span class="keyword">val</span> <a name="VALmake_evolve"></a>make_evolve : <code class="type">int -> <a href="Gsl_odeiv.html#TYPEevolve">evolve</a></code></pre><pre><span class="keyword">val</span> <a name="VALevolve_reset"></a>evolve_reset : <code class="type"><a href="Gsl_odeiv.html#TYPEevolve">evolve</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALevolve_apply"></a>evolve_apply : <code class="type"><a href="Gsl_odeiv.html#TYPEevolve">evolve</a> -><br>       <a href="Gsl_odeiv.html#TYPEcontrol">control</a> -><br>       <a href="Gsl_odeiv.html#TYPEstep">step</a> -><br>       <a href="Gsl_odeiv.html#TYPEsystem">system</a> -><br>       t:float -> t1:float -> h:float -> y:float array -> float * float</code></pre></body></html>

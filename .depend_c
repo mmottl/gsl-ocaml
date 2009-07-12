@@ -1,0 +1,71 @@
+mlgsl_error.o: mlgsl_error.c
+mlgsl_ieee.o: mlgsl_ieee.c wrappers.h
+mlgsl_math.o: mlgsl_math.c wrappers.h
+mlgsl_complex.o: mlgsl_complex.c mlgsl_complex.h wrappers.h
+mlgsl_vector_float.o: mlgsl_vector_float.c mlgsl_vector_float.h \
+  wrappers.h mlgsl_vector.h mlgsl_vector.c
+mlgsl_vector_double.o: mlgsl_vector_double.c mlgsl_vector_double.h \
+  mlgsl_vector.h wrappers.h mlgsl_vector.c
+mlgsl_matrix_float.o: mlgsl_matrix_float.c mlgsl_matrix_float.h \
+  wrappers.h mlgsl_matrix.h mlgsl_matrix.c
+mlgsl_matrix_double.o: mlgsl_matrix_double.c mlgsl_matrix_double.h \
+  mlgsl_matrix.h wrappers.h mlgsl_matrix.c
+mlgsl_matrix_complex.o: mlgsl_matrix_complex.c mlgsl_matrix_complex.h \
+  wrappers.h mlgsl_matrix.h mlgsl_matrix.c
+mlgsl_matrix_complex_float.o: mlgsl_matrix_complex_float.c \
+  mlgsl_matrix_complex_float.h wrappers.h mlgsl_matrix.h mlgsl_matrix.c
+mlgsl_blas.o: mlgsl_blas.c mlgsl_vector_double.h mlgsl_vector.h \
+  wrappers.h mlgsl_matrix_double.h mlgsl_matrix.h mlgsl_blas.h
+mlgsl_blas_float.o: mlgsl_blas_float.c mlgsl_vector_float.h wrappers.h \
+  mlgsl_vector.h mlgsl_matrix_float.h mlgsl_matrix.h mlgsl_blas.h
+mlgsl_blas_complex.o: mlgsl_blas_complex.c mlgsl_complex.h wrappers.h \
+  mlgsl_vector_complex.h mlgsl_vector.h mlgsl_matrix_complex.h \
+  mlgsl_matrix.h mlgsl_blas.h
+mlgsl_blas_complex_float.o: mlgsl_blas_complex_float.c mlgsl_complex.h \
+  wrappers.h mlgsl_vector_complex_float.h mlgsl_vector.h \
+  mlgsl_matrix_complex_float.h mlgsl_matrix.h mlgsl_blas.h
+mlgsl_fun.o: mlgsl_fun.c wrappers.h mlgsl_fun.h
+mlgsl_permut.o: mlgsl_permut.c wrappers.h mlgsl_permut.h
+mlgsl_sort.o: mlgsl_sort.c wrappers.h mlgsl_vector_double.h \
+  mlgsl_vector.h mlgsl_permut.h
+mlgsl_linalg.o: mlgsl_linalg.c mlgsl_matrix_double.h mlgsl_matrix.h \
+  wrappers.h mlgsl_vector_double.h mlgsl_vector.h mlgsl_permut.h
+mlgsl_linalg_complex.o: mlgsl_linalg_complex.c mlgsl_matrix_complex.h \
+  wrappers.h mlgsl_matrix.h mlgsl_vector_complex.h mlgsl_vector.h \
+  mlgsl_permut.h mlgsl_complex.h mlgsl_matrix_double.h \
+  mlgsl_vector_double.h
+mlgsl_eigen.o: mlgsl_eigen.c wrappers.h mlgsl_permut.h mlgsl_complex.h \
+  mlgsl_vector_complex.h mlgsl_vector.h mlgsl_matrix_complex.h \
+  mlgsl_matrix.h mlgsl_matrix_double.h mlgsl_vector_double.h
+mlgsl_poly.o: mlgsl_poly.c wrappers.h
+mlgsl_interp.o: mlgsl_interp.c wrappers.h
+mlgsl_rng.o: mlgsl_rng.c wrappers.h mlgsl_rng.h
+mlgsl_qrng.o: mlgsl_qrng.c wrappers.h
+mlgsl_randist.o: mlgsl_randist.c wrappers.h mlgsl_rng.h
+mlgsl_integration.o: mlgsl_integration.c mlgsl_fun.h wrappers.h
+mlgsl_fit.o: mlgsl_fit.c wrappers.h mlgsl_matrix_double.h mlgsl_matrix.h \
+  mlgsl_vector_double.h mlgsl_vector.h
+mlgsl_multifit.o: mlgsl_multifit.c wrappers.h mlgsl_fun.h \
+  mlgsl_vector_double.h mlgsl_vector.h mlgsl_matrix_double.h \
+  mlgsl_matrix.h
+mlgsl_roots.o: mlgsl_roots.c wrappers.h mlgsl_fun.h
+mlgsl_multiroots.o: mlgsl_multiroots.c wrappers.h mlgsl_fun.h \
+  mlgsl_vector_double.h mlgsl_vector.h mlgsl_matrix_double.h \
+  mlgsl_matrix.h
+mlgsl_min.o: mlgsl_min.c wrappers.h mlgsl_fun.h
+mlgsl_multimin.o: mlgsl_multimin.c wrappers.h mlgsl_fun.h \
+  mlgsl_vector_double.h mlgsl_vector.h mlgsl_matrix_double.h \
+  mlgsl_matrix.h
+mlgsl_diff.o: mlgsl_diff.c wrappers.h mlgsl_fun.h
+mlgsl_cheb.o: mlgsl_cheb.c wrappers.h mlgsl_fun.h
+mlgsl_sum.o: mlgsl_sum.c wrappers.h
+mlgsl_fft.o: mlgsl_fft.c wrappers.h
+mlgsl_monte.o: mlgsl_monte.c wrappers.h mlgsl_fun.h mlgsl_rng.h io.h
+mlgsl_odeiv.o: mlgsl_odeiv.c wrappers.h
+mlgsl_histo.o: mlgsl_histo.c wrappers.h
+mlgsl_stats.o: mlgsl_stats.c wrappers.h
+mlgsl_wavelet.o: mlgsl_wavelet.c mlgsl_matrix_double.h mlgsl_matrix.h \
+  wrappers.h
+mlgsl_bspline.o: mlgsl_bspline.c wrappers.h mlgsl_vector_double.h \
+  mlgsl_vector.h
+mlgsl_sf.o: mlgsl_sf.c wrappers.h

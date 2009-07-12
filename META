@@ -1,0 +1,5 @@
+description = "GSL bindings"
+requires = "bigarray"
+version = "0.6.0"
+archive(byte) = "gsl.cma"
+archive(native) = "gsl.cmxa"
