@@ -13,7 +13,7 @@ let split ?(collapse=false) c s =
       if collapse && n' = n
       then accu
       else (String.sub s n (n' - n)) :: accu in
-    if n' = len 
+    if n' >= len - 1
     then List.rev accu'
     else proc accu' (succ n')
   in
