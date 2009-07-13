@@ -213,7 +213,16 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
   struct callback_params *p=params;
   value x_barr;
   int len = x->size;
-  LOCALARRAY(double, x_arr, len); 
+
+/* CR mmottl: Stack allocation may segfault with large lengths, hence
+   malloc.  Note that the OCaml callbacks may put the bigarrays into
+   references.  This is evil, and these bindings should really get fixed
+   to avoid problems of that sort. */
+  double *x_arr = malloc(sizeof(double) * len);
+#if 0
+  LOCALARRAY(double, x_arr, len);
+#endif
+
   gsl_vector_view x_v;
   value res;
 
@@ -221,8 +230,14 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
   gsl_vector_memcpy(&x_v.vector, x);
   x_barr = alloc_bigarray_dims(barr_flags, 1, x_arr, len);
   res=callback_exn(p->closure, x_barr);
-  if(Is_exception_result(res))
+
+  /* CR mmottl: need to free malloced memory now */
+  free(x_arr);
+
+  if(Is_exception_result(res)) {
     return GSL_NAN;
+  }
+
   return Double_val(res);
 }
 
@@ -232,7 +247,16 @@ double gsl_multimin_callback_f(const gsl_vector *x, void *params)
   struct callback_params *p=params;
   value x_barr;
   int len = x->size;
-  LOCALARRAY(double, x_arr, len); 
+
+/* CR mmottl: Stack allocation may segfault with large lengths, hence
+   malloc.  Note that the OCaml callbacks may put the bigarrays into
+   references.  This is evil, and these bindings should really get fixed
+   to avoid problems of that sort. */
+  double *x_arr = malloc(sizeof(double) * len);
+#if 0
+  LOCALARRAY(double, x_arr, len);
+#endif
+
   gsl_vector_view x_v;
   value res;
 
@@ -240,8 +264,13 @@ double gsl_multimin_callback_f(const gsl_vector *x, void *params)
   gsl_vector_memcpy(&x_v.vector, x);
   x_barr = alloc_bigarray_dims(barr_flags, 1, x_arr, len);
   res=callback_exn(Field(p->closure, 0), x_barr);
+
+  /* CR mmottl: need to free malloced memory now */
+  free(x_arr);
+
   if(Is_exception_result(res))
     return GSL_NAN;
+
   return Double_val(res);
 }
 
@@ -251,8 +280,18 @@ void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
   struct callback_params *p=params;
   value x_barr, g_barr;
   int len = x->size;
-  LOCALARRAY(double, x_arr, len); 
+
+/* CR mmottl: Stack allocation may segfault with large lengths, hence
+   malloc.  Note that the OCaml callbacks may put the bigarrays into
+   references.  This is evil, and these bindings should really get fixed
+   to avoid problems of that sort. */
+  double *x_arr = malloc(sizeof(double) * len);
+  double *g_arr = malloc(sizeof(double) * len);
+#if 0
+  LOCALARRAY(double, x_arr, len);
   LOCALARRAY(double, g_arr, len); 
+#endif
+
   gsl_vector_view x_v, g_v;
   value res;
 
@@ -262,14 +301,25 @@ void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
   x_barr = alloc_bigarray_dims(barr_flags, 1, x_arr, len);
   g_barr = alloc_bigarray_dims(barr_flags, 1, g_arr, len);
   res=callback2_exn(Field(p->closure, 1), x_barr, g_barr);
+
   if(Is_exception_result(res)){
+    /* CR mmottl: need to free malloced memory now */
+    free(x_arr);
+    free(g_arr);
+
     /* the caml functions raised an exception but there's no way we can
        indicate this to GSL since the return type is void.
        So we set the out param G to NaN. */
     gsl_vector_set_all(G, GSL_NAN);
     return;
   }
+
   gsl_vector_memcpy(G, &g_v.vector);
+
+  /* CR mmottl: need to free malloced memory now */
+  free(x_arr);
+  free(g_arr);
+
 }
 
 void gsl_multimin_callback_fdf(const gsl_vector *x, void *params, 
@@ -279,8 +329,18 @@ void gsl_multimin_callback_fdf(const gsl_vector *x, void *params,
   struct callback_params *p=params;
   value x_barr, g_barr;
   int len = x->size;
+
+/* CR mmottl: Stack allocation may segfault with large lengths, hence
+   malloc.  Note that the OCaml callbacks may put the bigarrays into
+   references.  This is evil, and these bindings should really get fixed
+   to avoid problems of that sort. */
+  double *x_arr = malloc(sizeof(double) * len);
+  double *g_arr = malloc(sizeof(double) * len);
+#if 0
   LOCALARRAY(double, x_arr, len);
   LOCALARRAY(double, g_arr, len); 
+#endif
+
   gsl_vector_view x_v, g_v;
   value res;
   
@@ -290,11 +350,21 @@ void gsl_multimin_callback_fdf(const gsl_vector *x, void *params,
   x_barr = alloc_bigarray_dims(barr_flags, 1, x_arr, len);
   g_barr = alloc_bigarray_dims(barr_flags, 1, g_arr, len);
   res=callback2_exn(Field(p->closure, 2), x_barr, g_barr);
+
   if(Is_exception_result(res)){
+    /* CR mmottl: need to free malloced memory now */
+    free(x_arr);
+    free(g_arr);
+
     *f=GSL_NAN;
     return;
   }
   gsl_vector_memcpy(G, &g_v.vector);
+
+  /* CR mmottl: need to free malloced memory now */
+  free(x_arr);
+  free(g_arr);
+
   *f=Double_val(res);
 }
 
