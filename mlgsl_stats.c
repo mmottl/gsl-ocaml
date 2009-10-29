@@ -295,3 +295,12 @@ CAMLprim value ml_gsl_stats_quantile_from_sorted_data(value data, value f)
 						 1, len, Double_val(f));
   return copy_double(r);
 }
+
+CAMLprim value ml_gsl_stats_correlation(value data1, value data2)
+{
+  size_t len = Double_array_length(data1);
+  check_array_size(data1, data2);
+  double r = gsl_stats_correlation(Double_array_val(data1), 1,
+                                   Double_array_val(data2), 1, len);
+  return copy_double(r);
+}

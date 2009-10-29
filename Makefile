@@ -94,7 +94,7 @@ SRC := wrappers.h gsl_misc.ml io.h \
 ifeq ($(OCAML_BACKEND),cl)
 include msvc.mak
 else
-ifeq ($(OCAML_BACKEND),gcc)
+ifeq ($(OCAML_BACKEND:gcc%=gcc),gcc)
 include gcc.mak
 else
 include mingw.mak
@@ -148,18 +148,7 @@ top : libmlgsl.$(A) gsl.cma
 	ocamlmktop -I . -o ocamlgsl$(EXE) bigarray.cma gsl.cma
 
 install : all
-	mkdir -p $(DESTDIR)$(INSTALLDIR)
-	cp $(STUBS) gsl.cma gsl.cmxa gsl.$(A) \
-          $(CMI) $(MLOPTOBJ) $(DESTDIR)$(INSTALLDIR)
-	mkdir -p $(DESTDIR)$(OCAMLDIR)/stublibs
-	if test -w $(DESTDIR)$(OCAMLDIR)/stublibs ; then \
-          ln -sf $(INSTALLDIR)/dllmlgsl.$(D) $(DESTDIR)$(OCAMLDIR)/stublibs ; fi
-
-install-findlib : all
-	export FINDLIBDIR=$$($(OCAMLFIND) printconf destdir) ; \
-	test -d "$${FINDLIBDIR}/stublibs" && mkdir -p $(DESTDIR)$${FINDLIBDIR}/stublibs ; \
-	OCAMLFIND_DESTDIR=$(DESTDIR)$${FINDLIBDIR} \
-        $(OCAMLFIND) install gsl META \
+	$(OCAMLFIND) install gsl META \
           libmlgsl.$(A) dllmlgsl.$(D) gsl.cma gsl.cmxa gsl.$(A) $(CMI) $(MLOPTOBJ) 
 
 ocamlgsl.odoc : $(MLOBJ) $(CMI)

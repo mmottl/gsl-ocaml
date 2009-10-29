@@ -17,8 +17,7 @@ i.e. ARCH_ALIGN_DOUBLE must be undefined in <caml/config.h>
 - have a look at the variables in Makefile and gcc.mak/msvc.mak.
   comment out DYNAMIC_LINKING if it isn't supported on your platform.
 - make
-- (optional) make install INSTALLDIR=/absolute/path/to/installdir 
-        or : make install-findlib
+- (optional) make install
 
 to link :
   ocamlopt -I gsldir bigarray.cmxa gsl.cmxa my_prog.ml
