@@ -114,7 +114,7 @@ DISTSRC := $(filter-out $(AUTO_SRC),$(SRC)) gsl_sf.mli.q \
            mlgsl_vector.c mlgsl_matrix.c \
            .depend .depend_c gcc.mak msvc.mak \
            Makefile .ocamlinit do_const.awk do_cdf.ml do_sf.ml \
-           NOTES README NEWS COPYING META ocamlgsl.spec \
+           NOTES README.txt NEWS COPYING META ocamlgsl.spec \
            $(wildcard examples/*.ml) examples/Makefile doc \
            $(wildcard test/*.ml) $(wildcard ocamlgsl.info*)
 VERSION := 0.6.0
