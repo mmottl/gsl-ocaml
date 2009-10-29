@@ -1,3 +1,8 @@
+in 0.6.1
+  - Minor changes to improve installation and to fix stack overflows
+    when dealing with extremely large optimization problems.
+    (Markus Mottl)
+
 in 0.6.0
   - sync with GSL 1.9
     - Nonsymmetric eigensystems in Gsl_eigen
