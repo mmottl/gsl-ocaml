@@ -209,30 +209,18 @@ int gsl_multiroot_callback_fdf(const gsl_vector *x, void *params,
 /* MULTIMIN CALLBACKS */
 double gsl_multimin_callback(const gsl_vector *x, void *params)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT | BIGARRAY_EXTERNAL;
+  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr;
-  int len = x->size;
-
-/* CR mmottl: Stack allocation may segfault with large lengths, hence
-   malloc.  Note that the OCaml callbacks may put the bigarrays into
-   references.  This is evil, and these bindings should really get fixed
-   to avoid problems of that sort. */
-  double *x_arr = malloc(sizeof(double) * len);
-#if 0
-  LOCALARRAY(double, x_arr, len);
-#endif
-
+  intnat len = x->size;
+  double *x_arr;
   gsl_vector_view x_v;
   value res;
 
-  x_v = gsl_vector_view_array(x_arr, len);
+  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
   gsl_vector_memcpy(&x_v.vector, x);
-  x_barr = alloc_bigarray_dims(barr_flags, 1, x_arr, len);
   res=callback_exn(p->closure, x_barr);
-
-  /* CR mmottl: need to free malloced memory now */
-  free(x_arr);
 
   if(Is_exception_result(res)) {
     return GSL_NAN;
