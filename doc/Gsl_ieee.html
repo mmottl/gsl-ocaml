@@ -61,7 +61,7 @@
 <link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="Representation of floating point numbers" rel="Section" href="#3_Representationoffloatingpointnumbers">
 <link title="IEEE environment" rel="Section" href="#3_IEEEenvironment">
 <link title="FPU status word" rel="Section" href="#3_FPUstatusword">
-<title>ocamlgsl 0.6.0 : Gsl_ieee</title>
+<title>gsl-ocaml 0.6.0 : Gsl_ieee</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_error.html">Previous</a>
@@ -73,9 +73,8 @@
 <pre><span class="keyword">module</span> Gsl_ieee: <code class="code">sig</code> <a href="Gsl_ieee.html">..</a> <code class="code">end</code></pre>IEEE floating-point arithmetic<br>
 <hr width="100%">
 <br>
-<a name="3_Representationoffloatingpointnumbers"></a>
-<h3>Representation of floating point numbers</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEieee_type"></a><code class="type"></code>ieee_type = </code><table class="typetable">
+<span id="3_Representationoffloatingpointnumbers"><h3>Representation of floating point numbers</h3></span><br>
+<br><code><span id="TYPEieee_type"><span class="keyword">type</span> <code class="type"></code>ieee_type</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -113,7 +112,7 @@
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEfloat_rep"></a><code class="type"></code>float_rep = {</code><table class="typetable">
+<br><code><span id="TYPEfloat_rep"><span class="keyword">type</span> <code class="type"></code>float_rep</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -145,10 +144,9 @@
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALrep_of_float"></a>rep_of_float : <code class="type">float -> <a href="Gsl_ieee.html#TYPEfloat_rep">float_rep</a></code></pre><pre><span class="keyword">val</span> <a name="VALprint"></a>print : <code class="type">float -> string</code></pre><br>
-<a name="3_IEEEenvironment"></a>
-<h3>IEEE environment</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEprecision"></a><code class="type"></code>precision = </code><table class="typetable">
+<pre><span id="VALrep_of_float"><span class="keyword">val</span> rep_of_float</span> : <code class="type">float -> <a href="Gsl_ieee.html#TYPEfloat_rep">float_rep</a></code></pre><pre><span id="VALprint"><span class="keyword">val</span> print</span> : <code class="type">float -> string</code></pre><br>
+<span id="3_IEEEenvironment"><h3>IEEE environment</h3></span><br>
+<br><code><span id="TYPEprecision"><span class="keyword">type</span> <code class="type"></code>precision</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -172,7 +170,7 @@
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPErounding"></a><code class="type"></code>rounding = </code><table class="typetable">
+<br><code><span id="TYPErounding"><span class="keyword">type</span> <code class="type"></code>rounding</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -203,7 +201,7 @@
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEexceptions"></a><code class="type"></code>exceptions = </code><table class="typetable">
+<br><code><span id="TYPEexceptions"><span class="keyword">type</span> <code class="type"></code>exceptions</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -255,10 +253,9 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALset_mode"></a>set_mode : <code class="type">?precision:<a href="Gsl_ieee.html#TYPEprecision">precision</a> -><br>       ?rounding:<a href="Gsl_ieee.html#TYPErounding">rounding</a> -> <a href="Gsl_ieee.html#TYPEexceptions">exceptions</a> list -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALenv_setup"></a>env_setup : <code class="type">unit -> unit</code></pre><br>
-<a name="3_FPUstatusword"></a>
-<h3>FPU status word</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEexcepts"></a><code class="type"></code>excepts = </code><table class="typetable">
+<pre><span id="VALset_mode"><span class="keyword">val</span> set_mode</span> : <code class="type">?precision:<a href="Gsl_ieee.html#TYPEprecision">precision</a> -><br>       ?rounding:<a href="Gsl_ieee.html#TYPErounding">rounding</a> -> <a href="Gsl_ieee.html#TYPEexceptions">exceptions</a> list -> unit</code></pre><pre><span id="VALenv_setup"><span class="keyword">val</span> env_setup</span> : <code class="type">unit -> unit</code></pre><br>
+<span id="3_FPUstatusword"><h3>FPU status word</h3></span><br>
+<br><code><span id="TYPEexcepts"><span class="keyword">type</span> <code class="type"></code>excepts</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -303,4 +300,4 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALclear_except"></a>clear_except : <code class="type"><a href="Gsl_ieee.html#TYPEexcepts">excepts</a> list -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtest_except"></a>test_except : <code class="type"><a href="Gsl_ieee.html#TYPEexcepts">excepts</a> list -> <a href="Gsl_ieee.html#TYPEexcepts">excepts</a> list</code></pre></body></html>
+<pre><span id="VALclear_except"><span class="keyword">val</span> clear_except</span> : <code class="type"><a href="Gsl_ieee.html#TYPEexcepts">excepts</a> list -> unit</code></pre><pre><span id="VALtest_except"><span class="keyword">val</span> test_except</span> : <code class="type"><a href="Gsl_ieee.html#TYPEexcepts">excepts</a> list -> <a href="Gsl_ieee.html#TYPEexcepts">excepts</a> list</code></pre></body></html>

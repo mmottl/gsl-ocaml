@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_bspline</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_bspline</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_wavelet.html">Previous</a>
@@ -69,6 +69,6 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_bspline: <code class="code">sig</code> <a href="Gsl_bspline.html">..</a> <code class="code">end</code></pre>Basis Splines<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEws"></a><code class="type"></code>ws </pre>
+<pre><span id="TYPEws"><span class="keyword">type</span> <code class="type"></code>ws</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type">k:int -> nbreak:int -> <a href="Gsl_bspline.html#TYPEws">ws</a></code></pre><pre><span class="keyword">val</span> <a name="VALncoeffs"></a>ncoeffs : <code class="type"><a href="Gsl_bspline.html#TYPEws">ws</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALknots"></a>knots : <code class="type">[< <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ] -> <a href="Gsl_bspline.html#TYPEws">ws</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALknots_uniform"></a>knots_uniform : <code class="type">a:float -> b:float -> <a href="Gsl_bspline.html#TYPEws">ws</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VAL_eval"></a>_eval : <code class="type">float -> [< <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ] -> <a href="Gsl_bspline.html#TYPEws">ws</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALeval"></a>eval : <code class="type"><a href="Gsl_bspline.html#TYPEws">ws</a> -> float -> [> <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ]</code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">k:int -> nbreak:int -> <a href="Gsl_bspline.html#TYPEws">ws</a></code></pre><pre><span id="VALncoeffs"><span class="keyword">val</span> ncoeffs</span> : <code class="type"><a href="Gsl_bspline.html#TYPEws">ws</a> -> int</code></pre><pre><span id="VALknots"><span class="keyword">val</span> knots</span> : <code class="type">[< <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ] -> <a href="Gsl_bspline.html#TYPEws">ws</a> -> unit</code></pre><pre><span id="VALknots_uniform"><span class="keyword">val</span> knots_uniform</span> : <code class="type">a:float -> b:float -> <a href="Gsl_bspline.html#TYPEws">ws</a> -> unit</code></pre><pre><span id="VAL_eval"><span class="keyword">val</span> _eval</span> : <code class="type">float -> [< <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ] -> <a href="Gsl_bspline.html#TYPEws">ws</a> -> unit</code></pre><pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Gsl_bspline.html#TYPEws">ws</a> -> float -> [> <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ]</code></pre></body></html>

@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_min</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_min</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_multiroot.html">Previous</a>
@@ -69,7 +69,7 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_min: <code class="code">sig</code> <a href="Gsl_min.html">..</a> <code class="code">end</code></pre>One dimensional Minimization<br>
 <hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -86,6 +86,6 @@
 </tr></table>
 
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_min.html#TYPEkind">kind</a> -><br>       <a href="Gsl_fun.html#TYPEgsl_fun">Gsl_fun.gsl_fun</a> -> min:float -> lo:float -> up:float -> <a href="Gsl_min.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALiterate"></a>iterate : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALminimum"></a>minimum : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALinterval"></a>interval : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> float * float</code></pre><pre><span class="keyword">val</span> <a name="VALtest_interval"></a>test_interval : <code class="type">x_lo:float -> x_up:float -> epsabs:float -> epsrel:float -> bool</code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_min.html#TYPEkind">kind</a> -><br>       <a href="Gsl_fun.html#TYPEgsl_fun">Gsl_fun.gsl_fun</a> -> min:float -> lo:float -> up:float -> <a href="Gsl_min.html#TYPEt">t</a></code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALiterate"><span class="keyword">val</span> iterate</span> : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALminimum"><span class="keyword">val</span> minimum</span> : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALinterval"><span class="keyword">val</span> interval</span> : <code class="type"><a href="Gsl_min.html#TYPEt">t</a> -> float * float</code></pre><pre><span id="VALtest_interval"><span class="keyword">val</span> test_interval</span> : <code class="type">x_lo:float -> x_up:float -> epsabs:float -> epsrel:float -> bool</code></pre></body></html>

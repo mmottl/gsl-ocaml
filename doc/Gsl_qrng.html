@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_qrng</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_qrng</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_rng.html">Previous</a>
@@ -69,7 +69,7 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_qrng: <code class="code">sig</code> <a href="Gsl_qrng.html">..</a> <code class="code">end</code></pre>Quasi-Random Sequences<br>
 <hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEqrng_type"></a><code class="type"></code>qrng_type = </code><table class="typetable">
+<br><code><span id="TYPEqrng_type"><span class="keyword">type</span> <code class="type"></code>qrng_type</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -86,6 +86,6 @@
 </tr></table>
 
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_qrng.html#TYPEqrng_type">qrng_type</a> -> int -> <a href="Gsl_qrng.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALinit"></a>init : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALsample"></a>sample : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> float array</code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALdimension"></a>dimension : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALmemcpy"></a>memcpy : <code class="type">src:<a href="Gsl_qrng.html#TYPEt">t</a> -> dst:<a href="Gsl_qrng.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALclone"></a>clone : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> <a href="Gsl_qrng.html#TYPEt">t</a></code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_qrng.html#TYPEqrng_type">qrng_type</a> -> int -> <a href="Gsl_qrng.html#TYPEt">t</a></code></pre><pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> float array -> unit</code></pre><pre><span id="VALsample"><span class="keyword">val</span> sample</span> : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> float array</code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALdimension"><span class="keyword">val</span> dimension</span> : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALmemcpy"><span class="keyword">val</span> memcpy</span> : <code class="type">src:<a href="Gsl_qrng.html#TYPEt">t</a> -> dst:<a href="Gsl_qrng.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALclone"><span class="keyword">val</span> clone</span> : <code class="type"><a href="Gsl_qrng.html#TYPEt">t</a> -> <a href="Gsl_qrng.html#TYPEt">t</a></code></pre></body></html>

@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_fit</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_fit</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_integration.html">Previous</a>
@@ -69,7 +69,7 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_fit: <code class="code">sig</code> <a href="Gsl_fit.html">..</a> <code class="code">end</code></pre>Least-Squares Fitting<br>
 <hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPElinear_fit_coeffs"></a><code class="type"></code>linear_fit_coeffs = {</code><table class="typetable">
+<br><code><span id="TYPElinear_fit_coeffs"><span class="keyword">type</span> <code class="type"></code>linear_fit_coeffs</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -115,7 +115,7 @@
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALlinear"></a>linear : <code class="type">?weight:float array -><br>       float array -> float array -> <a href="Gsl_fit.html#TYPElinear_fit_coeffs">linear_fit_coeffs</a></code></pre><pre><span class="keyword">val</span> <a name="VALlinear_est"></a>linear_est : <code class="type">float -> coeffs:<a href="Gsl_fit.html#TYPElinear_fit_coeffs">linear_fit_coeffs</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><br><code><span class="keyword">type</span> <a name="TYPEmul_fit_coeffs"></a><code class="type"></code>mul_fit_coeffs = {</code><table class="typetable">
+<pre><span id="VALlinear"><span class="keyword">val</span> linear</span> : <code class="type">?weight:float array -><br>       float array -> float array -> <a href="Gsl_fit.html#TYPElinear_fit_coeffs">linear_fit_coeffs</a></code></pre><pre><span id="VALlinear_est"><span class="keyword">val</span> linear_est</span> : <code class="type">float -> coeffs:<a href="Gsl_fit.html#TYPElinear_fit_coeffs">linear_fit_coeffs</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><br><code><span id="TYPEmul_fit_coeffs"><span class="keyword">type</span> <code class="type"></code>mul_fit_coeffs</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -140,4 +140,4 @@
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALmul"></a>mul : <code class="type">?weight:float array -> float array -> float array -> <a href="Gsl_fit.html#TYPEmul_fit_coeffs">mul_fit_coeffs</a></code></pre><pre><span class="keyword">val</span> <a name="VALmul_est"></a>mul_est : <code class="type">float -> coeffs:<a href="Gsl_fit.html#TYPEmul_fit_coeffs">mul_fit_coeffs</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre></body></html>
+<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">?weight:float array -> float array -> float array -> <a href="Gsl_fit.html#TYPEmul_fit_coeffs">mul_fit_coeffs</a></code></pre><pre><span id="VALmul_est"><span class="keyword">val</span> mul_est</span> : <code class="type">float -> coeffs:<a href="Gsl_fit.html#TYPEmul_fit_coeffs">mul_fit_coeffs</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre></body></html>

@@ -63,7 +63,7 @@
 <link title="PLAIN algorithm" rel="Subsection" href="#4_PLAINalgorithm">
 <link title="MISER algorithm" rel="Subsection" href="#4_MISERalgorithm">
 <link title="VEGAS algorithm" rel="Subsection" href="#4_VEGASalgorithm">
-<title>ocamlgsl 0.6.0 : Gsl_monte</title>
+<title>gsl-ocaml 0.6.0 : Gsl_monte</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_fft.html">Previous</a>
@@ -75,9 +75,8 @@
 <pre><span class="keyword">module</span> Gsl_monte: <code class="code">sig</code> <a href="Gsl_monte.html">..</a> <code class="code">end</code></pre>Monte Carlo Integration<br>
 <hr width="100%">
 <br>
-<a name="3_Highlevelinterface"></a>
-<h3>High-level interface</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<span id="3_Highlevelinterface"><h3>High-level interface</h3></span><br>
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -101,20 +100,17 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALintegrate"></a>integrate : <code class="type"><a href="Gsl_monte.html#TYPEkind">kind</a> -><br>       <a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -> up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><br>
-<a name="3_Lowlevelinterface"></a>
-<h3>Low-level interface</h3><br>
+<pre><span id="VALintegrate"><span class="keyword">val</span> integrate</span> : <code class="type"><a href="Gsl_monte.html#TYPEkind">kind</a> -><br>       <a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -> up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><br>
+<span id="3_Lowlevelinterface"><h3>Low-level interface</h3></span><br>
 <br>
-<a name="4_PLAINalgorithm"></a>
-<h4>PLAIN algorithm</h4><br>
-<pre><span class="keyword">type</span> <a name="TYPEplain_state"></a><code class="type"></code>plain_state </pre>
+<span id="4_PLAINalgorithm"><h4>PLAIN algorithm</h4></span><br>
+<pre><span id="TYPEplain_state"><span class="keyword">type</span> <code class="type"></code>plain_state</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake_plain_state"></a>make_plain_state : <code class="type">int -> <a href="Gsl_monte.html#TYPEplain_state">plain_state</a></code></pre><pre><span class="keyword">val</span> <a name="VALinit_plain"></a>init_plain : <code class="type"><a href="Gsl_monte.html#TYPEplain_state">plain_state</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALintegrate_plain"></a>integrate_plain : <code class="type"><a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -><br>       up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_monte.html#TYPEplain_state">plain_state</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><br>
-<a name="4_MISERalgorithm"></a>
-<h4>MISER algorithm</h4><br>
-<pre><span class="keyword">type</span> <a name="TYPEmiser_state"></a><code class="type"></code>miser_state </pre>
+<pre><span id="VALmake_plain_state"><span class="keyword">val</span> make_plain_state</span> : <code class="type">int -> <a href="Gsl_monte.html#TYPEplain_state">plain_state</a></code></pre><pre><span id="VALinit_plain"><span class="keyword">val</span> init_plain</span> : <code class="type"><a href="Gsl_monte.html#TYPEplain_state">plain_state</a> -> unit</code></pre><pre><span id="VALintegrate_plain"><span class="keyword">val</span> integrate_plain</span> : <code class="type"><a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -><br>       up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_monte.html#TYPEplain_state">plain_state</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><br>
+<span id="4_MISERalgorithm"><h4>MISER algorithm</h4></span><br>
+<pre><span id="TYPEmiser_state"><span class="keyword">type</span> <code class="type"></code>miser_state</span> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEmiser_params"></a><code class="type"></code>miser_params = {</code><table class="typetable">
+<br><code><span id="TYPEmiser_params"><span class="keyword">type</span> <code class="type"></code>miser_params</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -153,12 +149,11 @@
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALmake_miser_state"></a>make_miser_state : <code class="type">int -> <a href="Gsl_monte.html#TYPEmiser_state">miser_state</a></code></pre><pre><span class="keyword">val</span> <a name="VALinit_miser"></a>init_miser : <code class="type"><a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALintegrate_miser"></a>integrate_miser : <code class="type"><a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -><br>       up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><pre><span class="keyword">val</span> <a name="VALget_miser_params"></a>get_miser_params : <code class="type"><a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> <a href="Gsl_monte.html#TYPEmiser_params">miser_params</a></code></pre><pre><span class="keyword">val</span> <a name="VALset_miser_params"></a>set_miser_params : <code class="type"><a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> <a href="Gsl_monte.html#TYPEmiser_params">miser_params</a> -> unit</code></pre><br>
-<a name="4_VEGASalgorithm"></a>
-<h4>VEGAS algorithm</h4><br>
-<pre><span class="keyword">type</span> <a name="TYPEvegas_state"></a><code class="type"></code>vegas_state </pre>
+<pre><span id="VALmake_miser_state"><span class="keyword">val</span> make_miser_state</span> : <code class="type">int -> <a href="Gsl_monte.html#TYPEmiser_state">miser_state</a></code></pre><pre><span id="VALinit_miser"><span class="keyword">val</span> init_miser</span> : <code class="type"><a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> unit</code></pre><pre><span id="VALintegrate_miser"><span class="keyword">val</span> integrate_miser</span> : <code class="type"><a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -><br>       up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><pre><span id="VALget_miser_params"><span class="keyword">val</span> get_miser_params</span> : <code class="type"><a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> <a href="Gsl_monte.html#TYPEmiser_params">miser_params</a></code></pre><pre><span id="VALset_miser_params"><span class="keyword">val</span> set_miser_params</span> : <code class="type"><a href="Gsl_monte.html#TYPEmiser_state">miser_state</a> -> <a href="Gsl_monte.html#TYPEmiser_params">miser_params</a> -> unit</code></pre><br>
+<span id="4_VEGASalgorithm"><h4>VEGAS algorithm</h4></span><br>
+<pre><span id="TYPEvegas_state"><span class="keyword">type</span> <code class="type"></code>vegas_state</span> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEvegas_info"></a><code class="type"></code>vegas_info = {</code><table class="typetable">
+<br><code><span id="TYPEvegas_info"><span class="keyword">type</span> <code class="type"></code>vegas_info</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -183,7 +178,7 @@
 }
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEvegas_mode"></a><code class="type"></code>vegas_mode = </code><table class="typetable">
+<br><code><span id="TYPEvegas_mode"><span class="keyword">type</span> <code class="type"></code>vegas_mode</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -207,7 +202,7 @@
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEvegas_params"></a><code class="type"></code>vegas_params = {</code><table class="typetable">
+<br><code><span id="TYPEvegas_params"><span class="keyword">type</span> <code class="type"></code>vegas_params</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -253,4 +248,4 @@
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALmake_vegas_state"></a>make_vegas_state : <code class="type">int -> <a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a></code></pre><pre><span class="keyword">val</span> <a name="VALinit_vegas"></a>init_vegas : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALintegrate_vegas"></a>integrate_vegas : <code class="type"><a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -><br>       up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><pre><span class="keyword">val</span> <a name="VALget_vegas_info"></a>get_vegas_info : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_monte.html#TYPEvegas_info">vegas_info</a></code></pre><pre><span class="keyword">val</span> <a name="VALget_vegas_params"></a>get_vegas_params : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_monte.html#TYPEvegas_params">vegas_params</a></code></pre><pre><span class="keyword">val</span> <a name="VALset_vegas_params"></a>set_vegas_params : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_monte.html#TYPEvegas_params">vegas_params</a> -> unit</code></pre></body></html>
+<pre><span id="VALmake_vegas_state"><span class="keyword">val</span> make_vegas_state</span> : <code class="type">int -> <a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a></code></pre><pre><span id="VALinit_vegas"><span class="keyword">val</span> init_vegas</span> : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> unit</code></pre><pre><span id="VALintegrate_vegas"><span class="keyword">val</span> integrate_vegas</span> : <code class="type"><a href="Gsl_fun.html#TYPEmonte_fun">Gsl_fun.monte_fun</a> -><br>       lo:float array -><br>       up:float array -> int -> <a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> <a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_fun.html#TYPEresult">Gsl_fun.result</a></code></pre><pre><span id="VALget_vegas_info"><span class="keyword">val</span> get_vegas_info</span> : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_monte.html#TYPEvegas_info">vegas_info</a></code></pre><pre><span id="VALget_vegas_params"><span class="keyword">val</span> get_vegas_params</span> : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_monte.html#TYPEvegas_params">vegas_params</a></code></pre><pre><span id="VALset_vegas_params"><span class="keyword">val</span> set_vegas_params</span> : <code class="type"><a href="Gsl_monte.html#TYPEvegas_state">vegas_state</a> -> <a href="Gsl_monte.html#TYPEvegas_params">vegas_params</a> -> unit</code></pre></body></html>

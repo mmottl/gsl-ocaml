@@ -60,7 +60,7 @@
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
 <link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="1D transforms" rel="Section" href="#3_1Dtransforms">
 <link title="2D transforms" rel="Section" href="#3_2Dtransforms">
-<title>ocamlgsl 0.6.0 : Gsl_wavelet</title>
+<title>gsl-ocaml 0.6.0 : Gsl_wavelet</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_stats.html">Previous</a>
@@ -71,11 +71,11 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_wavelet: <code class="code">sig</code> <a href="Gsl_wavelet.html">..</a> <code class="code">end</code></pre>Wavelet Transforms<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEws"></a><code class="type"></code>ws </pre>
+<pre><span id="TYPEws"><span class="keyword">type</span> <code class="type"></code>ws</span> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -120,7 +120,7 @@
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEdirection"></a><code class="type"></code>direction = </code><table class="typetable">
+<br><code><span id="TYPEdirection"><span class="keyword">type</span> <code class="type"></code>direction</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -137,13 +137,11 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_wavelet.html#TYPEkind">kind</a> -> int -> <a href="Gsl_wavelet.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALworkspace_make"></a>workspace_make : <code class="type">int -> <a href="Gsl_wavelet.html#TYPEws">ws</a></code></pre><pre><span class="keyword">val</span> <a name="VALworkspace_size"></a>workspace_size : <code class="type"><a href="Gsl_wavelet.html#TYPEws">ws</a> -> int</code></pre><br>
-<a name="3_1Dtransforms"></a>
-<h3>1D transforms</h3><br>
-<pre><span class="keyword">val</span> <a name="VALtransform_array"></a>transform_array : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -><br>       ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -><br>       ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_forward"></a>transform_forward : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -><br>       ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_inverse"></a>transform_inverse : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -><br>       ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_vector_flat"></a>transform_vector_flat : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_vector_flat.html#TYPEvector">Gsl_vector_flat.vector</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_vector"></a>transform_vector : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_gen"></a>transform_gen : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> [< <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ] -> unit</code></pre><br>
-<a name="3_2Dtransforms"></a>
-<h3>2D transforms</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEordering"></a><code class="type"></code>ordering = </code><table class="typetable">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEkind">kind</a> -> int -> <a href="Gsl_wavelet.html#TYPEt">t</a></code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALworkspace_make"><span class="keyword">val</span> workspace_make</span> : <code class="type">int -> <a href="Gsl_wavelet.html#TYPEws">ws</a></code></pre><pre><span id="VALworkspace_size"><span class="keyword">val</span> workspace_size</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEws">ws</a> -> int</code></pre><br>
+<span id="3_1Dtransforms"><h3>1D transforms</h3></span><br>
+<pre><span id="VALtransform_array"><span class="keyword">val</span> transform_array</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -><br>       ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -><br>       ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre><pre><span id="VALtransform_forward"><span class="keyword">val</span> transform_forward</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -><br>       ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre><pre><span id="VALtransform_inverse"><span class="keyword">val</span> transform_inverse</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -><br>       ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre><pre><span id="VALtransform_vector_flat"><span class="keyword">val</span> transform_vector_flat</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_vector_flat.html#TYPEvector">Gsl_vector_flat.vector</a> -> unit</code></pre><pre><span id="VALtransform_vector"><span class="keyword">val</span> transform_vector</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code></pre><pre><span id="VALtransform_gen"><span class="keyword">val</span> transform_gen</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> [< <a href="Gsl_vectmat.html#TYPEvec">Gsl_vectmat.vec</a> ] -> unit</code></pre><br>
+<span id="3_2Dtransforms"><h3>2D transforms</h3></span><br>
+<br><code><span id="TYPEordering"><span class="keyword">type</span> <code class="type"></code>ordering</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -160,4 +158,4 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALtransform_matrix_flat"></a>transform_matrix_flat : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_matrix_flat.html#TYPEmatrix">Gsl_matrix_flat.matrix</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_matrix"></a>transform_matrix : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtransform_matrix_gen"></a>transform_matrix_gen : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> [< <a href="Gsl_vectmat.html#TYPEmat">Gsl_vectmat.mat</a> ] -> unit</code></pre></body></html>
+<pre><span id="VALtransform_matrix_flat"><span class="keyword">val</span> transform_matrix_flat</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_matrix_flat.html#TYPEmatrix">Gsl_matrix_flat.matrix</a> -> unit</code></pre><pre><span id="VALtransform_matrix"><span class="keyword">val</span> transform_matrix</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> <a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> unit</code></pre><pre><span id="VALtransform_matrix_gen"><span class="keyword">val</span> transform_matrix_gen</span> : <code class="type"><a href="Gsl_wavelet.html#TYPEt">t</a> -><br>       <a href="Gsl_wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Gsl_wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Gsl_wavelet.html#TYPEws">ws</a> -> [< <a href="Gsl_vectmat.html#TYPEmat">Gsl_vectmat.mat</a> ] -> unit</code></pre></body></html>

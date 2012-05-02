@@ -1,5 +1,5 @@
 Summary: OCaml interface for gsl
-Name: ocamlgsl
+Name: gsl-ocaml
 Version: 0.6.0
 Release: 1
 URL: http://oandrieu.nerim.net/ocaml/#gsl
@@ -25,19 +25,19 @@ make
 rm -rf %buildroot
 make DESTDIR=%buildroot INSTALLDIR=%ocamldir/gsl install
 mkdir -p %buildroot/%{_infodir}
-install -m 644 ocamlgsl.info* %buildroot/%{_infodir}
+install -m 644 gsl-ocaml.info* %buildroot/%{_infodir}
 
 %clean
 rm -rf %buildroot
 
 %post
 if test -x /sbin/install-info ; then
-  /sbin/install-info %{_infodir}/ocamlgsl.info %{_infodir}/dir
+  /sbin/install-info %{_infodir}/gsl-ocaml.info %{_infodir}/dir
 fi
 
 %preun
 if test -x /sbin/install-info ; then
-  /sbin/install-info --delete ocamlgsl %{_infodir}/dir
+  /sbin/install-info --delete gsl-ocaml %{_infodir}/dir
 fi
 
 %files

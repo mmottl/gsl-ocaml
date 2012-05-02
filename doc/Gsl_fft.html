@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_fft</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_fft</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_sum.html">Previous</a>
@@ -69,8 +69,8 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_fft: <code class="code">sig</code> <a href="Gsl_fft.html">..</a> <code class="code">end</code></pre>Fast Fourier Transforms<br>
 <hr width="100%">
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONWrong_layout"></a>Wrong_layout</pre>
-<br><code><span class="keyword">type</span> <a name="TYPElayout"></a><code class="type"></code>layout = </code><table class="typetable">
+<pre><span id="EXCEPTIONWrong_layout"><span class="keyword">exception</span> Wrong_layout</span></pre>
+<br><code><span id="TYPElayout"><span class="keyword">type</span> <code class="type"></code>layout</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -101,7 +101,7 @@
 </tr></table>
 
 
-<br><code><span class="keyword">type</span> <a name="TYPEfft_array"></a><code class="type"></code>fft_array = {</code><table class="typetable">
+<br><code><span id="TYPEfft_array"><span class="keyword">type</span> <code class="type"></code>fft_array</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -119,4 +119,4 @@
 }
 
 
-<pre><span class="keyword">module</span> <a href="Gsl_fft.Real.html">Real</a>: <code class="code">sig</code> <a href="Gsl_fft.Real.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Gsl_fft.Halfcomplex.html">Halfcomplex</a>: <code class="code">sig</code> <a href="Gsl_fft.Halfcomplex.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Gsl_fft.Complex.html">Complex</a>: <code class="code">sig</code> <a href="Gsl_fft.Complex.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">val</span> <a name="VALunpack"></a>unpack : <code class="type"><a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a></code></pre><pre><span class="keyword">val</span> <a name="VALhc_mult"></a>hc_mult : <code class="type"><a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> <a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALhc_mult_rad2"></a>hc_mult_rad2 : <code class="type"><a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> <a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> unit</code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Gsl_fft.Real.html">Real</a>: <code class="code">sig</code> <a href="Gsl_fft.Real.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Gsl_fft.Halfcomplex.html">Halfcomplex</a>: <code class="code">sig</code> <a href="Gsl_fft.Halfcomplex.html">..</a> <code class="code">end</code></pre><pre><span class="keyword">module</span> <a href="Gsl_fft.Complex.html">Complex</a>: <code class="code">sig</code> <a href="Gsl_fft.Complex.html">..</a> <code class="code">end</code></pre><pre><span id="VALunpack"><span class="keyword">val</span> unpack</span> : <code class="type"><a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a></code></pre><pre><span id="VALhc_mult"><span class="keyword">val</span> hc_mult</span> : <code class="type"><a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> <a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> unit</code></pre><pre><span id="VALhc_mult_rad2"><span class="keyword">val</span> hc_mult_rad2</span> : <code class="type"><a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> <a href="Gsl_fft.html#TYPEfft_array">fft_array</a> -> unit</code></pre></body></html>

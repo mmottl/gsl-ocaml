@@ -62,7 +62,7 @@
 <link title="Quadratic Equations" rel="Section" href="#3_QuadraticEquations">
 <link title="Cubic Equations" rel="Section" href="#3_CubicEquations">
 <link title="General Polynomial Equations" rel="Section" href="#3_GeneralPolynomialEquations">
-<title>ocamlgsl 0.6.0 : Gsl_poly</title>
+<title>gsl-ocaml 0.6.0 : Gsl_poly</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_eigen.html">Previous</a>
@@ -73,15 +73,13 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_poly: <code class="code">sig</code> <a href="Gsl_poly.html">..</a> <code class="code">end</code></pre>Polynomials<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEpoly"></a><code class="type"></code>poly = <code class="type">float array</code> </pre>
+<pre><span id="TYPEpoly"><span class="keyword">type</span> <code class="type"></code>poly</span> = <code class="type">float array</code> </pre>
 
 <br>
-<a name="3_PolynomialEvaluation"></a>
-<h3>Polynomial Evaluation</h3><br>
-<pre><span class="keyword">val</span> <a name="VALeval"></a>eval : <code class="type"><a href="Gsl_poly.html#TYPEpoly">poly</a> -> float -> float</code></pre><br>
-<a name="3_QuadraticEquations"></a>
-<h3>Quadratic Equations</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEquad_sol"></a><code class="type"></code>quad_sol = </code><table class="typetable">
+<span id="3_PolynomialEvaluation"><h3>Polynomial Evaluation</h3></span><br>
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Gsl_poly.html#TYPEpoly">poly</a> -> float -> float</code></pre><br>
+<span id="3_QuadraticEquations"><h3>Quadratic Equations</h3></span><br>
+<br><code><span id="TYPEquad_sol"><span class="keyword">type</span> <code class="type"></code>quad_sol</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -98,10 +96,9 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALsolve_quadratic"></a>solve_quadratic : <code class="type">a:float -> b:float -> c:float -> <a href="Gsl_poly.html#TYPEquad_sol">quad_sol</a></code></pre><pre><span class="keyword">val</span> <a name="VALcomplex_solve_quadratic"></a>complex_solve_quadratic : <code class="type">a:float -> b:float -> c:float -> <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a> * <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a></code></pre><br>
-<a name="3_CubicEquations"></a>
-<h3>Cubic Equations</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEcubic_sol"></a><code class="type"></code>cubic_sol = </code><table class="typetable">
+<pre><span id="VALsolve_quadratic"><span class="keyword">val</span> solve_quadratic</span> : <code class="type">a:float -> b:float -> c:float -> <a href="Gsl_poly.html#TYPEquad_sol">quad_sol</a></code></pre><pre><span id="VALcomplex_solve_quadratic"><span class="keyword">val</span> complex_solve_quadratic</span> : <code class="type">a:float -> b:float -> c:float -> <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a> * <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a></code></pre><br>
+<span id="3_CubicEquations"><h3>Cubic Equations</h3></span><br>
+<br><code><span id="TYPEcubic_sol"><span class="keyword">type</span> <code class="type"></code>cubic_sol</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -125,7 +122,6 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALsolve_cubic"></a>solve_cubic : <code class="type">a:float -> b:float -> c:float -> <a href="Gsl_poly.html#TYPEcubic_sol">cubic_sol</a></code></pre><pre><span class="keyword">val</span> <a name="VALcomplex_solve_cubic"></a>complex_solve_cubic : <code class="type">a:float -><br>       b:float -><br>       c:float -> <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a> * <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a> * <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a></code></pre><br>
-<a name="3_GeneralPolynomialEquations"></a>
-<h3>General Polynomial Equations</h3><br>
-<pre><span class="keyword">val</span> <a name="VALsolve"></a>solve : <code class="type"><a href="Gsl_poly.html#TYPEpoly">poly</a> -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a></code></pre></body></html>
+<pre><span id="VALsolve_cubic"><span class="keyword">val</span> solve_cubic</span> : <code class="type">a:float -> b:float -> c:float -> <a href="Gsl_poly.html#TYPEcubic_sol">cubic_sol</a></code></pre><pre><span id="VALcomplex_solve_cubic"><span class="keyword">val</span> complex_solve_cubic</span> : <code class="type">a:float -><br>       b:float -><br>       c:float -> <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a> * <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a> * <a href="Gsl_complex.html#TYPEcomplex">Gsl_complex.complex</a></code></pre><br>
+<span id="3_GeneralPolynomialEquations"><h3>General Polynomial Equations</h3></span><br>
+<pre><span id="VALsolve"><span class="keyword">val</span> solve</span> : <code class="type"><a href="Gsl_poly.html#TYPEpoly">poly</a> -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a></code></pre></body></html>

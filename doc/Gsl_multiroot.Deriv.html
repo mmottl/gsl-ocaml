@@ -57,7 +57,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_multiroot.Deriv</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_multiroot.Deriv</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_multiroot.NoDeriv.html">Previous</a>
@@ -66,7 +66,7 @@
 <center><h1>Module <a href="type_Gsl_multiroot.Deriv.html">Gsl_multiroot.Deriv</a></h1></center>
 <br>
 <pre><span class="keyword">module</span> Deriv: <code class="code">sig</code> <a href="Gsl_multiroot.Deriv.html">..</a> <code class="code">end</code></pre><hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -97,6 +97,6 @@
 </tr></table>
 
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEkind">kind</a> -><br>       int -> <a href="Gsl_fun.html#TYPEmulti_fun_fdf">Gsl_fun.multi_fun_fdf</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multiroot.Deriv.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALiterate"></a>iterate : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALroot"></a>root : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALget_state"></a>get_state : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -><br>       ?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?f:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?j:<a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> ?dx:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtest_delta"></a>test_delta : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> epsabs:float -> epsrel:float -> bool</code></pre><pre><span class="keyword">val</span> <a name="VALtest_residual"></a>test_residual : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> epsabs:float -> bool</code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEkind">kind</a> -><br>       int -> <a href="Gsl_fun.html#TYPEmulti_fun_fdf">Gsl_fun.multi_fun_fdf</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multiroot.Deriv.html#TYPEt">t</a></code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALiterate"><span class="keyword">val</span> iterate</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALroot"><span class="keyword">val</span> root</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code></pre><pre><span id="VALget_state"><span class="keyword">val</span> get_state</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -><br>       ?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?f:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?j:<a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> ?dx:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit -> unit</code></pre><pre><span id="VALtest_delta"><span class="keyword">val</span> test_delta</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> epsabs:float -> epsrel:float -> bool</code></pre><pre><span id="VALtest_residual"><span class="keyword">val</span> test_residual</span> : <code class="type"><a href="Gsl_multiroot.Deriv.html#TYPEt">t</a> -> epsabs:float -> bool</code></pre></body></html>

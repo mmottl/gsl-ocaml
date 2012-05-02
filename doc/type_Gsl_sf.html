@@ -53,7 +53,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_sf</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_sf</title>
 </head>
 <body>
 <code class="code"><span class="keyword">sig</span><br>
@@ -121,9 +121,6 @@
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_I1&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_I1"</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"gsl_sf_bessel_I1"</span>&nbsp;<span class="string">"float"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_I1_e&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_fun</span>.result&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_I1_e"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_In&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_In"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_In_e&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_fun</span>.result<br>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_In_e"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_In_array&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_In_array"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_K0&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_K0"</span><br>
@@ -132,9 +129,6 @@
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_K1&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_K1"</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"gsl_sf_bessel_K1"</span>&nbsp;<span class="string">"float"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_K1_e&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_fun</span>.result&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_K1_e"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_Kn&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_Kn"</span><br>
-&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_Kn_e&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_fun</span>.result<br>
-&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_Kn_e"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_Kn_array&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_Kn_array"</span><br>
 &nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bessel_I0_scaled&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_sf_bessel_I0_scaled"</span><br>

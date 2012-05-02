@@ -108,15 +108,15 @@ COBJ     := $(patsubst %.c,%.$(O),$(filter %.c,$(SRC)))
 SOBJ     := $(patsubst %.c,%.$(SO),$(filter %.c,$(SRC)))
 DOBJ     := $(patsubst %.c,%.$(DO),$(filter %.c,$(SRC)))
 
-TRASH = ocamlgsl$(EXE) $(DEF) $(AUTO_SRC) do_cdf do_sf
+TRASH = gsl-ocaml$(EXE) $(DEF) $(AUTO_SRC) do_cdf do_sf
 
 DISTSRC := $(filter-out $(AUTO_SRC),$(SRC)) gsl_sf.mli.q \
            mlgsl_vector.c mlgsl_matrix.c \
            .depend .depend_c gcc.mak msvc.mak \
            Makefile .ocamlinit do_const.awk do_cdf.ml do_sf.ml \
-           NOTES README.txt NEWS COPYING META ocamlgsl.spec \
+           NOTES README.txt NEWS COPYING META gsl-ocaml.spec \
            $(wildcard examples/*.ml) examples/Makefile doc \
-           $(wildcard test/*.ml) $(wildcard ocamlgsl.info*)
+           $(wildcard test/*.ml) $(wildcard gsl-ocaml.info*)
 VERSION := 0.6.0
 
 all : stubs gsl.cma gsl.cmxa $(CMI)
@@ -145,24 +145,24 @@ gsl.cmxa : $(MLOPTOBJ)
 	$(call MKCMXA,mlgsl,gsl,$^)
 
 top : libmlgsl.$(A) gsl.cma
-	ocamlmktop -I . -o ocamlgsl$(EXE) bigarray.cma gsl.cma
+	ocamlmktop -I . -o gsl-ocaml$(EXE) bigarray.cma gsl.cma
 
 install : all
 	$(OCAMLFIND) install gsl META \
           libmlgsl.$(A) dllmlgsl.$(D) gsl.cma gsl.cmxa gsl.$(A) $(CMI) $(MLOPTOBJ) 
 
-ocamlgsl.odoc : $(MLOBJ) $(CMI)
+gsl-ocaml.odoc : $(MLOBJ) $(CMI)
 	$(OCAMLDOC) -v -dump $@ $(filter-out gsl_misc.%, $(filter %.mli, $(SRC)))
 
 doc : doc/index.html
-doc/index.html: ocamlgsl.odoc
+doc/index.html: gsl-ocaml.odoc
 	mkdir -p doc
-	$(OCAMLDOC) -v -html -t 'ocamlgsl $(VERSION)' -d doc -load $<
+	$(OCAMLDOC) -v -html -t 'gsl-ocaml $(VERSION)' -d doc -load $<
 
-info : ocamlgsl.info
-ocamlgsl.info : ocamlgsl.odoc
-	$(OCAMLDOC) -v -texi -t 'ocamlgsl $(VERSION)' -o ocamlgsl.texi -load $<
-	makeinfo ocamlgsl.texi
+info : gsl-ocaml.info
+gsl-ocaml.info : gsl-ocaml.odoc
+	$(OCAMLDOC) -v -texi -t 'gsl-ocaml $(VERSION)' -o gsl-ocaml.texi -load $<
+	makeinfo gsl-ocaml.texi
 
 test : gsl.cma dllmlgsl.$(D)
 	$(FORT) -I . test/*.test.ml
@@ -234,14 +234,14 @@ endif
 
 dist : doc info
 	export DIRNAME=$${PWD##*/} && \
-	cd .. && mv $$DIRNAME ocamlgsl-$(VERSION) && \
-	tar zcvf ocamlgsl-$(VERSION).tar.gz $(addprefix ocamlgsl-$(VERSION)/,$(DISTSRC)) && mv ocamlgsl-$(VERSION) $$DIRNAME
+	cd .. && mv $$DIRNAME gsl-ocaml-$(VERSION) && \
+	tar zcvf gsl-ocaml-$(VERSION).tar.gz $(addprefix gsl-ocaml-$(VERSION)/,$(DISTSRC)) && mv gsl-ocaml-$(VERSION) $$DIRNAME
 
 clean :
 	rm -f *.cm* *.$(SO) *.$(DO)  *.$(D) *.$(A) core* $(TRASH)
 
 realclean :
-	rm -f .depend* ocamlgsl.info* ocamlgsl.texi ocamlgsl.odoc
+	rm -f .depend* gsl-ocaml.info* gsl-ocaml.texi gsl-ocaml.odoc
 
 -include .depend
 -include .depend_c

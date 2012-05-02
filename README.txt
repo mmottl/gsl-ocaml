@@ -26,7 +26,7 @@ or :
 
 
 * CHANGES
-cf. the NEWS file to see what's changed between ocamlgsl versions.
+cf. the NEWS file to see what's changed between gsl-ocaml versions.
 
 WARNING : the code is not heavily tested !
 
@@ -66,7 +66,7 @@ reporting; otherwise, the default GSL error handler is used and aborts
 the program, leaving a core dump (not so helpful with caml).
 
 If a callback (for minimizers, solvers, etc.) raises an exception,
-ocamlgsl either return GSL_FAILURE or NaN to GSL, depending on the
+gsl-ocaml either returns GSL_FAILURE or NaN to GSL, depending on the
 type of callback. In either case the original caml exception is not
 propagated. The GSL function will either return normally (but probably
 with values containing NaNs somewhere) or raise a Gsl_exn exception.

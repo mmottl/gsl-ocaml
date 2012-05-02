@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_multifit_nlin</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_multifit_nlin</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_multifit.html">Previous</a>
@@ -69,9 +69,9 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_multifit_nlin: <code class="code">sig</code> <a href="Gsl_multifit_nlin.html">..</a> <code class="code">end</code></pre>Nonlinear Least-Squares Fitting<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -88,4 +88,4 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEkind">kind</a> -><br>       n:int -><br>       p:int -> <a href="Gsl_fun.html#TYPEmulti_fun_fdf">Gsl_fun.multi_fun_fdf</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multifit_nlin.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALiterate"></a>iterate : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALposition"></a>position : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALget_state"></a>get_state : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -><br>       ?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?f:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> ?dx:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALtest_delta"></a>test_delta : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> epsabs:float -> epsrel:float -> bool</code></pre><pre><span class="keyword">val</span> <a name="VALtest_gradient"></a>test_gradient : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> epsabs:float -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> bool</code></pre><pre><span class="keyword">val</span> <a name="VALcovar"></a>covar : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> epsrel:float -> <a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> unit</code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEkind">kind</a> -><br>       n:int -><br>       p:int -> <a href="Gsl_fun.html#TYPEmulti_fun_fdf">Gsl_fun.multi_fun_fdf</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multifit_nlin.html#TYPEt">t</a></code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALiterate"><span class="keyword">val</span> iterate</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALposition"><span class="keyword">val</span> position</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code></pre><pre><span id="VALget_state"><span class="keyword">val</span> get_state</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -><br>       ?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?f:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> ?dx:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit -> unit</code></pre><pre><span id="VALtest_delta"><span class="keyword">val</span> test_delta</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> epsabs:float -> epsrel:float -> bool</code></pre><pre><span id="VALtest_gradient"><span class="keyword">val</span> test_gradient</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> epsabs:float -> <a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> bool</code></pre><pre><span id="VALcovar"><span class="keyword">val</span> covar</span> : <code class="type"><a href="Gsl_multifit_nlin.html#TYPEt">t</a> -> epsrel:float -> <a href="Gsl_matrix.html#TYPEmatrix">Gsl_matrix.matrix</a> -> unit</code></pre></body></html>

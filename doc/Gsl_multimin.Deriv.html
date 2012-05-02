@@ -57,7 +57,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_multimin.Deriv</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_multimin.Deriv</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a href="Gsl_multimin.html">Up</a>
@@ -66,7 +66,7 @@
 <center><h1>Module <a href="type_Gsl_multimin.Deriv.html">Gsl_multimin.Deriv</a></h1></center>
 <br>
 <pre><span class="keyword">module</span> Deriv: <code class="code">sig</code> <a href="Gsl_multimin.Deriv.html">..</a> <code class="code">end</code></pre><hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -104,6 +104,6 @@
 </tr></table>
 
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEkind">kind</a> -><br>       int -><br>       <a href="Gsl_fun.html#TYPEmultim_fun_fdf">Gsl_fun.multim_fun_fdf</a> -><br>       x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> step:float -> tol:float -> <a href="Gsl_multimin.Deriv.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALiterate"></a>iterate : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALrestart"></a>restart : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALminimum"></a>minimum : <code class="type">?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?dx:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?g:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALtest_gradient"></a>test_gradient : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> float -> bool</code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEkind">kind</a> -><br>       int -><br>       <a href="Gsl_fun.html#TYPEmultim_fun_fdf">Gsl_fun.multim_fun_fdf</a> -><br>       x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> step:float -> tol:float -> <a href="Gsl_multimin.Deriv.html#TYPEt">t</a></code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALiterate"><span class="keyword">val</span> iterate</span> : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALrestart"><span class="keyword">val</span> restart</span> : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALminimum"><span class="keyword">val</span> minimum</span> : <code class="type">?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?dx:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -><br>       ?g:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALtest_gradient"><span class="keyword">val</span> test_gradient</span> : <code class="type"><a href="Gsl_multimin.Deriv.html#TYPEt">t</a> -> float -> bool</code></pre></body></html>

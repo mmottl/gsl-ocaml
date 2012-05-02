@@ -64,7 +64,7 @@
 <link title="Histograms statistics " rel="Section" href="#3_Histogramsstatistics">
 <link title="Histogram operations" rel="Section" href="#3_Histogramoperations">
 <link title="Resampling" rel="Section" href="#3_Resampling">
-<title>ocamlgsl 0.6.0 : Gsl_histo</title>
+<title>gsl-ocaml 0.6.0 : Gsl_histo</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_odeiv.html">Previous</a>
@@ -75,7 +75,7 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_histo: <code class="code">sig</code> <a href="Gsl_histo.html">..</a> <code class="code">end</code></pre>Histograms<br>
 <hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t = private {</code><table class="typetable">
+<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = private {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -103,25 +103,19 @@
 The histogram type<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALcheck"></a>check : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> bool</code></pre><br>
-<a name="3_Allocatinghistograms"></a>
-<h3>Allocating histograms</h3><br>
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type">int -> <a href="Gsl_histo.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALcopy"></a>copy : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALset_ranges"></a>set_ranges : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALset_ranges_uniform"></a>set_ranges_uniform : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> xmin:float -> xmax:float -> unit</code></pre><br>
-<a name="3_Updatingandaccessinghistogramelements"></a>
-<h3>Updating and accessing histogram elements</h3><br>
-<pre><span class="keyword">val</span> <a name="VALaccumulate"></a>accumulate : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> ?w:float -> float -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int -> float</code></pre><pre><span class="keyword">val</span> <a name="VALget_range"></a>get_range : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int -> float * float</code></pre><pre><span class="keyword">val</span> <a name="VALh_max"></a>h_max : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALh_min"></a>h_min : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALbins"></a>bins : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALreset"></a>reset : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><br>
-<a name="3_Searchinghistogramranges"></a>
-<h3>Searching histogram ranges</h3><br>
-<pre><span class="keyword">val</span> <a name="VALfind"></a>find : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float -> int</code></pre><br>
-<a name="3_Histogramsstatistics"></a>
-<h3>Histograms statistics </h3><br>
-<pre><span class="keyword">val</span> <a name="VALmax_val"></a>max_val : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALmax_bin"></a>max_bin : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALmin_val"></a>min_val : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALmin_bin"></a>min_bin : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALmean"></a>mean : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALsigma"></a>sigma : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALsum"></a>sum : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><br>
-<a name="3_Histogramoperations"></a>
-<h3>Histogram operations</h3><br>
-<pre><span class="keyword">val</span> <a name="VALequal_bins_p"></a>equal_bins_p : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> bool</code></pre><pre><span class="keyword">val</span> <a name="VALadd"></a>add : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALsub"></a>sub : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALmul"></a>mul : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALdiv"></a>div : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALscale"></a>scale : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALshift"></a>shift : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float -> unit</code></pre><br>
-<a name="3_Resampling"></a>
-<h3>Resampling</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEhisto_pdf"></a><code class="type"></code>histo_pdf = private {</code><table class="typetable">
+<pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> bool</code></pre><br>
+<span id="3_Allocatinghistograms"><h3>Allocating histograms</h3></span><br>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -> <a href="Gsl_histo.html#TYPEt">t</a></code></pre><pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a></code></pre><pre><span id="VALset_ranges"><span class="keyword">val</span> set_ranges</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float array -> unit</code></pre><pre><span id="VALset_ranges_uniform"><span class="keyword">val</span> set_ranges_uniform</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> xmin:float -> xmax:float -> unit</code></pre><br>
+<span id="3_Updatingandaccessinghistogramelements"><h3>Updating and accessing histogram elements</h3></span><br>
+<pre><span id="VALaccumulate"><span class="keyword">val</span> accumulate</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> ?w:float -> float -> unit</code></pre><pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int -> float</code></pre><pre><span id="VALget_range"><span class="keyword">val</span> get_range</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int -> float * float</code></pre><pre><span id="VALh_max"><span class="keyword">val</span> h_max</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALh_min"><span class="keyword">val</span> h_min</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALbins"><span class="keyword">val</span> bins</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><br>
+<span id="3_Searchinghistogramranges"><h3>Searching histogram ranges</h3></span><br>
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float -> int</code></pre><br>
+<span id="3_Histogramsstatistics"><h3>Histograms statistics </h3></span><br>
+<pre><span id="VALmax_val"><span class="keyword">val</span> max_val</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALmax_bin"><span class="keyword">val</span> max_bin</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALmin_val"><span class="keyword">val</span> min_val</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALmin_bin"><span class="keyword">val</span> min_bin</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALmean"><span class="keyword">val</span> mean</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALsigma"><span class="keyword">val</span> sigma</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALsum"><span class="keyword">val</span> sum</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float</code></pre><br>
+<span id="3_Histogramoperations"><h3>Histogram operations</h3></span><br>
+<pre><span id="VALequal_bins_p"><span class="keyword">val</span> equal_bins_p</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> bool</code></pre><pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALscale"><span class="keyword">val</span> scale</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float -> unit</code></pre><pre><span id="VALshift"><span class="keyword">val</span> shift</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> float -> unit</code></pre><br>
+<span id="3_Resampling"><h3>Resampling</h3></span><br>
+<br><code><span id="TYPEhisto_pdf"><span class="keyword">type</span> <code class="type"></code>histo_pdf</span> = private {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -146,4 +140,4 @@ The histogram type<br>
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALinit"></a>init : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEhisto_pdf">histo_pdf</a></code></pre><pre><span class="keyword">val</span> <a name="VALsample"></a>sample : <code class="type"><a href="Gsl_histo.html#TYPEhisto_pdf">histo_pdf</a> -> float -> float</code></pre></body></html>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type"><a href="Gsl_histo.html#TYPEt">t</a> -> <a href="Gsl_histo.html#TYPEhisto_pdf">histo_pdf</a></code></pre><pre><span id="VALsample"><span class="keyword">val</span> sample</span> : <code class="type"><a href="Gsl_histo.html#TYPEhisto_pdf">histo_pdf</a> -> float -> float</code></pre></body></html>

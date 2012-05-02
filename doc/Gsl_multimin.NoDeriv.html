@@ -57,7 +57,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_multimin.NoDeriv</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_multimin.NoDeriv</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_multimin.Deriv.html">Previous</a>
@@ -66,7 +66,7 @@
 <center><h1>Module <a href="type_Gsl_multimin.NoDeriv.html">Gsl_multimin.NoDeriv</a></h1></center>
 <br>
 <pre><span class="keyword">module</span> NoDeriv: <code class="code">sig</code> <a href="Gsl_multimin.NoDeriv.html">..</a> <code class="code">end</code></pre><hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEkind"></a><code class="type"></code>kind = </code><table class="typetable">
+<br><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -76,6 +76,6 @@
 </tr></table>
 
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEkind">kind</a> -><br>       int -><br>       <a href="Gsl_fun.html#TYPEmultim_fun">Gsl_fun.multim_fun</a> -><br>       x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> step_size:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALiterate"></a>iterate : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALminimum"></a>minimum : <code class="type">?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALsize"></a>size : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALtest_size"></a>test_size : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> float -> bool</code></pre></body></html>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEkind">kind</a> -><br>       int -><br>       <a href="Gsl_fun.html#TYPEmultim_fun">Gsl_fun.multim_fun</a> -><br>       x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> step_size:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a></code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALiterate"><span class="keyword">val</span> iterate</span> : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALminimum"><span class="keyword">val</span> minimum</span> : <code class="type">?x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> <a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALtest_size"><span class="keyword">val</span> test_size</span> : <code class="type"><a href="Gsl_multimin.NoDeriv.html#TYPEt">t</a> -> float -> bool</code></pre></body></html>

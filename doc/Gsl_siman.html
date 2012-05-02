@@ -58,7 +58,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_siman</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_siman</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_monte.html">Previous</a>
@@ -73,7 +73,7 @@
 NB: This module is not interfaced to GSL, it is implemented in OCaml.
     It is quite simple in fact, so rather than using it you may want to copy
     the code and tweak the algorithm in your own program.<br>
-<br><code><span class="keyword">type</span> <a name="TYPEparams"></a><code class="type"></code>params = {</code><table class="typetable">
+<br><code><span id="TYPEparams"><span class="keyword">type</span> <code class="type"></code>params</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -119,4 +119,4 @@ NB: This module is not interfaced to GSL, it is implemented in OCaml.
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALsolve"></a>solve : <code class="type"><a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -><br>       'a -><br>       energ_func:('a -> float) -><br>       step_func:(<a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> 'a -> float -> 'a) -><br>       ?print_func:('a -> unit) -> <a href="Gsl_siman.html#TYPEparams">params</a> -> 'a</code></pre></body></html>
+<pre><span id="VALsolve"><span class="keyword">val</span> solve</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -><br>       'a -><br>       energ_func:('a -> float) -><br>       step_func:(<a href="Gsl_rng.html#TYPEt">Gsl_rng.t</a> -> 'a -> float -> 'a) -><br>       ?print_func:('a -> unit) -> <a href="Gsl_siman.html#TYPEparams">params</a> -> 'a</code></pre></body></html>

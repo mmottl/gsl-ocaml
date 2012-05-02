@@ -61,7 +61,7 @@
 <link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="Default values" rel="Section" href="#3_Defaultvalues">
 <link title="Creating" rel="Section" href="#3_Creating">
 <link title="Sampling" rel="Section" href="#3_Sampling">
-<title>ocamlgsl 0.6.0 : Gsl_rng</title>
+<title>gsl-ocaml 0.6.0 : Gsl_rng</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_interp.html">Previous</a>
@@ -72,7 +72,7 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_rng: <code class="code">sig</code> <a href="Gsl_rng.html">..</a> <code class="code">end</code></pre>Random Number Generation<br>
 <hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPErng_type"></a><code class="type"></code>rng_type = </code><table class="typetable">
+<br><code><span id="TYPErng_type"><span class="keyword">type</span> <code class="type"></code>rng_type</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -509,21 +509,18 @@
 </tr></table>
 
 
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 <br>
-<a name="3_Defaultvalues"></a>
-<h3>Default values</h3><br>
-<pre><span class="keyword">val</span> <a name="VALdefault"></a>default : <code class="type">unit -> <a href="Gsl_rng.html#TYPErng_type">rng_type</a></code></pre><pre><span class="keyword">val</span> <a name="VALdefault_seed"></a>default_seed : <code class="type">unit -> nativeint</code></pre><pre><span class="keyword">val</span> <a name="VALset_default"></a>set_default : <code class="type"><a href="Gsl_rng.html#TYPErng_type">rng_type</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALset_default_seed"></a>set_default_seed : <code class="type">nativeint -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALenv_setup"></a>env_setup : <code class="type">unit -> unit</code></pre><br>
-<a name="3_Creating"></a>
-<h3>Creating</h3><br>
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_rng.html#TYPErng_type">rng_type</a> -> <a href="Gsl_rng.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALset"></a>set : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALget_type"></a>get_type : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> <a href="Gsl_rng.html#TYPErng_type">rng_type</a></code></pre><br>
+<span id="3_Defaultvalues"><h3>Default values</h3></span><br>
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">unit -> <a href="Gsl_rng.html#TYPErng_type">rng_type</a></code></pre><pre><span id="VALdefault_seed"><span class="keyword">val</span> default_seed</span> : <code class="type">unit -> nativeint</code></pre><pre><span id="VALset_default"><span class="keyword">val</span> set_default</span> : <code class="type"><a href="Gsl_rng.html#TYPErng_type">rng_type</a> -> unit</code></pre><pre><span id="VALset_default_seed"><span class="keyword">val</span> set_default_seed</span> : <code class="type">nativeint -> unit</code></pre><pre><span id="VALenv_setup"><span class="keyword">val</span> env_setup</span> : <code class="type">unit -> unit</code></pre><br>
+<span id="3_Creating"><h3>Creating</h3></span><br>
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_rng.html#TYPErng_type">rng_type</a> -> <a href="Gsl_rng.html#TYPEt">t</a></code></pre><pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint -> unit</code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALget_type"><span class="keyword">val</span> get_type</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> <a href="Gsl_rng.html#TYPErng_type">rng_type</a></code></pre><br>
 warning : the nativeint used for seeds are in fact unsigned but
    ocaml treats them as signed.
    But you can still print them using %nu with printf functions.<br>
-<pre><span class="keyword">val</span> <a name="VALmax"></a>max : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint</code></pre><pre><span class="keyword">val</span> <a name="VALmin"></a>min : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint</code></pre><pre><span class="keyword">val</span> <a name="VALmemcpy"></a>memcpy : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> <a href="Gsl_rng.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALclone"></a>clone : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> <a href="Gsl_rng.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALdump_state"></a>dump_state : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> string * string</code></pre><pre><span class="keyword">val</span> <a name="VALset_state"></a>set_state : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> string * string -> unit</code></pre><br>
-<a name="3_Sampling"></a>
-<h3>Sampling</h3><br>
-<pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint</code></pre><pre><span class="keyword">val</span> <a name="VALuniform"></a>uniform : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALuniform_pos"></a>uniform_pos : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALuniform_int"></a>uniform_int : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> int -> int</code></pre><br>
+<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint</code></pre><pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint</code></pre><pre><span id="VALmemcpy"><span class="keyword">val</span> memcpy</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> <a href="Gsl_rng.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALclone"><span class="keyword">val</span> clone</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> <a href="Gsl_rng.html#TYPEt">t</a></code></pre><pre><span id="VALdump_state"><span class="keyword">val</span> dump_state</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> string * string</code></pre><pre><span id="VALset_state"><span class="keyword">val</span> set_state</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> string * string -> unit</code></pre><br>
+<span id="3_Sampling"><h3>Sampling</h3></span><br>
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> nativeint</code></pre><pre><span id="VALuniform"><span class="keyword">val</span> uniform</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALuniform_pos"><span class="keyword">val</span> uniform_pos</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float</code></pre><pre><span id="VALuniform_int"><span class="keyword">val</span> uniform_int</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> int -> int</code></pre><br>
 These function fill the array with random numbers :<br>
-<pre><span class="keyword">val</span> <a name="VALuniform_arr"></a>uniform_arr : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALuniform_pos_arr"></a>uniform_pos_arr : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float array -> unit</code></pre></body></html>
+<pre><span id="VALuniform_arr"><span class="keyword">val</span> uniform_arr</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float array -> unit</code></pre><pre><span id="VALuniform_pos_arr"><span class="keyword">val</span> uniform_pos_arr</span> : <code class="type"><a href="Gsl_rng.html#TYPEt">t</a> -> float array -> unit</code></pre></body></html>

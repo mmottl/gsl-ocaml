@@ -1,164 +1,178 @@
-gsl_error.cmo: gsl_error.cmi 
-gsl_error.cmx: gsl_error.cmi 
-gsl_ieee.cmo: gsl_ieee.cmi 
-gsl_ieee.cmx: gsl_ieee.cmi 
-gsl_math.cmo: gsl_math.cmi 
-gsl_math.cmx: gsl_math.cmi 
-gsl_complex.cmo: gsl_complex.cmi 
-gsl_complex.cmx: gsl_complex.cmi 
-gsl_vector.cmo: gsl_vector.cmi 
-gsl_vector.cmx: gsl_vector.cmi 
-gsl_vector_flat.cmo: gsl_vector_flat.cmi 
-gsl_vector_flat.cmx: gsl_vector_flat.cmi 
-gsl_vector_complex.cmo: gsl_complex.cmi gsl_vector_complex.cmi 
-gsl_vector_complex.cmx: gsl_complex.cmx gsl_vector_complex.cmi 
-gsl_vector_complex.cmi: gsl_complex.cmi 
+gsl_misc.cmo:
+gsl_misc.cmx:
+gsl_error.cmo: gsl_error.cmi
+gsl_error.cmx: gsl_error.cmi
+gsl_error.cmi:
+gsl_ieee.cmo: gsl_ieee.cmi
+gsl_ieee.cmx: gsl_ieee.cmi
+gsl_ieee.cmi:
+gsl_math.cmo: gsl_math.cmi
+gsl_math.cmx: gsl_math.cmi
+gsl_math.cmi:
+gsl_complex.cmo: gsl_complex.cmi
+gsl_complex.cmx: gsl_complex.cmi
+gsl_complex.cmi:
+gsl_vector.cmo: gsl_vector.cmi
+gsl_vector.cmx: gsl_vector.cmi
+gsl_vector.cmi:
+gsl_vector_flat.cmo: gsl_vector_flat.cmi
+gsl_vector_flat.cmx: gsl_vector_flat.cmi
+gsl_vector_flat.cmi:
+gsl_vector_complex.cmo: gsl_complex.cmi gsl_vector_complex.cmi
+gsl_vector_complex.cmx: gsl_complex.cmx gsl_vector_complex.cmi
+gsl_vector_complex.cmi: gsl_complex.cmi
 gsl_vector_complex_flat.cmo: gsl_vector_flat.cmi gsl_complex.cmi \
-    gsl_vector_complex_flat.cmi 
+    gsl_vector_complex_flat.cmi
 gsl_vector_complex_flat.cmx: gsl_vector_flat.cmx gsl_complex.cmx \
-    gsl_vector_complex_flat.cmi 
-gsl_vector_complex_flat.cmi: gsl_vector_flat.cmi gsl_complex.cmi 
-gsl_matrix.cmo: gsl_matrix.cmi 
-gsl_matrix.cmx: gsl_matrix.cmi 
-gsl_matrix.cmi: gsl_vector.cmi 
-gsl_matrix_flat.cmo: gsl_vector_flat.cmi gsl_matrix_flat.cmi 
-gsl_matrix_flat.cmx: gsl_vector_flat.cmx gsl_matrix_flat.cmi 
-gsl_matrix_flat.cmi: gsl_vector_flat.cmi 
-gsl_matrix_complex.cmo: gsl_complex.cmi gsl_matrix_complex.cmi 
-gsl_matrix_complex.cmx: gsl_complex.cmx gsl_matrix_complex.cmi 
-gsl_matrix_complex.cmi: gsl_vector_complex.cmi gsl_complex.cmi 
+    gsl_vector_complex_flat.cmi
+gsl_vector_complex_flat.cmi: gsl_vector_flat.cmi gsl_complex.cmi
+gsl_matrix.cmo: gsl_matrix.cmi
+gsl_matrix.cmx: gsl_matrix.cmi
+gsl_matrix.cmi: gsl_vector.cmi
+gsl_matrix_flat.cmo: gsl_vector_flat.cmi gsl_matrix_flat.cmi
+gsl_matrix_flat.cmx: gsl_vector_flat.cmx gsl_matrix_flat.cmi
+gsl_matrix_flat.cmi: gsl_vector_flat.cmi
+gsl_matrix_complex.cmo: gsl_complex.cmi gsl_matrix_complex.cmi
+gsl_matrix_complex.cmx: gsl_complex.cmx gsl_matrix_complex.cmi
+gsl_matrix_complex.cmi: gsl_vector_complex.cmi gsl_complex.cmi
 gsl_matrix_complex_flat.cmo: gsl_vector_complex_flat.cmi gsl_complex.cmi \
-    gsl_matrix_complex_flat.cmi 
+    gsl_matrix_complex_flat.cmi
 gsl_matrix_complex_flat.cmx: gsl_vector_complex_flat.cmx gsl_complex.cmx \
-    gsl_matrix_complex_flat.cmi 
-gsl_matrix_complex_flat.cmi: gsl_vector_complex_flat.cmi gsl_complex.cmi 
+    gsl_matrix_complex_flat.cmi
+gsl_matrix_complex_flat.cmi: gsl_vector_complex_flat.cmi gsl_complex.cmi
 gsl_vectmat.cmo: gsl_vector_flat.cmi gsl_vector_complex_flat.cmi \
     gsl_vector_complex.cmi gsl_vector.cmi gsl_matrix_flat.cmi \
     gsl_matrix_complex_flat.cmi gsl_matrix_complex.cmi gsl_matrix.cmi \
-    gsl_vectmat.cmi 
+    gsl_vectmat.cmi
 gsl_vectmat.cmx: gsl_vector_flat.cmx gsl_vector_complex_flat.cmx \
     gsl_vector_complex.cmx gsl_vector.cmx gsl_matrix_flat.cmx \
     gsl_matrix_complex_flat.cmx gsl_matrix_complex.cmx gsl_matrix.cmx \
-    gsl_vectmat.cmi 
+    gsl_vectmat.cmi
 gsl_vectmat.cmi: gsl_vector_flat.cmi gsl_vector_complex_flat.cmi \
     gsl_vector_complex.cmi gsl_vector.cmi gsl_matrix_flat.cmi \
     gsl_matrix_complex_flat.cmi gsl_matrix_complex.cmi gsl_matrix.cmi \
-    gsl_complex.cmi 
+    gsl_complex.cmi
 gsl_blas.cmo: gsl_vector_complex.cmi gsl_vector.cmi gsl_matrix_complex.cmi \
-    gsl_matrix.cmi gsl_complex.cmi gsl_blas.cmi 
+    gsl_matrix.cmi gsl_complex.cmi gsl_blas.cmi
 gsl_blas.cmx: gsl_vector_complex.cmx gsl_vector.cmx gsl_matrix_complex.cmx \
-    gsl_matrix.cmx gsl_complex.cmx gsl_blas.cmi 
+    gsl_matrix.cmx gsl_complex.cmx gsl_blas.cmi
 gsl_blas_flat.cmo: gsl_vector_flat.cmi gsl_vector_complex_flat.cmi \
     gsl_matrix_flat.cmi gsl_matrix_complex_flat.cmi gsl_complex.cmi \
-    gsl_blas.cmi gsl_blas_flat.cmi 
+    gsl_blas.cmi gsl_blas_flat.cmi
 gsl_blas_flat.cmx: gsl_vector_flat.cmx gsl_vector_complex_flat.cmx \
     gsl_matrix_flat.cmx gsl_matrix_complex_flat.cmx gsl_complex.cmx \
-    gsl_blas.cmx gsl_blas_flat.cmi 
+    gsl_blas.cmx gsl_blas_flat.cmi
 gsl_blas_gen.cmo: gsl_vectmat.cmi gsl_complex.cmi gsl_blas.cmi \
-    gsl_blas_gen.cmi 
+    gsl_blas_gen.cmi
 gsl_blas_gen.cmx: gsl_vectmat.cmx gsl_complex.cmx gsl_blas.cmx \
-    gsl_blas_gen.cmi 
+    gsl_blas_gen.cmi
 gsl_blas.cmi: gsl_vector_complex.cmi gsl_vector.cmi gsl_matrix_complex.cmi \
-    gsl_matrix.cmi gsl_complex.cmi 
+    gsl_matrix.cmi gsl_complex.cmi
 gsl_blas_flat.cmi: gsl_vector_flat.cmi gsl_vector_complex_flat.cmi \
     gsl_matrix_flat.cmi gsl_matrix_complex_flat.cmi gsl_complex.cmi \
-    gsl_blas.cmi 
-gsl_blas_gen.cmi: gsl_vectmat.cmi gsl_complex.cmi gsl_blas.cmi 
-gsl_fun.cmo: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi 
-gsl_fun.cmx: gsl_vector.cmx gsl_matrix.cmx gsl_fun.cmi 
-gsl_fun.cmi: gsl_vector.cmi gsl_matrix.cmi 
-gsl_permut.cmo: gsl_error.cmi gsl_complex.cmi gsl_permut.cmi 
-gsl_permut.cmx: gsl_error.cmx gsl_complex.cmx gsl_permut.cmi 
-gsl_sort.cmo: gsl_vector_flat.cmi gsl_vector.cmi gsl_permut.cmi gsl_sort.cmi 
-gsl_sort.cmx: gsl_vector_flat.cmx gsl_vector.cmx gsl_permut.cmx gsl_sort.cmi 
-gsl_sort.cmi: gsl_vector_flat.cmi gsl_vector.cmi gsl_permut.cmi 
+    gsl_blas.cmi
+gsl_blas_gen.cmi: gsl_vectmat.cmi gsl_complex.cmi gsl_blas.cmi
+gsl_fun.cmo: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi
+gsl_fun.cmx: gsl_vector.cmx gsl_matrix.cmx gsl_fun.cmi
+gsl_fun.cmi: gsl_vector.cmi gsl_matrix.cmi
+gsl_permut.cmo: gsl_error.cmi gsl_complex.cmi gsl_permut.cmi
+gsl_permut.cmx: gsl_error.cmx gsl_complex.cmx gsl_permut.cmi
+gsl_permut.cmi:
+gsl_sort.cmo: gsl_vector_flat.cmi gsl_vector.cmi gsl_permut.cmi gsl_sort.cmi
+gsl_sort.cmx: gsl_vector_flat.cmx gsl_vector.cmx gsl_permut.cmx gsl_sort.cmi
+gsl_sort.cmi: gsl_vector_flat.cmi gsl_vector.cmi gsl_permut.cmi
 gsl_linalg.cmo: gsl_vector_flat.cmi gsl_vectmat.cmi gsl_permut.cmi \
-    gsl_matrix.cmi gsl_fun.cmi gsl_complex.cmi gsl_linalg.cmi 
+    gsl_matrix.cmi gsl_fun.cmi gsl_complex.cmi gsl_linalg.cmi
 gsl_linalg.cmx: gsl_vector_flat.cmx gsl_vectmat.cmx gsl_permut.cmx \
-    gsl_matrix.cmx gsl_fun.cmx gsl_complex.cmx gsl_linalg.cmi 
+    gsl_matrix.cmx gsl_fun.cmx gsl_complex.cmx gsl_linalg.cmi
 gsl_linalg.cmi: gsl_vector_flat.cmi gsl_vector.cmi gsl_vectmat.cmi \
     gsl_permut.cmi gsl_matrix_flat.cmi gsl_matrix.cmi gsl_fun.cmi \
-    gsl_complex.cmi 
+    gsl_complex.cmi
 gsl_eigen.cmo: gsl_vector_complex.cmi gsl_vector.cmi gsl_vectmat.cmi \
-    gsl_matrix_complex.cmi gsl_matrix.cmi gsl_eigen.cmi 
+    gsl_matrix_complex.cmi gsl_matrix.cmi gsl_eigen.cmi
 gsl_eigen.cmx: gsl_vector_complex.cmx gsl_vector.cmx gsl_vectmat.cmx \
-    gsl_matrix_complex.cmx gsl_matrix.cmx gsl_eigen.cmi 
+    gsl_matrix_complex.cmx gsl_matrix.cmx gsl_eigen.cmi
 gsl_eigen.cmi: gsl_vector_complex.cmi gsl_vector.cmi gsl_vectmat.cmi \
     gsl_matrix_flat.cmi gsl_matrix_complex_flat.cmi gsl_matrix_complex.cmi \
-    gsl_matrix.cmi gsl_complex.cmi 
-gsl_poly.cmo: gsl_complex.cmi gsl_poly.cmi 
-gsl_poly.cmx: gsl_complex.cmx gsl_poly.cmi 
-gsl_poly.cmi: gsl_complex.cmi 
-gsl_interp.cmo: gsl_interp.cmi 
-gsl_interp.cmx: gsl_interp.cmi 
-gsl_rng.cmo: gsl_rng.cmi 
-gsl_rng.cmx: gsl_rng.cmi 
-gsl_qrng.cmo: gsl_qrng.cmi 
-gsl_qrng.cmx: gsl_qrng.cmi 
-gsl_randist.cmo: gsl_rng.cmi gsl_randist.cmi 
-gsl_randist.cmx: gsl_rng.cmx gsl_randist.cmi 
-gsl_randist.cmi: gsl_rng.cmi 
-gsl_integration.cmo: gsl_fun.cmi gsl_integration.cmi 
-gsl_integration.cmx: gsl_fun.cmx gsl_integration.cmi 
-gsl_integration.cmi: gsl_fun.cmi 
-gsl_fit.cmo: gsl_fun.cmi gsl_fit.cmi 
-gsl_fit.cmx: gsl_fun.cmx gsl_fit.cmi 
-gsl_fit.cmi: gsl_fun.cmi 
+    gsl_matrix.cmi gsl_complex.cmi
+gsl_poly.cmo: gsl_complex.cmi gsl_poly.cmi
+gsl_poly.cmx: gsl_complex.cmx gsl_poly.cmi
+gsl_poly.cmi: gsl_complex.cmi
+gsl_interp.cmo: gsl_interp.cmi
+gsl_interp.cmx: gsl_interp.cmi
+gsl_interp.cmi:
+gsl_rng.cmo: gsl_rng.cmi
+gsl_rng.cmx: gsl_rng.cmi
+gsl_rng.cmi:
+gsl_qrng.cmo: gsl_qrng.cmi
+gsl_qrng.cmx: gsl_qrng.cmi
+gsl_qrng.cmi:
+gsl_randist.cmo: gsl_rng.cmi gsl_randist.cmi
+gsl_randist.cmx: gsl_rng.cmx gsl_randist.cmi
+gsl_randist.cmi: gsl_rng.cmi
+gsl_integration.cmo: gsl_fun.cmi gsl_integration.cmi
+gsl_integration.cmx: gsl_fun.cmx gsl_integration.cmi
+gsl_integration.cmi: gsl_fun.cmi
+gsl_fit.cmo: gsl_fun.cmi gsl_fit.cmi
+gsl_fit.cmx: gsl_fun.cmx gsl_fit.cmi
+gsl_fit.cmi: gsl_fun.cmi
 gsl_multifit.cmo: gsl_vector.cmi gsl_vectmat.cmi gsl_misc.cmo gsl_matrix.cmi \
-    gsl_math.cmi gsl_fun.cmi gsl_multifit.cmi 
+    gsl_math.cmi gsl_fun.cmi gsl_multifit.cmi
 gsl_multifit.cmx: gsl_vector.cmx gsl_vectmat.cmx gsl_misc.cmx gsl_matrix.cmx \
-    gsl_math.cmx gsl_fun.cmx gsl_multifit.cmi 
-gsl_multifit.cmi: gsl_vector.cmi gsl_vectmat.cmi gsl_matrix.cmi gsl_fun.cmi 
+    gsl_math.cmx gsl_fun.cmx gsl_multifit.cmi
+gsl_multifit.cmi: gsl_vector.cmi gsl_vectmat.cmi gsl_matrix.cmi gsl_fun.cmi
 gsl_multifit_nlin.cmo: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi \
-    gsl_multifit_nlin.cmi 
+    gsl_multifit_nlin.cmi
 gsl_multifit_nlin.cmx: gsl_vector.cmx gsl_matrix.cmx gsl_fun.cmx \
-    gsl_multifit_nlin.cmi 
-gsl_multifit_nlin.cmi: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi 
-gsl_root.cmo: gsl_fun.cmi gsl_root.cmi 
-gsl_root.cmx: gsl_fun.cmx gsl_root.cmi 
-gsl_root.cmi: gsl_fun.cmi 
+    gsl_multifit_nlin.cmi
+gsl_multifit_nlin.cmi: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi
+gsl_root.cmo: gsl_fun.cmi gsl_root.cmi
+gsl_root.cmx: gsl_fun.cmx gsl_root.cmi
+gsl_root.cmi: gsl_fun.cmi
 gsl_multiroot.cmo: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi \
-    gsl_multiroot.cmi 
+    gsl_multiroot.cmi
 gsl_multiroot.cmx: gsl_vector.cmx gsl_matrix.cmx gsl_fun.cmx \
-    gsl_multiroot.cmi 
-gsl_multiroot.cmi: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi 
-gsl_min.cmo: gsl_fun.cmi gsl_min.cmi 
-gsl_min.cmx: gsl_fun.cmx gsl_min.cmi 
-gsl_min.cmi: gsl_fun.cmi 
-gsl_multimin.cmo: gsl_vector.cmi gsl_fun.cmi gsl_multimin.cmi 
-gsl_multimin.cmx: gsl_vector.cmx gsl_fun.cmx gsl_multimin.cmi 
-gsl_multimin.cmi: gsl_vector.cmi gsl_fun.cmi 
-gsl_diff.cmo: gsl_fun.cmi gsl_diff.cmi 
-gsl_diff.cmx: gsl_fun.cmx gsl_diff.cmi 
-gsl_diff.cmi: gsl_fun.cmi 
-gsl_cheb.cmo: gsl_fun.cmi gsl_cheb.cmi 
-gsl_cheb.cmx: gsl_fun.cmx gsl_cheb.cmi 
-gsl_cheb.cmi: gsl_fun.cmi 
-gsl_sum.cmo: gsl_fun.cmi gsl_sum.cmi 
-gsl_sum.cmx: gsl_fun.cmx gsl_sum.cmi 
-gsl_sum.cmi: gsl_fun.cmi 
-gsl_fft.cmo: gsl_complex.cmi gsl_fft.cmi 
-gsl_fft.cmx: gsl_complex.cmx gsl_fft.cmi 
-gsl_fft.cmi: gsl_complex.cmi 
-gsl_monte.cmo: gsl_rng.cmi gsl_fun.cmi gsl_monte.cmi 
-gsl_monte.cmx: gsl_rng.cmx gsl_fun.cmx gsl_monte.cmi 
-gsl_monte.cmi: gsl_rng.cmi gsl_fun.cmi 
-gsl_siman.cmo: gsl_rng.cmi gsl_misc.cmo gsl_siman.cmi 
-gsl_siman.cmx: gsl_rng.cmx gsl_misc.cmx gsl_siman.cmi 
-gsl_siman.cmi: gsl_rng.cmi 
-gsl_odeiv.cmo: gsl_matrix.cmi gsl_odeiv.cmi 
-gsl_odeiv.cmx: gsl_matrix.cmx gsl_odeiv.cmi 
-gsl_odeiv.cmi: gsl_matrix.cmi 
-gsl_histo.cmo: gsl_histo.cmi 
-gsl_histo.cmx: gsl_histo.cmi 
-gsl_stats.cmo: gsl_stats.cmi 
-gsl_stats.cmx: gsl_stats.cmi 
+    gsl_multiroot.cmi
+gsl_multiroot.cmi: gsl_vector.cmi gsl_matrix.cmi gsl_fun.cmi
+gsl_min.cmo: gsl_fun.cmi gsl_min.cmi
+gsl_min.cmx: gsl_fun.cmx gsl_min.cmi
+gsl_min.cmi: gsl_fun.cmi
+gsl_multimin.cmo: gsl_vector.cmi gsl_fun.cmi gsl_multimin.cmi
+gsl_multimin.cmx: gsl_vector.cmx gsl_fun.cmx gsl_multimin.cmi
+gsl_multimin.cmi: gsl_vector.cmi gsl_fun.cmi
+gsl_diff.cmo: gsl_fun.cmi gsl_diff.cmi
+gsl_diff.cmx: gsl_fun.cmx gsl_diff.cmi
+gsl_diff.cmi: gsl_fun.cmi
+gsl_cheb.cmo: gsl_fun.cmi gsl_cheb.cmi
+gsl_cheb.cmx: gsl_fun.cmx gsl_cheb.cmi
+gsl_cheb.cmi: gsl_fun.cmi
+gsl_sum.cmo: gsl_fun.cmi gsl_sum.cmi
+gsl_sum.cmx: gsl_fun.cmx gsl_sum.cmi
+gsl_sum.cmi: gsl_fun.cmi
+gsl_fft.cmo: gsl_complex.cmi gsl_fft.cmi
+gsl_fft.cmx: gsl_complex.cmx gsl_fft.cmi
+gsl_fft.cmi: gsl_complex.cmi
+gsl_monte.cmo: gsl_rng.cmi gsl_fun.cmi gsl_monte.cmi
+gsl_monte.cmx: gsl_rng.cmx gsl_fun.cmx gsl_monte.cmi
+gsl_monte.cmi: gsl_rng.cmi gsl_fun.cmi
+gsl_siman.cmo: gsl_rng.cmi gsl_misc.cmo gsl_siman.cmi
+gsl_siman.cmx: gsl_rng.cmx gsl_misc.cmx gsl_siman.cmi
+gsl_siman.cmi: gsl_rng.cmi
+gsl_odeiv.cmo: gsl_matrix.cmi gsl_odeiv.cmi
+gsl_odeiv.cmx: gsl_matrix.cmx gsl_odeiv.cmi
+gsl_odeiv.cmi: gsl_matrix.cmi
+gsl_histo.cmo: gsl_histo.cmi
+gsl_histo.cmx: gsl_histo.cmi
+gsl_histo.cmi:
+gsl_stats.cmo: gsl_stats.cmi
+gsl_stats.cmx: gsl_stats.cmi
+gsl_stats.cmi:
 gsl_wavelet.cmo: gsl_vector_flat.cmi gsl_vector.cmi gsl_vectmat.cmi \
-    gsl_matrix_flat.cmi gsl_matrix.cmi gsl_wavelet.cmi 
+    gsl_matrix_flat.cmi gsl_matrix.cmi gsl_wavelet.cmi
 gsl_wavelet.cmx: gsl_vector_flat.cmx gsl_vector.cmx gsl_vectmat.cmx \
-    gsl_matrix_flat.cmx gsl_matrix.cmx gsl_wavelet.cmi 
+    gsl_matrix_flat.cmx gsl_matrix.cmx gsl_wavelet.cmi
 gsl_wavelet.cmi: gsl_vector_flat.cmi gsl_vector.cmi gsl_vectmat.cmi \
-    gsl_matrix_flat.cmi gsl_matrix.cmi 
-gsl_bspline.cmo: gsl_vector.cmi gsl_vectmat.cmi gsl_bspline.cmi 
-gsl_bspline.cmx: gsl_vector.cmx gsl_vectmat.cmx gsl_bspline.cmi 
-gsl_bspline.cmi: gsl_vectmat.cmi 
+    gsl_matrix_flat.cmi gsl_matrix.cmi
+gsl_bspline.cmo: gsl_vector.cmi gsl_vectmat.cmi gsl_bspline.cmi
+gsl_bspline.cmx: gsl_vector.cmx gsl_vectmat.cmx gsl_bspline.cmi
+gsl_bspline.cmi: gsl_vectmat.cmi

@@ -59,7 +59,7 @@
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
 <link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="Higher level functions" rel="Section" href="#3_Higherlevelfunctions">
-<title>ocamlgsl 0.6.0 : Gsl_interp</title>
+<title>gsl-ocaml 0.6.0 : Gsl_interp</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_poly.html">Previous</a>
@@ -70,11 +70,11 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_interp: <code class="code">sig</code> <a href="Gsl_interp.html">..</a> <code class="code">end</code></pre>Interpolation<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEaccel"></a><code class="type"></code>accel </pre>
+<pre><span id="TYPEaccel"><span class="keyword">type</span> <code class="type"></code>accel</span> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEinterp_type"></a><code class="type"></code>interp_type = </code><table class="typetable">
+<br><code><span id="TYPEinterp_type"><span class="keyword">type</span> <code class="type"></code>interp_type</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -119,10 +119,9 @@
 </tr></table>
 
 
-<pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a> -> int -> <a href="Gsl_interp.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALinit"></a>init : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> float array -> float array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALname"></a>name : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALmin_size"></a>min_size : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> int</code></pre><pre><span class="keyword">val</span> <a name="VALmake_accel"></a>make_accel : <code class="type">unit -> <a href="Gsl_interp.html#TYPEaccel">accel</a></code></pre><pre><span class="keyword">val</span> <a name="VALi_eval"></a>i_eval : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALi_eval_deriv"></a>i_eval_deriv : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALi_eval_deriv2"></a>i_eval_deriv2 : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span class="keyword">val</span> <a name="VALi_eval_integ"></a>i_eval_integ : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><br>
-<a name="3_Higherlevelfunctions"></a>
-<h3>Higher level functions</h3><br>
-<br><code><span class="keyword">type</span> <a name="TYPEinterp"></a><code class="type"></code>interp = {</code><table class="typetable">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a> -> int -> <a href="Gsl_interp.html#TYPEt">t</a></code></pre><pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> float array -> float array -> unit</code></pre><pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> string</code></pre><pre><span id="VALmin_size"><span class="keyword">val</span> min_size</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -> int</code></pre><pre><span id="VALmake_accel"><span class="keyword">val</span> make_accel</span> : <code class="type">unit -> <a href="Gsl_interp.html#TYPEaccel">accel</a></code></pre><pre><span id="VALi_eval"><span class="keyword">val</span> i_eval</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span id="VALi_eval_deriv"><span class="keyword">val</span> i_eval_deriv</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span id="VALi_eval_deriv2"><span class="keyword">val</span> i_eval_deriv2</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><pre><span id="VALi_eval_integ"><span class="keyword">val</span> i_eval_integ</span> : <code class="type"><a href="Gsl_interp.html#TYPEt">t</a> -><br>       float array -> float array -> float -> float -> <a href="Gsl_interp.html#TYPEaccel">accel</a> -> float</code></pre><br>
+<span id="3_Higherlevelfunctions"><h3>Higher level functions</h3></span><br>
+<br><code><span id="TYPEinterp"><span class="keyword">type</span> <code class="type"></code>interp</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -168,9 +167,9 @@
 }
 
 
-<pre><span class="keyword">val</span> <a name="VALmake_interp"></a>make_interp : <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a> -> float array -> float array -> <a href="Gsl_interp.html#TYPEinterp">interp</a></code></pre><pre><span class="keyword">val</span> <a name="VALeval"></a>eval : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALeval_array"></a>eval_array : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float array -> float array -> unit</code></pre><div class="info">
+<pre><span id="VALmake_interp"><span class="keyword">val</span> make_interp</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp_type">interp_type</a> -> float array -> float array -> <a href="Gsl_interp.html#TYPEinterp">interp</a></code></pre><pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span id="VALeval_array"><span class="keyword">val</span> eval_array</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float array -> float array -> unit</code></pre><div class="info">
 <code class="code">eval_array interp x_a y_a</code> fills the array <code class="code">y_a</code> with the 
    evaluation of the interpolation function <code class="code">interp</code> for each point
    of array <code class="code">x_a</code>. <code class="code">x_a</code> and <code class="code">y_a</code> must have the same length.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALeval_deriv"></a>eval_deriv : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALeval_deriv2"></a>eval_deriv2 : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALeval_integ"></a>eval_integ : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float -> float</code></pre></body></html>
+<pre><span id="VALeval_deriv"><span class="keyword">val</span> eval_deriv</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span id="VALeval_deriv2"><span class="keyword">val</span> eval_deriv2</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float</code></pre><pre><span id="VALeval_integ"><span class="keyword">val</span> eval_integ</span> : <code class="type"><a href="Gsl_interp.html#TYPEinterp">interp</a> -> float -> float -> float</code></pre></body></html>

@@ -57,7 +57,7 @@
 <link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
 <link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
-<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>ocamlgsl 0.6.0 : Gsl_error</title>
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><title>gsl-ocaml 0.6.0 : Gsl_error</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a href="index.html">Up</a>
@@ -67,10 +67,10 @@
 <br>
 <pre><span class="keyword">module</span> Gsl_error: <code class="code">sig</code> <a href="Gsl_error.html">..</a> <code class="code">end</code></pre>Error reporting<br>
 <hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALversion"></a>version : <code class="type">string</code></pre><div class="info">
+<pre><span id="VALversion"><span class="keyword">val</span> version</span> : <code class="type">string</code></pre><div class="info">
 version of GSL library<br>
 </div>
-<br><code><span class="keyword">type</span> <a name="TYPEerrno"></a><code class="type"></code>errno = </code><table class="typetable">
+<br><code><span id="TYPEerrno"><span class="keyword">type</span> <code class="type"></code>errno</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -311,5 +311,5 @@ version of GSL library<br>
 </tr></table>
 
 
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONGsl_exn"></a>Gsl_exn <span class="keyword">of</span> <code class="type">(<a href="Gsl_error.html#TYPEerrno">errno</a> * string)</code></pre>
-<pre><span class="keyword">val</span> <a name="VALinit"></a>init : <code class="type">unit -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALuninit"></a>uninit : <code class="type">unit -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALstrerror"></a>strerror : <code class="type"><a href="Gsl_error.html#TYPEerrno">errno</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALstring_of_errno"></a>string_of_errno : <code class="type"><a href="Gsl_error.html#TYPEerrno">errno</a> -> string</code></pre><pre><span class="keyword">val</span> <a name="VALpprint_exn"></a>pprint_exn : <code class="type">exn -> string</code></pre><pre><span class="keyword">val</span> <a name="VALhandle_exn"></a>handle_exn : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre></body></html>
+<pre><span id="EXCEPTIONGsl_exn"><span class="keyword">exception</span> Gsl_exn</span> <span class="keyword">of</span> <code class="type">(<a href="Gsl_error.html#TYPEerrno">errno</a> * string)</code></pre>
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">unit -> unit</code></pre><pre><span id="VALuninit"><span class="keyword">val</span> uninit</span> : <code class="type">unit -> unit</code></pre><pre><span id="VALstrerror"><span class="keyword">val</span> strerror</span> : <code class="type"><a href="Gsl_error.html#TYPEerrno">errno</a> -> string</code></pre><pre><span id="VALstring_of_errno"><span class="keyword">val</span> string_of_errno</span> : <code class="type"><a href="Gsl_error.html#TYPEerrno">errno</a> -> string</code></pre><pre><span id="VALpprint_exn"><span class="keyword">val</span> pprint_exn</span> : <code class="type">exn -> string</code></pre><pre><span id="VALhandle_exn"><span class="keyword">val</span> handle_exn</span> : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre></body></html>

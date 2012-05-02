@@ -60,7 +60,7 @@
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
 <link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="Types for special functions" rel="Section" href="#3_Typesforspecialfunctions">
 <link title="Callbacks" rel="Section" href="#3_Callbacks">
-<title>ocamlgsl 0.6.0 : Gsl_fun</title>
+<title>gsl-ocaml 0.6.0 : Gsl_fun</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_blas_gen.html">Previous</a>
@@ -72,11 +72,10 @@
 <pre><span class="keyword">module</span> Gsl_fun: <code class="code">sig</code> <a href="Gsl_fun.html">..</a> <code class="code">end</code></pre>Callbacks and types for error estimates<br>
 <hr width="100%">
 <br>
-<a name="3_Typesforspecialfunctions"></a>
-<h3>Types for special functions</h3><br>
+<span id="3_Typesforspecialfunctions"><h3>Types for special functions</h3></span><br>
 <br>
 These type are used by module <a href="Gsl_sf.html"><code class="code">Gsl_sf</code></a><br>
-<br><code><span class="keyword">type</span> <a name="TYPEresult"></a><code class="type"></code>result = {</code><table class="typetable">
+<br><code><span id="TYPEresult"><span class="keyword">type</span> <code class="type"></code>result</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -98,7 +97,7 @@ The result of a computation : <code class="code">res</code> is the value and <co
     estimate of the absolute  error in the value.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEresult_e10"></a><code class="type"></code>result_e10 = {</code><table class="typetable">
+<br><code><span id="TYPEresult_e10"><span class="keyword">type</span> <code class="type"></code>result_e10</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -127,7 +126,7 @@ Result of computation with a scaling exponent. Actual result is
     obtained as <code class="code">res *. 10. ** e10</code>.<br>
 </div>
 
-<br><code><span class="keyword">type</span> <a name="TYPEmode"></a><code class="type"></code>mode = </code><table class="typetable">
+<br><code><span id="TYPEmode"><span class="keyword">type</span> <code class="type"></code>mode</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -154,12 +153,11 @@ Result of computation with a scaling exponent. Actual result is
 Reduce the accuracy of some evaluations to speed up computations.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALsmash"></a>smash : <code class="type"><a href="Gsl_fun.html#TYPEresult_e10">result_e10</a> -> <a href="Gsl_fun.html#TYPEresult">result</a></code></pre><br>
-<a name="3_Callbacks"></a>
-<h3>Callbacks</h3><br>
-<pre><span class="keyword">type</span> <a name="TYPEgsl_fun"></a><code class="type"></code>gsl_fun = <code class="type">float -> float</code> </pre>
+<pre><span id="VALsmash"><span class="keyword">val</span> smash</span> : <code class="type"><a href="Gsl_fun.html#TYPEresult_e10">result_e10</a> -> <a href="Gsl_fun.html#TYPEresult">result</a></code></pre><br>
+<span id="3_Callbacks"><h3>Callbacks</h3></span><br>
+<pre><span id="TYPEgsl_fun"><span class="keyword">type</span> <code class="type"></code>gsl_fun</span> = <code class="type">float -> float</code> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEgsl_fun_fdf"></a><code class="type"></code>gsl_fun_fdf = {</code><table class="typetable">
+<br><code><span id="TYPEgsl_fun_fdf"><span class="keyword">type</span> <code class="type"></code>gsl_fun_fdf</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -184,11 +182,11 @@ Reduce the accuracy of some evaluations to speed up computations.<br>
 }
 
 
-<pre><span class="keyword">type</span> <a name="TYPEmonte_fun"></a><code class="type"></code>monte_fun = <code class="type">float array -> float</code> </pre>
+<pre><span id="TYPEmonte_fun"><span class="keyword">type</span> <code class="type"></code>monte_fun</span> = <code class="type">float array -> float</code> </pre>
 
-<pre><span class="keyword">type</span> <a name="TYPEmulti_fun"></a><code class="type"></code>multi_fun = <code class="type">x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> f:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code> </pre>
+<pre><span id="TYPEmulti_fun"><span class="keyword">type</span> <code class="type"></code>multi_fun</span> = <code class="type">x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> f:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> unit</code> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEmulti_fun_fdf"></a><code class="type"></code>multi_fun_fdf = {</code><table class="typetable">
+<br><code><span id="TYPEmulti_fun_fdf"><span class="keyword">type</span> <code class="type"></code>multi_fun_fdf</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
@@ -213,9 +211,9 @@ Reduce the accuracy of some evaluations to speed up computations.<br>
 }
 
 
-<pre><span class="keyword">type</span> <a name="TYPEmultim_fun"></a><code class="type"></code>multim_fun = <code class="type">x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> float</code> </pre>
+<pre><span id="TYPEmultim_fun"><span class="keyword">type</span> <code class="type"></code>multim_fun</span> = <code class="type">x:<a href="Gsl_vector.html#TYPEvector">Gsl_vector.vector</a> -> float</code> </pre>
 
-<br><code><span class="keyword">type</span> <a name="TYPEmultim_fun_fdf"></a><code class="type"></code>multim_fun_fdf = {</code><table class="typetable">
+<br><code><span id="TYPEmultim_fun_fdf"><span class="keyword">type</span> <code class="type"></code>multim_fun_fdf</span> = {</code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>

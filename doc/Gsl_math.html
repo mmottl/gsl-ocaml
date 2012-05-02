@@ -60,7 +60,7 @@
 <link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
 <link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html"><link title="Constants" rel="Section" href="#3_Constants">
 <link title="Simple Functions" rel="Section" href="#3_SimpleFunctions">
-<title>ocamlgsl 0.6.0 : Gsl_math</title>
+<title>gsl-ocaml 0.6.0 : Gsl_math</title>
 </head>
 <body>
 <div class="navbar"><a href="Gsl_ieee.html">Previous</a>
@@ -72,60 +72,58 @@
 <pre><span class="keyword">module</span> Gsl_math: <code class="code">sig</code> <a href="Gsl_math.html">..</a> <code class="code">end</code></pre>Mathematical constants and some simple functions<br>
 <hr width="100%">
 <br>
-<a name="3_Constants"></a>
-<h3>Constants</h3><br>
-<pre><span class="keyword">val</span> <a name="VALe"></a>e : <code class="type">float</code></pre><div class="info">
+<span id="3_Constants"><h3>Constants</h3></span><br>
+<pre><span id="VALe"><span class="keyword">val</span> e</span> : <code class="type">float</code></pre><div class="info">
 e<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALlog2e"></a>log2e : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALlog2e"><span class="keyword">val</span> log2e</span> : <code class="type">float</code></pre><div class="info">
 log_2 (e)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALlog10e"></a>log10e : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALlog10e"><span class="keyword">val</span> log10e</span> : <code class="type">float</code></pre><div class="info">
 log_10 (e)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALsqrt2"></a>sqrt2 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALsqrt2"><span class="keyword">val</span> sqrt2</span> : <code class="type">float</code></pre><div class="info">
 sqrt(2)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALsqrt1_2"></a>sqrt1_2 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALsqrt1_2"><span class="keyword">val</span> sqrt1_2</span> : <code class="type">float</code></pre><div class="info">
 sqrt(1/2)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALsqrt3"></a>sqrt3 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALsqrt3"><span class="keyword">val</span> sqrt3</span> : <code class="type">float</code></pre><div class="info">
 sqrt(3)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpi"></a>pi : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALpi"><span class="keyword">val</span> pi</span> : <code class="type">float</code></pre><div class="info">
 pi<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpi_2"></a>pi_2 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALpi_2"><span class="keyword">val</span> pi_2</span> : <code class="type">float</code></pre><div class="info">
 pi/2<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpi_4"></a>pi_4 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALpi_4"><span class="keyword">val</span> pi_4</span> : <code class="type">float</code></pre><div class="info">
 pi/4<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALsqrtpi"></a>sqrtpi : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALsqrtpi"><span class="keyword">val</span> sqrtpi</span> : <code class="type">float</code></pre><div class="info">
 sqrt(pi)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALi_2_sqrtpi"></a>i_2_sqrtpi : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALi_2_sqrtpi"><span class="keyword">val</span> i_2_sqrtpi</span> : <code class="type">float</code></pre><div class="info">
 2/sqrt(pi)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALi_1_pi"></a>i_1_pi : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALi_1_pi"><span class="keyword">val</span> i_1_pi</span> : <code class="type">float</code></pre><div class="info">
 1/pi<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALi_2_pi"></a>i_2_pi : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALi_2_pi"><span class="keyword">val</span> i_2_pi</span> : <code class="type">float</code></pre><div class="info">
 2/pi<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALln10"></a>ln10 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALln10"><span class="keyword">val</span> ln10</span> : <code class="type">float</code></pre><div class="info">
 ln(10)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALln2"></a>ln2 : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALln2"><span class="keyword">val</span> ln2</span> : <code class="type">float</code></pre><div class="info">
 ln(2)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALlnpi"></a>lnpi : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALlnpi"><span class="keyword">val</span> lnpi</span> : <code class="type">float</code></pre><div class="info">
 ln(pi)<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALeuler"></a>euler : <code class="type">float</code></pre><div class="info">
+<pre><span id="VALeuler"><span class="keyword">val</span> euler</span> : <code class="type">float</code></pre><div class="info">
 Euler constant<br>
 </div>
 <br>
-<a name="3_SimpleFunctions"></a>
-<h3>Simple Functions</h3><br>
-<pre><span class="keyword">val</span> <a name="VALpow_int"></a>pow_int : <code class="type">float -> int -> float</code></pre><pre><span class="keyword">val</span> <a name="VALlog1p"></a>log1p : <code class="type">float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALexpm1"></a>expm1 : <code class="type">float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALhypot"></a>hypot : <code class="type">float -> float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALacosh"></a>acosh : <code class="type">float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALasinh"></a>asinh : <code class="type">float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALatanh"></a>atanh : <code class="type">float -> float</code></pre><pre><span class="keyword">val</span> <a name="VALfcmp"></a>fcmp : <code class="type">float -> float -> epsilon:float -> int</code></pre></body></html>
+<span id="3_SimpleFunctions"><h3>Simple Functions</h3></span><br>
+<pre><span id="VALpow_int"><span class="keyword">val</span> pow_int</span> : <code class="type">float -> int -> float</code></pre><pre><span id="VALlog1p"><span class="keyword">val</span> log1p</span> : <code class="type">float -> float</code></pre><pre><span id="VALexpm1"><span class="keyword">val</span> expm1</span> : <code class="type">float -> float</code></pre><pre><span id="VALhypot"><span class="keyword">val</span> hypot</span> : <code class="type">float -> float -> float</code></pre><pre><span id="VALacosh"><span class="keyword">val</span> acosh</span> : <code class="type">float -> float</code></pre><pre><span id="VALasinh"><span class="keyword">val</span> asinh</span> : <code class="type">float -> float</code></pre><pre><span id="VALatanh"><span class="keyword">val</span> atanh</span> : <code class="type">float -> float</code></pre><pre><span id="VALfcmp"><span class="keyword">val</span> fcmp</span> : <code class="type">float -> float -> epsilon:float -> int</code></pre></body></html>
