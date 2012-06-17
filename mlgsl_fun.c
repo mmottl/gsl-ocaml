@@ -213,7 +213,6 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
   struct callback_params *p=params;
   value x_barr;
   intnat len = x->size;
-  double *x_arr;
   gsl_vector_view x_v;
   value res;
 
