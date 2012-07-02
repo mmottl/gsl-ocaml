@@ -42,7 +42,7 @@ fi
 
 %files
 %defattr(-,root,root)
-%doc doc README NOTES COPYING
+%doc doc README.md NOTES LICENSE.txt
 %ocamldir/gsl
 %ocamldir/stublibs/*
 %{_infodir}/*.info*
