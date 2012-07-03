@@ -46,6 +46,7 @@ Library gsl
                   Matrix_complex_flat,
                   Matrix_flat,
                   Min,
+                  Misc,
                   Monte,
                   Multifit,
                   Multifit_nlin,

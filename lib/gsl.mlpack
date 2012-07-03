@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 8756eb1a15be156b8d98cb13d34ede37)
+# DO NOT EDIT (digest: 8bd8d3bd05dc5c118b77e484ab2783d5)
 Blas
 Blas_flat
 Blas_gen
@@ -25,6 +25,7 @@ Matrix_complex
 Matrix_complex_flat
 Matrix_flat
 Min
+Misc
 Monte
 Multifit
 Multifit_nlin

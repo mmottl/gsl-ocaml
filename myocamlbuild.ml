@@ -639,7 +639,7 @@ let () =
             raise exn
         in
         flag ["compile"; "c"] (S gsl_cflags);
-        flag ["link"; "ocaml"] (S gsl_clibs)
+        flag ["link"; "ocaml"; "library"] (S gsl_clibs)
       | _ -> ()
   in
   dispatch

@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 4455fc9c47239155d84a5fc37d45e4ae)
+# DO NOT EDIT (digest: 0665e7bc5e30cfc9302b7a5e3d8a09a8)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -40,6 +40,7 @@
 "lib/matrix_complex_flat.cmx": for-pack(Gsl)
 "lib/matrix_flat.cmx": for-pack(Gsl)
 "lib/min.cmx": for-pack(Gsl)
+"lib/misc.cmx": for-pack(Gsl)
 "lib/monte.cmx": for-pack(Gsl)
 "lib/multifit.cmx": for-pack(Gsl)
 "lib/multifit_nlin.cmx": for-pack(Gsl)
