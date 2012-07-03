@@ -1,4 +1,4 @@
-(* gsl-ocaml - OCaml interface to GSL                        *)
+(* gsl-ocaml - OCaml interface to GSL                       *)
 (* Copyright (©) 2002-2005, 2003 - Olivier Andrieu, Paul Pelzl   *)
 (* Distributed under the terms of the LGPL version 2.1      *)
 
