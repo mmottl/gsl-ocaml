@@ -1,9 +1,9 @@
 open Gsl
 
 let () =
-  let au  = Const.mksa_astronomical_unit in
-  let c   = Const.mksa_speed_of_light in
-  let min = Const.mksa_minute in
+  let au  = Const.MKSA.astronomical_unit in
+  let c   = Const.MKSA.speed_of_light in
+  let min = Const.MKSA.minute in
 
   let r_earth = 1.00 *. au in
   let r_mars  = 1.52 *. au in
