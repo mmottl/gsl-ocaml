@@ -1,5 +1,0 @@
-#load "bigarray.cma" ;;
-#load "gsl.cma" ;;
-
-Gsl_error.init () ;;
-Printf.printf "\t\t GSL version %s\n\n" Gsl_error.version;;

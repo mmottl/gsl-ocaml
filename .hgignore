@@ -1,5 +1,6 @@
-^.*\.(omc|o|annot|cm.*|a|so)$
-^do_(cd|s)f$
-^gsl_(cd|s)f\.mli?$
-^gsl_const\.mli?$
-^mlgsl_cdf\.c$
+^.*\.swp$
+^_build$
+^setup\.(data|log)$
+^.*\.native$
+^API\.docdir$
+^lib/(const|sf)\.ml(i)?$

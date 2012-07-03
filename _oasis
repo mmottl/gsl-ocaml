@@ -1,0 +1,372 @@
+OASISFormat:      0.3
+OCamlVersion:     >= 4.00
+Name:             gsl
+Version:          0.6.4
+Synopsis:         GSL - Bindings to the GNU Scientific Library
+Authors:          Olivier Andrieu <oandrieu@merim.net>
+                  Markus Mottl <markus.mottl@gmail.com>
+License:          LGPL-2.1+ with OCaml linking exception
+Plugins:          META (0.3), StdFiles (0.3), DevFiles (0.3)
+Homepage:         http://www.bitbucket.org/mmottl/gsl-ocaml
+XStdFilesREADME:  false
+XStdFilesAUTHORS: false
+PreBuildCommand:  mkdir -p _build/lib;
+                  cp lib/mlgsl_matrix.c lib/mlgsl_vector.c _build/lib;
+                  ocaml do_const.ml --mli > lib/const.mli;
+                  ocaml do_const.ml > lib/const.ml;
+                  ocaml do_sf.ml < lib/sf.mli.q > lib/sf.mli;
+                  cp lib/sf.mli lib/sf.ml
+
+Library gsl
+  Path:           lib
+  FindlibName:    gsl
+  Pack:           true
+  Modules:        Blas,
+                  Blas_flat,
+                  Blas_gen,
+                  Bspline,
+                  Cheb,
+                  Const,
+                  Diff,
+                  Eigen,
+                  Error,
+                  Fft,
+                  Fit,
+                  Fun,
+                  Gsl_complex,
+                  Gsl_sort,
+                  Histo,
+                  Ieee,
+                  Integration,
+                  Interp,
+                  Linalg,
+                  Math,
+                  Matrix,
+                  Matrix_complex,
+                  Matrix_complex_flat,
+                  Matrix_flat,
+                  Min,
+                  Monte,
+                  Multifit,
+                  Multifit_nlin,
+                  Multimin,
+                  Multiroot,
+                  Odeiv,
+                  Permut,
+                  Poly,
+                  Qrng,
+                  Randist,
+                  Rng,
+                  Root,
+                  Sf,
+                  Siman,
+                  Stats,
+                  Sum,
+                  Vectmat,
+                  Vector,
+                  Vector_complex,
+                  Vector_complex_flat,
+                  Vector_flat,
+                  Wavelet
+  CSources:       mlgsl_blas.c,
+                  mlgsl_blas_complex.c,
+                  mlgsl_blas_complex_float.c,
+                  mlgsl_blas_float.c,
+                  mlgsl_bspline.c,
+                  mlgsl_cheb.c,
+                  mlgsl_complex.c,
+                  mlgsl_diff.c,
+                  mlgsl_eigen.c,
+                  mlgsl_error.c,
+                  mlgsl_fft.c,
+                  mlgsl_fit.c,
+                  mlgsl_fun.c,
+                  mlgsl_histo.c,
+                  mlgsl_ieee.c,
+                  mlgsl_integration.c,
+                  mlgsl_interp.c,
+                  mlgsl_linalg.c,
+                  mlgsl_linalg_complex.c,
+                  mlgsl_math.c,
+                  mlgsl_matrix_complex.c,
+                  mlgsl_matrix_complex_float.c,
+                  mlgsl_matrix_double.c,
+                  mlgsl_matrix_float.c,
+                  mlgsl_min.c,
+                  mlgsl_monte.c,
+                  mlgsl_multifit.c,
+                  mlgsl_multimin.c,
+                  mlgsl_multiroots.c,
+                  mlgsl_odeiv.c,
+                  mlgsl_permut.c,
+                  mlgsl_poly.c,
+                  mlgsl_qrng.c,
+                  mlgsl_randist.c,
+                  mlgsl_rng.c,
+                  mlgsl_roots.c,
+                  mlgsl_sf.c,
+                  mlgsl_sort.c,
+                  mlgsl_stats.c,
+                  mlgsl_sum.c,
+                  mlgsl_vector_double.c,
+                  mlgsl_vector_float.c,
+                  mlgsl_wavelet.c,
+                  io.h,
+                  mlgsl_blas.h,
+                  mlgsl_complex.h,
+                  mlgsl_fun.h,
+                  mlgsl_matrix.h,
+                  mlgsl_matrix_complex.h,
+                  mlgsl_matrix_complex_float.h,
+                  mlgsl_matrix_double.h,
+                  mlgsl_matrix_float.h,
+                  mlgsl_permut.h,
+                  mlgsl_rng.h,
+                  mlgsl_vector.h,
+                  mlgsl_vector_complex.h,
+                  mlgsl_vector_complex_float.h,
+                  mlgsl_vector_double.h,
+                  mlgsl_vector_float.h,
+                  wrappers.h
+  CCOpt:          -O2 -DPIC
+  CCLib:          -lcblas
+  if system(macosx)
+    CCOpt+:       -framework vecLib
+    CCLib:        -framework vecLib
+  BuildDepends:   bigarray
+  BuildTools:     ocamlbuild
+
+
+# Examples
+
+Executable blas_ex
+  Path:           examples
+  MainIs:         blas_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable bspline_ex
+  Path:           examples
+  MainIs:         bspline_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable cheb_ex
+  Path:           examples
+  MainIs:         cheb_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable const_ex
+  Path:           examples
+  MainIs:         const_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable diff_ex
+  Path:           examples
+  MainIs:         diff_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable eigen_ex
+  Path:           examples
+  MainIs:         eigen_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable fit_ex
+  Path:           examples
+  MainIs:         fit_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable histo_ex
+  Path:           examples
+  MainIs:         histo_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable integration_ex
+  Path:           examples
+  MainIs:         integration_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable interp_ex
+  Path:           examples
+  MainIs:         interp_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable linalg_ex
+  Path:           examples
+  MainIs:         linalg_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable min_ex
+  Path:           examples
+  MainIs:         min_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable monte_ex
+  Path:           examples
+  MainIs:         monte_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable "multifit_data_ex"
+  Path:           examples
+  MainIs:         multifit_data_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable multifit_ex
+  Path:           examples
+  MainIs:         multifit_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable multifit_nlin_ex
+  Path:           examples
+  MainIs:         multifit_nlin_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable multimin_ex
+  Path:           examples
+  MainIs:         multimin_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable multiroot_ex
+  Path:           examples
+  MainIs:         multiroot_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable odeiv_ex
+  Path:           examples
+  MainIs:         odeiv_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable permut_ex
+  Path:           examples
+  MainIs:         permut_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable qrng_ex
+  Path:           examples
+  MainIs:         qrng_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable rng_ex
+  Path:           examples
+  MainIs:         rng_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable root_ex
+  Path:           examples
+  MainIs:         root_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable siman_ex
+  Path:           examples
+  MainIs:         siman_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable siman_tsp_ex
+  Path:           examples
+  MainIs:         siman_tsp_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable stats_ex
+  Path:           examples
+  MainIs:         stats_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable sum_ex
+  Path:           examples
+  MainIs:         sum_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Executable wavelet_ex
+  Path:           examples
+  MainIs:         wavelet_ex.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+  BuildTools:     ocamlbuild
+
+Document API
+  Title:                API reference for GSL
+  Type:                 OCamlbuild (0.3)
+  InstallDir:           $docdir/api
+  BuildTools:           ocamldoc, ocamlbuild
+  XOCamlbuildPath:      .
+  XOCamlbuildLibraries: gsl

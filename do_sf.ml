@@ -2,6 +2,7 @@
 (* Copyright (©) 2002-2005 - Olivier Andrieu                *)
 (* distributed under the terms of the GPL version 2         *)
 
+#load "str.cma"
 
 let split ?(collapse=false) c s = 
   let len = String.length s in
@@ -113,7 +114,7 @@ let bessel_quot str =
 	  sf_quot 
 	    ("bessel_" ^ letter ^ "1_scaled float") ;
 	  sf_quot 
-	    ("bessel_" ^ letter ^ "n int float") ;
+	    ("bessel_" ^ letter ^ "n_scaled int float") ;
 	  ext_quot
 	    (Printf.sprintf 
 	       "bessel_%sn_scaled_array@ml_gsl_sf_bessel_%sn_scaled_array,\

@@ -1,0 +1,247 @@
+# OASIS_START
+# DO NOT EDIT (digest: 4455fc9c47239155d84a5fc37d45e4ae)
+# Ignore VCS directories, you can use the same kind of rule outside 
+# OASIS_START/STOP if you want to exclude directories that contains 
+# useless stuff for the build process
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library gsl
+"lib/gsl.cmxs": use_gsl
+"lib/blas.cmx": for-pack(Gsl)
+"lib/blas_flat.cmx": for-pack(Gsl)
+"lib/blas_gen.cmx": for-pack(Gsl)
+"lib/bspline.cmx": for-pack(Gsl)
+"lib/cheb.cmx": for-pack(Gsl)
+"lib/const.cmx": for-pack(Gsl)
+"lib/diff.cmx": for-pack(Gsl)
+"lib/eigen.cmx": for-pack(Gsl)
+"lib/error.cmx": for-pack(Gsl)
+"lib/fft.cmx": for-pack(Gsl)
+"lib/fit.cmx": for-pack(Gsl)
+"lib/fun.cmx": for-pack(Gsl)
+"lib/gsl_complex.cmx": for-pack(Gsl)
+"lib/gsl_sort.cmx": for-pack(Gsl)
+"lib/histo.cmx": for-pack(Gsl)
+"lib/ieee.cmx": for-pack(Gsl)
+"lib/integration.cmx": for-pack(Gsl)
+"lib/interp.cmx": for-pack(Gsl)
+"lib/linalg.cmx": for-pack(Gsl)
+"lib/math.cmx": for-pack(Gsl)
+"lib/matrix.cmx": for-pack(Gsl)
+"lib/matrix_complex.cmx": for-pack(Gsl)
+"lib/matrix_complex_flat.cmx": for-pack(Gsl)
+"lib/matrix_flat.cmx": for-pack(Gsl)
+"lib/min.cmx": for-pack(Gsl)
+"lib/monte.cmx": for-pack(Gsl)
+"lib/multifit.cmx": for-pack(Gsl)
+"lib/multifit_nlin.cmx": for-pack(Gsl)
+"lib/multimin.cmx": for-pack(Gsl)
+"lib/multiroot.cmx": for-pack(Gsl)
+"lib/odeiv.cmx": for-pack(Gsl)
+"lib/permut.cmx": for-pack(Gsl)
+"lib/poly.cmx": for-pack(Gsl)
+"lib/qrng.cmx": for-pack(Gsl)
+"lib/randist.cmx": for-pack(Gsl)
+"lib/rng.cmx": for-pack(Gsl)
+"lib/root.cmx": for-pack(Gsl)
+"lib/sf.cmx": for-pack(Gsl)
+"lib/siman.cmx": for-pack(Gsl)
+"lib/stats.cmx": for-pack(Gsl)
+"lib/sum.cmx": for-pack(Gsl)
+"lib/vectmat.cmx": for-pack(Gsl)
+"lib/vector.cmx": for-pack(Gsl)
+"lib/vector_complex.cmx": for-pack(Gsl)
+"lib/vector_complex_flat.cmx": for-pack(Gsl)
+"lib/vector_flat.cmx": for-pack(Gsl)
+"lib/wavelet.cmx": for-pack(Gsl)
+<lib/*.ml{,i}>: oasis_library_gsl_ccopt
+"lib/mlgsl_blas.c": oasis_library_gsl_ccopt
+"lib/mlgsl_blas_complex.c": oasis_library_gsl_ccopt
+"lib/mlgsl_blas_complex_float.c": oasis_library_gsl_ccopt
+"lib/mlgsl_blas_float.c": oasis_library_gsl_ccopt
+"lib/mlgsl_bspline.c": oasis_library_gsl_ccopt
+"lib/mlgsl_cheb.c": oasis_library_gsl_ccopt
+"lib/mlgsl_complex.c": oasis_library_gsl_ccopt
+"lib/mlgsl_diff.c": oasis_library_gsl_ccopt
+"lib/mlgsl_eigen.c": oasis_library_gsl_ccopt
+"lib/mlgsl_error.c": oasis_library_gsl_ccopt
+"lib/mlgsl_fft.c": oasis_library_gsl_ccopt
+"lib/mlgsl_fit.c": oasis_library_gsl_ccopt
+"lib/mlgsl_fun.c": oasis_library_gsl_ccopt
+"lib/mlgsl_histo.c": oasis_library_gsl_ccopt
+"lib/mlgsl_ieee.c": oasis_library_gsl_ccopt
+"lib/mlgsl_integration.c": oasis_library_gsl_ccopt
+"lib/mlgsl_interp.c": oasis_library_gsl_ccopt
+"lib/mlgsl_linalg.c": oasis_library_gsl_ccopt
+"lib/mlgsl_linalg_complex.c": oasis_library_gsl_ccopt
+"lib/mlgsl_math.c": oasis_library_gsl_ccopt
+"lib/mlgsl_matrix_complex.c": oasis_library_gsl_ccopt
+"lib/mlgsl_matrix_complex_float.c": oasis_library_gsl_ccopt
+"lib/mlgsl_matrix_double.c": oasis_library_gsl_ccopt
+"lib/mlgsl_matrix_float.c": oasis_library_gsl_ccopt
+"lib/mlgsl_min.c": oasis_library_gsl_ccopt
+"lib/mlgsl_monte.c": oasis_library_gsl_ccopt
+"lib/mlgsl_multifit.c": oasis_library_gsl_ccopt
+"lib/mlgsl_multimin.c": oasis_library_gsl_ccopt
+"lib/mlgsl_multiroots.c": oasis_library_gsl_ccopt
+"lib/mlgsl_odeiv.c": oasis_library_gsl_ccopt
+"lib/mlgsl_permut.c": oasis_library_gsl_ccopt
+"lib/mlgsl_poly.c": oasis_library_gsl_ccopt
+"lib/mlgsl_qrng.c": oasis_library_gsl_ccopt
+"lib/mlgsl_randist.c": oasis_library_gsl_ccopt
+"lib/mlgsl_rng.c": oasis_library_gsl_ccopt
+"lib/mlgsl_roots.c": oasis_library_gsl_ccopt
+"lib/mlgsl_sf.c": oasis_library_gsl_ccopt
+"lib/mlgsl_sort.c": oasis_library_gsl_ccopt
+"lib/mlgsl_stats.c": oasis_library_gsl_ccopt
+"lib/mlgsl_sum.c": oasis_library_gsl_ccopt
+"lib/mlgsl_vector_double.c": oasis_library_gsl_ccopt
+"lib/mlgsl_vector_float.c": oasis_library_gsl_ccopt
+"lib/mlgsl_wavelet.c": oasis_library_gsl_ccopt
+<lib/gsl.{cma,cmxa}>: oasis_library_gsl_cclib
+"lib/libgsl_stubs.lib": oasis_library_gsl_cclib
+"lib/dllgsl_stubs.dll": oasis_library_gsl_cclib
+"lib/libgsl_stubs.a": oasis_library_gsl_cclib
+"lib/dllgsl_stubs.so": oasis_library_gsl_cclib
+<lib/gsl.{cma,cmxa}>: use_libgsl_stubs
+<lib/*.ml{,i}>: pkg_bigarray
+"lib/mlgsl_blas.c": pkg_bigarray
+"lib/mlgsl_blas_complex.c": pkg_bigarray
+"lib/mlgsl_blas_complex_float.c": pkg_bigarray
+"lib/mlgsl_blas_float.c": pkg_bigarray
+"lib/mlgsl_bspline.c": pkg_bigarray
+"lib/mlgsl_cheb.c": pkg_bigarray
+"lib/mlgsl_complex.c": pkg_bigarray
+"lib/mlgsl_diff.c": pkg_bigarray
+"lib/mlgsl_eigen.c": pkg_bigarray
+"lib/mlgsl_error.c": pkg_bigarray
+"lib/mlgsl_fft.c": pkg_bigarray
+"lib/mlgsl_fit.c": pkg_bigarray
+"lib/mlgsl_fun.c": pkg_bigarray
+"lib/mlgsl_histo.c": pkg_bigarray
+"lib/mlgsl_ieee.c": pkg_bigarray
+"lib/mlgsl_integration.c": pkg_bigarray
+"lib/mlgsl_interp.c": pkg_bigarray
+"lib/mlgsl_linalg.c": pkg_bigarray
+"lib/mlgsl_linalg_complex.c": pkg_bigarray
+"lib/mlgsl_math.c": pkg_bigarray
+"lib/mlgsl_matrix_complex.c": pkg_bigarray
+"lib/mlgsl_matrix_complex_float.c": pkg_bigarray
+"lib/mlgsl_matrix_double.c": pkg_bigarray
+"lib/mlgsl_matrix_float.c": pkg_bigarray
+"lib/mlgsl_min.c": pkg_bigarray
+"lib/mlgsl_monte.c": pkg_bigarray
+"lib/mlgsl_multifit.c": pkg_bigarray
+"lib/mlgsl_multimin.c": pkg_bigarray
+"lib/mlgsl_multiroots.c": pkg_bigarray
+"lib/mlgsl_odeiv.c": pkg_bigarray
+"lib/mlgsl_permut.c": pkg_bigarray
+"lib/mlgsl_poly.c": pkg_bigarray
+"lib/mlgsl_qrng.c": pkg_bigarray
+"lib/mlgsl_randist.c": pkg_bigarray
+"lib/mlgsl_rng.c": pkg_bigarray
+"lib/mlgsl_roots.c": pkg_bigarray
+"lib/mlgsl_sf.c": pkg_bigarray
+"lib/mlgsl_sort.c": pkg_bigarray
+"lib/mlgsl_stats.c": pkg_bigarray
+"lib/mlgsl_sum.c": pkg_bigarray
+"lib/mlgsl_vector_double.c": pkg_bigarray
+"lib/mlgsl_vector_float.c": pkg_bigarray
+"lib/mlgsl_wavelet.c": pkg_bigarray
+# Executable blas_ex
+<examples/blas_ex.{native,byte}>: use_gsl
+<examples/blas_ex.{native,byte}>: pkg_bigarray
+# Executable bspline_ex
+<examples/bspline_ex.{native,byte}>: use_gsl
+<examples/bspline_ex.{native,byte}>: pkg_bigarray
+# Executable cheb_ex
+<examples/cheb_ex.{native,byte}>: use_gsl
+<examples/cheb_ex.{native,byte}>: pkg_bigarray
+# Executable const_ex
+<examples/const_ex.{native,byte}>: use_gsl
+<examples/const_ex.{native,byte}>: pkg_bigarray
+# Executable diff_ex
+<examples/diff_ex.{native,byte}>: use_gsl
+<examples/diff_ex.{native,byte}>: pkg_bigarray
+# Executable eigen_ex
+<examples/eigen_ex.{native,byte}>: use_gsl
+<examples/eigen_ex.{native,byte}>: pkg_bigarray
+# Executable fit_ex
+<examples/fit_ex.{native,byte}>: use_gsl
+<examples/fit_ex.{native,byte}>: pkg_bigarray
+# Executable histo_ex
+<examples/histo_ex.{native,byte}>: use_gsl
+<examples/histo_ex.{native,byte}>: pkg_bigarray
+# Executable integration_ex
+<examples/integration_ex.{native,byte}>: use_gsl
+<examples/integration_ex.{native,byte}>: pkg_bigarray
+# Executable interp_ex
+<examples/interp_ex.{native,byte}>: use_gsl
+<examples/interp_ex.{native,byte}>: pkg_bigarray
+# Executable linalg_ex
+<examples/linalg_ex.{native,byte}>: use_gsl
+<examples/linalg_ex.{native,byte}>: pkg_bigarray
+# Executable min_ex
+<examples/min_ex.{native,byte}>: use_gsl
+<examples/min_ex.{native,byte}>: pkg_bigarray
+# Executable monte_ex
+<examples/monte_ex.{native,byte}>: use_gsl
+<examples/monte_ex.{native,byte}>: pkg_bigarray
+# Executable multifit_data_ex
+<examples/multifit_data_ex.{native,byte}>: use_gsl
+<examples/multifit_data_ex.{native,byte}>: pkg_bigarray
+# Executable multifit_ex
+<examples/multifit_ex.{native,byte}>: use_gsl
+<examples/multifit_ex.{native,byte}>: pkg_bigarray
+# Executable multifit_nlin_ex
+<examples/multifit_nlin_ex.{native,byte}>: use_gsl
+<examples/multifit_nlin_ex.{native,byte}>: pkg_bigarray
+# Executable multimin_ex
+<examples/multimin_ex.{native,byte}>: use_gsl
+<examples/multimin_ex.{native,byte}>: pkg_bigarray
+# Executable multiroot_ex
+<examples/multiroot_ex.{native,byte}>: use_gsl
+<examples/multiroot_ex.{native,byte}>: pkg_bigarray
+# Executable odeiv_ex
+<examples/odeiv_ex.{native,byte}>: use_gsl
+<examples/odeiv_ex.{native,byte}>: pkg_bigarray
+# Executable permut_ex
+<examples/permut_ex.{native,byte}>: use_gsl
+<examples/permut_ex.{native,byte}>: pkg_bigarray
+# Executable qrng_ex
+<examples/qrng_ex.{native,byte}>: use_gsl
+<examples/qrng_ex.{native,byte}>: pkg_bigarray
+# Executable rng_ex
+<examples/rng_ex.{native,byte}>: use_gsl
+<examples/rng_ex.{native,byte}>: pkg_bigarray
+# Executable root_ex
+<examples/root_ex.{native,byte}>: use_gsl
+<examples/root_ex.{native,byte}>: pkg_bigarray
+# Executable siman_ex
+<examples/siman_ex.{native,byte}>: use_gsl
+<examples/siman_ex.{native,byte}>: pkg_bigarray
+# Executable siman_tsp_ex
+<examples/siman_tsp_ex.{native,byte}>: use_gsl
+<examples/siman_tsp_ex.{native,byte}>: pkg_bigarray
+# Executable stats_ex
+<examples/stats_ex.{native,byte}>: use_gsl
+<examples/stats_ex.{native,byte}>: pkg_bigarray
+# Executable sum_ex
+<examples/sum_ex.{native,byte}>: use_gsl
+<examples/sum_ex.{native,byte}>: pkg_bigarray
+# Executable wavelet_ex
+<examples/wavelet_ex.{native,byte}>: use_gsl
+<examples/wavelet_ex.{native,byte}>: pkg_bigarray
+<examples/*.ml{,i}>: use_gsl
+<examples/*.ml{,i}>: pkg_bigarray
+# OASIS_STOP
+<**/*.ml{,i}>: warn_A, warn_e, warn_r, warn_error_A
+<examples/multifit_ex.ml>: camlp4of
