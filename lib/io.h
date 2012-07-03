@@ -15,11 +15,11 @@
 
 /* Buffered input/output */
 
-#ifndef CAML_IO_H
-#define CAML_IO_H
+#ifndef GSL_CAML_IO_H
+#define GSL_CAML_IO_H
 
-#include "misc.h"
-#include "mlvalues.h"
+#include <caml/misc.h>
+#include <caml/mlvalues.h>
 
 #ifndef IO_BUFFER_SIZE
 #define IO_BUFFER_SIZE 65536
@@ -123,4 +123,4 @@ CAMLextern file_offset caml_File_offset_val(value v);
 #define File_offset_val caml_File_offset_val
 #endif
 
-#endif /* CAML_IO_H */
+#endif /* GSL_CAML_IO_H */
