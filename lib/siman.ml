@@ -1,6 +1,6 @@
 (* gsl-ocaml - OCaml interface to GSL                        *)
 (* Copyright (©) 2002-2005 - Olivier Andrieu                *)
-(* distributed under the terms of the GPL version 2         *)
+(* Distributed under the terms of the GPL version 2         *)
 
 type params = {
     iters_fixed_T : int ;
