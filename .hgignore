@@ -3,4 +3,3 @@
 ^setup\.(data|log)$
 ^.*\.native$
 ^API\.docdir$
-^lib/(const|sf)\.ml(i)?$
