@@ -622,7 +622,7 @@ let () =
         flag ["compile"; "ocaml"] (S [A "-strict-sequence" ]);
 
         (* Add correct GSL compilation and link flags *)
-        let gsl_cflags, gsl_clibs =
+        let gsl_clibs, ogsl_cflags, ogsl_clibs =
           let ic = Unix.open_process_in "gsl-config --cflags --libs" in
           try
             let gsl_cflags = input_line ic in
@@ -632,14 +632,17 @@ let () =
               let cnv flag = [A ocaml_flag; A flag] in
               List.concat (List.map cnv chunks)
             in
+            gsl_clibs,
             ocamlify ~ocaml_flag:"-ccopt" gsl_cflags,
             ocamlify ~ocaml_flag:"-cclib" gsl_clibs
           with exn ->
             close_in ic;
             raise exn
         in
-        flag ["compile"; "c"] (S gsl_cflags);
-        flag ["link"; "ocaml"; "library"] (S gsl_clibs)
+        flag ["compile"; "c"] (S ogsl_cflags);
+        flag ["link"; "ocaml"; "library"] (S ogsl_clibs);
+        flag ["oasis_library_gsl_cclib"; "ocamlmklib"; "c"] (A gsl_clibs);
+        flag ["oasis_library_gsl_cclib"; "link"] (S ogsl_clibs)
       | _ -> ()
   in
   dispatch
