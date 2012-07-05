@@ -1,6 +1,6 @@
 /* gsl-ocaml - OCaml interface to GSL                       */
 /* Copyright (©) 2003 - Paul Pelzl                          */
-/* Distributed under the terms of the LGPL version 2.1      */
+/* Distributed under the terms of the GPL version 3         */
 
 #include <caml/alloc.h>
 #include <gsl/gsl_complex_math.h>

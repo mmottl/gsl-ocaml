@@ -5,7 +5,7 @@ Version:          0.6.4
 Synopsis:         GSL - Bindings to the GNU Scientific Library
 Authors:          Olivier Andrieu <oandrieu@merim.net>
                   Markus Mottl <markus.mottl@gmail.com>
-License:          LGPL-2.1+ with OCaml linking exception
+License:          GPL-3+
 Plugins:          META (0.3), StdFiles (0.3), DevFiles (0.3)
 Homepage:         http://www.bitbucket.org/mmottl/gsl-ocaml
 XStdFilesREADME:  false

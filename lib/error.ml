@@ -1,6 +1,6 @@
 (* gsl-ocaml - OCaml interface to GSL                       *)
 (* Copyright (©) 2002-2005 - Olivier Andrieu                *)
-(* Distributed under the terms of the LGPL version 2.1      *)
+(* Distributed under the terms of the GPL version 3         *)
 
 external gsl_version : unit -> string
     = "ml_gsl_version"
