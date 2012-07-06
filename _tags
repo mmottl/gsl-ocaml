@@ -244,5 +244,5 @@
 <examples/*.ml{,i}>: use_gsl
 <examples/*.ml{,i}>: pkg_bigarray
 # OASIS_STOP
-<**/*.ml{,i}>: warn_A, warn_e, warn_r
+<**/*.ml{,i}>: warn_A, warn_e, warn_r, annot
 <examples/multifit_ex.ml>: camlp4of
