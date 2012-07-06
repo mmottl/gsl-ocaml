@@ -546,7 +546,7 @@ let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
 let () =
   let additional_rules = function
     | After_rules ->
-        flag ["compile"; "ocaml"] (S [A "-strict-sequence" ]);
+        flag ["compile"; "ocaml"] (S [A "-strict-sequence"]);
 
         (* Add correct GSL compilation and link flags *)
         let gsl_clibs, ogsl_cflags, ogsl_clibs =
@@ -554,12 +554,24 @@ let () =
           try
             let gsl_cflags = input_line ic in
             let gsl_clibs = input_line ic in
+            (* TODO: remove once split-function in generated code is fixed *)
+            let rec split_string s =
+              match try Some (String.index s ' ') with Not_found -> None with
+              | Some pos ->
+                  String.before s pos :: split_string (String.after s (pos + 1))
+              | None -> [s]
+            in
             let ocamlify ~ocaml_flag flags =
-              let chunks = MyOCamlbuildFindlib.split flags ' ' in
+              let chunks = split_string flags in
               let cnv flag = [A ocaml_flag; A flag] in
               List.concat (List.map cnv chunks)
             in
-            gsl_clibs,
+            let split_flags flags =
+              let chunks = split_string flags in
+              let cnv flag = A flag in
+              List.map cnv chunks
+            in
+            split_flags gsl_clibs,
             ocamlify ~ocaml_flag:"-ccopt" gsl_cflags,
             ocamlify ~ocaml_flag:"-cclib" gsl_clibs
           with exn ->
@@ -568,7 +580,7 @@ let () =
         in
         flag ["compile"; "c"] (S ogsl_cflags);
         flag ["link"; "ocaml"; "library"] (S ogsl_clibs);
-        flag ["oasis_library_gsl_cclib"; "ocamlmklib"; "c"] (A gsl_clibs);
+        flag ["oasis_library_gsl_cclib"; "ocamlmklib"; "c"] (S gsl_clibs);
         flag ["oasis_library_gsl_cclib"; "link"] (S ogsl_clibs)
       | _ -> ()
   in
