@@ -542,7 +542,6 @@ let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
 
 # 544 "myocamlbuild.ml"
 (* OASIS_STOP *)
-Ocamlbuild_plugin.dispatch dispatch_default;;
 
 let () =
   let additional_rules = function
