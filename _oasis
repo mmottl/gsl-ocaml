@@ -26,6 +26,8 @@ PreBuildCommand:  mkdir -p _build/lib;
                   ocaml do_sf.ml < lib/sf.mli.q > lib/sf.mli;
                   cp lib/sf.mli lib/sf.ml
 
+BuildTools:       ocamlbuild, ocamldoc
+
 Library gsl
   Path:           lib
   FindlibName:    gsl
@@ -144,7 +146,6 @@ Library gsl
     CCOpt+:       -framework vecLib
     CCLib:        -framework vecLib
   BuildDepends:   bigarray
-  BuildTools:     ocamlbuild
 
 
 # Examples
@@ -155,7 +156,6 @@ Executable blas_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable bspline_ex
   Path:           examples
@@ -163,7 +163,6 @@ Executable bspline_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable cheb_ex
   Path:           examples
@@ -171,7 +170,6 @@ Executable cheb_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable const_ex
   Path:           examples
@@ -179,7 +177,6 @@ Executable const_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable diff_ex
   Path:           examples
@@ -187,7 +184,6 @@ Executable diff_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable eigen_ex
   Path:           examples
@@ -195,7 +191,6 @@ Executable eigen_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable fit_ex
   Path:           examples
@@ -203,7 +198,6 @@ Executable fit_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable histo_ex
   Path:           examples
@@ -211,7 +205,6 @@ Executable histo_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable integration_ex
   Path:           examples
@@ -219,7 +212,6 @@ Executable integration_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable interp_ex
   Path:           examples
@@ -227,7 +219,6 @@ Executable interp_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable linalg_ex
   Path:           examples
@@ -235,7 +226,6 @@ Executable linalg_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable min_ex
   Path:           examples
@@ -243,7 +233,6 @@ Executable min_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable monte_ex
   Path:           examples
@@ -251,7 +240,6 @@ Executable monte_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable "multifit_data_ex"
   Path:           examples
@@ -259,7 +247,6 @@ Executable "multifit_data_ex"
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable multifit_ex
   Path:           examples
@@ -267,7 +254,6 @@ Executable multifit_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable multifit_nlin_ex
   Path:           examples
@@ -275,7 +261,6 @@ Executable multifit_nlin_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable multimin_ex
   Path:           examples
@@ -283,7 +268,6 @@ Executable multimin_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable multiroot_ex
   Path:           examples
@@ -291,7 +275,6 @@ Executable multiroot_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable odeiv_ex
   Path:           examples
@@ -299,7 +282,6 @@ Executable odeiv_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable permut_ex
   Path:           examples
@@ -307,7 +289,6 @@ Executable permut_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable qrng_ex
   Path:           examples
@@ -315,7 +296,6 @@ Executable qrng_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable rng_ex
   Path:           examples
@@ -323,7 +303,6 @@ Executable rng_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable root_ex
   Path:           examples
@@ -331,7 +310,6 @@ Executable root_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable siman_ex
   Path:           examples
@@ -339,7 +317,6 @@ Executable siman_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable siman_tsp_ex
   Path:           examples
@@ -347,7 +324,6 @@ Executable siman_tsp_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable stats_ex
   Path:           examples
@@ -355,7 +331,6 @@ Executable stats_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable sum_ex
   Path:           examples
@@ -363,7 +338,6 @@ Executable sum_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 Executable wavelet_ex
   Path:           examples
@@ -371,7 +345,6 @@ Executable wavelet_ex
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
-  BuildTools:     ocamlbuild
 
 #
 
@@ -379,7 +352,6 @@ Document API
   Title:                API reference for GSL
   Type:                 OCamlbuild (0.3)
   InstallDir:           $docdir/api
-  BuildTools:           ocamldoc, ocamlbuild
   XOCamlbuildPath:      .
   XOCamlbuildLibraries: gsl
 

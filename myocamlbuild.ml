@@ -571,6 +571,7 @@ let () =
               let cnv flag = A flag in
               List.map cnv chunks
             in
+            close_in ic;
             S (split_flags gsl_clibs),
             S (ocamlify ~ocaml_flag:"-ccopt" gsl_cflags),
             S (ocamlify ~ocaml_flag:"-cclib" gsl_clibs)
@@ -584,7 +585,6 @@ let () =
         flag ["oasis_library_gsl_cclib"; "link"] ogsl_clibs
       | _ -> ()
   in
-  dispatch
-    (MyOCamlbuildBase.dispatch_combine [
-         MyOCamlbuildBase.dispatch_default package_default;
-         additional_rules ])
+  dispatch (
+    MyOCamlbuildBase.dispatch_combine
+      [MyOCamlbuildBase.dispatch_default package_default; additional_rules])
