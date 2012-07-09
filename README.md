@@ -2,7 +2,7 @@ GSL-OCaml - GSL-Bindings for OCaml
 ==================================
 
 This is an interface to the [GSL](http://www.gnu.org/software/gsl) (GNU
-scientific library) for the [OCaml](http://www.ocaml.org) language.
+scientific library) for the [OCaml](http://www.ocaml.org)-language.
 
 Requirements
 ------------
