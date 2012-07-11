@@ -192,6 +192,27 @@ Executable eigen_ex
   Install:        false
   CompiledObject: best
 
+Executable fft_c
+  Path:           examples
+  MainIs:         fft_c.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+
+Executable fft_c2
+  Path:           examples
+  MainIs:         fft_c2.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+
+Executable fft_hc
+  Path:           examples
+  MainIs:         fft_hc.ml
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+
 Executable fit_ex
   Path:           examples
   MainIs:         fit_ex.ml

@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 0665e7bc5e30cfc9302b7a5e3d8a09a8)
+# DO NOT EDIT (digest: 99979f2c282a00f9522bc90970862886)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -175,6 +175,15 @@
 # Executable eigen_ex
 <examples/eigen_ex.{native,byte}>: use_gsl
 <examples/eigen_ex.{native,byte}>: pkg_bigarray
+# Executable fft_c
+<examples/fft_c.{native,byte}>: use_gsl
+<examples/fft_c.{native,byte}>: pkg_bigarray
+# Executable fft_c2
+<examples/fft_c2.{native,byte}>: use_gsl
+<examples/fft_c2.{native,byte}>: pkg_bigarray
+# Executable fft_hc
+<examples/fft_hc.{native,byte}>: use_gsl
+<examples/fft_hc.{native,byte}>: pkg_bigarray
 # Executable fit_ex
 <examples/fit_ex.{native,byte}>: use_gsl
 <examples/fit_ex.{native,byte}>: pkg_bigarray
