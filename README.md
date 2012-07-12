@@ -18,7 +18,6 @@ Installation
     $ ./configure
     $ make
     $ make install
-    $ make doc
 
 Documentation
 -------------

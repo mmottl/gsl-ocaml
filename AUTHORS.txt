@@ -1,10 +1,10 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: c7fdb6d7a2342e2a686f7f799909b71f) *)
+(* DO NOT EDIT (digest: 7ce52ff79ebae0c13c14ea0872af9433) *)
 Authors of gsl
-Olivier Andrieu <oandrieu@merim.net>
+Olivier Andrieu <oandrieu@gmail.com>
 Markus Mottl <markus.mottl@gmail.com>
 
 Current maintainers of gsl
-Olivier Andrieu <oandrieu@merim.net>
+Olivier Andrieu <oandrieu@gmail.com>
 Markus Mottl <markus.mottl@gmail.com>
 (* OASIS_STOP *)
