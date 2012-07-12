@@ -1,3 +1,8 @@
+in 1.10.0
+  - ocamlgsl version number now indicates the required major+minor GSL
+    version
+  - support for gsl_stats_correlation
+
 in 0.6.1
   - Minor changes to improve installation and to fix stack overflows
     when dealing with extremely large optimization problems.
@@ -32,6 +37,7 @@ in 0.5.0
        gsl_sf_debye_5, gsl_sf_debye_6
   - sync with GSL 1.7
     - add Gsl_randist.binomial_knuth, add Gsl_multifit._linear_svd
+
 in 0.4.1
   - make several record types 'private'. This disallows building bogus values
     that could crash the program.
