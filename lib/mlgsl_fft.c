@@ -218,7 +218,7 @@ CAMLprim value ml_gsl_fft_halfcomplex_radix2_inverse(value stride, value fft_arr
 
 CAMLprim value ml_gsl_fft_complex_rad2_forward(value dif, value stride, value data)
 {
-  size_t N = Double_array_length(data);
+  size_t N = Double_array_length(data) / 2;
   size_t c_stride = Opt_arg(stride, Int_val, 1);
   int c_dif = Opt_arg(dif, Bool_val, 0);
 
@@ -233,7 +233,7 @@ CAMLprim value ml_gsl_fft_complex_rad2_forward(value dif, value stride, value da
 CAMLprim value ml_gsl_fft_complex_rad2_transform(value dif, value stride, 
 					value data, value sign)
 {
-  size_t N = Double_array_length(data);
+  size_t N = Double_array_length(data) / 2;
   size_t c_stride = Opt_arg(stride, Int_val, 1);
   int c_dif = Opt_arg(dif, Bool_val, 0);
   gsl_fft_direction c_sign =
@@ -251,7 +251,7 @@ CAMLprim value ml_gsl_fft_complex_rad2_transform(value dif, value stride,
 
 CAMLprim value ml_gsl_fft_complex_rad2_backward(value dif, value stride, value data)
 {
-  size_t N = Double_array_length(data);
+  size_t N = Double_array_length(data) / 2;
   size_t c_stride = Opt_arg(stride, Int_val, 1);
   int c_dif = Opt_arg(dif, Bool_val, 0);
 
@@ -265,7 +265,7 @@ CAMLprim value ml_gsl_fft_complex_rad2_backward(value dif, value stride, value d
 
 CAMLprim value ml_gsl_fft_complex_rad2_inverse(value dif, value stride, value data)
 {
-  size_t N = Double_array_length(data);
+  size_t N = Double_array_length(data) / 2;
   size_t c_stride = Opt_arg(stride, Int_val, 1);
   int c_dif = Opt_arg(dif, Bool_val, 0);
 

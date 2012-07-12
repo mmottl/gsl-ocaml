@@ -162,3 +162,52 @@ CAMLprim value ml_gsl_permute_inverse_complex(value p, value arr)
 			      Double_array_length(arr)/2);
   return Val_unit;
 }
+
+CAMLprim value ml_gsl_permute_mul(value p, value pa, value pb)
+{
+  GSL_PERMUT_OF_BIGARRAY(p);
+  GSL_PERMUT_OF_BIGARRAY(pa);
+  GSL_PERMUT_OF_BIGARRAY(pb);
+  gsl_permutation_mul(&perm_p, &perm_pa, &perm_pb);
+  return Val_unit;
+}
+
+CAMLprim value ml_gsl_permute_linear_to_canonical(value q, value p)
+{
+  GSL_PERMUT_OF_BIGARRAY(q);
+  GSL_PERMUT_OF_BIGARRAY(p);
+  gsl_permutation_linear_to_canonical (&perm_q, &perm_p);
+  return Val_unit;
+}
+
+CAMLprim value ml_gsl_permute_canonical_to_linear(value p, value q)
+{
+  GSL_PERMUT_OF_BIGARRAY(p);
+  GSL_PERMUT_OF_BIGARRAY(q);
+  gsl_permutation_canonical_to_linear (&perm_p, &perm_q);
+  return Val_unit;
+}
+
+CAMLprim value ml_gsl_permute_inversions(value p) 
+{
+  size_t inv;
+  GSL_PERMUT_OF_BIGARRAY(p);
+  inv = gsl_permutation_inversions (&perm_p);
+  return Val_long(inv);
+}
+
+CAMLprim value ml_gsl_permute_canonical_cycles(value q) 
+{
+  size_t c;
+  GSL_PERMUT_OF_BIGARRAY(q);
+  c = gsl_permutation_canonical_cycles (&perm_q);
+  return Val_long(c);
+}
+
+CAMLprim value ml_gsl_permute_linear_cycles(value p) 
+{
+  size_t c;
+  GSL_PERMUT_OF_BIGARRAY(p);
+  c = gsl_permutation_linear_cycles (&perm_p);
+  return Val_long(c);
+}
