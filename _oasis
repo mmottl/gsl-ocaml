@@ -19,12 +19,10 @@ Homepage:         https://bitbucket.org/mmottl/gsl-ocaml
 Plugins:          META (0.3), StdFiles (0.3), DevFiles (0.3)
 XStdFilesREADME:  false
 
+PostConfCommand:  make post-conf
+
 PreBuildCommand:  mkdir -p _build/lib;
-                  cp lib/mlgsl_matrix.c lib/mlgsl_vector.c _build/lib;
-                  ocaml do_const.ml --mli > lib/const.mli;
-                  ocaml do_const.ml > lib/const.ml;
-                  ocaml do_sf.ml < lib/sf.mli.q > lib/sf.mli;
-                  cp lib/sf.mli lib/sf.ml
+                  cp lib/mlgsl_matrix.c lib/mlgsl_vector.c _build/lib
 
 BuildTools:       ocamlbuild, ocamldoc
 
@@ -36,6 +34,7 @@ Library gsl
                   Blas_flat,
                   Blas_gen,
                   Bspline,
+                  Cdf,
                   Cheb,
                   Const,
                   Diff,
@@ -85,6 +84,7 @@ Library gsl
                   mlgsl_blas_complex_float.c,
                   mlgsl_blas_float.c,
                   mlgsl_bspline.c,
+                  mlgsl_cdf.c,
                   mlgsl_cheb.c,
                   mlgsl_complex.c,
                   mlgsl_diff.c,

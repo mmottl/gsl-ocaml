@@ -1,10 +1,11 @@
 # OASIS_START
-# DO NOT EDIT (digest: da868fced7d6411dddccdfd62a861ccf)
+# DO NOT EDIT (digest: 9572d446ec2ca52b6ea1b246d152c5a5)
 mlgsl_blas.o
 mlgsl_blas_complex.o
 mlgsl_blas_complex_float.o
 mlgsl_blas_float.o
 mlgsl_bspline.o
+mlgsl_cdf.o
 mlgsl_cheb.o
 mlgsl_complex.o
 mlgsl_diff.o

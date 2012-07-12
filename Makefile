@@ -36,3 +36,15 @@ setup.data:
 .PHONY: build doc test all install uninstall reinstall clean distclean configure
 
 # OASIS_STOP
+
+GSLINCDIR := $(shell gsl-config --prefix)/include
+
+.PHONY: post-conf
+post-conf:
+	ocaml do_const.ml --mli > lib/const.mli
+	ocaml do_const.ml > lib/const.ml
+	ocaml do_sf.ml < lib/sf.mli.q > lib/sf.mli
+	cp lib/sf.mli lib/sf.ml
+	ocaml do_cdf.ml < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/cdf.mli
+	cp lib/cdf.mli lib/cdf.ml
+	ocaml do_cdf.ml --c < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/mlgsl_cdf.c

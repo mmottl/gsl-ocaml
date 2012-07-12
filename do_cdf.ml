@@ -1,3 +1,5 @@
+#load "str.cma"
+
 type arg_type =
   | FLOAT
   | UINT
