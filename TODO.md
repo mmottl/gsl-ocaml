@@ -1,47 +1,23 @@
-COMPLETE
---------
+  * custom blocks ?
 
-  * Fast Fourier Transforms
-  * Random Number Generation
-  * Random Number Distributions
-  * Polynomials
-  * Interpolation
-  * Mathematical Functions
-  * Least-Squares Fitting
-  * One dimensional Root-Finding
-  * One dimensional Minimization
-  * Numerical Differentiation
-  * Monte Carlo Integration
-  * IEEE floating-point arithmetic
-  * Numerical Integration
-  * Quasi-Random Sequences
-  * Chebyshev Approximations
-  * Multidimensional Root-Finding
-  * Multidimensional Minimization
-  * Series Acceleration
-  * Nonlinear Least-Squares Fitting
-  * Simulated Annealing
-  * Ordinary Differential Equations
-  * Linear Algebra
-  * Eigensystems
-  * BLAS Support
-  * Vectors and Matrices
-  * Physical Constants
-  * Statistics
-  * Complex Numbers
-  * Wavelet Transforms
+  * 2D histograms
+  * complex and double matrices & vectors with a type param ?
+  * finish special functions
+  * remaining modules
+  * polymorphic variants for FFT ?
 
-PARTIAL
--------
+CHECK
+-----
 
-  * Special Functions
-  * Permutations
-  * Histograms
-  * Sorting
+  * complex matrices
+  * BLAS functions
 
-NOT YET
--------
+DONE
+----
 
-  * Combinations
-  * N-tuples
-  * Discrete Hankel Transforms
+  * put .mli only modules back
+  * complex funs in linalg and eigen
+  * complex funs for vectmat sum types
+  * rewrite siman in ML
+  * drop gsl_fun type : use closures directly
+  * check the "noalloc" directives in externals (removed most of them)
