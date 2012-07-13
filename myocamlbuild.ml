@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 0ad8cfff4b3a238f3db161e834c77a44) *)
+(* DO NOT EDIT (digest: d62bc830315aeea1a2e691d64ae43fdd) *)
 module OASISGettext = struct
 (* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/oasis/OASISGettext.ml" *)
 
@@ -510,6 +510,8 @@ let package_default =
                  S
                    [
                       A "-ccopt";
+                      A "-g";
+                      A "-ccopt";
                       A "-O2";
                       A "-ccopt";
                       A "-fPIC";
@@ -519,6 +521,8 @@ let package_default =
                (OASISExpr.ETest ("system", "macosx"),
                  S
                    [
+                      A "-ccopt";
+                      A "-g";
                       A "-ccopt";
                       A "-O2";
                       A "-ccopt";
@@ -535,6 +539,8 @@ let package_default =
                     OASISExpr.ETest ("ccomp_type", "cc")),
                  S
                    [
+                      A "-ccopt";
+                      A "-g";
                       A "-ccopt";
                       A "-O2";
                       A "-ccopt";
@@ -555,6 +561,8 @@ let package_default =
                     OASISExpr.ETest ("system", "macosx")),
                  S
                    [
+                      A "-ccopt";
+                      A "-g";
                       A "-ccopt";
                       A "-O2";
                       A "-ccopt";
@@ -592,7 +600,7 @@ let package_default =
 
 let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
 
-# 596 "myocamlbuild.ml"
+# 604 "myocamlbuild.ml"
 (* OASIS_STOP *)
 
 let () =

@@ -144,7 +144,7 @@ Library gsl
                   mlgsl_vector_double.h,
                   mlgsl_vector_float.h,
                   wrappers.h
-  CCOpt:          -O2 -fPIC -DPIC
+  CCOpt:          -g -O2 -fPIC -DPIC
   if flag(strict) && ccomp_type(cc)
 # FIXME: eliminate all pedantic and extra warnings
 #    CCOpt+:       -Wall -pedantic -Wextra -Wunused -Wno-long-long
