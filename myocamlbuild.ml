@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 1411582283d4d87fdecc9b30227be679) *)
+(* DO NOT EDIT (digest: 0ad8cfff4b3a238f3db161e834c77a44) *)
 module OASISGettext = struct
 (* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/oasis/OASISGettext.ml" *)
 
@@ -507,14 +507,66 @@ let package_default =
           (["oasis_library_gsl_ccopt"; "compile"],
             [
                (OASISExpr.EBool true,
-                 S [A "-ccopt"; A "-O2"; A "-ccopt"; A "-DPIC"]);
+                 S
+                   [
+                      A "-ccopt";
+                      A "-O2";
+                      A "-ccopt";
+                      A "-fPIC";
+                      A "-ccopt";
+                      A "-DPIC"
+                   ]);
                (OASISExpr.ETest ("system", "macosx"),
                  S
                    [
                       A "-ccopt";
                       A "-O2";
                       A "-ccopt";
+                      A "-fPIC";
+                      A "-ccopt";
                       A "-DPIC";
+                      A "-ccopt";
+                      A "-framework";
+                      A "-ccopt";
+                      A "vecLib"
+                   ]);
+               (OASISExpr.EAnd
+                  (OASISExpr.EFlag "strict",
+                    OASISExpr.ETest ("ccomp_type", "cc")),
+                 S
+                   [
+                      A "-ccopt";
+                      A "-O2";
+                      A "-ccopt";
+                      A "-fPIC";
+                      A "-ccopt";
+                      A "-DPIC";
+                      A "-ccopt";
+                      A "-Wall";
+                      A "-ccopt";
+                      A "-Wunused";
+                      A "-ccopt";
+                      A "-Wno-long-long"
+                   ]);
+               (OASISExpr.EAnd
+                  (OASISExpr.EAnd
+                     (OASISExpr.EFlag "strict",
+                       OASISExpr.ETest ("ccomp_type", "cc")),
+                    OASISExpr.ETest ("system", "macosx")),
+                 S
+                   [
+                      A "-ccopt";
+                      A "-O2";
+                      A "-ccopt";
+                      A "-fPIC";
+                      A "-ccopt";
+                      A "-DPIC";
+                      A "-ccopt";
+                      A "-Wall";
+                      A "-ccopt";
+                      A "-Wunused";
+                      A "-ccopt";
+                      A "-Wno-long-long";
                       A "-ccopt";
                       A "-framework";
                       A "-ccopt";
@@ -540,7 +592,7 @@ let package_default =
 
 let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
 
-# 544 "myocamlbuild.ml"
+# 596 "myocamlbuild.ml"
 (* OASIS_STOP *)
 
 let () =
