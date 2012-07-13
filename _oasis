@@ -158,9 +158,14 @@ Library gsl
 
 # Examples
 
+Flag examples
+  Description:    Build examples
+  Default:        true
+
 Executable blas_ex
   Path:           examples
   MainIs:         blas_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -168,6 +173,7 @@ Executable blas_ex
 Executable bspline_ex
   Path:           examples
   MainIs:         bspline_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -175,6 +181,7 @@ Executable bspline_ex
 Executable cheb_ex
   Path:           examples
   MainIs:         cheb_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -182,6 +189,7 @@ Executable cheb_ex
 Executable const_ex
   Path:           examples
   MainIs:         const_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -189,6 +197,7 @@ Executable const_ex
 Executable diff_ex
   Path:           examples
   MainIs:         diff_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -196,6 +205,7 @@ Executable diff_ex
 Executable eigen_ex
   Path:           examples
   MainIs:         eigen_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -203,6 +213,7 @@ Executable eigen_ex
 Executable fft_c
   Path:           examples
   MainIs:         fft_c.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -210,6 +221,7 @@ Executable fft_c
 Executable fft_c2
   Path:           examples
   MainIs:         fft_c2.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -217,6 +229,7 @@ Executable fft_c2
 Executable fft_hc
   Path:           examples
   MainIs:         fft_hc.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -224,6 +237,7 @@ Executable fft_hc
 Executable fit_ex
   Path:           examples
   MainIs:         fit_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -231,6 +245,7 @@ Executable fit_ex
 Executable histo_ex
   Path:           examples
   MainIs:         histo_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -238,6 +253,7 @@ Executable histo_ex
 Executable integration_ex
   Path:           examples
   MainIs:         integration_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -245,6 +261,7 @@ Executable integration_ex
 Executable interp_ex
   Path:           examples
   MainIs:         interp_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -252,6 +269,7 @@ Executable interp_ex
 Executable linalg_ex
   Path:           examples
   MainIs:         linalg_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -259,6 +277,7 @@ Executable linalg_ex
 Executable min_ex
   Path:           examples
   MainIs:         min_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -266,6 +285,7 @@ Executable min_ex
 Executable monte_ex
   Path:           examples
   MainIs:         monte_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -273,6 +293,7 @@ Executable monte_ex
 Executable "multifit_data_ex"
   Path:           examples
   MainIs:         multifit_data_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -280,6 +301,7 @@ Executable "multifit_data_ex"
 Executable multifit_ex
   Path:           examples
   MainIs:         multifit_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -287,6 +309,7 @@ Executable multifit_ex
 Executable multifit_nlin_ex
   Path:           examples
   MainIs:         multifit_nlin_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -294,6 +317,7 @@ Executable multifit_nlin_ex
 Executable multimin_ex
   Path:           examples
   MainIs:         multimin_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -301,6 +325,7 @@ Executable multimin_ex
 Executable multiroot_ex
   Path:           examples
   MainIs:         multiroot_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -308,6 +333,7 @@ Executable multiroot_ex
 Executable odeiv_ex
   Path:           examples
   MainIs:         odeiv_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -315,6 +341,7 @@ Executable odeiv_ex
 Executable permut_ex
   Path:           examples
   MainIs:         permut_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -322,6 +349,7 @@ Executable permut_ex
 Executable qrng_ex
   Path:           examples
   MainIs:         qrng_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -329,6 +357,7 @@ Executable qrng_ex
 Executable rng_ex
   Path:           examples
   MainIs:         rng_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -336,6 +365,7 @@ Executable rng_ex
 Executable root_ex
   Path:           examples
   MainIs:         root_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -343,6 +373,7 @@ Executable root_ex
 Executable siman_ex
   Path:           examples
   MainIs:         siman_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -350,6 +381,7 @@ Executable siman_ex
 Executable siman_tsp_ex
   Path:           examples
   MainIs:         siman_tsp_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -357,6 +389,7 @@ Executable siman_tsp_ex
 Executable stats_ex
   Path:           examples
   MainIs:         stats_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -364,6 +397,7 @@ Executable stats_ex
 Executable sum_ex
   Path:           examples
   MainIs:         sum_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
@@ -371,6 +405,7 @@ Executable sum_ex
 Executable wavelet_ex
   Path:           examples
   MainIs:         wavelet_ex.ml
+  Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
   CompiledObject: best
