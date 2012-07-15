@@ -25,8 +25,10 @@ Documentation
 Check the [GSL manual](http://www.gnu.org/software/gsl/manual/html_node)
 to learn more about the GNU Scientific Library.
 
-You can browse the OCaml module interfaces as ocamldoc-generated HTML files
-in directory `API.docdir` after building the documentation with `make doc`.
+You can browse the OCaml module interfaces as `ocamldoc`-generated
+HTML files in directory `API.docdir` after building the
+documentation with `make doc`.  It is also available
+[online](http://mmottl.bitbucket.org/projects/gsl-ocaml/api/).
 
 Usage Hints
 -----------
