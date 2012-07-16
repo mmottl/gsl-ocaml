@@ -35,7 +35,7 @@ Usage Hints
 
 ### Vectors and Matrices
 
-There are several datatypes for handling vectors and matrices.
+There are several data types for handling vectors and matrices.
 
   * Modules `Gsl.Vector`, `Gsl.Vector.Single`, `Gsl.Vector_complex`,
     `Gsl.Vector_complex.Single`, and the corresponding matrix modules use
