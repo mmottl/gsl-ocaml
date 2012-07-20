@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 6af45f9e58b9e466a364025e698746fa) *)
+(* DO NOT EDIT (digest: ade2641453a0925f1ea5110f3b515ee8) *)
 This is the INSTALL file for the gsl distribution.
 
 This package uses OASIS to generate its build system. See section OASIS for
@@ -10,7 +10,7 @@ Dependencies
 
 In order to compile this package, you will need:
 * ocaml (>= 3.12) for all, doc API
-* findlib (>= 1.3.2)
+* findlib (>= 1.3.1)
 
 Installing
 ==========
