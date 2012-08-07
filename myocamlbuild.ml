@@ -1,7 +1,7 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 116b63bd56183462d28cbe92d86e5380) *)
+(* DO NOT EDIT (digest: 9572ae7d7fca8bfe5bc46518891391c0) *)
 module OASISGettext = struct
-(* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/oasis/OASISGettext.ml" *)
+(* # 21 "/home/mmottl/local/linux-gnu/src/oasis-0.3.0/src/oasis/OASISGettext.ml" *)
 
   let ns_ str =
     str
@@ -24,7 +24,7 @@ module OASISGettext = struct
 end
 
 module OASISExpr = struct
-(* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/oasis/OASISExpr.ml" *)
+(* # 21 "/home/mmottl/local/linux-gnu/src/oasis-0.3.0/src/oasis/OASISExpr.ml" *)
 
 
 
@@ -116,7 +116,7 @@ end
 
 # 117 "myocamlbuild.ml"
 module BaseEnvLight = struct
-(* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/base/BaseEnvLight.ml" *)
+(* # 21 "/home/mmottl/local/linux-gnu/src/oasis-0.3.0/src/base/BaseEnvLight.ml" *)
 
   module MapString = Map.Make(String)
 
@@ -214,7 +214,7 @@ end
 
 # 215 "myocamlbuild.ml"
 module MyOCamlbuildFindlib = struct
-(* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/plugins/ocamlbuild/MyOCamlbuildFindlib.ml" *)
+(* # 21 "/home/mmottl/local/linux-gnu/src/oasis-0.3.0/src/plugins/ocamlbuild/MyOCamlbuildFindlib.ml" *)
 
   (** OCamlbuild extension, copied from 
     * http://brion.inria.fr/gallium/index.php/Using_ocamlfind_with_ocamlbuild
@@ -323,7 +323,7 @@ module MyOCamlbuildFindlib = struct
 end
 
 module MyOCamlbuildBase = struct
-(* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/plugins/ocamlbuild/MyOCamlbuildBase.ml" *)
+(* # 21 "/home/mmottl/local/linux-gnu/src/oasis-0.3.0/src/plugins/ocamlbuild/MyOCamlbuildBase.ml" *)
 
   (** Base functions for writing myocamlbuild.ml
       @author Sylvain Le Gall
@@ -339,7 +339,7 @@ module MyOCamlbuildBase = struct
   type name = string 
   type tag = string 
 
-(* # 56 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/plugins/ocamlbuild/MyOCamlbuildBase.ml" *)
+(* # 56 "/home/mmottl/local/linux-gnu/src/oasis-0.3.0/src/plugins/ocamlbuild/MyOCamlbuildBase.ml" *)
 
   type t =
       {
@@ -541,13 +541,13 @@ let package_default =
             ]);
           (["oasis_library_gsl_cclib"; "link"],
             [
-               (OASISExpr.EBool true, S [A "-cclib"; A "-lcblas"]);
+               (OASISExpr.EBool true, S []);
                (OASISExpr.ETest ("system", "macosx"),
                  S [A "-cclib"; A "-framework"; A "-cclib"; A "vecLib"])
             ]);
           (["oasis_library_gsl_cclib"; "ocamlmklib"; "c"],
             [
-               (OASISExpr.EBool true, S [A "-lcblas"]);
+               (OASISExpr.EBool true, S []);
                (OASISExpr.ETest ("system", "macosx"),
                  S [A "-framework"; A "vecLib"])
             ])

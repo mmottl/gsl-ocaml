@@ -1,3 +1,6 @@
+in 1.10.2  (gsl-ocaml fork)
+  - Fixed linking problem
+
 in 1.10.1  (gsl-ocaml fork)
   - Switched to Oasis
   - GSL is now a packed library.  E.g. the module "Gsl_rng" is now "Gsl.Rng".
