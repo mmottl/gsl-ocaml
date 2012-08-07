@@ -1,6 +1,24 @@
+in 1.10.1  (gsl-ocaml fork)
+  - Switched to Oasis
+  - GSL is now a packed library.  E.g. the module "Gsl_rng" is now "Gsl.Rng".
+  - Fixed new OCaml 4.00 warnings
+  - Added stricter C-compilation flags
+  - Minor fixes
+
 in 1.10.0
   - ocamlgsl version number now indicates the required major+minor GSL
     version
+  - improved error support:
+      GSL errors are now handled by an OCaml function. By default it raises
+      the Gsl_exn exception, but it can be redefined to ignore some errors.
+  - callbacks:
+      now exceptions raised in OCaml callback functions are propagated and are
+      no longer "absorbed".
+      Mind that for some functions (Gsl_monte.integrate_miser for one) this can
+      result in a memory leak in GSL.
+  - fixes for multimin (Markus)
+  - fixes for exceptions on "all-float" functions
+  - update the buildsystem (autoconf)
   - support for gsl_stats_correlation
 
 in 0.6.1
@@ -16,7 +34,7 @@ in 0.6.0
 
 in 0.5.3
   - compile with ocaml 3.10
-  - fix GC bugs with C functions taking a callbak parameter (min, multimin, 
+  - fix GC bugs with C functions taking a callbak parameter (min, multimin,
     multifit, etc.)
 
 in 0.5.2
@@ -31,9 +49,9 @@ in 0.5.1
 in 0.5.0
   - sync with GSL 1.8
     - fix Gsl_cdf
-    - wrap new functions: 
+    - wrap new functions:
        gsl_multifit_linear_est, gsl_linalg_cholesky_decomp_unit,
-       gsl_ran_gamma_mt, gsl_ran_gaussian_ziggurat, 
+       gsl_ran_gamma_mt, gsl_ran_gaussian_ziggurat,
        gsl_sf_debye_5, gsl_sf_debye_6
   - sync with GSL 1.7
     - add Gsl_randist.binomial_knuth, add Gsl_multifit._linear_svd
@@ -46,7 +64,7 @@ in 0.4.1
   - added Associated Legendre Polynomials and Spherical Harmonics in
     Gsl_sf (Will M. Farr)
   - fixed the type Gsl_fft.Complex.direction (Joe Shirron)
-  - fixed the type of Gsl_randist.negative_binomial and negative_binomial_pdf 
+  - fixed the type of Gsl_randist.negative_binomial and negative_binomial_pdf
     (Martin Willensdorfer)
 
 in 0.4.0
@@ -61,7 +79,7 @@ in 0.4.0
   - better support for Cygwin (James Scott, Lexifi)
 
 in 0.3.5
-  - improve build system a bit so that it works better on cygwin 
+  - improve build system a bit so that it works better on cygwin
     (thanks to Brian Wilfley)
   - fix bugs in Gsl_odeiv (thanks to Will M. Farr)
 
@@ -73,7 +91,7 @@ in 0.3.3
   - report an error when building on a platform with ARCH_ALIGN_DOUBLE
     defined
   - findlib support
-	 
+
 in 0.3.2
   - complex functions (contributed by Paul Pelzl)
 
