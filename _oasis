@@ -151,7 +151,6 @@ Library gsl
     CCOpt+:       -Wall -Wunused -Wno-long-long
   CCLib:          -lcblas
   if system(macosx)
-    CCOpt+:       -framework vecLib
     CCLib:        -framework vecLib
   BuildDepends:   bigarray
 

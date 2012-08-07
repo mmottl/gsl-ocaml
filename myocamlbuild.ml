@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: d62bc830315aeea1a2e691d64ae43fdd) *)
+(* DO NOT EDIT (digest: 116b63bd56183462d28cbe92d86e5380) *)
 module OASISGettext = struct
 (* # 21 "/Users/mmottl/local/darwin11.3.0/src/oasis-0.3.0/src/oasis/OASISGettext.ml" *)
 
@@ -518,22 +518,6 @@ let package_default =
                       A "-ccopt";
                       A "-DPIC"
                    ]);
-               (OASISExpr.ETest ("system", "macosx"),
-                 S
-                   [
-                      A "-ccopt";
-                      A "-g";
-                      A "-ccopt";
-                      A "-O2";
-                      A "-ccopt";
-                      A "-fPIC";
-                      A "-ccopt";
-                      A "-DPIC";
-                      A "-ccopt";
-                      A "-framework";
-                      A "-ccopt";
-                      A "vecLib"
-                   ]);
                (OASISExpr.EAnd
                   (OASISExpr.EFlag "strict",
                     OASISExpr.ETest ("ccomp_type", "cc")),
@@ -553,32 +537,6 @@ let package_default =
                       A "-Wunused";
                       A "-ccopt";
                       A "-Wno-long-long"
-                   ]);
-               (OASISExpr.EAnd
-                  (OASISExpr.EAnd
-                     (OASISExpr.EFlag "strict",
-                       OASISExpr.ETest ("ccomp_type", "cc")),
-                    OASISExpr.ETest ("system", "macosx")),
-                 S
-                   [
-                      A "-ccopt";
-                      A "-g";
-                      A "-ccopt";
-                      A "-O2";
-                      A "-ccopt";
-                      A "-fPIC";
-                      A "-ccopt";
-                      A "-DPIC";
-                      A "-ccopt";
-                      A "-Wall";
-                      A "-ccopt";
-                      A "-Wunused";
-                      A "-ccopt";
-                      A "-Wno-long-long";
-                      A "-ccopt";
-                      A "-framework";
-                      A "-ccopt";
-                      A "vecLib"
                    ])
             ]);
           (["oasis_library_gsl_cclib"; "link"],
@@ -600,7 +558,7 @@ let package_default =
 
 let dispatch_default = MyOCamlbuildBase.dispatch_default package_default;;
 
-# 604 "myocamlbuild.ml"
+# 562 "myocamlbuild.ml"
 (* OASIS_STOP *)
 
 let () =
