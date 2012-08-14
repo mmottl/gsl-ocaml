@@ -1,8 +1,13 @@
 GSL-OCaml - GSL-Bindings for OCaml
 ==================================
 
-This is an interface to the [GSL](http://www.gnu.org/software/gsl) (GNU
-scientific library) for the [OCaml](http://www.ocaml.org)-language.
+This library was written by [Olivier Andrieu](http://oandrieu.nerim.net/ocaml).
+This version (gsl-ocaml) contains patches by [Markus
+Mottl](http://www.ocaml.info) that may be merged into the original distribution
+in the future.
+
+GSL-OCaml is an interface to the [GSL](http://www.gnu.org/software/gsl)
+(GNU scientific library) for the [OCaml](http://www.ocaml.org)-language.
 
 Requirements
 ------------
