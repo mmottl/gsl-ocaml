@@ -123,11 +123,11 @@ open Fun
 << expint_E2_scaled float >>
 << expint_Ei float >>
 << expint_Ei_scaled float >>
-<:ext< shi@ml_gsl_sf_Shi@gsl_sf_Shi,float,float >>
-<:ext< chi@ml_gsl_sf_Chi@gsl_sf_Chi,float,float >>
+<:ext< shi@ml_gsl_sf_Shi,float,float >>
+<:ext< chi@ml_gsl_sf_Chi,float,float >>
 << expint_3 float >>
-<:ext< si@ml_gsl_sf_Si@gsl_sf_Si,float,float >>
-<:ext< ci@ml_gsl_sf_Ci@gsl_sf_Ci,float,float >>
+<:ext< si@ml_gsl_sf_Si,float,float >>
+<:ext< ci@ml_gsl_sf_Ci,float,float >>
 << atanint float >>
 
 (* fermi-dirac *)
