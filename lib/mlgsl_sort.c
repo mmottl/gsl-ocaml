@@ -4,7 +4,6 @@
 
 #include <caml/fail.h>
 #include <caml/memory.h>
-#include <caml/callback.h>
 #include <caml/bigarray.h>
 
 #include <gsl/gsl_sort_vector.h>
