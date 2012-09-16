@@ -73,3 +73,25 @@ external permute_inverse_barr : permut ->
     = "ml_gsl_permute_inverse_barr"
 external permute_inverse_complex : permut -> Gsl_complex.complex_array -> unit
     = "ml_gsl_permute_inverse_complex"
+
+external _mul : permut -> permut -> permut -> unit = "ml_gsl_permute_mul"
+let mul pa pb =
+  let p = create (size pa) in
+  _mul p pa pb ;
+  p
+
+external _lin_to_can : permut -> permut -> unit = "ml_gsl_permute_linear_to_canonical"
+let linear_to_canonical p =
+  let q = create (size p) in
+  _lin_to_can q p ;
+  q
+
+external _can_to_lin : permut -> permut -> unit = "ml_gsl_permute_canonical_to_linear"
+let canonical_to_linear q =
+  let p = create (size q) in
+  _can_to_lin p q ;
+  p
+
+external inversions : permut -> int = "ml_gsl_permute_inversions"
+external canonical_cycles : permut -> int = "ml_gsl_permute_canonical_cycles"
+external linear_cycles : permut -> int = "ml_gsl_permute_linear_cycles"
