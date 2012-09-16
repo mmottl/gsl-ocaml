@@ -45,16 +45,23 @@ type errno =
 
 exception Gsl_exn of (errno * string)
 
-external raise_caml_exn : bool -> unit = "ml_gsl_error_init"
+
+let default_handler errcode =
+  raise (Gsl_exn errcode)
+let handler =
+  ref default_handler
+
+external setup_caml_error_handler : bool -> unit = "ml_gsl_error_init"
 
 let _ = 
-  Callback.register_exception "mlgsl_exn" (Gsl_exn (CONTINUE, ""))
+  Callback.register_exception "mlgsl_exn" (Gsl_exn (CONTINUE, ""));
+  Callback.register "mlgsl_err_handler" handler
 
 let init () = 
-  raise_caml_exn true
+  setup_caml_error_handler true
 
 let uninit () = 
-  raise_caml_exn false
+  setup_caml_error_handler false
 
 external strerror : errno -> string = "ml_gsl_strerror"
 
