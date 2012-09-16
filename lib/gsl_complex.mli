@@ -1,5 +1,5 @@
 (* gsl-ocaml - OCaml interface to GSL                       *)
-(* Copyright (©) 2002-2005, 2003 - Olivier Andrieu, Paul Pelzl   *)
+(* Copyright (©) 2002-2012, 2003 - Olivier Andrieu, Paul Pelzl   *)
 (* Distributed under the terms of the GPL version 3         *)
 
 (** Complex arithmetic and simple functions *)

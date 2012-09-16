@@ -1,5 +1,5 @@
 (* gsl-ocaml - OCaml interface to GSL                       *)
-(* Copyright (©) 2002-2005 - Olivier Andrieu                *)
+(* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
 (** Matrices of floats implemented with [Bigarray] *)
