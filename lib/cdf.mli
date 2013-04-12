@@ -84,3 +84,5 @@ external negative_binomial_P : k:int -> p:float -> n:float -> float = "ml_gsl_cd
 external negative_binomial_Q : k:int -> p:float -> n:float -> float = "ml_gsl_cdf_negative_binomial_Q"
 external pascal_P : k:int -> p:float -> n:int -> float = "ml_gsl_cdf_pascal_P"
 external pascal_Q : k:int -> p:float -> n:int -> float = "ml_gsl_cdf_pascal_Q"
+external hypergeometric_P : k:int -> n1:int -> n2:int -> t:int -> float = "ml_gsl_cdf_hypergeometric_P"
+external hypergeometric_Q : k:int -> n1:int -> n2:int -> t:int -> float = "ml_gsl_cdf_hypergeometric_Q"

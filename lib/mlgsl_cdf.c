@@ -169,3 +169,7 @@ ML3(gsl_cdf_pascal_P, Unsigned_int_val, Double_val, Unsigned_int_val, copy_doubl
 
 ML3(gsl_cdf_pascal_Q, Unsigned_int_val, Double_val, Unsigned_int_val, copy_double)
 
+ML4(gsl_cdf_hypergeometric_P, Unsigned_int_val, Unsigned_int_val, Unsigned_int_val, Unsigned_int_val, copy_double)
+
+ML4(gsl_cdf_hypergeometric_Q, Unsigned_int_val, Unsigned_int_val, Unsigned_int_val, Unsigned_int_val, copy_double)
+
