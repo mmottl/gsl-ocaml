@@ -285,10 +285,10 @@ external multinomial_lnpdf : p:float array -> n:int array -> float
 
 
 (* NEGATIVE BINOMIAL *)
-external negative_binomial : Rng.t -> p:float -> n:int -> int
+external negative_binomial : Rng.t -> p:float -> n:float -> int
     = "ml_gsl_ran_negative_binomial"
 
-external negative_binomial_pdf : int -> p:float -> n:int -> float
+external negative_binomial_pdf : int -> p:float -> n:float -> float
     = "ml_gsl_ran_negative_binomial_pdf"
 
 (* PASCAL *)

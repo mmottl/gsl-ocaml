@@ -252,8 +252,8 @@ CAMLprim value ml_gsl_ran_multinomial_lnpdf(value p, value n)
 
 
 /* NEGATIVE BINOMIAL */
-ML3(gsl_ran_negative_binomial, Rng_val, Double_val, Int_val, Val_int)
-ML3(gsl_ran_negative_binomial_pdf, Int_val, Double_val, Int_val, copy_double)
+ML3(gsl_ran_negative_binomial, Rng_val, Double_val, Double_val, Val_int)
+ML3(gsl_ran_negative_binomial_pdf, Int_val, Double_val, Double_val, copy_double)
 
 /* PASCAL */
 ML3(gsl_ran_pascal, Rng_val, Double_val, Int_val, Val_int)
