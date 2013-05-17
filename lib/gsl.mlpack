@@ -1,11 +1,12 @@
 # OASIS_START
-# DO NOT EDIT (digest: e21a5ea8a2101875f12c3e0b53ef5547)
+# DO NOT EDIT (digest: 89abe9643e9172b3a72237fe167e75cc)
 Blas
 Blas_flat
 Blas_gen
 Bspline
 Cdf
 Cheb
+Combi
 Const
 Diff
 Eigen

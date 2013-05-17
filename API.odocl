@@ -1,11 +1,12 @@
 # OASIS_START
-# DO NOT EDIT (digest: 0008c21dab8a4a0b9569603c9a08c807)
+# DO NOT EDIT (digest: abb8ae7353f835703db3ce4139a9e87e)
 lib/Blas
 lib/Blas_flat
 lib/Blas_gen
 lib/Bspline
 lib/Cdf
 lib/Cheb
+lib/Combi
 lib/Const
 lib/Diff
 lib/Eigen

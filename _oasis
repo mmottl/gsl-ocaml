@@ -40,6 +40,7 @@ Library gsl
                   Bspline,
                   Cdf,
                   Cheb,
+                  Combi,
                   Const,
                   Diff,
                   Eigen,
@@ -90,6 +91,7 @@ Library gsl
                   mlgsl_bspline.c,
                   mlgsl_cdf.c,
                   mlgsl_cheb.c,
+                  mlgsl_combi.c,
                   mlgsl_complex.c,
                   mlgsl_diff.c,
                   mlgsl_eigen.c,
@@ -179,6 +181,14 @@ Executable bspline_ex
 Executable cheb_ex
   Path:           examples
   MainIs:         cheb_ex.ml
+  Build$:         flag(examples)
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+
+Executable combi_ex
+  Path:           examples
+  MainIs:         combi_ex.ml
   Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false

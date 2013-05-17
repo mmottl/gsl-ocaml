@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 705a03c2fead374d287e12768fb67df5)
+# DO NOT EDIT (digest: 884e17b5262460005d9b51694d37fa0a)
 # Ignore VCS directories, you can use the same kind of rule outside 
 # OASIS_START/STOP if you want to exclude directories that contains 
 # useless stuff for the build process
@@ -21,6 +21,7 @@
 "lib/bspline.cmx": for-pack(Gsl)
 "lib/cdf.cmx": for-pack(Gsl)
 "lib/cheb.cmx": for-pack(Gsl)
+"lib/combi.cmx": for-pack(Gsl)
 "lib/const.cmx": for-pack(Gsl)
 "lib/diff.cmx": for-pack(Gsl)
 "lib/eigen.cmx": for-pack(Gsl)
@@ -72,6 +73,7 @@
 "lib/mlgsl_bspline.c": oasis_library_gsl_ccopt
 "lib/mlgsl_cdf.c": oasis_library_gsl_ccopt
 "lib/mlgsl_cheb.c": oasis_library_gsl_ccopt
+"lib/mlgsl_combi.c": oasis_library_gsl_ccopt
 "lib/mlgsl_complex.c": oasis_library_gsl_ccopt
 "lib/mlgsl_diff.c": oasis_library_gsl_ccopt
 "lib/mlgsl_eigen.c": oasis_library_gsl_ccopt
@@ -123,6 +125,7 @@
 "lib/mlgsl_bspline.c": pkg_bigarray
 "lib/mlgsl_cdf.c": pkg_bigarray
 "lib/mlgsl_cheb.c": pkg_bigarray
+"lib/mlgsl_combi.c": pkg_bigarray
 "lib/mlgsl_complex.c": pkg_bigarray
 "lib/mlgsl_diff.c": pkg_bigarray
 "lib/mlgsl_eigen.c": pkg_bigarray
@@ -169,6 +172,9 @@
 # Executable cheb_ex
 <examples/cheb_ex.{native,byte}>: use_gsl
 <examples/cheb_ex.{native,byte}>: pkg_bigarray
+# Executable combi_ex
+<examples/combi_ex.{native,byte}>: use_gsl
+<examples/combi_ex.{native,byte}>: pkg_bigarray
 # Executable const_ex
 <examples/const_ex.{native,byte}>: use_gsl
 <examples/const_ex.{native,byte}>: pkg_bigarray
