@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: ade2641453a0925f1ea5110f3b515ee8) *)
+(* DO NOT EDIT (digest: 20f1320c01a6d305f75f59bdd25a283e) *)
 This is the INSTALL file for the gsl distribution.
 
 This package uses OASIS to generate its build system. See section OASIS for
@@ -23,7 +23,7 @@ Installing
 Uninstalling
 ============
 
-1. Go to the root of the package 
+1. Go to the root of the package
 2. Run 'ocaml setup.ml -uninstall'
 
 OASIS

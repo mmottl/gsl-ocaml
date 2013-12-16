@@ -1,7 +1,7 @@
 # OASIS_START
-# DO NOT EDIT (digest: 884e17b5262460005d9b51694d37fa0a)
-# Ignore VCS directories, you can use the same kind of rule outside 
-# OASIS_START/STOP if you want to exclude directories that contains 
+# DO NOT EDIT (digest: 96ceb4fb71bb23697d1c261c38f69996)
+# Ignore VCS directories, you can use the same kind of rule outside
+# OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
 <**/.svn>: -traverse
 <**/.svn>: not_hygienic
@@ -262,5 +262,12 @@
 <examples/*.ml{,i}>: use_gsl
 <examples/*.ml{,i}>: pkg_bigarray
 # OASIS_STOP
-<**/*.ml{,i}>: warn_A, warn_e, warn_r, annot
+
+true: -traverse
+<{lib,examples}/**>: traverse
+
+<**/*.ml{,i}>: warn(Aer-44), strict_sequence, annot
+
 <examples/multifit_ex.ml>: camlp4of
+
+"lib/gsl.cmxs": use_libgsl_stubs

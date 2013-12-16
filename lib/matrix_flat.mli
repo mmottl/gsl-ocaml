@@ -23,8 +23,6 @@ val of_arrays : float array array -> matrix
 val to_array  : matrix -> float array
 val to_arrays : matrix -> float array array
 
-val to_array : matrix -> float array
-
 val get : matrix -> int -> int -> float
 val set : matrix -> int -> int -> float -> unit
 val set_all  : matrix -> float -> unit
