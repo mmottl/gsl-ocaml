@@ -1,3 +1,7 @@
+in 1.15.0  (gsl-ocaml fork)
+
+  - Fixed superfluous Jacobian allocation when not requested for ODE solving.
+
 in 1.10.2  (gsl-ocaml fork)
   - Fixed linking problem
 
