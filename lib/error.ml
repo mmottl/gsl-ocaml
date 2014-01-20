@@ -53,7 +53,7 @@ external setup_caml_error_handler : bool -> unit = "ml_gsl_error_init"
 let init () = setup_caml_error_handler true
 let uninit () = setup_caml_error_handler false
 
-let () = 
+let () =
   Callback.register_exception "mlgsl_exn" (Gsl_exn (CONTINUE, ""));
   Callback.register "mlgsl_err_handler" handler;
   init ()
@@ -98,12 +98,12 @@ let string_of_errno = function
 
 let pprint_exn = function
   | Gsl_exn (errno, msg) ->
-      Printf.sprintf "GSL error: %s, %s\n  %s" 
-	(string_of_errno errno)
-	(strerror errno) msg
-  | e -> 
+      Printf.sprintf "GSL error: %s, %s\n  %s"
+        (string_of_errno errno)
+        (strerror errno) msg
+  | e ->
       Printexc.to_string e
 
 let handle_exn f x =
-  try f x 
+  try f x
   with exn -> prerr_endline (pprint_exn exn) ; raise exn

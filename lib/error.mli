@@ -9,7 +9,7 @@ val version : string
 
 type errno =
   | CONTINUE (** iteration has not converged *)
-  | FAILURE  
+  | FAILURE
   | EDOM     (** input domain error, e.g sqrt(-1) *)
   | ERANGE   (** output range error, e.g. exp(1e100) *)
   | EFAULT   (** invalid pointer *)
@@ -45,29 +45,36 @@ type errno =
 
 exception Gsl_exn of (errno * string)
 
-(** [Gsl_error.init ()] setups the GSL error handler so that
-    the OCaml function {!Gsl_error.handler} gets called in case of an error.
+
+(** [Gsl.Error.init ()] setups the GSL error handler so that
+    the OCaml function {!Gsl.Error.handler} gets called in case of an error.
     This behavior is the default now. *)
 val init   : unit -> unit
 
-(** [Gsl_error.uninit ()] reverts the GSL error handler to the default of
+(** [Gsl.Error.uninit ()] reverts the GSL error handler to the default of
     the GSL C-library.  The default GSL error simply aborts the program. *)
 val uninit : unit -> unit
 
-(** The OCaml handler for GSL errors. Initially set to {!Gsl_error.default_handler}.
-    If the function returns, the error is ignored and execution of the GSL function continues.
+(** The OCaml handler for GSL errors. Initially set to
+    {!Gsl.Error.default_handler}.  If the function returns, the error
+    is ignored and execution of the GSL function continues.
 
     Redefine it so as to ignore some particular errors ([EOVRFLW] or
     [EUNDRFLW] for instance). *)
-val handler : (errno * string -> unit) ref 
+val handler : (errno * string -> unit) ref
 
 (** The default OCaml handler for GSL errors. It simply raises the
-    {!Gsl_error.Gsl_exn} exception. *)
+    {!Gsl.Error.Gsl_exn} exception. *)
 val default_handler : errno * string -> 'a
 
 val strerror : errno -> string
+(** [strerror e] returns a description of the error [e]. *)
+
 val string_of_errno : errno -> string
+(** [string_of_errno e] returns the name of [e]. *)
 
 val pprint_exn : exn -> string
+(** [pprint_exn e] pretty print the exception [e].  If [e] is not a
+    GSL exception, use [Printexc.to_string]. *)
 
 val handle_exn : ('a -> 'b) -> 'a -> 'b
