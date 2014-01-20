@@ -46,11 +46,12 @@ type errno =
 exception Gsl_exn of (errno * string)
 
 (** [Gsl_error.init ()] setups the GSL error handler so that
-    the OCaml function {!Gsl_error.handler} gets called in case of an error. *)
+    the OCaml function {!Gsl_error.handler} gets called in case of an error.
+    This behavior is the default now. *)
 val init   : unit -> unit
 
-(** [Gsl_error.uninit ()] reverts the GSL error handler to its previous definition.
-    The default GSL error simply aborts the program. *)
+(** [Gsl_error.uninit ()] reverts the GSL error handler to the default of
+    the GSL C-library.  The default GSL error simply aborts the program. *)
 val uninit : unit -> unit
 
 (** The OCaml handler for GSL errors. Initially set to {!Gsl_error.default_handler}.
