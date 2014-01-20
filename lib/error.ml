@@ -2,6 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
+open Printf
+
 external gsl_version : unit -> string
     = "ml_gsl_version"
 
@@ -95,14 +97,10 @@ let string_of_errno = function
   | ETOLG    -> "ETOLG"
   | EOF      -> "EOF"
 
-let pprint_exn = function
-  | Gsl_exn (errno, msg) ->
-      Printf.sprintf "GSL error: %s, %s\n  %s"
-        (string_of_errno errno)
-        (strerror errno) msg
-  | e ->
-      Printexc.to_string e
+let printer = function
+  | Gsl_exn(errno, msg) ->
+     Some(sprintf "Gsl.Error.Gsl_exn(%s, %S)" (string_of_errno errno) msg)
+  | _ -> None
 
-let handle_exn f x =
-  try f x
-  with exn -> prerr_endline (pprint_exn exn) ; raise exn
+let () =
+  Printexc.register_printer printer

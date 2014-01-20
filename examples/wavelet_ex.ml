@@ -6,10 +6,10 @@ let read_file init do_line finish f =
   begin
     try
       while true do
-	let l = input_line ic in
-	acc := do_line !acc l
+        let l = input_line ic in
+        acc := do_line !acc l
       done
-    with 
+    with
     | End_of_file -> close_in ic
     | exn -> close_in ic ; raise exn
   end ;
@@ -27,8 +27,8 @@ let main f =
 
   let w = Wavelet.make Wavelet.DAUBECHIES 4 in
   Wavelet.transform_forward w data ;
-  let high = 
-    Gsl_sort.vector_flat_largest_index 20 
+  let high =
+    Gsl_sort.vector_flat_largest_index 20
       (Vector_flat.view_array (Array.map abs_float data)) in
   let high_coeff = Array.make n 0. in
   for i = 0 to 20 - 1 do
@@ -36,11 +36,10 @@ let main f =
     high_coeff.(j) <- data.(j)
   done ;
   Wavelet.transform_inverse w high_coeff ;
-  
+
   Array.iter
     (fun f -> Printf.printf "%g\n" f)
     high_coeff
 
-let _ = 
-  Error.init () ;
-  Error.handle_exn main "ecg.dat"
+let () =
+  main "ecg.dat"

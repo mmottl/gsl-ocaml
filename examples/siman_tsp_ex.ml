@@ -6,8 +6,8 @@ type city = {
     long : float ;
   }
 
-let cities = 
-  Array.map (fun (n,la,lo) -> { name = n; lat = la; long = lo }) 
+let cities =
+  Array.map (fun (n,la,lo) -> { name = n; lat = la; long = lo })
     [| ("Santa Fe",    35.68,   105.95) ;
        ("Phoenix",     33.54,   112.07) ;
        ("Albuquerque", 35.12,   106.62) ;
@@ -32,8 +32,8 @@ let city_distance { lat = la1; long = lo1 } { lat = la2; long = lo2 } =
   let cla2 = cos (la2 *. pi_180) in
   let slo2 = sin (lo2 *. pi_180) in
   let clo2 = cos (lo2 *. pi_180) in
-  let dot_prod = 
-    (cla1 *. clo1) *. (cla2 *. clo2) 
+  let dot_prod =
+    (cla1 *. clo1) *. (cla2 *. clo2)
       +. (cla1 *. slo1) *. (cla2 *. slo2)
       +. sla1 *. sla2 in
   earth_radius *. acos dot_prod
@@ -45,12 +45,12 @@ let prepare_distance_matrix cities =
     for j= succ i to pred nb do
       let dist = city_distance cities.(i) cities.(j) in
       mat.(i).(j) <- dist ;
-      mat.(j).(i) <- dist 
-    done 
+      mat.(j).(i) <- dist
+    done
   done ;
   mat
 
-let print_distance_matrix mat = 
+let print_distance_matrix mat =
   let nb = Array.length mat in
   for i=0 to pred nb do
     Printf.printf "# " ;
@@ -62,7 +62,7 @@ let print_distance_matrix mat =
   flush stdout
 
 
-let energ_func dist_mat route = 
+let energ_func dist_mat route =
   let nb = Array.length route in
   let e = ref 0. in
   for i=0 to pred nb do
@@ -70,7 +70,7 @@ let energ_func dist_mat route =
   done ;
   !e
 
-let step_func rng route _step_size = 
+let step_func rng route _step_size =
   let nb = Array.length route in
   let x1 = (Rng.uniform_int rng (pred nb)) + 1 in
   let x2 = ref x1 in
@@ -80,10 +80,10 @@ let step_func rng route _step_size =
   let route = Array.copy route in
   let swap = route.(x1) in
   route.(x1)  <- route.(!x2) ;
-  route.(!x2) <- swap ; 
+  route.(!x2) <- swap ;
   route
 
-let print_func route = 
+let print_func route =
   let nb = Array.length route in
   print_string "  [" ;
   for i=0 to pred nb do
@@ -92,7 +92,7 @@ let print_func route =
   print_string "]\n"
 
 
-let main () = 
+let main () =
   let rng = Rng.make (Rng.default ()) in
   let nb = Array.length cities in
 
@@ -102,7 +102,7 @@ let main () =
   Printf.printf "# initial order of cities:\n" ;
   for i=0 to pred nb do
     Printf.printf "# \"%s\"\n" cities.(route_init.(i)).name
-  done ; 
+  done ;
   Printf.printf "# distance matrix is:\n" ;
   print_distance_matrix matrix ;
   Printf.printf "# initial coordinates of cities (longitude and latitude)\n" ;
@@ -119,18 +119,18 @@ let main () =
     Siman.t_initial = 5000. ; Siman.mu_t = 1.002 ;
     Siman.t_min = 5e-1 } in
 
-  let final_route = 
+  let final_route =
     Siman.solve
-      rng route_init 
+      rng route_init
       ~energ_func:(energ_func matrix)
       ~step_func
       (* ~print_func *)
       siman_params in
-  
+
   Printf.printf "# final order of cities:\n" ;
   for i=0 to pred nb do
     Printf.printf "# \"%s\"\n" cities.(final_route.(i)).name
-  done ; 
+  done ;
   Printf.printf "# final coordinates of cities (longitude and latitude)\n" ;
   for i=0 to pred nb do
     let c = final_route.(i) in
@@ -139,10 +139,9 @@ let main () =
   done ;
   flush stdout
 
-  
 
-let _ = 
-  Error.init () ;
+
+let () =
   Rng.env_setup () ;
   Ieee.env_setup () ;
-  Error.handle_exn main ()
+  main ()

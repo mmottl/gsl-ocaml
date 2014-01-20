@@ -73,8 +73,6 @@ val strerror : errno -> string
 val string_of_errno : errno -> string
 (** [string_of_errno e] returns the name of [e]. *)
 
-val pprint_exn : exn -> string
-(** [pprint_exn e] pretty print the exception [e].  If [e] is not a
-    GSL exception, use [Printexc.to_string]. *)
-
-val handle_exn : ('a -> 'b) -> 'a -> 'b
+val printer : exn -> string option
+(** [printer] is an exceoption printer for {!Gsl_exn}.  It is
+    registered by default with [Printexc]. *)
