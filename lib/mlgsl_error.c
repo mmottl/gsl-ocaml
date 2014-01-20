@@ -12,23 +12,22 @@
 
 CAMLprim value ml_gsl_version(value unit)
 {
-  return copy_string(gsl_version);
+  return caml_copy_string(gsl_version);
 }
 
 CAMLprim value ml_gsl_strerror(value ml_errno)
 {
   int c_errno = Int_val(ml_errno);
   int gsl_errno = (c_errno <= 1) ? (c_errno - 2) : (c_errno - 1) ;
-  return copy_string(gsl_strerror(gsl_errno));
+  return caml_copy_string(gsl_strerror(gsl_errno));
 }
 
 static value *ml_gsl_err_handler = NULL;
 
 static void ml_gsl_error_handler(const char *reason, const char *file,
-				 int line, int gsl_errno)
+                                 int line, int gsl_errno)
 {
-  CAMLparam0();
-  CAMLlocal1(exn_msg);
+  value exn_msg;
   int ml_errno;
 
   if (0 < gsl_errno && gsl_errno <= GSL_EOF)
@@ -38,10 +37,8 @@ static void ml_gsl_error_handler(const char *reason, const char *file,
   else
     failwith("invalid GSL error code");
 
-  exn_msg = copy_string(reason);
+  exn_msg = caml_copy_string(reason);
   caml_callback2(Field(*ml_gsl_err_handler,0), Val_int(ml_errno), exn_msg);
-
-  CAMLreturn0;
 }
 
 CAMLprim value ml_gsl_error_init(value init)
