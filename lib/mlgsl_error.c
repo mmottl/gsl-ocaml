@@ -22,13 +22,13 @@ CAMLprim value ml_gsl_strerror(value ml_errno)
   return copy_string(gsl_strerror(gsl_errno));
 }
 
-static value *ml_gsl_err_handler;
+static value *ml_gsl_err_handler = NULL;
 
 static void ml_gsl_error_handler(const char *reason, const char *file,
 				 int line, int gsl_errno)
 {
   CAMLparam0();
-  CAMLlocal2(exn_msg, exn_arg);
+  CAMLlocal1(exn_msg);
   int ml_errno;
 
   if (0 < gsl_errno && gsl_errno <= GSL_EOF)
@@ -39,10 +39,7 @@ static void ml_gsl_error_handler(const char *reason, const char *file,
     failwith("invalid GSL error code");
 
   exn_msg = copy_string(reason);
-  exn_arg = alloc_small(2, 0);
-  Field(exn_arg, 0) = Val_int(ml_errno);
-  Field(exn_arg, 1) = exn_msg;
-  callback(Field(*ml_gsl_err_handler, 0), exn_arg);
+  caml_callback2(Field(*ml_gsl_err_handler,0), Val_int(ml_errno), exn_msg);
 
   CAMLreturn0;
 }

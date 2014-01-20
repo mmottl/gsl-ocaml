@@ -9,7 +9,7 @@ let version = gsl_version ()
 
 type errno =
   | CONTINUE (* iteration has not converged *)
-  | FAILURE  
+  | FAILURE
   | EDOM     (* input domain error, e.g sqrt(-1) *)
   | ERANGE   (* output range error, e.g. exp(1e100) *)
   | EFAULT   (* invalid pointer *)
@@ -43,9 +43,9 @@ type errno =
   | ETOLG    (* cannot reach the specified tolerance in gradient *)
   | EOF      (* end of file *)
 
-exception Gsl_exn of (errno * string)
+exception Gsl_exn of errno * string
 
-let default_handler errcode = raise (Gsl_exn errcode)
+let default_handler errcode s = raise (Gsl_exn(errcode,s))
 let handler = ref default_handler
 
 external setup_caml_error_handler : bool -> unit = "ml_gsl_error_init"
@@ -54,7 +54,6 @@ let init () = setup_caml_error_handler true
 let uninit () = setup_caml_error_handler false
 
 let () =
-  Callback.register_exception "mlgsl_exn" (Gsl_exn (CONTINUE, ""));
   Callback.register "mlgsl_err_handler" handler;
   init ()
 

@@ -43,7 +43,7 @@ type errno =
   | ETOLG    (** cannot reach the specified tolerance in gradient *)
   | EOF      (** end of file *)
 
-exception Gsl_exn of (errno * string)
+exception Gsl_exn of errno * string
 
 
 (** [Gsl.Error.init ()] setups the GSL error handler so that
@@ -61,11 +61,11 @@ val uninit : unit -> unit
 
     Redefine it so as to ignore some particular errors ([EOVRFLW] or
     [EUNDRFLW] for instance). *)
-val handler : (errno * string -> unit) ref
+val handler : (errno -> string -> unit) ref
 
 (** The default OCaml handler for GSL errors. It simply raises the
     {!Gsl.Error.Gsl_exn} exception. *)
-val default_handler : errno * string -> 'a
+val default_handler : errno -> string -> 'a
 
 val strerror : errno -> string
 (** [strerror e] returns a description of the error [e]. *)
