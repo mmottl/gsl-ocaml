@@ -847,10 +847,11 @@ external fermi_dirac_inc_0_e : float -> float -> result
 
 
 (* Gamma function *)
-external gamma : float -> float
-    = "ml_gsl_sf_gamma" "gsl_sf_gamma" "float"
+external  gamma : float -> float 
+    = "ml_gsl_sf_gamma"
 
-external gamma_e : float -> result
+
+external  gamma_e : float -> result 
     = "ml_gsl_sf_gamma_e"
 
 
