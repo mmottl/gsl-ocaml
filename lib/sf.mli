@@ -81,13 +81,13 @@ external airy_zero_Bi_e : int -> result
 
 (* BESSEL functions *)
 external bessel_J0 : float -> float
-    = "ml_gsl_sf_bessel_J0" "gsl_sf_bessel_J0" "float"
+    = "ml_gsl_sf_bessel_J0"
 
 external bessel_J0_e : float -> result
     = "ml_gsl_sf_bessel_J0_e"
 
 external bessel_J1 : float -> float
-    = "ml_gsl_sf_bessel_J1" "gsl_sf_bessel_J1" "float"
+    = "ml_gsl_sf_bessel_J1"
 
 external bessel_J1_e : float -> result
     = "ml_gsl_sf_bessel_J1_e"
@@ -103,13 +103,13 @@ external bessel_Jn_array : int -> float -> float array -> unit
 
 
 external bessel_Y0 : float -> float
-    = "ml_gsl_sf_bessel_Y0" "gsl_sf_bessel_Y0" "float"
+    = "ml_gsl_sf_bessel_Y0"
 
 external bessel_Y0_e : float -> result
     = "ml_gsl_sf_bessel_Y0_e"
 
 external bessel_Y1 : float -> float
-    = "ml_gsl_sf_bessel_Y1" "gsl_sf_bessel_Y1" "float"
+    = "ml_gsl_sf_bessel_Y1"
 
 external bessel_Y1_e : float -> result
     = "ml_gsl_sf_bessel_Y1_e"
@@ -125,13 +125,13 @@ external bessel_Yn_array : int -> float -> float array -> unit
 
 
 external bessel_I0 : float -> float
-    = "ml_gsl_sf_bessel_I0" "gsl_sf_bessel_I0" "float"
+    = "ml_gsl_sf_bessel_I0"
 
 external bessel_I0_e : float -> result
     = "ml_gsl_sf_bessel_I0_e"
 
 external bessel_I1 : float -> float
-    = "ml_gsl_sf_bessel_I1" "gsl_sf_bessel_I1" "float"
+    = "ml_gsl_sf_bessel_I1"
 
 external bessel_I1_e : float -> result
     = "ml_gsl_sf_bessel_I1_e"
@@ -147,13 +147,13 @@ external bessel_In_array : int -> float -> float array -> unit
 
 
 external bessel_K0 : float -> float
-    = "ml_gsl_sf_bessel_K0" "gsl_sf_bessel_K0" "float"
+    = "ml_gsl_sf_bessel_K0"
 
 external bessel_K0_e : float -> result
     = "ml_gsl_sf_bessel_K0_e"
 
 external bessel_K1 : float -> float
-    = "ml_gsl_sf_bessel_K1" "gsl_sf_bessel_K1" "float"
+    = "ml_gsl_sf_bessel_K1"
 
 external bessel_K1_e : float -> result
     = "ml_gsl_sf_bessel_K1_e"
@@ -169,13 +169,13 @@ external bessel_Kn_array : int -> float -> float array -> unit
 
 
 external bessel_I0_scaled : float -> float
-    = "ml_gsl_sf_bessel_I0_scaled" "gsl_sf_bessel_I0_scaled" "float"
+    = "ml_gsl_sf_bessel_I0_scaled"
 
 external bessel_I0_scaled_e : float -> result
     = "ml_gsl_sf_bessel_I0_scaled_e"
 
 external bessel_I1_scaled : float -> float
-    = "ml_gsl_sf_bessel_I1_scaled" "gsl_sf_bessel_I1_scaled" "float"
+    = "ml_gsl_sf_bessel_I1_scaled"
 
 external bessel_I1_scaled_e : float -> result
     = "ml_gsl_sf_bessel_I1_scaled_e"
@@ -191,13 +191,13 @@ external bessel_In_scaled_array : int -> float -> float array -> unit
 
 
 external bessel_K0_scaled : float -> float
-    = "ml_gsl_sf_bessel_K0_scaled" "gsl_sf_bessel_K0_scaled" "float"
+    = "ml_gsl_sf_bessel_K0_scaled"
 
 external bessel_K0_scaled_e : float -> result
     = "ml_gsl_sf_bessel_K0_scaled_e"
 
 external bessel_K1_scaled : float -> float
-    = "ml_gsl_sf_bessel_K1_scaled" "gsl_sf_bessel_K1_scaled" "float"
+    = "ml_gsl_sf_bessel_K1_scaled"
 
 external bessel_K1_scaled_e : float -> result
     = "ml_gsl_sf_bessel_K1_scaled_e"
@@ -214,19 +214,19 @@ external bessel_Kn_scaled_array : int -> float -> float array -> unit
 
 
 external bessel_j0 : float -> float
-    = "ml_gsl_sf_bessel_j0" "gsl_sf_bessel_j0" "float"
+    = "ml_gsl_sf_bessel_j0"
 
 external bessel_j0_e : float -> result
     = "ml_gsl_sf_bessel_j0_e"
 
 external bessel_j1 : float -> float
-    = "ml_gsl_sf_bessel_j1" "gsl_sf_bessel_j1" "float"
+    = "ml_gsl_sf_bessel_j1"
 
 external bessel_j1_e : float -> result
     = "ml_gsl_sf_bessel_j1_e"
 
 external bessel_j2 : float -> float
-    = "ml_gsl_sf_bessel_j2" "gsl_sf_bessel_j2" "float"
+    = "ml_gsl_sf_bessel_j2"
 
 external bessel_j2_e : float -> result
     = "ml_gsl_sf_bessel_j2_e"
@@ -246,19 +246,19 @@ external  bessel_jl_steed_array : float -> float array -> unit
 
 
 external bessel_y0 : float -> float
-    = "ml_gsl_sf_bessel_y0" "gsl_sf_bessel_y0" "float"
+    = "ml_gsl_sf_bessel_y0"
 
 external bessel_y0_e : float -> result
     = "ml_gsl_sf_bessel_y0_e"
 
 external bessel_y1 : float -> float
-    = "ml_gsl_sf_bessel_y1" "gsl_sf_bessel_y1" "float"
+    = "ml_gsl_sf_bessel_y1"
 
 external bessel_y1_e : float -> result
     = "ml_gsl_sf_bessel_y1_e"
 
 external bessel_y2 : float -> float
-    = "ml_gsl_sf_bessel_y2" "gsl_sf_bessel_y2" "float"
+    = "ml_gsl_sf_bessel_y2"
 
 external bessel_y2_e : float -> result
     = "ml_gsl_sf_bessel_y2_e"
@@ -274,13 +274,13 @@ external bessel_yl_array : int -> float -> float array -> unit
 
 
 external bessel_i0_scaled : float -> float
-    = "ml_gsl_sf_bessel_i0_scaled" "gsl_sf_bessel_i0_scaled" "float"
+    = "ml_gsl_sf_bessel_i0_scaled"
 
 external bessel_i0_scaled_e : float -> result
     = "ml_gsl_sf_bessel_i0_scaled_e"
 
 external bessel_i1_scaled : float -> float
-    = "ml_gsl_sf_bessel_i1_scaled" "gsl_sf_bessel_i1_scaled" "float"
+    = "ml_gsl_sf_bessel_i1_scaled"
 
 external bessel_i1_scaled_e : float -> result
     = "ml_gsl_sf_bessel_i1_scaled_e"
@@ -296,13 +296,13 @@ external bessel_il_scaled_array : int -> float -> float array -> unit
 
 
 external bessel_k0_scaled : float -> float
-    = "ml_gsl_sf_bessel_k0_scaled" "gsl_sf_bessel_k0_scaled" "float"
+    = "ml_gsl_sf_bessel_k0_scaled"
 
 external bessel_k0_scaled_e : float -> result
     = "ml_gsl_sf_bessel_k0_scaled_e"
 
 external bessel_k1_scaled : float -> float
-    = "ml_gsl_sf_bessel_k1_scaled" "gsl_sf_bessel_k1_scaled" "float"
+    = "ml_gsl_sf_bessel_k1_scaled"
 
 external bessel_k1_scaled_e : float -> result
     = "ml_gsl_sf_bessel_k1_scaled_e"
@@ -319,7 +319,7 @@ external bessel_kl_scaled_array : int -> float -> float array -> unit
 
 
 external bessel_Jnu : float -> float -> float
-    = "ml_gsl_sf_bessel_Jnu" "gsl_sf_bessel_Jnu" "float"
+    = "ml_gsl_sf_bessel_Jnu"
 
 external bessel_Jnu_e : float -> float -> result
     = "ml_gsl_sf_bessel_Jnu_e"
@@ -330,42 +330,42 @@ external  bessel_sequence_Jnu_e : float -> mode -> float array -> unit
 
 
 external bessel_Ynu : float -> float -> float
-    = "ml_gsl_sf_bessel_Ynu" "gsl_sf_bessel_Ynu" "float"
+    = "ml_gsl_sf_bessel_Ynu"
 
 external bessel_Ynu_e : float -> float -> result
     = "ml_gsl_sf_bessel_Ynu_e"
 
 
 external bessel_Inu : float -> float -> float
-    = "ml_gsl_sf_bessel_Inu" "gsl_sf_bessel_Inu" "float"
+    = "ml_gsl_sf_bessel_Inu"
 
 external bessel_Inu_e : float -> float -> result
     = "ml_gsl_sf_bessel_Inu_e"
 
 
 external bessel_Inu_scaled : float -> float -> float
-    = "ml_gsl_sf_bessel_Inu_scaled" "gsl_sf_bessel_Inu_scaled" "float"
+    = "ml_gsl_sf_bessel_Inu_scaled"
 
 external bessel_Inu_scaled_e : float -> float -> result
     = "ml_gsl_sf_bessel_Inu_scaled_e"
 
 
 external bessel_Knu : float -> float -> float
-    = "ml_gsl_sf_bessel_Knu" "gsl_sf_bessel_Knu" "float"
+    = "ml_gsl_sf_bessel_Knu"
 
 external bessel_Knu_e : float -> float -> result
     = "ml_gsl_sf_bessel_Knu_e"
 
 
 external bessel_lnKnu : float -> float -> float
-    = "ml_gsl_sf_bessel_lnKnu" "gsl_sf_bessel_lnKnu" "float"
+    = "ml_gsl_sf_bessel_lnKnu"
 
 external bessel_lnKnu_e : float -> float -> result
     = "ml_gsl_sf_bessel_lnKnu_e"
 
 
 external bessel_Knu_scaled : float -> float -> float
-    = "ml_gsl_sf_bessel_Knu_scaled" "gsl_sf_bessel_Knu_scaled" "float"
+    = "ml_gsl_sf_bessel_Knu_scaled"
 
 external bessel_Knu_scaled_e : float -> float -> result
     = "ml_gsl_sf_bessel_Knu_scaled_e"
@@ -396,7 +396,7 @@ external bessel_zero_Jnu_e : float -> int -> result
 
 (* CLAUSEN functions *)
 external clausen : float -> float
-    = "ml_gsl_sf_clausen" "gsl_sf_clausen" "float"
+    = "ml_gsl_sf_clausen"
 
 external clausen_e : float -> result
     = "ml_gsl_sf_clausen_e"
@@ -405,7 +405,7 @@ external clausen_e : float -> result
 
 (* COULOMB functions *)
 external hydrogenicR_1 : float -> float -> float
-    = "ml_gsl_sf_hydrogenicR_1" "gsl_sf_hydrogenicR_1" "float"
+    = "ml_gsl_sf_hydrogenicR_1"
 
 external hydrogenicR_1_e : float -> float -> result
     = "ml_gsl_sf_hydrogenicR_1_e"
@@ -432,7 +432,7 @@ external  coulomb_CL_array : float -> float -> float array -> unit
 
 (* DAWSON functions *)
 external dawson : float -> float
-    = "ml_gsl_sf_dawson" "gsl_sf_dawson" "float"
+    = "ml_gsl_sf_dawson"
 
 external dawson_e : float -> result
     = "ml_gsl_sf_dawson_e"
@@ -441,42 +441,42 @@ external dawson_e : float -> result
 
 (* DEBYE functions *)
 external debye_1 : float -> float
-    = "ml_gsl_sf_debye_1" "gsl_sf_debye_1" "float"
+    = "ml_gsl_sf_debye_1"
 
 external debye_1_e : float -> result
     = "ml_gsl_sf_debye_1_e"
 
 
 external debye_2 : float -> float
-    = "ml_gsl_sf_debye_2" "gsl_sf_debye_2" "float"
+    = "ml_gsl_sf_debye_2"
 
 external debye_2_e : float -> result
     = "ml_gsl_sf_debye_2_e"
 
 
 external debye_3 : float -> float
-    = "ml_gsl_sf_debye_3" "gsl_sf_debye_3" "float"
+    = "ml_gsl_sf_debye_3"
 
 external debye_3_e : float -> result
     = "ml_gsl_sf_debye_3_e"
 
 
 external debye_4 : float -> float
-    = "ml_gsl_sf_debye_4" "gsl_sf_debye_4" "float"
+    = "ml_gsl_sf_debye_4"
 
 external debye_4_e : float -> result
     = "ml_gsl_sf_debye_4_e"
 
 
 external debye_5 : float -> float
-    = "ml_gsl_sf_debye_5" "gsl_sf_debye_5" "float"
+    = "ml_gsl_sf_debye_5"
 
 external debye_5_e : float -> result
     = "ml_gsl_sf_debye_5_e"
 
 
 external debye_6 : float -> float
-    = "ml_gsl_sf_debye_6" "gsl_sf_debye_6" "float"
+    = "ml_gsl_sf_debye_6"
 
 external debye_6_e : float -> result
     = "ml_gsl_sf_debye_6_e"
@@ -485,7 +485,7 @@ external debye_6_e : float -> result
 
 (* DILOGARITHM *)
 external dilog : float -> float
-    = "ml_gsl_sf_dilog" "gsl_sf_dilog" "float"
+    = "ml_gsl_sf_dilog"
 
 external dilog_e : float -> result
     = "ml_gsl_sf_dilog_e"
@@ -603,35 +603,35 @@ external ellint_RJ_e : float -> float -> float -> float -> mode -> result
 
 (* ERROR function *)
 external erf : float -> float
-    = "ml_gsl_sf_erf" "gsl_sf_erf" "float"
+    = "ml_gsl_sf_erf"
 
 external erf_e : float -> result
     = "ml_gsl_sf_erf_e"
 
 
 external erfc : float -> float
-    = "ml_gsl_sf_erfc" "gsl_sf_erfc" "float"
+    = "ml_gsl_sf_erfc"
 
 external erfc_e : float -> result
     = "ml_gsl_sf_erfc_e"
 
 
 external log_erfc : float -> float
-    = "ml_gsl_sf_log_erfc" "gsl_sf_log_erfc" "float"
+    = "ml_gsl_sf_log_erfc"
 
 external log_erfc_e : float -> result
     = "ml_gsl_sf_log_erfc_e"
 
 
 external erf_Z : float -> float
-    = "ml_gsl_sf_erf_Z" "gsl_sf_erf_Z" "float"
+    = "ml_gsl_sf_erf_Z"
 
 external erf_Z_e : float -> result
     = "ml_gsl_sf_erf_Z_e"
 
 
 external erf_Q : float -> float
-    = "ml_gsl_sf_erf_Q" "gsl_sf_erf_Q" "float"
+    = "ml_gsl_sf_erf_Q"
 
 external erf_Q_e : float -> result
     = "ml_gsl_sf_erf_Q_e"
@@ -640,7 +640,7 @@ external erf_Q_e : float -> result
 
 (* EXPONENTIAL functions *)
 external exp : float -> float
-    = "ml_gsl_sf_exp" "gsl_sf_exp" "float"
+    = "ml_gsl_sf_exp"
 
 external exp_e : float -> result
     = "ml_gsl_sf_exp_e"
@@ -651,7 +651,7 @@ external  exp_e10 : float -> result_e10
 
 
 external exp_mult : float -> float -> float
-    = "ml_gsl_sf_exp_mult" "gsl_sf_exp_mult" "float"
+    = "ml_gsl_sf_exp_mult"
 
 external exp_mult_e : float -> float -> result
     = "ml_gsl_sf_exp_mult_e"
@@ -663,21 +663,21 @@ external  exp_mult_e10 : float -> float -> result_e10
 
 
 external expm1 : float -> float
-    = "ml_gsl_sf_expm1" "gsl_sf_expm1" "float"
+    = "ml_gsl_sf_expm1"
 
 external expm1_e : float -> result
     = "ml_gsl_sf_expm1_e"
 
 
 external exprel : float -> float
-    = "ml_gsl_sf_exprel" "gsl_sf_exprel" "float"
+    = "ml_gsl_sf_exprel"
 
 external exprel_e : float -> result
     = "ml_gsl_sf_exprel_e"
 
 
 external exprel_2 : float -> float
-    = "ml_gsl_sf_exprel_2" "gsl_sf_exprel_2" "float"
+    = "ml_gsl_sf_exprel_2"
 
 external exprel_2_e : float -> result
     = "ml_gsl_sf_exprel_2_e"
@@ -709,42 +709,42 @@ external  exp_mult_err_e10_e : x:float -> dx:float -> y:float -> dy:float -> res
 
 (* EXPONENTIAL integrals *)
 external expint_E1 : float -> float
-    = "ml_gsl_sf_expint_E1" "gsl_sf_expint_E1" "float"
+    = "ml_gsl_sf_expint_E1"
 
 external expint_E1_e : float -> result
     = "ml_gsl_sf_expint_E1_e"
 
 
 external expint_E2 : float -> float
-    = "ml_gsl_sf_expint_E2" "gsl_sf_expint_E2" "float"
+    = "ml_gsl_sf_expint_E2"
 
 external expint_E2_e : float -> result
     = "ml_gsl_sf_expint_E2_e"
 
 
 external expint_E1_scaled : float -> float
-    = "ml_gsl_sf_expint_E1_scaled" "gsl_sf_expint_E1_scaled" "float"
+    = "ml_gsl_sf_expint_E1_scaled"
 
 external expint_E1_scaled_e : float -> result
     = "ml_gsl_sf_expint_E1_scaled_e"
 
 
 external expint_E2_scaled : float -> float
-    = "ml_gsl_sf_expint_E2_scaled" "gsl_sf_expint_E2_scaled" "float"
+    = "ml_gsl_sf_expint_E2_scaled"
 
 external expint_E2_scaled_e : float -> result
     = "ml_gsl_sf_expint_E2_scaled_e"
 
 
 external expint_Ei : float -> float
-    = "ml_gsl_sf_expint_Ei" "gsl_sf_expint_Ei" "float"
+    = "ml_gsl_sf_expint_Ei"
 
 external expint_Ei_e : float -> result
     = "ml_gsl_sf_expint_Ei_e"
 
 
 external expint_Ei_scaled : float -> float
-    = "ml_gsl_sf_expint_Ei_scaled" "gsl_sf_expint_Ei_scaled" "float"
+    = "ml_gsl_sf_expint_Ei_scaled"
 
 external expint_Ei_scaled_e : float -> result
     = "ml_gsl_sf_expint_Ei_scaled_e"
@@ -759,7 +759,7 @@ external  chi : float -> float
 
 
 external expint_3 : float -> float
-    = "ml_gsl_sf_expint_3" "gsl_sf_expint_3" "float"
+    = "ml_gsl_sf_expint_3"
 
 external expint_3_e : float -> result
     = "ml_gsl_sf_expint_3_e"
@@ -774,7 +774,7 @@ external  ci : float -> float
 
 
 external atanint : float -> float
-    = "ml_gsl_sf_atanint" "gsl_sf_atanint" "float"
+    = "ml_gsl_sf_atanint"
 
 external atanint_e : float -> result
     = "ml_gsl_sf_atanint_e"
@@ -783,28 +783,28 @@ external atanint_e : float -> result
 
 (* fermi-dirac *)
 external fermi_dirac_m1 : float -> float
-    = "ml_gsl_sf_fermi_dirac_m1" "gsl_sf_fermi_dirac_m1" "float"
+    = "ml_gsl_sf_fermi_dirac_m1"
 
 external fermi_dirac_m1_e : float -> result
     = "ml_gsl_sf_fermi_dirac_m1_e"
 
 
 external fermi_dirac_0 : float -> float
-    = "ml_gsl_sf_fermi_dirac_0" "gsl_sf_fermi_dirac_0" "float"
+    = "ml_gsl_sf_fermi_dirac_0"
 
 external fermi_dirac_0_e : float -> result
     = "ml_gsl_sf_fermi_dirac_0_e"
 
 
 external fermi_dirac_1 : float -> float
-    = "ml_gsl_sf_fermi_dirac_1" "gsl_sf_fermi_dirac_1" "float"
+    = "ml_gsl_sf_fermi_dirac_1"
 
 external fermi_dirac_1_e : float -> result
     = "ml_gsl_sf_fermi_dirac_1_e"
 
 
 external fermi_dirac_2 : float -> float
-    = "ml_gsl_sf_fermi_dirac_2" "gsl_sf_fermi_dirac_2" "float"
+    = "ml_gsl_sf_fermi_dirac_2"
 
 external fermi_dirac_2_e : float -> result
     = "ml_gsl_sf_fermi_dirac_2_e"
@@ -818,28 +818,28 @@ external fermi_dirac_int_e : int -> float -> result
 
 
 external fermi_dirac_mhalf : float -> float
-    = "ml_gsl_sf_fermi_dirac_mhalf" "gsl_sf_fermi_dirac_mhalf" "float"
+    = "ml_gsl_sf_fermi_dirac_mhalf"
 
 external fermi_dirac_mhalf_e : float -> result
     = "ml_gsl_sf_fermi_dirac_mhalf_e"
 
 
 external fermi_dirac_half : float -> float
-    = "ml_gsl_sf_fermi_dirac_half" "gsl_sf_fermi_dirac_half" "float"
+    = "ml_gsl_sf_fermi_dirac_half"
 
 external fermi_dirac_half_e : float -> result
     = "ml_gsl_sf_fermi_dirac_half_e"
 
 
 external fermi_dirac_3half : float -> float
-    = "ml_gsl_sf_fermi_dirac_3half" "gsl_sf_fermi_dirac_3half" "float"
+    = "ml_gsl_sf_fermi_dirac_3half"
 
 external fermi_dirac_3half_e : float -> result
     = "ml_gsl_sf_fermi_dirac_3half_e"
 
 
 external fermi_dirac_inc_0 : float -> float -> float
-    = "ml_gsl_sf_fermi_dirac_inc_0" "gsl_sf_fermi_dirac_inc_0" "float"
+    = "ml_gsl_sf_fermi_dirac_inc_0"
 
 external fermi_dirac_inc_0_e : float -> float -> result
     = "ml_gsl_sf_fermi_dirac_inc_0_e"
@@ -856,7 +856,7 @@ external  gamma_e : float -> result
 
 
 external lngamma : float -> float
-    = "ml_gsl_sf_lngamma" "gsl_sf_lngamma" "float"
+    = "ml_gsl_sf_lngamma"
 
 external lngamma_e : float -> result
     = "ml_gsl_sf_lngamma_e"
@@ -867,14 +867,14 @@ external  lngamma_sgn_e : float -> result * float
 
 
 external gammastar : float -> float
-    = "ml_gsl_sf_gammastar" "gsl_sf_gammastar" "float"
+    = "ml_gsl_sf_gammastar"
 
 external gammastar_e : float -> result
     = "ml_gsl_sf_gammastar_e"
 
 
 external gammainv : float -> float
-    = "ml_gsl_sf_gammainv" "gsl_sf_gammainv" "float"
+    = "ml_gsl_sf_gammainv"
 
 external gammainv_e : float -> result
     = "ml_gsl_sf_gammainv_e"
@@ -934,14 +934,14 @@ external lnchoose_e : int -> int -> result
 
 
 external poch : float -> float -> float
-    = "ml_gsl_sf_poch" "gsl_sf_poch" "float"
+    = "ml_gsl_sf_poch"
 
 external poch_e : float -> float -> result
     = "ml_gsl_sf_poch_e"
 
 
 external lnpoch : float -> float -> float
-    = "ml_gsl_sf_lnpoch" "gsl_sf_lnpoch" "float"
+    = "ml_gsl_sf_lnpoch"
 
 external lnpoch_e : float -> float -> result
     = "ml_gsl_sf_lnpoch_e"
@@ -952,42 +952,42 @@ external  lnpoch_sgn_e : float -> float -> result * float
 
 
 external pochrel : float -> float -> float
-    = "ml_gsl_sf_pochrel" "gsl_sf_pochrel" "float"
+    = "ml_gsl_sf_pochrel"
 
 external pochrel_e : float -> float -> result
     = "ml_gsl_sf_pochrel_e"
 
 
 external gamma_inc_Q : float -> float -> float
-    = "ml_gsl_sf_gamma_inc_Q" "gsl_sf_gamma_inc_Q" "float"
+    = "ml_gsl_sf_gamma_inc_Q"
 
 external gamma_inc_Q_e : float -> float -> result
     = "ml_gsl_sf_gamma_inc_Q_e"
 
 
 external gamma_inc_P : float -> float -> float
-    = "ml_gsl_sf_gamma_inc_P" "gsl_sf_gamma_inc_P" "float"
+    = "ml_gsl_sf_gamma_inc_P"
 
 external gamma_inc_P_e : float -> float -> result
     = "ml_gsl_sf_gamma_inc_P_e"
 
 
 external gamma_inc : float -> float -> float
-    = "ml_gsl_sf_gamma_inc" "gsl_sf_gamma_inc" "float"
+    = "ml_gsl_sf_gamma_inc"
 
 external gamma_inc_e : float -> float -> result
     = "ml_gsl_sf_gamma_inc_e"
 
 
 external beta : float -> float -> float
-    = "ml_gsl_sf_beta" "gsl_sf_beta" "float"
+    = "ml_gsl_sf_beta"
 
 external beta_e : float -> float -> result
     = "ml_gsl_sf_beta_e"
 
 
 external lnbeta : float -> float -> float
-    = "ml_gsl_sf_lnbeta" "gsl_sf_lnbeta" "float"
+    = "ml_gsl_sf_lnbeta"
 
 external lnbeta_e : float -> float -> result
     = "ml_gsl_sf_lnbeta_e"
@@ -998,7 +998,7 @@ external  lnbeta_sgn_e : float -> float -> result * float
 
 
 external beta_inc : float -> float -> float -> float
-    = "ml_gsl_sf_beta_inc" "gsl_sf_beta_inc" "float"
+    = "ml_gsl_sf_beta_inc"
 
 external beta_inc_e : float -> float -> float -> result
     = "ml_gsl_sf_beta_inc_e"
@@ -1007,21 +1007,21 @@ external beta_inc_e : float -> float -> float -> result
 
 (* GEGENBAUER functions *)
 external gegenpoly_1 : float -> float -> float
-    = "ml_gsl_sf_gegenpoly_1" "gsl_sf_gegenpoly_1" "float"
+    = "ml_gsl_sf_gegenpoly_1"
 
 external gegenpoly_1_e : float -> float -> result
     = "ml_gsl_sf_gegenpoly_1_e"
 
 
 external gegenpoly_2 : float -> float -> float
-    = "ml_gsl_sf_gegenpoly_2" "gsl_sf_gegenpoly_2" "float"
+    = "ml_gsl_sf_gegenpoly_2"
 
 external gegenpoly_2_e : float -> float -> result
     = "ml_gsl_sf_gegenpoly_2_e"
 
 
 external gegenpoly_3 : float -> float -> float
-    = "ml_gsl_sf_gegenpoly_3" "gsl_sf_gegenpoly_3" "float"
+    = "ml_gsl_sf_gegenpoly_3"
 
 external gegenpoly_3_e : float -> float -> result
     = "ml_gsl_sf_gegenpoly_3_e"
@@ -1044,21 +1044,21 @@ external  gegenpoly_array : float -> float -> float array -> unit
 
 (* LAGUERRE functions *)
 external laguerre_1 : float -> float -> float
-    = "ml_gsl_sf_laguerre_1" "gsl_sf_laguerre_1" "float"
+    = "ml_gsl_sf_laguerre_1"
 
 external laguerre_1_e : float -> float -> result
     = "ml_gsl_sf_laguerre_1_e"
 
 
 external laguerre_2 : float -> float -> float
-    = "ml_gsl_sf_laguerre_2" "gsl_sf_laguerre_2" "float"
+    = "ml_gsl_sf_laguerre_2"
 
 external laguerre_2_e : float -> float -> result
     = "ml_gsl_sf_laguerre_2_e"
 
 
 external laguerre_3 : float -> float -> float
-    = "ml_gsl_sf_laguerre_3" "gsl_sf_laguerre_3" "float"
+    = "ml_gsl_sf_laguerre_3"
 
 external laguerre_3_e : float -> float -> result
     = "ml_gsl_sf_laguerre_3_e"
@@ -1074,14 +1074,14 @@ external laguerre_n_e : int -> float -> float -> result
 
 (* LAMBERT W functions *)
 external lambert_W0 : float -> float
-    = "ml_gsl_sf_lambert_W0" "gsl_sf_lambert_W0" "float"
+    = "ml_gsl_sf_lambert_W0"
 
 external lambert_W0_e : float -> result
     = "ml_gsl_sf_lambert_W0_e"
 
 
 external lambert_Wm1 : float -> float
-    = "ml_gsl_sf_lambert_Wm1" "gsl_sf_lambert_Wm1" "float"
+    = "ml_gsl_sf_lambert_Wm1"
 
 external lambert_Wm1_e : float -> result
     = "ml_gsl_sf_lambert_Wm1_e"
@@ -1090,21 +1090,21 @@ external lambert_Wm1_e : float -> result
 
 (* LEGENDRE functions *)
 external legendre_P1 : float -> float
-    = "ml_gsl_sf_legendre_P1" "gsl_sf_legendre_P1" "float"
+    = "ml_gsl_sf_legendre_P1"
 
 external legendre_P1_e : float -> result
     = "ml_gsl_sf_legendre_P1_e"
 
 
 external legendre_P2 : float -> float
-    = "ml_gsl_sf_legendre_P2" "gsl_sf_legendre_P2" "float"
+    = "ml_gsl_sf_legendre_P2"
 
 external legendre_P2_e : float -> result
     = "ml_gsl_sf_legendre_P2_e"
 
 
 external legendre_P3 : float -> float
-    = "ml_gsl_sf_legendre_P3" "gsl_sf_legendre_P3" "float"
+    = "ml_gsl_sf_legendre_P3"
 
 external legendre_P3_e : float -> result
     = "ml_gsl_sf_legendre_P3_e"
@@ -1122,14 +1122,14 @@ external  legendre_Pl_array : float -> float array -> unit
 
 
 external legendre_Q0 : float -> float
-    = "ml_gsl_sf_legendre_Q0" "gsl_sf_legendre_Q0" "float"
+    = "ml_gsl_sf_legendre_Q0"
 
 external legendre_Q0_e : float -> result
     = "ml_gsl_sf_legendre_Q0_e"
 
 
 external legendre_Q1 : float -> float
-    = "ml_gsl_sf_legendre_Q1" "gsl_sf_legendre_Q1" "float"
+    = "ml_gsl_sf_legendre_Q1"
 
 external legendre_Q1_e : float -> result
     = "ml_gsl_sf_legendre_Q1_e"
@@ -1173,14 +1173,14 @@ external  legendre_array_size : int -> int -> int
 
 (* LOGARITHM and related functions *)
 external log : float -> float
-    = "ml_gsl_sf_log" "gsl_sf_log" "float"
+    = "ml_gsl_sf_log"
 
 external log_e : float -> result
     = "ml_gsl_sf_log_e"
 
 
 external log_abs : float -> float
-    = "ml_gsl_sf_log_abs" "gsl_sf_log_abs" "float"
+    = "ml_gsl_sf_log_abs"
 
 external log_abs_e : float -> result
     = "ml_gsl_sf_log_abs_e"
@@ -1191,14 +1191,14 @@ external  log_complex_e : float -> float -> result * result
 
 
 external log_1plusx : float -> float
-    = "ml_gsl_sf_log_1plusx" "gsl_sf_log_1plusx" "float"
+    = "ml_gsl_sf_log_1plusx"
 
 external log_1plusx_e : float -> result
     = "ml_gsl_sf_log_1plusx_e"
 
 
 external log_1plusx_mx : float -> float
-    = "ml_gsl_sf_log_1plusx_mx" "gsl_sf_log_1plusx_mx" "float"
+    = "ml_gsl_sf_log_1plusx_mx"
 
 external log_1plusx_mx_e : float -> result
     = "ml_gsl_sf_log_1plusx_mx_e"
@@ -1223,14 +1223,14 @@ external psi_int_e : int -> result
 
 
 external psi : float -> float
-    = "ml_gsl_sf_psi" "gsl_sf_psi" "float"
+    = "ml_gsl_sf_psi"
 
 external psi_e : float -> result
     = "ml_gsl_sf_psi_e"
 
 
 external psi_1piy : float -> float
-    = "ml_gsl_sf_psi_1piy" "gsl_sf_psi_1piy" "float"
+    = "ml_gsl_sf_psi_1piy"
 
 external psi_1piy_e : float -> result
     = "ml_gsl_sf_psi_1piy_e"
@@ -1248,7 +1248,7 @@ external psi_1_int_e : int -> result
 
 
 external psi_1 : float -> float
-    = "ml_gsl_sf_psi_1" "gsl_sf_psi_1" "float"
+    = "ml_gsl_sf_psi_1"
 
 external psi_1_e : float -> result
     = "ml_gsl_sf_psi_1_e"
@@ -1264,14 +1264,14 @@ external psi_n_e : int -> float -> result
 
 (* SYNCHROTRON functions *)
 external synchrotron_1 : float -> float
-    = "ml_gsl_sf_synchrotron_1" "gsl_sf_synchrotron_1" "float"
+    = "ml_gsl_sf_synchrotron_1"
 
 external synchrotron_1_e : float -> result
     = "ml_gsl_sf_synchrotron_1_e"
 
 
 external synchrotron_2 : float -> float
-    = "ml_gsl_sf_synchrotron_2" "gsl_sf_synchrotron_2" "float"
+    = "ml_gsl_sf_synchrotron_2"
 
 external synchrotron_2_e : float -> result
     = "ml_gsl_sf_synchrotron_2_e"
@@ -1280,28 +1280,28 @@ external synchrotron_2_e : float -> result
 
 (* TRANSPORT functions *)
 external transport_2 : float -> float
-    = "ml_gsl_sf_transport_2" "gsl_sf_transport_2" "float"
+    = "ml_gsl_sf_transport_2"
 
 external transport_2_e : float -> result
     = "ml_gsl_sf_transport_2_e"
 
 
 external transport_3 : float -> float
-    = "ml_gsl_sf_transport_3" "gsl_sf_transport_3" "float"
+    = "ml_gsl_sf_transport_3"
 
 external transport_3_e : float -> result
     = "ml_gsl_sf_transport_3_e"
 
 
 external transport_4 : float -> float
-    = "ml_gsl_sf_transport_4" "gsl_sf_transport_4" "float"
+    = "ml_gsl_sf_transport_4"
 
 external transport_4_e : float -> result
     = "ml_gsl_sf_transport_4_e"
 
 
 external transport_5 : float -> float
-    = "ml_gsl_sf_transport_5" "gsl_sf_transport_5" "float"
+    = "ml_gsl_sf_transport_5"
 
 external transport_5_e : float -> result
     = "ml_gsl_sf_transport_5_e"
@@ -1310,28 +1310,28 @@ external transport_5_e : float -> result
 
 (* TRIGONOMETRIC functions *)
 external sin : float -> float
-    = "ml_gsl_sf_sin" "gsl_sf_sin" "float"
+    = "ml_gsl_sf_sin"
 
 external sin_e : float -> result
     = "ml_gsl_sf_sin_e"
 
 
 external cos : float -> float
-    = "ml_gsl_sf_cos" "gsl_sf_cos" "float"
+    = "ml_gsl_sf_cos"
 
 external cos_e : float -> result
     = "ml_gsl_sf_cos_e"
 
 
 external hypot : float -> float
-    = "ml_gsl_sf_hypot" "gsl_sf_hypot" "float"
+    = "ml_gsl_sf_hypot"
 
 external hypot_e : float -> result
     = "ml_gsl_sf_hypot_e"
 
 
 external sinc : float -> float
-    = "ml_gsl_sf_sinc" "gsl_sf_sinc" "float"
+    = "ml_gsl_sf_sinc"
 
 external sinc_e : float -> result
     = "ml_gsl_sf_sinc_e"
@@ -1350,14 +1350,14 @@ external  complex_logsin_e : float -> float -> result * result
 
 
 external lnsinh : float -> float
-    = "ml_gsl_sf_lnsinh" "gsl_sf_lnsinh" "float"
+    = "ml_gsl_sf_lnsinh"
 
 external lnsinh_e : float -> result
     = "ml_gsl_sf_lnsinh_e"
 
 
 external lncosh : float -> float
-    = "ml_gsl_sf_lncosh" "gsl_sf_lncosh" "float"
+    = "ml_gsl_sf_lncosh"
 
 external lncosh_e : float -> result
     = "ml_gsl_sf_lncosh_e"
@@ -1397,14 +1397,14 @@ external zeta_int_e : int -> result
 
 
 external zeta : float -> float
-    = "ml_gsl_sf_zeta" "gsl_sf_zeta" "float"
+    = "ml_gsl_sf_zeta"
 
 external zeta_e : float -> result
     = "ml_gsl_sf_zeta_e"
 
 
 external hzeta : float -> float -> float
-    = "ml_gsl_sf_hzeta" "gsl_sf_hzeta" "float"
+    = "ml_gsl_sf_hzeta"
 
 external hzeta_e : float -> float -> result
     = "ml_gsl_sf_hzeta_e"
@@ -1418,7 +1418,7 @@ external eta_int_e : int -> result
 
 
 external eta : float -> float
-    = "ml_gsl_sf_eta" "gsl_sf_eta" "float"
+    = "ml_gsl_sf_eta"
 
 external eta_e : float -> result
     = "ml_gsl_sf_eta_e"

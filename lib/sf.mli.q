@@ -142,8 +142,8 @@ open Fun
 << fermi_dirac_inc_0 float float >>
 
 (* Gamma function *)
-<:ext< gamma@ml_gsl_sf_gamma@,float,float >>
-<:ext< gamma_e@ml_gsl_sf_gamma_e@,float,result >>
+<:ext< gamma@ml_gsl_sf_gamma,float,float >>
+<:ext< gamma_e@ml_gsl_sf_gamma_e,float,result >>
 << lngamma float >>
 <:ext< lngamma_sgn_e@ml_gsl_sf_lngamma_sgn_e,float,result * float >>
 << gammastar float >>

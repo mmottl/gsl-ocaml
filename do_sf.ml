@@ -68,6 +68,8 @@ let sf_quot =
   let b = Buffer.create 256 in
   fun str ->
     let wl = words_list str in
+    let float, wl = List.partition ((=) "@float") wl in
+    let float = float <> [] in
     match wl with
     | [] -> failwith "sf_quot: empty quotation"
     | _ :: [] -> failwith "sf_quot: no arguments"
@@ -75,9 +77,9 @@ let sf_quot =
         let quot =
           Buffer.clear b ;
           Printf.bprintf b "%s@ml_gsl_sf_%s%s," name name
-          (if List.for_all ((=) "float") args
-          then "@" ^ "gsl_sf_" ^ name
-          else "") ;
+                         (if float && List.for_all ((=) "float") args
+                          then "@" ^ "gsl_sf_" ^ name
+                          else "");
           List.iter (fun a -> Printf.bprintf b "%s," a) args ;
           Printf.bprintf b "float" ;
           Buffer.contents b
@@ -94,55 +96,46 @@ let sf_quot =
 
 let bessel_quot str =
   match words_list str with
-  | "cyl" :: letter :: _ ->
+  | "cyl" :: letter :: tl ->
+      let tl = String.concat " " tl in
       String.concat ""
-        [ sf_quot
-            ("bessel_" ^ letter ^ "0 float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "1 float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "n int float") ;
+        [ sf_quot ("bessel_" ^ letter ^ "0 float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "1 float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "n int float " ^ tl);
           ext_quot
             (Printf.sprintf
                "bessel_%sn_array@ml_gsl_sf_bessel_%sn_array,\
                   int,float,float array,unit" letter letter) ;
         ]
-  | "cyl_scaled" :: letter :: _ ->
+  | "cyl_scaled" :: letter :: tl ->
+      let tl = String.concat " " tl in
       String.concat ""
-        [ sf_quot
-            ("bessel_" ^ letter ^ "0_scaled float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "1_scaled float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "n_scaled int float") ;
+        [ sf_quot ("bessel_" ^ letter ^ "0_scaled float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "1_scaled float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "n_scaled int float " ^ tl);
           ext_quot
             (Printf.sprintf
                "bessel_%sn_scaled_array@ml_gsl_sf_bessel_%sn_scaled_array,\
                   int,float,float array,unit" letter letter) ;
         ]
-  | "sph" :: letter :: _ ->
+  | "sph" :: letter :: tl ->
+      let tl = String.concat " " tl in
       String.concat ""
-        [ sf_quot
-            ("bessel_" ^ letter ^ "0 float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "1 float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "2 float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "l int float") ;
+        [ sf_quot ("bessel_" ^ letter ^ "0 float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "1 float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "2 float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "l int float " ^ tl);
           ext_quot
             (Printf.sprintf
                "bessel_%sl_array@ml_gsl_sf_bessel_%sl_array,\
                   int,float,float array,unit" letter letter) ;
         ]
-  | "sph_scaled" :: letter :: _ ->
+  | "sph_scaled" :: letter :: tl ->
+      let tl = String.concat " " tl in
       String.concat ""
-        [ sf_quot
-            ("bessel_" ^ letter ^ "0_scaled float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "1_scaled float") ;
-          sf_quot
-            ("bessel_" ^ letter ^ "l_scaled int float") ;
+        [ sf_quot ("bessel_" ^ letter ^ "0_scaled float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "1_scaled float " ^ tl);
+          sf_quot ("bessel_" ^ letter ^ "l_scaled int float " ^ tl);
           ext_quot
             (Printf.sprintf
                "bessel_%sl_scaled_array@ml_gsl_sf_bessel_%sl_scaled_array,\
