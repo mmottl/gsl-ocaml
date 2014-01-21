@@ -1323,10 +1323,10 @@ external cos_e : float -> result
     = "ml_gsl_sf_cos_e"
 
 
-external hypot : float -> float
+external hypot : float -> float -> float
     = "ml_gsl_sf_hypot"
 
-external hypot_e : float -> result
+external hypot_e : float -> float -> result
     = "ml_gsl_sf_hypot_e"
 
 

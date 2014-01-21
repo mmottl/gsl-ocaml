@@ -237,7 +237,7 @@ open Fun
 (* TRIGONOMETRIC functions *)
 << sin float >>
 << cos float >>
-<< hypot float >>
+<< hypot float float >>
 << sinc float >>
 <:ext< complex_sin_e@ml_gsl_sf_complex_sin_e,float,float,result * result >>
 <:ext< complex_cos_e@ml_gsl_sf_complex_cos_e,float,float,result * result >>
