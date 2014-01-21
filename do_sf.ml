@@ -4,6 +4,8 @@
 
 #load "str.cma"
 
+open Printf
+
 let split ?(collapse=false) c s =
   let len = String.length s in
   let rec proc accu n =
@@ -47,20 +49,19 @@ let ext_quot =
         | [] -> failwith "ext_quot: too many C function names"
         in
         begin
-          Printf.bprintf b "external %s : " name ;
-          Printf.bprintf b "%s" arg1 ;
-          List.iter (fun a -> Printf.bprintf b " -> %s" a) argr ;
-          Printf.bprintf b "\n    = " ;
-          if List.length args > 6
-          then Printf.bprintf b "\"%s_bc\" " name_c ;
+          bprintf b "external %s : Ms" name arg1 ;
+          List.iter (fun a -> bprintf b " -> %s" a) argr ;
+          bprintf b "\n    = " ;
+          if List.length args > 6 then
+            bprintf b "\"%s_bc\" " name_c ;
           if (List.for_all ((=) "float") args) && name_float <> ""
           then (
-            if List.length args <= 6
-            then Printf.bprintf b "\"%s\"" name_c ;
-            Printf.bprintf b " \"%s\" \"float\"" name_float )
-          else Printf.bprintf b "\"%s\"" name_c ;
-          Printf.bprintf b "\n\n"
-        end ;
+            if List.length args <= 6 then bprintf b "\"%s\"" name_c ;
+            bprintf b " \"%s\" \"float\"" name_float )
+          else
+            bprintf b "\"%s\"" name_c ;
+          bprintf b "\n\n"
+        end;
         Buffer.contents b
 
 
@@ -76,19 +77,19 @@ let sf_quot =
     | name :: args ->
         let quot =
           Buffer.clear b ;
-          Printf.bprintf b "%s@ml_gsl_sf_%s%s," name name
-                         (if float && List.for_all ((=) "float") args
-                          then "@" ^ "gsl_sf_" ^ name
-                          else "");
-          List.iter (fun a -> Printf.bprintf b "%s," a) args ;
-          Printf.bprintf b "float" ;
+          bprintf b "%s@ml_gsl_sf_%s%s," name name
+                  (if float && List.for_all ((=) "float") args then
+                     "@" ^ "gsl_sf_" ^ name
+                   else "");
+          List.iter (fun a -> bprintf b "%s," a) args ;
+          bprintf b "float" ;
           Buffer.contents b
         in
         let quot_res =
           Buffer.clear b ;
-          Printf.bprintf b "%s_e@ml_gsl_sf_%s_e," name name ;
-          List.iter (fun a -> Printf.bprintf b "%s," a) args ;
-          Printf.bprintf b "result" ;
+          bprintf b "%s_e@ml_gsl_sf_%s_e," name name ;
+          List.iter (fun a -> bprintf b "%s," a) args ;
+          bprintf b "result" ;
           Buffer.contents b
         in
         String.concat ""
@@ -103,9 +104,8 @@ let bessel_quot str =
           sf_quot ("bessel_" ^ letter ^ "1 float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "n int float " ^ tl);
           ext_quot
-            (Printf.sprintf
-               "bessel_%sn_array@ml_gsl_sf_bessel_%sn_array,\
-                  int,float,float array,unit" letter letter) ;
+            (sprintf "bessel_%sn_array@ml_gsl_sf_bessel_%sn_array,\
+                      int,float,float array,unit" letter letter) ;
         ]
   | "cyl_scaled" :: letter :: tl ->
       let tl = String.concat " " tl in
@@ -114,9 +114,9 @@ let bessel_quot str =
           sf_quot ("bessel_" ^ letter ^ "1_scaled float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "n_scaled int float " ^ tl);
           ext_quot
-            (Printf.sprintf
+            (sprintf
                "bessel_%sn_scaled_array@ml_gsl_sf_bessel_%sn_scaled_array,\
-                  int,float,float array,unit" letter letter) ;
+                int,float,float array,unit" letter letter) ;
         ]
   | "sph" :: letter :: tl ->
       let tl = String.concat " " tl in
@@ -126,9 +126,8 @@ let bessel_quot str =
           sf_quot ("bessel_" ^ letter ^ "2 float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "l int float " ^ tl);
           ext_quot
-            (Printf.sprintf
-               "bessel_%sl_array@ml_gsl_sf_bessel_%sl_array,\
-                  int,float,float array,unit" letter letter) ;
+            (sprintf "bessel_%sl_array@ml_gsl_sf_bessel_%sl_array,\
+                      int,float,float array,unit" letter letter) ;
         ]
   | "sph_scaled" :: letter :: tl ->
       let tl = String.concat " " tl in
@@ -137,7 +136,7 @@ let bessel_quot str =
           sf_quot ("bessel_" ^ letter ^ "1_scaled float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "l_scaled int float " ^ tl);
           ext_quot
-            (Printf.sprintf
+            (sprintf
                "bessel_%sl_scaled_array@ml_gsl_sf_bessel_%sl_scaled_array,\
                   int,float,float array,unit" letter letter) ;
         ]
