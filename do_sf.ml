@@ -26,6 +26,26 @@ let words_list s =
   split ~collapse:true ' ' s
 
 
+let is_space = function
+  | ' ' | '\012' | '\n' | '\r' | '\t' -> true
+  | _ -> false
+
+let trim s =
+  (* From String, OCaml 4.01 *)
+  let len = String.length s in
+  let i = ref 0 in
+  while !i < len && is_space s.[!i] do incr i done;
+  let j = ref (len - 1) in
+  while !j >= !i && is_space s.[!j] do
+    decr j
+  done;
+  if !i = 0 && !j = len - 1 then
+    s
+  else if !j >= !i then
+    String.sub s !i (!j - !i + 1)
+  else
+    ""
+
 (** Quotation for externals :
    << fun1,arg1,arg2 >> ->
       external fun1 : arg1 -> arg2 = "fun1"
@@ -49,8 +69,8 @@ let ext_quot =
          | name :: name_c :: name_f :: _ -> name, name_c, name_f
          | [] -> failwith "ext_quot: too many C function names"
        in
-       Format.fprintf bh "@[<2>external %s : %s" name arg1 ;
-       List.iter (fun a -> Format.fprintf bh " -> %s" a) argr ;
+       Format.fprintf bh "@[<2>external %s : %s" (trim name) (trim arg1);
+       List.iter (fun a -> Format.fprintf bh " -> %s" (trim a)) argr;
        Format.fprintf bh "@ = " ;
        if List.length args > 6 then
          Format.fprintf bh "\"%s_bc\"" name_c ;
