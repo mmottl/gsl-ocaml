@@ -9,18 +9,19 @@ type poly = float array
 
 (** {3 Polynomial Evaluation} *)
 
-external eval : poly -> float -> float 
-    = "ml_gsl_poly_eval"
+external eval : poly -> float -> float = "ml_gsl_poly_eval"
+(** [eval p x] returns [p.(0) +. p.(1) *. x +. p.(2) *. x**2 +. ... +. p.(n)
+    *. x**n] where [n = Array.length p]. *)
 
 (** {3 Quadratic Equations} *)
 
-type quad_sol = 
-  | Quad_0 
+type quad_sol =
+  | Quad_0
   | Quad_2 of float * float
 external solve_quadratic : a:float -> b:float -> c:float -> quad_sol
     = "ml_gsl_poly_solve_quadratic"
 
-external complex_solve_quadratic : 
+external complex_solve_quadratic :
     a:float -> b:float -> c:float -> complex * complex
 	= "ml_gsl_poly_complex_solve_quadratic"
 
