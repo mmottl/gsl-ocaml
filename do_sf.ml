@@ -36,33 +36,33 @@ let words_list s =
 *)
 let ext_quot =
   let b = Buffer.create 256 in
+  let bh = Format.formatter_of_buffer b in
   fun str ->
     Buffer.clear b ;
     match split ',' str with
     | [] -> failwith "ext_quot: empty quotation"
     | _ :: [] -> failwith "ext_quot: no arguments"
     | name_r :: (arg1 :: argr as args) ->
-        let (name, name_c, name_float) = match split '@' name_r with
-        | name :: [] -> name, name, ""
-        | name :: name_c :: [] -> name, name_c, ""
-        | name :: name_c :: name_f :: _ -> name, name_c, name_f
-        | [] -> failwith "ext_quot: too many C function names"
-        in
-        begin
-          bprintf b "external %s : Ms" name arg1 ;
-          List.iter (fun a -> bprintf b " -> %s" a) argr ;
-          bprintf b "\n    = " ;
-          if List.length args > 6 then
-            bprintf b "\"%s_bc\" " name_c ;
-          if (List.for_all ((=) "float") args) && name_float <> ""
-          then (
-            if List.length args <= 6 then bprintf b "\"%s\"" name_c ;
-            bprintf b " \"%s\" \"float\"" name_float )
-          else
-            bprintf b "\"%s\"" name_c ;
-          bprintf b "\n\n"
-        end;
-        Buffer.contents b
+       let (name, name_c, name_float) = match split '@' name_r with
+         | name :: [] -> name, name, ""
+         | name :: name_c :: [] -> name, name_c, ""
+         | name :: name_c :: name_f :: _ -> name, name_c, name_f
+         | [] -> failwith "ext_quot: too many C function names"
+       in
+       Format.fprintf bh "@[<2>external %s : %s" name arg1 ;
+       List.iter (fun a -> Format.fprintf bh " -> %s" a) argr ;
+       Format.fprintf bh "@ = " ;
+       if List.length args > 6 then
+         Format.fprintf bh "\"%s_bc\"" name_c ;
+       if (List.for_all ((=) "float") args) && name_float <> "" then (
+         if List.length args <= 6 then
+           Format.fprintf bh "\"%s\"" name_c ;
+         Format.fprintf bh " \"%s\" \"float\"" name_float
+       )
+       else
+         Format.fprintf bh "\"%s\"" name_c ;
+       Format.fprintf bh "@]@\n%!";
+       Buffer.contents b
 
 
 let sf_quot =
@@ -92,8 +92,7 @@ let sf_quot =
           bprintf b "result" ;
           Buffer.contents b
         in
-        String.concat ""
-          (List.map ext_quot [ quot ; quot_res ])
+        String.concat "" (List.map ext_quot [ quot ; quot_res ])
 
 let bessel_quot str =
   match words_list str with
