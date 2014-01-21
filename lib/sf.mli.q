@@ -95,14 +95,14 @@ open Fun
 (* FIXME: elljac_e *)
 
 (* ERROR function *)
-<< erf float >>
-<< erfc float >>
-<< log_erfc float >>
-<< erf_Z float >>
-<< erf_Q float >>
+<< erf float @float >>
+<< erfc float @float >>
+<< log_erfc float @float >>
+<< erf_Z float @float >>
+<< erf_Q float @float >>
 
 (* EXPONENTIAL functions *)
-<< exp float >>
+<< exp float @float >>
 <:ext< exp_e10@ml_gsl_sf_exp_e10_e,float,result_e10 >>
 << exp_mult float float >>
 <:ext< exp_mult_e10@ml_gsl_sf_exp_mult_e10_e,float,float,result_e10 >>
@@ -235,10 +235,10 @@ open Fun
 << transport_5 float >>
 
 (* TRIGONOMETRIC functions *)
-<< sin float >>
-<< cos float >>
+<< sin float @float >>
+<< cos float @float >>
 << hypot float float >>
-<< sinc float >>
+<< sinc float @float >>
 <:ext< complex_sin_e@ml_gsl_sf_complex_sin_e,float,float,result * result >>
 <:ext< complex_cos_e@ml_gsl_sf_complex_cos_e,float,float,result * result >>
 <:ext< complex_logsin_e@ml_gsl_sf_complex_logsin_e,float,float,result * result >>
