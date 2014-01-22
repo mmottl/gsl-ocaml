@@ -4,8 +4,8 @@
 
 (** Error reporting *)
 
-(** version of GSL library *)
 val version : string
+(** Version of GSL library. *)
 
 type errno =
   | CONTINUE (** iteration has not converged *)
@@ -44,10 +44,11 @@ type errno =
   | EOF      (** end of file *)
 
 exception Gsl_exn of errno * string
+(** [Gsl.Error.Gsl_exn] is raised by GSL to indicate an error.  The
+    second argument gives the reason for the error. *)
 
-
-(** [Gsl.Error.init ()] setups the GSL error handler so that
-    the OCaml function {!Gsl.Error.handler} gets called in case of an error.
+(** [GSL.Error.init ()] setups the GSL error handler so that
+    the OCaml function {!Error.handler} gets called in case of an error.
     This behavior is the default now. *)
 val init   : unit -> unit
 
@@ -56,7 +57,7 @@ val init   : unit -> unit
 val uninit : unit -> unit
 
 (** The OCaml handler for GSL errors. Initially set to
-    {!Gsl.Error.default_handler}.  If the function returns, the error
+    {!Error.default_handler}.  If the function returns, the error
     is ignored and execution of the GSL function continues.
 
     Redefine it so as to ignore some particular errors ([EOVRFLW] or
@@ -64,7 +65,7 @@ val uninit : unit -> unit
 val handler : (errno -> string -> unit) ref
 
 (** The default OCaml handler for GSL errors. It simply raises the
-    {!Gsl.Error.Gsl_exn} exception. *)
+    {!Error.Gsl_exn} exception. *)
 val default_handler : errno -> string -> 'a
 
 val strerror : errno -> string
