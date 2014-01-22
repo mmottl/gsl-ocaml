@@ -1,9 +1,9 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 20f1320c01a6d305f75f59bdd25a283e) *)
+(* DO NOT EDIT (digest: a7cf00a89a707c213ca63e4a81991dbd) *)
 This is the INSTALL file for the gsl distribution.
 
 This package uses OASIS to generate its build system. See section OASIS for
-full information. 
+full information.
 
 Dependencies
 ============

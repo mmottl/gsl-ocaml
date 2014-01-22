@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: aace118cbbb06f99495946c5af2c0c2e)
+# DO NOT EDIT (digest: ed754c8d7d248f374d490c5e4f80764f)
 mlgsl_blas.o
 mlgsl_blas_complex.o
 mlgsl_blas_complex_float.o
@@ -9,7 +9,7 @@ mlgsl_cdf.o
 mlgsl_cheb.o
 mlgsl_combi.o
 mlgsl_complex.o
-mlgsl_diff.o
+mlgsl_deriv.o
 mlgsl_eigen.o
 mlgsl_error.o
 mlgsl_fft.o

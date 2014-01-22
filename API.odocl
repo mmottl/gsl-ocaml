@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: abb8ae7353f835703db3ce4139a9e87e)
+# DO NOT EDIT (digest: 70c771b61e921ff6b11bed153866720d)
 lib/Blas
 lib/Blas_flat
 lib/Blas_gen
@@ -8,7 +8,7 @@ lib/Cdf
 lib/Cheb
 lib/Combi
 lib/Const
-lib/Diff
+lib/Deriv
 lib/Eigen
 lib/Error
 lib/Fft

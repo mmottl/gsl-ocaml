@@ -45,7 +45,7 @@ Library gsl
                   Cheb,
                   Combi,
                   Const,
-                  Diff,
+                  Deriv,
                   Eigen,
                   Error,
                   Fft,
@@ -96,7 +96,7 @@ Library gsl
                   mlgsl_cheb.c,
                   mlgsl_combi.c,
                   mlgsl_complex.c,
-                  mlgsl_diff.c,
+                  mlgsl_deriv.c,
                   mlgsl_eigen.c,
                   mlgsl_error.c,
                   mlgsl_fft.c,
@@ -205,9 +205,9 @@ Executable const_ex
   Install:        false
   CompiledObject: best
 
-Executable diff_ex
+Executable deriv_ex
   Path:           examples
-  MainIs:         diff_ex.ml
+  MainIs:         deriv_ex.ml
   Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
