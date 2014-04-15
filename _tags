@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 31e14fe3d1192ecb11b8777f406b3b65)
+# DO NOT EDIT (digest: 062f840a3733c02aa74c8cfaf651d916)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -164,103 +164,106 @@
 "lib/mlgsl_vector_float.c": pkg_bigarray
 "lib/mlgsl_wavelet.c": pkg_bigarray
 # Executable blas_ex
-<examples/blas_ex.{native,byte}>: use_gsl
 <examples/blas_ex.{native,byte}>: pkg_bigarray
+<examples/blas_ex.{native,byte}>: use_gsl
+# Executable blas_speed_test
+<examples/blas_speed_test.{native,byte}>: pkg_bigarray
+<examples/blas_speed_test.{native,byte}>: use_gsl
 # Executable bspline_ex
-<examples/bspline_ex.{native,byte}>: use_gsl
 <examples/bspline_ex.{native,byte}>: pkg_bigarray
+<examples/bspline_ex.{native,byte}>: use_gsl
 # Executable cheb_ex
-<examples/cheb_ex.{native,byte}>: use_gsl
 <examples/cheb_ex.{native,byte}>: pkg_bigarray
+<examples/cheb_ex.{native,byte}>: use_gsl
 # Executable combi_ex
-<examples/combi_ex.{native,byte}>: use_gsl
 <examples/combi_ex.{native,byte}>: pkg_bigarray
+<examples/combi_ex.{native,byte}>: use_gsl
 # Executable const_ex
-<examples/const_ex.{native,byte}>: use_gsl
 <examples/const_ex.{native,byte}>: pkg_bigarray
+<examples/const_ex.{native,byte}>: use_gsl
 # Executable deriv_ex
-<examples/deriv_ex.{native,byte}>: use_gsl
 <examples/deriv_ex.{native,byte}>: pkg_bigarray
+<examples/deriv_ex.{native,byte}>: use_gsl
 # Executable eigen_ex
-<examples/eigen_ex.{native,byte}>: use_gsl
 <examples/eigen_ex.{native,byte}>: pkg_bigarray
+<examples/eigen_ex.{native,byte}>: use_gsl
 # Executable fft_c
-<examples/fft_c.{native,byte}>: use_gsl
 <examples/fft_c.{native,byte}>: pkg_bigarray
+<examples/fft_c.{native,byte}>: use_gsl
 # Executable fft_c2
-<examples/fft_c2.{native,byte}>: use_gsl
 <examples/fft_c2.{native,byte}>: pkg_bigarray
+<examples/fft_c2.{native,byte}>: use_gsl
 # Executable fft_hc
-<examples/fft_hc.{native,byte}>: use_gsl
 <examples/fft_hc.{native,byte}>: pkg_bigarray
+<examples/fft_hc.{native,byte}>: use_gsl
 # Executable fit_ex
-<examples/fit_ex.{native,byte}>: use_gsl
 <examples/fit_ex.{native,byte}>: pkg_bigarray
+<examples/fit_ex.{native,byte}>: use_gsl
 # Executable histo_ex
-<examples/histo_ex.{native,byte}>: use_gsl
 <examples/histo_ex.{native,byte}>: pkg_bigarray
+<examples/histo_ex.{native,byte}>: use_gsl
 # Executable integration_ex
-<examples/integration_ex.{native,byte}>: use_gsl
 <examples/integration_ex.{native,byte}>: pkg_bigarray
+<examples/integration_ex.{native,byte}>: use_gsl
 # Executable interp_ex
-<examples/interp_ex.{native,byte}>: use_gsl
 <examples/interp_ex.{native,byte}>: pkg_bigarray
+<examples/interp_ex.{native,byte}>: use_gsl
 # Executable linalg_ex
-<examples/linalg_ex.{native,byte}>: use_gsl
 <examples/linalg_ex.{native,byte}>: pkg_bigarray
+<examples/linalg_ex.{native,byte}>: use_gsl
 # Executable min_ex
-<examples/min_ex.{native,byte}>: use_gsl
 <examples/min_ex.{native,byte}>: pkg_bigarray
+<examples/min_ex.{native,byte}>: use_gsl
 # Executable monte_ex
-<examples/monte_ex.{native,byte}>: use_gsl
 <examples/monte_ex.{native,byte}>: pkg_bigarray
+<examples/monte_ex.{native,byte}>: use_gsl
 # Executable multifit_data_ex
-<examples/multifit_data_ex.{native,byte}>: use_gsl
 <examples/multifit_data_ex.{native,byte}>: pkg_bigarray
+<examples/multifit_data_ex.{native,byte}>: use_gsl
 # Executable multifit_ex
-<examples/multifit_ex.{native,byte}>: use_gsl
 <examples/multifit_ex.{native,byte}>: pkg_bigarray
+<examples/multifit_ex.{native,byte}>: use_gsl
 # Executable multifit_nlin_ex
-<examples/multifit_nlin_ex.{native,byte}>: use_gsl
 <examples/multifit_nlin_ex.{native,byte}>: pkg_bigarray
+<examples/multifit_nlin_ex.{native,byte}>: use_gsl
 # Executable multimin_ex
-<examples/multimin_ex.{native,byte}>: use_gsl
 <examples/multimin_ex.{native,byte}>: pkg_bigarray
+<examples/multimin_ex.{native,byte}>: use_gsl
 # Executable multiroot_ex
-<examples/multiroot_ex.{native,byte}>: use_gsl
 <examples/multiroot_ex.{native,byte}>: pkg_bigarray
+<examples/multiroot_ex.{native,byte}>: use_gsl
 # Executable odeiv_ex
-<examples/odeiv_ex.{native,byte}>: use_gsl
 <examples/odeiv_ex.{native,byte}>: pkg_bigarray
+<examples/odeiv_ex.{native,byte}>: use_gsl
 # Executable permut_ex
-<examples/permut_ex.{native,byte}>: use_gsl
 <examples/permut_ex.{native,byte}>: pkg_bigarray
+<examples/permut_ex.{native,byte}>: use_gsl
 # Executable qrng_ex
-<examples/qrng_ex.{native,byte}>: use_gsl
 <examples/qrng_ex.{native,byte}>: pkg_bigarray
+<examples/qrng_ex.{native,byte}>: use_gsl
 # Executable rng_ex
-<examples/rng_ex.{native,byte}>: use_gsl
 <examples/rng_ex.{native,byte}>: pkg_bigarray
+<examples/rng_ex.{native,byte}>: use_gsl
 # Executable root_ex
-<examples/root_ex.{native,byte}>: use_gsl
 <examples/root_ex.{native,byte}>: pkg_bigarray
+<examples/root_ex.{native,byte}>: use_gsl
 # Executable siman_ex
-<examples/siman_ex.{native,byte}>: use_gsl
 <examples/siman_ex.{native,byte}>: pkg_bigarray
+<examples/siman_ex.{native,byte}>: use_gsl
 # Executable siman_tsp_ex
-<examples/siman_tsp_ex.{native,byte}>: use_gsl
 <examples/siman_tsp_ex.{native,byte}>: pkg_bigarray
+<examples/siman_tsp_ex.{native,byte}>: use_gsl
 # Executable stats_ex
-<examples/stats_ex.{native,byte}>: use_gsl
 <examples/stats_ex.{native,byte}>: pkg_bigarray
+<examples/stats_ex.{native,byte}>: use_gsl
 # Executable sum_ex
-<examples/sum_ex.{native,byte}>: use_gsl
 <examples/sum_ex.{native,byte}>: pkg_bigarray
+<examples/sum_ex.{native,byte}>: use_gsl
 # Executable wavelet_ex
-<examples/wavelet_ex.{native,byte}>: use_gsl
 <examples/wavelet_ex.{native,byte}>: pkg_bigarray
-<examples/*.ml{,i}>: use_gsl
+<examples/wavelet_ex.{native,byte}>: use_gsl
 <examples/*.ml{,i}>: pkg_bigarray
+<examples/*.ml{,i}>: use_gsl
 # OASIS_STOP
 
 true: -traverse
