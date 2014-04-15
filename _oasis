@@ -9,8 +9,7 @@ Description:      GSL - Bindings to the GNU Scientific Library
 Authors:          Olivier Andrieu <oandrieu@gmail.com>,
                   Markus Mottl <markus.mottl@gmail.com>
 Copyrights:       (C) 2002-2012 Olivier Andrieu <oandrieu@gmail.com>
-Maintainers:      Olivier Andrieu <oandrieu@gmail.com>,
-                  Markus Mottl <markus.mottl@gmail.com>
+Maintainers:      Markus Mottl <markus.mottl@gmail.com>
 LicenseFile:      COPYING.txt
 License:          GPL-3+
 OCamlVersion:     >= 3.12
@@ -168,6 +167,14 @@ Flag examples
 Executable blas_ex
   Path:           examples
   MainIs:         blas_ex.ml
+  Build$:         flag(examples)
+  BuildDepends:   gsl
+  Install:        false
+  CompiledObject: best
+
+Executable blas_speed_test
+  Path:           examples
+  MainIs:         blas_speed_test.ml
   Build$:         flag(examples)
   BuildDepends:   gsl
   Install:        false
