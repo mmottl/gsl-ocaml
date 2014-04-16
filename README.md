@@ -47,7 +47,6 @@ the build process.  For example, if you are installing the package via
     $ export GSL_CBLAS_LIB=-lopenblas
     $ gsl-config --libs
     -L/opt/local/lib -lgsl -lopenblas
-    $
     $ opam install gsl-ocaml
 
 The above shows that after setting the environment variable `GSL_CBLAS_LIB`,
