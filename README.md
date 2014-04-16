@@ -24,6 +24,39 @@ Installation
     $ make
     $ make install
 
+### Configuring alternative BLAS-libraries
+
+The underlying GSL-library depends on a C-implementation of the BLAS-library
+(Basic Linear Algebra Subroutines).  It comes with its own implementation,
+`gslcblas`, which GSL will link with by default, e.g.:
+
+    :::sh
+    $ gsl-config --libs
+    -L/opt/local/lib -lgsl -lgslcblas
+
+This implementation is usually considerably slower than alternatives like
+[OpenBLAS](http://www.openblas.net) or [ATLAS (Automatically Tuned Linear
+Algebra Software)](http://math-atlas.sourceforge.net) or miscellaneous
+platform-specific vendor implementations.
+
+If you want GSL-OCaml to link with another BLAS-implementation by
+default, you will need to set an environment variable before starting
+the build process.  For example, if you are installing the package via
+[OPAM](http://opam.ocamlpro.com), you may want to do the following:
+
+    $ export GSL_CBLAS_LIB=-lopenblas
+    $ gsl-config --libs
+    -L/opt/local/lib -lgsl -lopenblas
+    $
+    $ opam install gsl-ocaml
+
+The above shows that after setting the environment variable `GSL_CBLAS_LIB`,
+`gsl-config` will return the correct linking flags to the build process
+of GSL-OCaml.
+
+Note that on Mac OS X GSL-OCaml requires the Apple-specific vendor library
+`vecLib`, which is very efficient, and will automatically link with it.
+
 Documentation
 -------------
 
