@@ -53,8 +53,9 @@ The above shows that after setting the environment variable `GSL_CBLAS_LIB`,
 `gsl-config` will return the correct linking flags to the build process
 of GSL-OCaml.
 
-Note that on Mac OS X GSL-OCaml requires the Apple-specific vendor library
-`vecLib`, which is very efficient, and will automatically link with it.
+Note that on Mac OS X GSL-OCaml requires the Apple-specific, highly optimized
+vendor library `vecLib`, which is part of the Accelerate-framework, and will
+automatically link with it.
 
 Documentation
 -------------

@@ -1,5 +1,5 @@
 (* OASIS_START *)
-(* DO NOT EDIT (digest: 06d5a98b70a4f2a327ecf65d8cef9c6b) *)
+(* DO NOT EDIT (digest: d1bc0cb4d1c46c07fbfb4e1de50582ab) *)
 module OASISGettext = struct
 (* # 22 "src/oasis/OASISGettext.ml" *)
 
@@ -661,13 +661,13 @@ let package_default =
             [
                (OASISExpr.EBool true, S []);
                (OASISExpr.ETest ("system", "macosx"),
-                 S [A "-cclib"; A "-framework"; A "-cclib"; A "vecLib"])
+                 S [A "-cclib"; A "-framework"; A "-cclib"; A "Accelerate"])
             ]);
           (["oasis_library_gsl_cclib"; "ocamlmklib"; "c"],
             [
                (OASISExpr.EBool true, S []);
                (OASISExpr.ETest ("system", "macosx"),
-                 S [A "-framework"; A "vecLib"])
+                 S [A "-framework"; A "Accelerate"])
             ])
        ];
      includes = [("examples", ["lib"])]

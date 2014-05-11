@@ -1,6 +1,6 @@
 OASISFormat:      0.4
 Name:             gsl
-Version:          1.15.1
+Version:          1.15.2
 Synopsis:         GSL - Bindings to the GNU Scientific Library
 Description:      GSL - Bindings to the GNU Scientific Library
   This version branched off from Olivier Andrieu's distribution
@@ -154,7 +154,7 @@ Library gsl
 #    CCOpt+:       -Wall -pedantic -Wextra -Wunused -Wno-long-long
     CCOpt+:       -Wall -Wunused -Wno-long-long
   if system(macosx)
-    CCLib:        -framework vecLib
+    CCLib:        -framework Accelerate
   BuildDepends:   bigarray
 
 

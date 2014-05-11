@@ -1,3 +1,7 @@
+in 1.15.2  (gsl-ocaml fork)
+
+  - Fixed linking on Mac OS X Mavericks using the Accelerate-framework
+
 in 1.15.0  (gsl-ocaml fork)
 
   - Fixed superfluous Jacobian allocation when not requested for ODE solving.
