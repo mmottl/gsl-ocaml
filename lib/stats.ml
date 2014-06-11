@@ -40,7 +40,7 @@ external kurtosis_m_sd :
     = "ml_gsl_stats_kurtosis_m_sd"
 
 external lag1_autocorrelation : 
-  mean:float -> float array -> float
+  ?mean:float -> float array -> float
     = "ml_gsl_stats_lag1_autocorrelation"
 
 external covariance : 

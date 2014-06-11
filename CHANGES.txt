@@ -1,3 +1,8 @@
+in 1.15.3  (gsl-ocaml fork)
+
+  - Fixed a bug in the bindings for lag1_autocorrelation that could cause
+    segfaults (thanks to Hezekiah Carty for the bug report!)
+
 in 1.15.2  (gsl-ocaml fork)
 
   - Fixed linking on Mac OS X Mavericks using the Accelerate-framework
