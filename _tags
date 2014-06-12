@@ -269,7 +269,7 @@
 true: -traverse
 <{lib,examples}/**>: traverse
 
-<**/*.ml{,i}>: warn(Aer-44), strict_sequence, annot
+<**/*.ml{,i}>: warn(Ader-44), strict_sequence, annot
 
 <examples/multifit_ex.ml>: camlp4of
 

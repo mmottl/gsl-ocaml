@@ -1,3 +1,7 @@
+in 1.15.4  (gsl-ocaml fork)
+
+  - Relaxed warning for deprecated features to not fail with an error
+
 in 1.15.3  (gsl-ocaml fork)
 
   - Fixed a bug in the bindings for lag1_autocorrelation that could cause
