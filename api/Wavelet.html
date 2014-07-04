@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Vector_flat.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><link title="1D transforms" rel="Section" href="#3_1Dtransforms">
+<link title="2D transforms" rel="Section" href="#3_2Dtransforms">
+<title>Wavelet</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Vector_flat.html" title="Vector_flat">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Wavelet.html">Wavelet</a></h1>
+
+<pre><span class="keyword">module</span> Wavelet: <code class="code">sig</code> <a href="Wavelet.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Wavelet Transforms<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="TYPEws"><span class="keyword">type</span> <code class="type"></code>ws</span> </pre>
+
+
+<pre><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.DAUBECHIES"><span class="constructor">DAUBECHIES</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.DAUBECHIES_CENTERED"><span class="constructor">DAUBECHIES_CENTERED</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.HAAR"><span class="constructor">HAAR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.HAAR_CENTERED"><span class="constructor">HAAR_CENTERED</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.BSPLINE"><span class="constructor">BSPLINE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.BSPLINE_CENTERED"><span class="constructor">BSPLINE_CENTERED</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEdirection"><span class="keyword">type</span> <code class="type"></code>direction</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdirection.FORWARD"><span class="constructor">FORWARD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdirection.BACKWARD"><span class="constructor">BACKWARD</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Wavelet.html#TYPEkind">kind</a> -> int -> <a href="Wavelet.html#TYPEt">t</a></code></pre>
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -> string</code></pre>
+<pre><span id="VALworkspace_make"><span class="keyword">val</span> workspace_make</span> : <code class="type">int -> <a href="Wavelet.html#TYPEws">ws</a></code></pre>
+<pre><span id="VALworkspace_size"><span class="keyword">val</span> workspace_size</span> : <code class="type"><a href="Wavelet.html#TYPEws">ws</a> -> int</code></pre><br>
+<h3 id="3_1Dtransforms">1D transforms</h3><br>
+
+<pre><span id="VALtransform_array"><span class="keyword">val</span> transform_array</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       <a href="Wavelet.html#TYPEdirection">direction</a> -><br>       ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre>
+<pre><span id="VALtransform_forward"><span class="keyword">val</span> transform_forward</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre>
+<pre><span id="VALtransform_inverse"><span class="keyword">val</span> transform_inverse</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> ?stride:int -> ?off:int -> ?len:int -> float array -> unit</code></pre>
+<pre><span id="VALtransform_vector_flat"><span class="keyword">val</span> transform_vector_flat</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       <a href="Wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> <a href="Vector_flat.html#TYPEvector">Vector_flat.vector</a> -> unit</code></pre>
+<pre><span id="VALtransform_vector"><span class="keyword">val</span> transform_vector</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -> <a href="Wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> <a href="Vector.html#TYPEvector">Vector.vector</a> -> unit</code></pre>
+<pre><span id="VALtransform_gen"><span class="keyword">val</span> transform_gen</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -> <a href="Wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre><br>
+<h3 id="3_2Dtransforms">2D transforms</h3><br>
+
+<pre><code><span id="TYPEordering"><span class="keyword">type</span> <code class="type"></code>ordering</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTordering.STANDARD"><span class="constructor">STANDARD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTordering.NON_STANDARD"><span class="constructor">NON_STANDARD</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALtransform_matrix_flat"><span class="keyword">val</span> transform_matrix_flat</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       <a href="Wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> <a href="Matrix_flat.html#TYPEmatrix">Matrix_flat.matrix</a> -> unit</code></pre>
+<pre><span id="VALtransform_matrix"><span class="keyword">val</span> transform_matrix</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       <a href="Wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a> -> unit</code></pre>
+<pre><span id="VALtransform_matrix_gen"><span class="keyword">val</span> transform_matrix_gen</span> : <code class="type"><a href="Wavelet.html#TYPEt">t</a> -><br>       <a href="Wavelet.html#TYPEordering">ordering</a> -><br>       <a href="Wavelet.html#TYPEdirection">direction</a> -> ?ws:<a href="Wavelet.html#TYPEws">ws</a> -> [< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre></body></html>

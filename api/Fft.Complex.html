@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Fft.Halfcomplex.html">
+<link rel="Up" href="Fft.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><title>Fft.Complex</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Fft.Halfcomplex.html" title="Fft.Halfcomplex">Previous</a>
+&nbsp;<a class="up" href="Fft.html" title="Fft">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Fft.Complex.html">Fft.Complex</a></h1>
+
+<pre><span class="keyword">module</span> Complex: <code class="code">sig</code> <a href="Fft.Complex.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="TYPEworkspace"><span class="keyword">type</span> <code class="type"></code>workspace</span> </pre>
+
+
+<pre><span id="TYPEwavetable"><span class="keyword">type</span> <code class="type"></code>wavetable</span> </pre>
+
+
+<pre><code><span id="TYPEdirection"><span class="keyword">type</span> <code class="type"></code>direction</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdirection.Forward"><span class="constructor">Forward</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdirection.Backward"><span class="constructor">Backward</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALmake_workspace"><span class="keyword">val</span> make_workspace</span> : <code class="type">int -> <a href="Fft.Complex.html#TYPEworkspace">workspace</a></code></pre>
+<pre><span id="VALmake_wavetable"><span class="keyword">val</span> make_wavetable</span> : <code class="type">int -> <a href="Fft.Complex.html#TYPEwavetable">wavetable</a></code></pre>
+<pre><span id="VALforward"><span class="keyword">val</span> forward</span> : <code class="type">?stride:int -><br>       <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -><br>       <a href="Fft.Complex.html#TYPEwavetable">wavetable</a> -> <a href="Fft.Complex.html#TYPEworkspace">workspace</a> -> unit</code></pre>
+<pre><span id="VALforward_rad2"><span class="keyword">val</span> forward_rad2</span> : <code class="type">?dif:bool -> ?stride:int -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -> unit</code></pre>
+<pre><span id="VALtransform"><span class="keyword">val</span> transform</span> : <code class="type">?stride:int -><br>       <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -><br>       <a href="Fft.Complex.html#TYPEwavetable">wavetable</a> -><br>       <a href="Fft.Complex.html#TYPEworkspace">workspace</a> -> <a href="Fft.Complex.html#TYPEdirection">direction</a> -> unit</code></pre>
+<pre><span id="VALtransform_rad2"><span class="keyword">val</span> transform_rad2</span> : <code class="type">?dif:bool -><br>       ?stride:int -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -> <a href="Fft.Complex.html#TYPEdirection">direction</a> -> unit</code></pre>
+<pre><span id="VALbackward"><span class="keyword">val</span> backward</span> : <code class="type">?stride:int -><br>       <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -><br>       <a href="Fft.Complex.html#TYPEwavetable">wavetable</a> -> <a href="Fft.Complex.html#TYPEworkspace">workspace</a> -> unit</code></pre>
+<pre><span id="VALbackward_rad2"><span class="keyword">val</span> backward_rad2</span> : <code class="type">?dif:bool -> ?stride:int -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -> unit</code></pre>
+<pre><span id="VALinverse"><span class="keyword">val</span> inverse</span> : <code class="type">?stride:int -><br>       <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -><br>       <a href="Fft.Complex.html#TYPEwavetable">wavetable</a> -> <a href="Fft.Complex.html#TYPEworkspace">workspace</a> -> unit</code></pre>
+<pre><span id="VALinverse_rad2"><span class="keyword">val</span> inverse_rad2</span> : <code class="type">?dif:bool -> ?stride:int -> <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> -> unit</code></pre></body></html>

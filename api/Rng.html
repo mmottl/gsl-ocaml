@@ -1,0 +1,553 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Randist.html">
+<link rel="next" href="Root.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><link title="Default values" rel="Section" href="#3_Defaultvalues">
+<link title="Creating" rel="Section" href="#3_Creating">
+<link title="Sampling" rel="Section" href="#3_Sampling">
+<title>Rng</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Randist.html" title="Randist">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Root.html" title="Root">Next</a>
+</div>
+<h1>Module <a href="type_Rng.html">Rng</a></h1>
+
+<pre><span class="keyword">module</span> Rng: <code class="code">sig</code> <a href="Rng.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Random Number Generation<br>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPErng_type"><span class="keyword">type</span> <code class="type"></code>rng_type</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.BOROSH13"><span class="constructor">BOROSH13</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.COVEYOU"><span class="constructor">COVEYOU</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.CMRG"><span class="constructor">CMRG</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.FISHMAN18"><span class="constructor">FISHMAN18</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.FISHMAN20"><span class="constructor">FISHMAN20</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.FISHMAN2X"><span class="constructor">FISHMAN2X</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.GFSR4"><span class="constructor">GFSR4</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.KNUTHRAN"><span class="constructor">KNUTHRAN</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.KNUTHRAN2"><span class="constructor">KNUTHRAN2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.KNUTHRAN2002"><span class="constructor">KNUTHRAN2002</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.LECUYER21"><span class="constructor">LECUYER21</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.MINSTD"><span class="constructor">MINSTD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.MRG"><span class="constructor">MRG</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.MT19937"><span class="constructor">MT19937</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.MT19937_1999"><span class="constructor">MT19937_1999</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.MT19937_1998"><span class="constructor">MT19937_1998</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.R250"><span class="constructor">R250</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RAN0"><span class="constructor">RAN0</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RAN1"><span class="constructor">RAN1</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RAN2"><span class="constructor">RAN2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RAN3"><span class="constructor">RAN3</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RAND"><span class="constructor">RAND</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RAND48"><span class="constructor">RAND48</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM128_BSD"><span class="constructor">RANDOM128_BSD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM128_GLIBC2"><span class="constructor">RANDOM128_GLIBC2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM128_LIBC5"><span class="constructor">RANDOM128_LIBC5</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM256_BSD"><span class="constructor">RANDOM256_BSD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM256_GLIBC2"><span class="constructor">RANDOM256_GLIBC2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM256_LIBC5"><span class="constructor">RANDOM256_LIBC5</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM32_BSD"><span class="constructor">RANDOM32_BSD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM32_GLIBC2"><span class="constructor">RANDOM32_GLIBC2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM32_LIBC5"><span class="constructor">RANDOM32_LIBC5</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM64_BSD"><span class="constructor">RANDOM64_BSD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM64_GLIBC2"><span class="constructor">RANDOM64_GLIBC2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM64_LIBC5"><span class="constructor">RANDOM64_LIBC5</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM8_BSD"><span class="constructor">RANDOM8_BSD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM8_GLIBC2"><span class="constructor">RANDOM8_GLIBC2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM8_LIBC5"><span class="constructor">RANDOM8_LIBC5</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM_BSD"><span class="constructor">RANDOM_BSD</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM_GLIBC2"><span class="constructor">RANDOM_GLIBC2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDOM_LIBC5"><span class="constructor">RANDOM_LIBC5</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANDU"><span class="constructor">RANDU</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANF"><span class="constructor">RANF</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLUX"><span class="constructor">RANLUX</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLUX389"><span class="constructor">RANLUX389</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLXD1"><span class="constructor">RANLXD1</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLXD2"><span class="constructor">RANLXD2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLXS0"><span class="constructor">RANLXS0</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLXS1"><span class="constructor">RANLXS1</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANLXS2"><span class="constructor">RANLXS2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.RANMAR"><span class="constructor">RANMAR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.SLATEC"><span class="constructor">SLATEC</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.TAUS"><span class="constructor">TAUS</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.TAUS_2"><span class="constructor">TAUS_2</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.TAUS_113"><span class="constructor">TAUS_113</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.TRANSPUTER"><span class="constructor">TRANSPUTER</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.TT800"><span class="constructor">TT800</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.UNI"><span class="constructor">UNI</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.UNI32"><span class="constructor">UNI32</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.VAX"><span class="constructor">VAX</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.WATERMAN14"><span class="constructor">WATERMAN14</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrng_type.ZUF"><span class="constructor">ZUF</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+<br>
+<h3 id="3_Defaultvalues">Default values</h3><br>
+
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">unit -> <a href="Rng.html#TYPErng_type">rng_type</a></code></pre>
+<pre><span id="VALdefault_seed"><span class="keyword">val</span> default_seed</span> : <code class="type">unit -> nativeint</code></pre>
+<pre><span id="VALset_default"><span class="keyword">val</span> set_default</span> : <code class="type"><a href="Rng.html#TYPErng_type">rng_type</a> -> unit</code></pre>
+<pre><span id="VALset_default_seed"><span class="keyword">val</span> set_default_seed</span> : <code class="type">nativeint -> unit</code></pre>
+<pre><span id="VALenv_setup"><span class="keyword">val</span> env_setup</span> : <code class="type">unit -> unit</code></pre><br>
+<h3 id="3_Creating">Creating</h3><br>
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type"><a href="Rng.html#TYPErng_type">rng_type</a> -> <a href="Rng.html#TYPEt">t</a></code></pre>
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> nativeint -> unit</code></pre>
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> string</code></pre>
+<pre><span id="VALget_type"><span class="keyword">val</span> get_type</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> <a href="Rng.html#TYPErng_type">rng_type</a></code></pre><br>
+warning : the nativeint used for seeds are in fact unsigned but
+   ocaml treats them as signed.
+   But you can still print them using %nu with printf functions.<br>
+
+<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> nativeint</code></pre>
+<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> nativeint</code></pre>
+<pre><span id="VALmemcpy"><span class="keyword">val</span> memcpy</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> <a href="Rng.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALclone"><span class="keyword">val</span> clone</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> <a href="Rng.html#TYPEt">t</a></code></pre>
+<pre><span id="VALdump_state"><span class="keyword">val</span> dump_state</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> string * string</code></pre>
+<pre><span id="VALset_state"><span class="keyword">val</span> set_state</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> string * string -> unit</code></pre><br>
+<h3 id="3_Sampling">Sampling</h3><br>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> nativeint</code></pre>
+<pre><span id="VALuniform"><span class="keyword">val</span> uniform</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> float</code></pre>
+<pre><span id="VALuniform_pos"><span class="keyword">val</span> uniform_pos</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> float</code></pre>
+<pre><span id="VALuniform_int"><span class="keyword">val</span> uniform_int</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> int -> int</code></pre><br>
+These function fill the array with random numbers :<br>
+
+<pre><span id="VALuniform_arr"><span class="keyword">val</span> uniform_arr</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> float array -> unit</code></pre>
+<pre><span id="VALuniform_pos_arr"><span class="keyword">val</span> uniform_pos_arr</span> : <code class="type"><a href="Rng.html#TYPEt">t</a> -> float array -> unit</code></pre></body></html>

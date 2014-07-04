@@ -1,0 +1,97 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><title>Ieee</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;ieee_type&nbsp;=&nbsp;<span class="constructor">NAN</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">INF</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">NORMAL</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DENORMAL</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ZERO</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;float_rep&nbsp;=&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sign&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mantissa&nbsp;:&nbsp;string;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exponent&nbsp;:&nbsp;int;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ieee_type&nbsp;:&nbsp;<span class="constructor">Ieee</span>.ieee_type;<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;rep_of_float&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Ieee</span>.float_rep<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_ieee_double_to_rep"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;print&nbsp;:&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;precision&nbsp;=&nbsp;<span class="constructor">SINGLE</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DOUBLE</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EXTENDED</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;rounding&nbsp;=&nbsp;<span class="constructor">TO_NEAREST</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DOWN</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">UP</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TO_ZERO</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;exceptions&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">MASK_INVALID</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_DENORMALIZED</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_DIVISION_BY_ZERO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_OVERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_UNDERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MASK_ALL</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TRAP_INEXACT</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_mode&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?precision:<span class="constructor">Ieee</span>.precision&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?rounding:<span class="constructor">Ieee</span>.rounding&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Ieee</span>.exceptions&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_ieee_set_mode"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;env_setup&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_ieee_env_setup"</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;excepts&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">FE_INEXACT</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_DIVBYZERO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_UNDERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_OVERFLOW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_INVALID</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FE_ALL_EXCEPT</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clear_except&nbsp;:&nbsp;<span class="constructor">Ieee</span>.excepts&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_feclearexcept"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;test_except&nbsp;:&nbsp;<span class="constructor">Ieee</span>.excepts&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Ieee</span>.excepts&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_fetestexcept"</span><br>
+<span class="keyword">end</span></code></body></html>

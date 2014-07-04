@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Blas_flat.html">
+<link rel="next" href="Bspline.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><title>Blas_gen</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Blas_flat.html" title="Blas_flat">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Bspline.html" title="Bspline">Next</a>
+</div>
+<h1>Module <a href="type_Blas_gen.html">Blas_gen</a></h1>
+
+<pre><span class="keyword">module</span> Blas_gen: <code class="code">sig</code> <a href="Blas_gen.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="TYPEorder"><span class="keyword">type</span> <code class="type"></code>order</span> = <code class="type"><a href="Blas.html#TYPEorder">Blas.order</a></code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorder.RowMajor"><span class="constructor">RowMajor</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorder.ColMajor"><span class="constructor">ColMajor</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEtranspose"><span class="keyword">type</span> <code class="type"></code>transpose</span> = <code class="type"><a href="Blas.html#TYPEtranspose">Blas.transpose</a></code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtranspose.NoTrans"><span class="constructor">NoTrans</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtranspose.Trans"><span class="constructor">Trans</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtranspose.ConjTrans"><span class="constructor">ConjTrans</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEuplo"><span class="keyword">type</span> <code class="type"></code>uplo</span> = <code class="type"><a href="Blas.html#TYPEuplo">Blas.uplo</a></code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTuplo.Upper"><span class="constructor">Upper</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTuplo.Lower"><span class="constructor">Lower</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEdiag"><span class="keyword">type</span> <code class="type"></code>diag</span> = <code class="type"><a href="Blas.html#TYPEdiag">Blas.diag</a></code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdiag.NonUnit"><span class="constructor">NonUnit</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdiag.Unit"><span class="constructor">Unit</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="TYPEside"><span class="keyword">type</span> <code class="type"></code>side</span> = <code class="type"><a href="Blas.html#TYPEside">Blas.side</a></code> = </pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTside.Left"><span class="constructor">Left</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTside.Right"><span class="constructor">Right</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALdot"><span class="keyword">val</span> dot</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> float</code></pre>
+<pre><span id="VALnrm2"><span class="keyword">val</span> nrm2</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> float</code></pre>
+<pre><span id="VALasum"><span class="keyword">val</span> asum</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> float</code></pre>
+<pre><span id="VALiamax"><span class="keyword">val</span> iamax</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> int</code></pre>
+<pre><span id="VALswap"><span class="keyword">val</span> swap</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALaxpy"><span class="keyword">val</span> axpy</span> : <code class="type">float -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALrot"><span class="keyword">val</span> rot</span> : <code class="type">[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> float -> float -> unit</code></pre>
+<pre><span id="VALscal"><span class="keyword">val</span> scal</span> : <code class="type">float -> [< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALgemv"><span class="keyword">val</span> gemv</span> : <code class="type"><a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       alpha:float -><br>       a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -><br>       x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> beta:float -> y:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALtrmv"><span class="keyword">val</span> trmv</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       <a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       <a href="Blas_gen.html#TYPEdiag">diag</a> -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALtrsv"><span class="keyword">val</span> trsv</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       <a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       <a href="Blas_gen.html#TYPEdiag">diag</a> -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALsymv"><span class="keyword">val</span> symv</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       alpha:float -><br>       a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -><br>       x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> beta:float -> y:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> unit</code></pre>
+<pre><span id="VALdger"><span class="keyword">val</span> dger</span> : <code class="type">alpha:float -><br>       x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> y:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALsyr"><span class="keyword">val</span> syr</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       alpha:float -> x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALsyr2"><span class="keyword">val</span> syr2</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       alpha:float -><br>       x:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> y:[< <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> ] -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALgemm"><span class="keyword">val</span> gemm</span> : <code class="type">ta:<a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       tb:<a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       alpha:float -><br>       a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -><br>       b:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> beta:float -> c:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALsymm"><span class="keyword">val</span> symm</span> : <code class="type"><a href="Blas_gen.html#TYPEside">side</a> -><br>       <a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       alpha:float -><br>       a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -><br>       b:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> beta:float -> c:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALtrmm"><span class="keyword">val</span> trmm</span> : <code class="type"><a href="Blas_gen.html#TYPEside">side</a> -><br>       <a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       <a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       <a href="Blas_gen.html#TYPEdiag">diag</a> -><br>       alpha:float -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> b:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALtrsm"><span class="keyword">val</span> trsm</span> : <code class="type"><a href="Blas_gen.html#TYPEside">side</a> -><br>       <a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       <a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       <a href="Blas_gen.html#TYPEdiag">diag</a> -><br>       alpha:float -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> b:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALsyrk"><span class="keyword">val</span> syrk</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       <a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       alpha:float -> a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> beta:float -> c:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span id="VALsyr2k"><span class="keyword">val</span> syr2k</span> : <code class="type"><a href="Blas_gen.html#TYPEuplo">uplo</a> -><br>       <a href="Blas_gen.html#TYPEtranspose">transpose</a> -><br>       alpha:float -><br>       a:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -><br>       b:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> beta:float -> c:[< <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> ] -> unit</code></pre>
+<pre><span class="keyword">module</span> <a href="Blas_gen.Complex.html">Complex</a>: <code class="code">sig</code> <a href="Blas_gen.Complex.html">..</a> <code class="code">end</code></pre></body></html>

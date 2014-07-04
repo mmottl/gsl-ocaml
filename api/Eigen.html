@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Deriv.html">
+<link rel="next" href="Error.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><link title="Real Symmetric Matrices" rel="Section" href="#3_RealSymmetricMatrices">
+<link title="Complex Hermitian Matrices" rel="Section" href="#3_ComplexHermitianMatrices">
+<link title="Real Nonsymmetric Matrices" rel="Section" href="#3_RealNonsymmetricMatrices">
+<title>Eigen</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Deriv.html" title="Deriv">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Error.html" title="Error">Next</a>
+</div>
+<h1>Module <a href="type_Eigen.html">Eigen</a></h1>
+
+<pre><span class="keyword">module</span> Eigen: <code class="code">sig</code> <a href="Eigen.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Eigensystems<br>
+</div>
+<hr width="100%">
+<br>
+<h3 id="3_RealSymmetricMatrices">Real Symmetric Matrices</h3><br>
+
+<pre><span id="TYPEsymm_ws"><span class="keyword">type</span> <code class="type"></code>symm_ws</span> </pre>
+
+
+<pre><span id="VALmake_symm_ws"><span class="keyword">val</span> make_symm_ws</span> : <code class="type">int -> <a href="Eigen.html#TYPEsymm_ws">symm_ws</a></code></pre>
+<pre><span id="VAL_symm"><span class="keyword">val</span> _symm</span> : <code class="type"><a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> -> <a href="Eigen.html#TYPEsymm_ws">symm_ws</a> -> unit</code></pre>
+<pre><span id="VALsymm"><span class="keyword">val</span> symm</span> : <code class="type">?protect:bool -><br>       [< `A of float array * int * int<br>        | `AA of float array array<br>        | `M of <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a><br>        | `MF of <a href="Matrix_flat.html#TYPEmatrix">Matrix_flat.matrix</a> ] -><br>       <a href="Vector.html#TYPEvector">Vector.vector</a></code></pre>
+<pre><span id="TYPEsymmv_ws"><span class="keyword">type</span> <code class="type"></code>symmv_ws</span> </pre>
+
+
+<pre><span id="VALmake_symmv_ws"><span class="keyword">val</span> make_symmv_ws</span> : <code class="type">int -> <a href="Eigen.html#TYPEsymmv_ws">symmv_ws</a></code></pre>
+<pre><span id="VAL_symmv"><span class="keyword">val</span> _symmv</span> : <code class="type"><a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> -> <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Eigen.html#TYPEsymmv_ws">symmv_ws</a> -> unit</code></pre>
+<pre><span id="VALsymmv"><span class="keyword">val</span> symmv</span> : <code class="type">?protect:bool -><br>       [< `A of float array * int * int<br>        | `AA of float array array<br>        | `M of <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a><br>        | `MF of <a href="Matrix_flat.html#TYPEmatrix">Matrix_flat.matrix</a> ] -><br>       <a href="Vector.html#TYPEvector">Vector.vector</a> * <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a></code></pre>
+<pre><code><span id="TYPEsort"><span class="keyword">type</span> <code class="type"></code>sort</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTsort.VAL_ASC"><span class="constructor">VAL_ASC</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTsort.VAL_DESC"><span class="constructor">VAL_DESC</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTsort.ABS_ASC"><span class="constructor">ABS_ASC</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTsort.ABS_DESC"><span class="constructor">ABS_DESC</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><span id="VALsymmv_sort"><span class="keyword">val</span> symmv_sort</span> : <code class="type"><a href="Vector.html#TYPEvector">Vector.vector</a> * <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a> -> <a href="Eigen.html#TYPEsort">sort</a> -> unit</code></pre><br>
+<h3 id="3_ComplexHermitianMatrices">Complex Hermitian Matrices</h3><br>
+
+<pre><span id="TYPEherm_ws"><span class="keyword">type</span> <code class="type"></code>herm_ws</span> </pre>
+
+
+<pre><span id="VALmake_herm_ws"><span class="keyword">val</span> make_herm_ws</span> : <code class="type">int -> <a href="Eigen.html#TYPEherm_ws">herm_ws</a></code></pre>
+<pre><span id="VAL_herm"><span class="keyword">val</span> _herm</span> : <code class="type"><a href="Vectmat.html#TYPEcmat">Vectmat.cmat</a> -> <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> -> <a href="Eigen.html#TYPEherm_ws">herm_ws</a> -> unit</code></pre>
+<pre><span id="VALherm"><span class="keyword">val</span> herm</span> : <code class="type">?protect:bool -><br>       [< `CA of <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> * int * int<br>        | `CM of <a href="Matrix_complex.html#TYPEmatrix">Matrix_complex.matrix</a><br>        | `CMF of <a href="Matrix_complex_flat.html#TYPEmatrix">Matrix_complex_flat.matrix</a> ] -><br>       <a href="Vector.html#TYPEvector">Vector.vector</a></code></pre>
+<pre><span id="TYPEhermv_ws"><span class="keyword">type</span> <code class="type"></code>hermv_ws</span> </pre>
+
+
+<pre><span id="VALmake_hermv_ws"><span class="keyword">val</span> make_hermv_ws</span> : <code class="type">int -> <a href="Eigen.html#TYPEhermv_ws">hermv_ws</a></code></pre>
+<pre><span id="VAL_hermv"><span class="keyword">val</span> _hermv</span> : <code class="type"><a href="Vectmat.html#TYPEcmat">Vectmat.cmat</a> -> <a href="Vectmat.html#TYPEvec">Vectmat.vec</a> -> <a href="Vectmat.html#TYPEcmat">Vectmat.cmat</a> -> <a href="Eigen.html#TYPEhermv_ws">hermv_ws</a> -> unit</code></pre>
+<pre><span id="VALhermv"><span class="keyword">val</span> hermv</span> : <code class="type">?protect:bool -><br>       [< `CA of <a href="Gsl_complex.html#TYPEcomplex_array">Gsl_complex.complex_array</a> * int * int<br>        | `CM of <a href="Matrix_complex.html#TYPEmatrix">Matrix_complex.matrix</a><br>        | `CMF of <a href="Matrix_complex_flat.html#TYPEmatrix">Matrix_complex_flat.matrix</a> ] -><br>       <a href="Vector.html#TYPEvector">Vector.vector</a> * <a href="Matrix_complex.html#TYPEmatrix">Matrix_complex.matrix</a></code></pre>
+<pre><span id="VALhermv_sort"><span class="keyword">val</span> hermv_sort</span> : <code class="type"><a href="Vector.html#TYPEvector">Vector.vector</a> * <a href="Matrix_complex.html#TYPEmatrix">Matrix_complex.matrix</a> -> <a href="Eigen.html#TYPEsort">sort</a> -> unit</code></pre><br>
+<h3 id="3_RealNonsymmetricMatrices">Real Nonsymmetric Matrices</h3><br>
+
+<pre><span id="TYPEnonsymm_ws"><span class="keyword">type</span> <code class="type"></code>nonsymm_ws</span> </pre>
+
+
+<pre><span id="VALmake_nonsymm_ws"><span class="keyword">val</span> make_nonsymm_ws</span> : <code class="type">int -> <a href="Eigen.html#TYPEnonsymm_ws">nonsymm_ws</a></code></pre>
+<pre><span id="VAL_nonsymm"><span class="keyword">val</span> _nonsymm</span> : <code class="type"><a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Vectmat.html#TYPEcvec">Vectmat.cvec</a> -> <a href="Eigen.html#TYPEnonsymm_ws">nonsymm_ws</a> -> unit</code></pre>
+<pre><span id="VAL_nonsymm_Z"><span class="keyword">val</span> _nonsymm_Z</span> : <code class="type"><a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Vectmat.html#TYPEcvec">Vectmat.cvec</a> -> <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Eigen.html#TYPEnonsymm_ws">nonsymm_ws</a> -> unit</code></pre>
+<pre><span id="VALnonsymm"><span class="keyword">val</span> nonsymm</span> : <code class="type">?protect:bool -><br>       [< `A of float array * int * int<br>        | `AA of float array array<br>        | `M of <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a><br>        | `MF of <a href="Matrix_flat.html#TYPEmatrix">Matrix_flat.matrix</a> ] -><br>       <a href="Vector_complex.html#TYPEvector">Vector_complex.vector</a></code></pre>
+<pre><span id="TYPEnonsymmv_ws"><span class="keyword">type</span> <code class="type"></code>nonsymmv_ws</span> </pre>
+
+
+<pre><span id="VALmake_nonsymmv_ws"><span class="keyword">val</span> make_nonsymmv_ws</span> : <code class="type">int -> <a href="Eigen.html#TYPEnonsymmv_ws">nonsymmv_ws</a></code></pre>
+<pre><span id="VAL_nonsymmv"><span class="keyword">val</span> _nonsymmv</span> : <code class="type"><a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Vectmat.html#TYPEcvec">Vectmat.cvec</a> -> <a href="Vectmat.html#TYPEcmat">Vectmat.cmat</a> -> <a href="Eigen.html#TYPEnonsymmv_ws">nonsymmv_ws</a> -> unit</code></pre>
+<pre><span id="VAL_nonsymmv_Z"><span class="keyword">val</span> _nonsymmv_Z</span> : <code class="type"><a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -><br>       <a href="Vectmat.html#TYPEcvec">Vectmat.cvec</a> -> <a href="Vectmat.html#TYPEcmat">Vectmat.cmat</a> -> <a href="Vectmat.html#TYPEmat">Vectmat.mat</a> -> <a href="Eigen.html#TYPEnonsymmv_ws">nonsymmv_ws</a> -> unit</code></pre>
+<pre><span id="VALnonsymmv"><span class="keyword">val</span> nonsymmv</span> : <code class="type">?protect:bool -><br>       [< `A of float array * int * int<br>        | `AA of float array array<br>        | `M of <a href="Matrix.html#TYPEmatrix">Matrix.matrix</a><br>        | `MF of <a href="Matrix_flat.html#TYPEmatrix">Matrix_flat.matrix</a> ] -><br>       <a href="Vector_complex.html#TYPEvector">Vector_complex.vector</a> * <a href="Matrix_complex.html#TYPEmatrix">Matrix_complex.matrix</a></code></pre>
+<pre><span id="VALnonsymmv_sort"><span class="keyword">val</span> nonsymmv_sort</span> : <code class="type"><a href="Vector_complex.html#TYPEvector">Vector_complex.vector</a> * <a href="Matrix_complex.html#TYPEmatrix">Matrix_complex.matrix</a> -> <a href="Eigen.html#TYPEsort">sort</a> -> unit</code></pre></body></html>

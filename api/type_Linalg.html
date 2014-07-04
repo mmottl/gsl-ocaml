@@ -1,0 +1,372 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Blas" rel="Chapter" href="Blas.html">
+<link title="Blas_flat" rel="Chapter" href="Blas_flat.html">
+<link title="Blas_gen" rel="Chapter" href="Blas_gen.html">
+<link title="Bspline" rel="Chapter" href="Bspline.html">
+<link title="Cdf" rel="Chapter" href="Cdf.html">
+<link title="Cheb" rel="Chapter" href="Cheb.html">
+<link title="Combi" rel="Chapter" href="Combi.html">
+<link title="Const" rel="Chapter" href="Const.html">
+<link title="Deriv" rel="Chapter" href="Deriv.html">
+<link title="Eigen" rel="Chapter" href="Eigen.html">
+<link title="Error" rel="Chapter" href="Error.html">
+<link title="Fft" rel="Chapter" href="Fft.html">
+<link title="Fit" rel="Chapter" href="Fit.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Histo" rel="Chapter" href="Histo.html">
+<link title="Ieee" rel="Chapter" href="Ieee.html">
+<link title="Integration" rel="Chapter" href="Integration.html">
+<link title="Interp" rel="Chapter" href="Interp.html">
+<link title="Linalg" rel="Chapter" href="Linalg.html">
+<link title="Math" rel="Chapter" href="Math.html">
+<link title="Matrix" rel="Chapter" href="Matrix.html">
+<link title="Matrix_complex" rel="Chapter" href="Matrix_complex.html">
+<link title="Matrix_complex_flat" rel="Chapter" href="Matrix_complex_flat.html">
+<link title="Matrix_flat" rel="Chapter" href="Matrix_flat.html">
+<link title="Min" rel="Chapter" href="Min.html">
+<link title="Misc" rel="Chapter" href="Misc.html">
+<link title="Monte" rel="Chapter" href="Monte.html">
+<link title="Multifit" rel="Chapter" href="Multifit.html">
+<link title="Multifit_nlin" rel="Chapter" href="Multifit_nlin.html">
+<link title="Multimin" rel="Chapter" href="Multimin.html">
+<link title="Multiroot" rel="Chapter" href="Multiroot.html">
+<link title="Odeiv" rel="Chapter" href="Odeiv.html">
+<link title="Permut" rel="Chapter" href="Permut.html">
+<link title="Poly" rel="Chapter" href="Poly.html">
+<link title="Qrng" rel="Chapter" href="Qrng.html">
+<link title="Randist" rel="Chapter" href="Randist.html">
+<link title="Rng" rel="Chapter" href="Rng.html">
+<link title="Root" rel="Chapter" href="Root.html">
+<link title="Sf" rel="Chapter" href="Sf.html">
+<link title="Siman" rel="Chapter" href="Siman.html">
+<link title="Stats" rel="Chapter" href="Stats.html">
+<link title="Sum" rel="Chapter" href="Sum.html">
+<link title="Vectmat" rel="Chapter" href="Vectmat.html">
+<link title="Vector" rel="Chapter" href="Vector.html">
+<link title="Vector_complex" rel="Chapter" href="Vector_complex.html">
+<link title="Vector_complex_flat" rel="Chapter" href="Vector_complex_flat.html">
+<link title="Vector_flat" rel="Chapter" href="Vector_flat.html">
+<link title="Wavelet" rel="Chapter" href="Wavelet.html"><title>Linalg</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;matmult&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?transpa:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;?transpb:bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_matmult_mod"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_decomp&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_solve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_svx&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_svx"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_refine&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;lu:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;res:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_refine_bc"</span>&nbsp;<span class="string">"ml_gsl_linalg_LU_refine"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_invert&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_invert"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_det&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_det"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_lndet&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_lndet"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LU_sgndet&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LU_sgndet"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;decomp_LU&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?protect:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">AA</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">MF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix_flat</span>.matrix&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;*&nbsp;<span class="constructor">Permut</span>.permut&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;solve_LU&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?protect:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">AA</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">MF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix_flat</span>.matrix&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">V</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Vector</span>.vector&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">VF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Vector_flat</span>.vector&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;array<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;det_LU&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?protect:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">AA</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">MF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix_flat</span>.matrix&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;invert_LU&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?protect:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?result:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">AA</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">MF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix_flat</span>.matrix&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_decomp&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_solve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_svx&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_svx"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_refine&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;lu:<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;b:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;res:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_refine_bc"</span>&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_refine"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_invert&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_invert"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_det&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_complex</span>.complex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_det"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_lndet&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_lndet"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;complex_LU_sgndet&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_complex</span>.complex<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_complex_LU_sgndet"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_decomp&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_solve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_svx&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_svx"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_lssolve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;res:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_lssolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_QTvec&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_QTvec"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_Qvec&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_Qvec"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_Rsolve&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_Rsolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_Rsvx&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_Rsvx"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_unpack&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_unpack"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_QRsolve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_QRsolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QR_update&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;w:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QR_update"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_R_solve&nbsp;:&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_R_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_decomp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;norm:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_decomp2&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;norm:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_decomp2_bc"</span>&nbsp;<span class="string">"ml_gsl_linalg_QRPT_decomp2"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_solve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qr:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_svx&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qr:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_svx"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_QRsolve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_QRsolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_update&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;u:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_update"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_Rsolve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qr:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_Rsolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_QRPT_Rsvx&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qr:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;p:<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_QRPT_Rsolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_SV_decomp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;v:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;s:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;work:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_SV_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_SV_decomp_mod&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;x:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;v:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;s:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;work:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_SV_decomp_mod"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_SV_decomp_jacobi&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;s:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_SV_decomp_jacobi"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_SV_solve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;u:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;v:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;s:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_SV_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_decomp&nbsp;:&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_solve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_solve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_svx_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_svx_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_lssolve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;res:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_lssolve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_Lsolve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_Lsolve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_Lsvx_T&nbsp;:&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_Lsvx_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_L_solve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;l:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_L_solve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_vecQ&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_vecQ"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_vecQT&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_vecQT"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_unpack&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;l:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_unpack"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_update&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;w:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_update"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_LQ_LQsolve&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;l:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_LQ_LQsolve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_decomp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;norm:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_decomp2&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;r:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;norm:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_decomp2_bc"</span>&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_decomp2"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_solve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;qr:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_solve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_svx_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_svx_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_LQsolve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;l:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_LQsolve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_Lsolve_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_Lsolve_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_Lsvx_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lq:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_Lsvx_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_PTLQ_update&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;l:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Permut</span>.permut&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;w:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_PTLQ_update"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cho_decomp&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_cholesky_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cho_solve&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_cholesky_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cho_svx&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_cholesky_svx"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;cho_decomp_unit&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_cholesky_decomp_unit"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;symmtd_decomp&nbsp;:&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_symmtd_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;symmtd_unpack&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;subdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_symmtd_unpack"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;symmtd_unpack_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;subdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_symmtd_unpack_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hermtd_decomp&nbsp;:&nbsp;a:<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_hermtd_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hermtd_unpack&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau:<span class="constructor">Vectmat</span>.cvec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;q:<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;subdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_hermtd_unpack"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;hermtd_unpack_T&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.cmat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;subdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_hermtd_unpack_T"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bidiag_decomp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau_u:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau_v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_bidiag_decomp"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bidiag_unpack&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau_u:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;u:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau_v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;v:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;superdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_bidiag_unpack_bc"</span>&nbsp;<span class="string">"ml_gsl_linalg_bidiag_unpack"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bidiag_unpack2&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;tau_u:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;tau_v:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;v:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_bidiag_unpack2"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;bidiag_unpack_B&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a:<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;superdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_bidiag_unpack_B"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_HH_solve&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_HH_solve"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_HH_svx&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_HH_svx"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;solve_HH&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?protect:bool&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">AA</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;array<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">MF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix_flat</span>.matrix&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">V</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Vector</span>.vector&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">VF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Vector_flat</span>.vector&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;array<br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;solve_symm_tridiag&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;offdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_solve_symm_tridiag"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;solve_tridiag&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;abovediag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;belowdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_solve_tridiag"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;solve_symm_cyc_tridiag&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;offdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_solve_symm_cyc_tridiag"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;solve_cyc_tridiag&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;diag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;abovediag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;belowdiag:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;b:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;x:<span class="constructor">Vectmat</span>.vec&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_solve_cyc_tridiag"</span><br>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;_exponential&nbsp;:&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Vectmat</span>.mat&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fun</span>.mode&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_linalg_exponential_ss"</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;exponential&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?mode:<span class="constructor">Fun</span>.mode&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">A</span>&nbsp;<span class="keyword">of</span>&nbsp;float&nbsp;array&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">MF</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix_flat</span>.matrix&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">M</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Matrix</span>.matrix&nbsp;]<br>
+<span class="keyword">end</span></code></body></html>
