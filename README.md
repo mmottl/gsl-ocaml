@@ -19,10 +19,11 @@ The platform must not align doubles on double-word addresses, i.e. the C-macro
 Installation
 ------------
 
-    :::sh
-    $ ./configure
-    $ make
-    $ make install
+```sh
+$ ./configure
+$ make
+$ make install
+```
 
 ### Configuring alternative BLAS-libraries
 
@@ -30,9 +31,10 @@ The underlying GSL-library depends on a C-implementation of the BLAS-library
 (Basic Linear Algebra Subroutines).  It comes with its own implementation,
 `gslcblas`, which GSL will link with by default, e.g.:
 
-    :::sh
-    $ gsl-config --libs
-    -L/opt/local/lib -lgsl -lgslcblas
+```sh
+$ gsl-config --libs
+-L/opt/local/lib -lgsl -lgslcblas
+```
 
 This implementation is usually considerably slower than alternatives like
 [OpenBLAS](http://www.openblas.net) or [ATLAS (Automatically Tuned Linear
@@ -44,10 +46,12 @@ default, you will need to set an environment variable before starting
 the build process.  For example, if you are installing the package via
 [OPAM](http://opam.ocamlpro.com), you may want to do the following:
 
-    $ export GSL_CBLAS_LIB=-lopenblas
-    $ gsl-config --libs
-    -L/opt/local/lib -lgsl -lopenblas
-    $ opam install gsl-ocaml
+```sh
+$ export GSL_CBLAS_LIB=-lopenblas
+$ gsl-config --libs
+-L/opt/local/lib -lgsl -lopenblas
+$ opam install gsl-ocaml
+```
 
 The above shows that after setting the environment variable `GSL_CBLAS_LIB`,
 `gsl-config` will return the correct linking flags to the build process
@@ -66,7 +70,7 @@ to learn more about the GNU Scientific Library.
 You can browse the OCaml module interfaces as `ocamldoc`-generated
 HTML files in directory `API.docdir` after building the
 documentation with `make doc`.  It is also available
-[online](http://mmottl.bitbucket.org/projects/gsl-ocaml/api/).
+[online](http://mmottl.github.io/projects/gsl-ocaml/api/).
 
 Usage Hints
 -----------
@@ -86,8 +90,9 @@ There are several data types for handling vectors and matrices.
   * Module `Gsl.Vectmat` defines a sum type with polymorphic variants
     that regroups these two representations.  For instance:
 
-        :::ocaml
-        Gsl.Vectmat.v_add (`V v1) (`VF v2)
+    ```ocaml
+    Gsl.Vectmat.v_add (`V v1) (`VF v2)
+    ```
 
     adds a vector in an OCaml array to a bigarray.
 
@@ -98,8 +103,9 @@ There are several data types for handling vectors and matrices.
 
 Errors in GSL functions are reported as exceptions:
 
-    :::ocaml
-    Gsl.Error.Gsl_exn (errno, msg)
+```ocaml
+Gsl.Error.Gsl_exn (errno, msg)
+```
 
 You have to call `Gsl.Error.init ()` to initialize error reporting.  Otherwise,
 the default GSL error handler is used and aborts the program, leaving a core
