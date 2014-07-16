@@ -119,21 +119,25 @@ CAMLprim value ml_gsl_multifit_test_delta(value S, value epsabs, value epsrel)
   return Val_negbool(status);
 }
 
-CAMLprim value ml_gsl_multifit_test_gradient(value S, value epsabs, value g)
+CAMLprim value ml_gsl_multifit_test_gradient(value S, value J, value epsabs, value g)
 {
   int status;
   gsl_multifit_fdfsolver *solv=FDFSOLVER_VAL(S);
   _DECLARE_VECTOR(g);
   _CONVERT_VECTOR(g);
-  gsl_multifit_gradient(solv->J, solv->f, &v_g);
+  _DECLARE_MATRIX(J);
+  _CONVERT_MATRIX(J);
+  gsl_multifit_gradient(&m_J, solv->f, &v_g);
   status = gsl_multifit_test_gradient(&v_g, Double_val(epsabs));
   return Val_negbool(status);
 }
 
-CAMLprim value ml_gsl_multifit_covar(value S, value epsrel, value covar)
+CAMLprim value ml_gsl_multifit_covar(value J, value epsrel, value covar)
 {
+  _DECLARE_MATRIX(J);
+  _CONVERT_MATRIX(J);
   _DECLARE_MATRIX(covar);
   _CONVERT_MATRIX(covar);
-  gsl_multifit_covar(FDFSOLVER_VAL(S)->J, Double_val(epsrel), &m_covar);
+  gsl_multifit_covar(&m_J, Double_val(epsrel), &m_covar);
   return Val_unit;
 }

@@ -95,14 +95,20 @@ let solv (y, sigma) xinit =
   proc 1 ;
   let pos = Vector.create 3 in
   Multifit_nlin.position s pos ;
-  let covar = Matrix.create p p in
-  Multifit_nlin.covar s ~epsrel:0. covar ;
-  Printf.printf
-    "A      = %.5f +/- %.5f\n" pos.{0} (sqrt covar.{0, 0}) ;
-  Printf.printf
-    "lambda = %.5f +/- %.5f\n" pos.{1} (sqrt covar.{1, 1}) ;
-  Printf.printf
-    "b      = %.5f +/- %.5f\n" pos.{2} (sqrt covar.{2, 2})
+  ()
+  (* TODO: GSL is heavily modifying the Multifit-API right now.  Once the
+     API is stable and released more widely, the covariance functions
+     can be used again.  There currently is no way to access the required
+     Jacobian-matrix, which has been removed from the high-level GSL-API,
+     presumably to support factorized internal representations. *)
+  (* let covar = Matrix.create p p in *)
+  (* Multifit_nlin.covar s ~epsrel:0. covar ; *)
+  (* Printf.printf *)
+  (*   "A      = %.5f +/- %.5f\n" pos.{0} (sqrt covar.{0, 0}) ; *)
+  (* Printf.printf *)
+  (*   "lambda = %.5f +/- %.5f\n" pos.{1} (sqrt covar.{1, 1}) ; *)
+  (* Printf.printf *)
+  (*   "b      = %.5f +/- %.5f\n" pos.{2} (sqrt covar.{2, 2}) *)
 
 let _ = 
   solv (data ()) [| 1.0;  0.;  0.; |]

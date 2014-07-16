@@ -1,3 +1,11 @@
+in 1.17.1  (gsl-ocaml fork)
+
+  - API fixes for upcoming GSL 1.17 release.  Affects
+      - Multifit_nlin.{test_gradient,covar}
+      - SF.ellint_D
+
+    Thanks to Andrey Bergman for the initial patch!
+
 in 1.15.3  (gsl-ocaml fork)
 
   - Fixed a bug in the bindings for lag1_autocorrelation that could cause
