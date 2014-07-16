@@ -306,9 +306,8 @@ external ellint_P : float -> float -> float -> mode -> float
 external ellint_P_e : float -> float -> float -> mode -> result
   = "ml_gsl_sf_ellint_P_e"
 
-external ellint_D : float -> float -> float -> mode -> float
-  = "ml_gsl_sf_ellint_D"
-external ellint_D_e : float -> float -> float -> mode -> result
+external ellint_D : float -> float -> mode -> float = "ml_gsl_sf_ellint_D"
+external ellint_D_e : float -> float -> mode -> result
   = "ml_gsl_sf_ellint_D_e"
 
 external ellint_RC : float -> float -> mode -> float = "ml_gsl_sf_ellint_RC"

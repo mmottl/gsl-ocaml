@@ -87,7 +87,7 @@ open Fun
 << ellint_F float float mode >>
 << ellint_E float float mode >>
 << ellint_P float float float mode >>
-<< ellint_D float float float mode >>
+<< ellint_D float float mode >>
 << ellint_RC float float mode >>
 << ellint_RD float float float mode >>
 << ellint_RF float float float mode >>

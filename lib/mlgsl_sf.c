@@ -11,7 +11,6 @@
 
 #include "wrappers.h"
 
-
 static inline value val_of_result(gsl_sf_result *result)
 {
   return copy_two_double_arr(result->val, result->err);
@@ -99,7 +98,6 @@ CAMLprim value ml_gsl_sf_result_smash_e(value e10)
   ML5_res(gsl_sf_##name##_e, conv1, conv2, conv3, conv4, conv5)
 
 
-
 /* AIRY functions */
 SF2(airy_Ai, Double_val, GSL_MODE_val)
 SF2(airy_Bi, Double_val, GSL_MODE_val)
@@ -258,7 +256,30 @@ SF2(ellint_Dcomp, Double_val, GSL_MODE_val)
 SF3(ellint_F, Double_val, Double_val, GSL_MODE_val)
 SF3(ellint_E, Double_val, Double_val, GSL_MODE_val)
 SF4(ellint_P, Double_val, Double_val, Double_val, GSL_MODE_val)
-SF4(ellint_D, Double_val, Double_val, Double_val, GSL_MODE_val)
+
+#if GSL_MAJOR_VERSION > 1 || (GSL_MAJOR_VERSION >= 1 && GSL_MINOR_VERSION >= 17)
+SF3(ellint_D, Double_val, Double_val, GSL_MODE_val)
+#else
+CAMLprim value ml_gsl_sf_ellint_D(value arg1, value arg2, value arg3)
+{
+  CAMLparam3(arg1, arg2, arg3);
+  double dummy_n = 0;  /* Ignored by old implementation anyway */
+  double res =
+    gsl_sf_ellint_D(
+      Double_val(arg1), Double_val(arg2), dummy_n, GSL_MODE_val(arg3));
+  CAMLreturn(caml_copy_double(res));
+}
+
+CAMLprim value ml_gsl_sf_ellint_D_e(value arg1, value arg2, value arg3)
+{
+  gsl_sf_result res;
+  double dummy_n = 0;  /* Ignored by old implementation anyway */
+  gsl_sf_ellint_D_e(
+    Double_val(arg1), Double_val(arg2), dummy_n, GSL_MODE_val(arg3), &res);
+  return val_of_result(&res);
+}
+#endif
+
 SF3(ellint_RC, Double_val, Double_val, GSL_MODE_val)
 SF4(ellint_RD, Double_val, Double_val, Double_val, GSL_MODE_val)
 SF4(ellint_RF, Double_val, Double_val, Double_val, GSL_MODE_val)
