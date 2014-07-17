@@ -1,6 +1,6 @@
 OASISFormat:      0.4
 Name:             gsl
-Version:          1.17.1
+Version:          1.17.2
 Synopsis:         GSL - Bindings to the GNU Scientific Library
 Description:      GSL - Bindings to the GNU Scientific Library
   This version branched off from Olivier Andrieu's distribution

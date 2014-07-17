@@ -4,6 +4,7 @@
 
 #include <gsl/gsl_mode.h>
 #include <gsl/gsl_sf.h>
+#include <gsl/gsl_version.h>
 
 #include <caml/mlvalues.h>
 #include <caml/alloc.h>
