@@ -27,7 +27,7 @@ let print_state n =
   fun iter solv ->
     Multiroot.NoDeriv.get_state solv ~x ~f () ;
     Printf.printf 
-      "iter = %3u x = %+ .3f %+ .3f f(x) = %+ .3e %+ .3e\n"
+      "iter = %3u x = %+.3f %+.3f f(x) = %+.3e %+.3e\n"
       iter x.{0} x.{1} f.{0} f.{1} ;
     flush stdout
 
@@ -72,7 +72,7 @@ let print_state_deriv n =
   fun iter solv ->
     Multiroot.Deriv.get_state solv ~x ~f () ;
     Printf.printf 
-      "iter = %3u x = %+ .3f %+ .3f f(x) = %+ .3e %+ .3e\n"
+      "iter = %3u x = %+.3f %+.3f f(x) = %+.3e %+.3e\n"
       iter x.{0} x.{1} f.{0} f.{1} ;
     flush stdout
 
