@@ -2,7 +2,7 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Vectmat
+open Gsl_vectmat
 open Gsl_complex
 
 (* Simple matrix multiplication *)
@@ -17,20 +17,20 @@ external matmult :
 
 (* Low-level functions  *)
 
-external _LU_decomp : mat -> Permut.permut -> int
+external _LU_decomp : mat -> Gsl_permut.permut -> int
     = "ml_gsl_linalg_LU_decomp"
 
-external _LU_solve : mat -> Permut.permut -> b:vec -> x:vec -> unit
+external _LU_solve : mat -> Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_LU_solve"
 
-external _LU_svx : mat -> Permut.permut -> vec -> unit
+external _LU_svx : mat -> Gsl_permut.permut -> vec -> unit
     = "ml_gsl_linalg_LU_svx"
 
-external _LU_refine : a:mat -> lu:mat -> Permut.permut -> 
+external _LU_refine : a:mat -> lu:mat -> Gsl_permut.permut -> 
   b:vec -> x:vec -> res:vec -> unit
     = "ml_gsl_linalg_LU_refine_bc" "ml_gsl_linalg_LU_refine"
 
-external _LU_invert : mat -> Permut.permut -> mat -> unit
+external _LU_invert : mat -> Gsl_permut.permut -> mat -> unit
     = "ml_gsl_linalg_LU_invert"
 
 external _LU_det : mat -> int -> float
@@ -49,20 +49,20 @@ intermediate datastructures are allocated; *)
 
 let decomp_LU ?(protect=true) mat =
   let mA = mat_convert ~protect mat in
-  let (len, _) = Vectmat.dims mA in
-  let p = Permut.create len in
+  let (len, _) = Gsl_vectmat.dims mA in
+  let p = Gsl_permut.create len in
   let sign = _LU_decomp mA p in
   (mA, p, sign)
 
 let solve_LU ?(protect=true) mat b =
   let mA = mat_convert ~protect mat in
   let vB = vec_convert b in
-  let (len, _) = Vectmat.dims mA in
-  let p = Permut.create len in
+  let (len, _) = Gsl_vectmat.dims mA in
+  let p = Gsl_permut.create len in
   let _ = _LU_decomp mA p in
-  let x = Vector_flat.create len in
+  let x = Gsl_vector_flat.create len in
   _LU_solve mA p ~b:vB ~x:(`VF x) ;
-  x.Vector_flat.data
+  x.Gsl_vector_flat.data
 
 let det_LU ?(protect=true) mat =
   let (lu, _, sign) = decomp_LU ~protect mat in
@@ -72,27 +72,27 @@ let invert_LU ?(protect=true) ?result mat =
   let (lu, lu_p, _) = decomp_LU ~protect mat in
   let result = match result with
   | Some r -> r
-  | None -> Vectmat.tmp lu in
+  | None -> Gsl_vectmat.tmp lu in
   _LU_invert lu lu_p result ;
   result
 
 
 (* Complex LU decomposition *)
 
-external complex_LU_decomp : cmat -> Permut.permut -> int
+external complex_LU_decomp : cmat -> Gsl_permut.permut -> int
     = "ml_gsl_linalg_complex_LU_decomp"
 
-external complex_LU_solve : cmat -> Permut.permut -> b:cvec -> x:cvec -> unit
+external complex_LU_solve : cmat -> Gsl_permut.permut -> b:cvec -> x:cvec -> unit
     = "ml_gsl_linalg_complex_LU_solve"
 
-external complex_LU_svx : cmat -> Permut.permut -> cvec -> unit
+external complex_LU_svx : cmat -> Gsl_permut.permut -> cvec -> unit
     = "ml_gsl_linalg_complex_LU_svx"
 
-external complex_LU_refine : a:cmat -> lu:cmat -> Permut.permut -> 
+external complex_LU_refine : a:cmat -> lu:cmat -> Gsl_permut.permut -> 
   b:cvec -> x:cvec -> res:cvec -> unit
     = "ml_gsl_linalg_complex_LU_refine_bc" "ml_gsl_linalg_complex_LU_refine"
 
-external complex_LU_invert : cmat -> Permut.permut -> cmat -> unit
+external complex_LU_invert : cmat -> Gsl_permut.permut -> cmat -> unit
     = "ml_gsl_linalg_complex_LU_invert"
 
 external complex_LU_det : cmat -> int -> complex
@@ -150,28 +150,28 @@ external _R_solve : r:mat -> b:vec -> x:vec -> unit
 
 (* QR Decomposition with Column Pivoting *)
 
-external _QRPT_decomp : a:mat -> tau:vec -> p:Permut.permut -> norm:vec -> int
+external _QRPT_decomp : a:mat -> tau:vec -> p:Gsl_permut.permut -> norm:vec -> int
     = "ml_gsl_linalg_QRPT_decomp"
 
-external _QRPT_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> p:Permut.permut -> norm:vec -> int
+external _QRPT_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> p:Gsl_permut.permut -> norm:vec -> int
     = "ml_gsl_linalg_QRPT_decomp2_bc" "ml_gsl_linalg_QRPT_decomp2"
 
-external _QRPT_solve : qr:mat -> tau:vec -> p:Permut.permut -> b:vec -> x:vec -> unit
+external _QRPT_solve : qr:mat -> tau:vec -> p:Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_solve"
 
-external _QRPT_svx : qr:mat -> tau:vec -> p:Permut.permut -> x:vec -> unit
+external _QRPT_svx : qr:mat -> tau:vec -> p:Gsl_permut.permut -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_svx"
 
-external _QRPT_QRsolve : q:mat -> r:mat -> p:Permut.permut -> b:vec -> x:vec -> unit
+external _QRPT_QRsolve : q:mat -> r:mat -> p:Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_QRsolve"
 
-external _QRPT_update : q:mat -> r:mat -> p:Permut.permut -> u:vec -> v:vec -> unit
+external _QRPT_update : q:mat -> r:mat -> p:Gsl_permut.permut -> u:vec -> v:vec -> unit
     = "ml_gsl_linalg_QRPT_update"
 
-external _QRPT_Rsolve : qr:mat -> p:Permut.permut -> b:vec -> x:vec -> unit
+external _QRPT_Rsolve : qr:mat -> p:Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_Rsolve"
 
-external _QRPT_Rsvx : qr:mat -> p:Permut.permut -> x:vec -> unit
+external _QRPT_Rsvx : qr:mat -> p:Gsl_permut.permut -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_Rsolve"
 
 
@@ -208,14 +208,14 @@ external _LQ_LQsolve : q:mat -> l:mat -> b:vec -> x:vec -> unit = "ml_gsl_linalg
 
 
 (* P^T L Q decomposition *)
-external _PTLQ_decomp : a:mat -> tau:vec -> Permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp"
-external _PTLQ_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> Permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp2_bc" "ml_gsl_linalg_PTLQ_decomp2"
-external _PTLQ_solve_T : qr:mat -> tau:vec -> Permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_solve_T"
-external _PTLQ_svx_T : lq:mat -> tau:vec -> Permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_svx_T"
-external _PTLQ_LQsolve_T : q:mat -> l:mat -> Permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_LQsolve_T"
-external _PTLQ_Lsolve_T : lq:mat -> Permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsolve_T"
-external _PTLQ_Lsvx_T : lq:mat -> Permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsvx_T"
-external _PTLQ_update : q:mat -> l:mat -> Permut.permut -> v:vec -> w:vec -> unit  = "ml_gsl_linalg_PTLQ_update"
+external _PTLQ_decomp : a:mat -> tau:vec -> Gsl_permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp"
+external _PTLQ_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> Gsl_permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp2_bc" "ml_gsl_linalg_PTLQ_decomp2"
+external _PTLQ_solve_T : qr:mat -> tau:vec -> Gsl_permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_solve_T"
+external _PTLQ_svx_T : lq:mat -> tau:vec -> Gsl_permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_svx_T"
+external _PTLQ_LQsolve_T : q:mat -> l:mat -> Gsl_permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_LQsolve_T"
+external _PTLQ_Lsolve_T : lq:mat -> Gsl_permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsolve_T"
+external _PTLQ_Lsvx_T : lq:mat -> Gsl_permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsvx_T"
+external _PTLQ_update : q:mat -> l:mat -> Gsl_permut.permut -> v:vec -> w:vec -> unit  = "ml_gsl_linalg_PTLQ_update"
 
 
 (* Cholesky decomposition *)
@@ -288,9 +288,9 @@ external _HH_svx : mat -> vec -> unit
 let solve_HH ?(protect=true) mat b =
   let mA = mat_convert ~protect mat in
   let vB = vec_convert b in
-  let vX = Vector_flat.create (Vectmat.length vB) in
+  let vX = Gsl_vector_flat.create (Gsl_vectmat.length vB) in
   _HH_solve mA ~b:vB ~x:(`VF vX) ;
-  vX.Vector_flat.data
+  vX.Gsl_vector_flat.data
 
 
 
@@ -312,14 +312,14 @@ external solve_cyc_tridiag : diag:vec -> abovediag:vec -> belowdiag:vec -> b:vec
 
 (* exponential *)
 
-external _exponential : mat -> mat -> Fun.mode -> unit
+external _exponential : mat -> mat -> Gsl_fun.mode -> unit
     = "ml_gsl_linalg_exponential_ss"
 
-let exponential ?(mode=Fun.DOUBLE) mat =
-  let mA = Vectmat.mat_convert mat in
-  let eA = Vectmat.tmp mA in
+let exponential ?(mode=Gsl_fun.DOUBLE) mat =
+  let mA = Gsl_vectmat.mat_convert mat in
+  let eA = Gsl_vectmat.tmp mA in
   _exponential mA 
-    (eA : [`M of Matrix.matrix] :> mat)
+    (eA : [`M of Gsl_matrix.matrix] :> mat)
     mode ;
   eA
 

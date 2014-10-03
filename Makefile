@@ -40,14 +40,17 @@ configure:
 
 # OASIS_STOP
 
+setup.ml: _oasis
+	oasis setup -setup-update dynamic
+
 GSLINCDIR := $(shell gsl-config --prefix)/include
 
 .PHONY: post-conf
 post-conf:
-	ocaml do_const.ml --mli > lib/const.mli
-	ocaml do_const.ml > lib/const.ml
-	ocaml do_sf.ml < lib/sf.mli.q > lib/sf.mli
-	cp lib/sf.mli lib/sf.ml
-	ocaml do_cdf.ml < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/cdf.mli
-	cp lib/cdf.mli lib/cdf.ml
+	ocaml do_const.ml --mli > lib/gsl_const.mli
+	ocaml do_const.ml > lib/gsl_const.ml
+	ocaml do_sf.ml < lib/gsl_sf.mli.q > lib/gsl_sf.mli
+	cp lib/gsl_sf.mli lib/gsl_sf.ml
+	ocaml do_cdf.ml < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/gsl_cdf.mli
+	cp lib/gsl_cdf.mli lib/gsl_cdf.ml
 	ocaml do_cdf.ml --c < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/mlgsl_cdf.c

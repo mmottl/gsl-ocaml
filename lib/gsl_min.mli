@@ -11,7 +11,7 @@ type kind =
 type t
 
 val make :
-  kind -> Fun.gsl_fun -> min:float -> lo:float -> up:float -> t
+  kind -> Gsl_fun.gsl_fun -> min:float -> lo:float -> up:float -> t
 external name : t -> string
     = "ml_gsl_min_fminimizer_name"
 

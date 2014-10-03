@@ -12,7 +12,7 @@ type linear_fit_coeffs = {
 external linear :
   ?weight:float array -> float array -> float array -> linear_fit_coeffs
   = "ml_gsl_fit_linear"
-external linear_est : float -> coeffs:linear_fit_coeffs -> Fun.result
+external linear_est : float -> coeffs:linear_fit_coeffs -> Gsl_fun.result
   = "ml_gsl_fit_linear_est"
 
 
@@ -24,5 +24,5 @@ type mul_fit_coeffs = {
 external mul :
   ?weight:float array -> float array -> float array -> mul_fit_coeffs
   = "ml_gsl_fit_mul"
-external mul_est : float -> coeffs:mul_fit_coeffs -> Fun.result
+external mul_est : float -> coeffs:mul_fit_coeffs -> Gsl_fun.result
   = "ml_gsl_fit_mul_est"

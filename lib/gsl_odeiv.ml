@@ -7,7 +7,7 @@ type system
 
 external _alloc : 
   (float -> float array -> float array -> unit) ->
-  ?jacobian:(float -> float array -> Matrix.matrix -> float array -> unit) ->
+  ?jacobian:(float -> float array -> Gsl_matrix.matrix -> float array -> unit) ->
   int -> system = "ml_gsl_odeiv_alloc_system"
 
 external _free : system -> unit = "ml_gsl_odeiv_free_system"

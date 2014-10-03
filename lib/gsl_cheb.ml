@@ -19,19 +19,19 @@ external order : t -> int
 
 external coefs : t -> float array = "ml_gsl_cheb_coefs"
 
-external init : t -> Fun.gsl_fun -> a:float -> b:float -> unit
+external init : t -> Gsl_fun.gsl_fun -> a:float -> b:float -> unit
     = "ml_gsl_cheb_init"
 
 external _eval : t -> float -> float
     = "ml_gsl_cheb_eval"
 
-external _eval_err : t -> float -> Fun.result
+external _eval_err : t -> float -> Gsl_fun.result
     = "ml_gsl_cheb_eval_err"
 
 external _eval_n : t -> int -> float -> float
     = "ml_gsl_cheb_eval_n"
 
-external _eval_n_err : t -> int -> float -> Fun.result
+external _eval_n_err : t -> int -> float -> Gsl_fun.result
     = "ml_gsl_cheb_eval_n_err"
 
 let eval cs ?order x =

@@ -8,7 +8,7 @@ type system
 
 val make_system :
   (float -> float array -> float array -> unit) ->
-  ?jac:(float -> float array -> Matrix.matrix -> float array -> unit) ->
+  ?jac:(float -> float array -> Gsl_matrix.matrix -> float array -> unit) ->
   int -> system
 
 

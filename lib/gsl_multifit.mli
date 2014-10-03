@@ -4,7 +4,7 @@
 
 (** Multi-parameter Least-Squares Fitting *)
 
-open Vectmat
+open Gsl_vectmat
 
 type ws
 val make : n:int -> p:int -> ws
@@ -23,9 +23,9 @@ external _linear_svd :
 
 val linear :
   ?weight:vec -> mat -> vec -> 
-    Vector.vector * Matrix.matrix * float
+    Gsl_vector.vector * Gsl_matrix.matrix * float
 
-external linear_est : x:vec -> c:vec -> cov:mat -> Fun.result
+external linear_est : x:vec -> c:vec -> cov:mat -> Gsl_fun.result
     = "ml_gsl_multifit_linear_est"
 
 val fit_poly : 

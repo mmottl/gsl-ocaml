@@ -4,7 +4,7 @@
 
 (** Numerical Differentiation *)
 
-external central : f:(float -> float) -> x:float -> h:float -> Fun.result
+external central : f:(float -> float) -> x:float -> h:float -> Gsl_fun.result
   = "ml_gsl_deriv_central"
 (** [central f x h] computes the numerical derivative of the function
     [f] at the point [x] using an adaptive central difference
@@ -12,7 +12,7 @@ external central : f:(float -> float) -> x:float -> h:float -> Fun.result
     [r] with the derivative being in [r.res] and an estimate of its
     absolute error in [r.err].  *)
 
-external forward : f:(float -> float) -> x:float -> h:float -> Fun.result
+external forward : f:(float -> float) -> x:float -> h:float -> Gsl_fun.result
   = "ml_gsl_deriv_forward"
 (** [forward f x h] computes the numerical derivative of the function
     [f] at the point [x] using an adaptive forward difference
@@ -22,7 +22,7 @@ external forward : f:(float -> float) -> x:float -> h:float -> Fun.result
     absolute in [r.err].  This function should be used if f(x) has a
     discontinuity at [x], or is undefined for values less than [x].  *)
 
-external backward : f:(float -> float) -> x:float -> h:float -> Fun.result
+external backward : f:(float -> float) -> x:float -> h:float -> Gsl_fun.result
   = "ml_gsl_deriv_backward"
 (** [forward f x h] computes the numerical derivative of the function
     [f] at the point [x] using an adaptive backward difference

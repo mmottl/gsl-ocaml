@@ -52,7 +52,7 @@ let to_array (mat : matrix) =
 let to_complex_array (mat : matrix) =
   let d1 = Array2.dim1 mat in
   let d2 = Array2.dim2 mat in
-  let arr = Array.create (2*d1*d2) 0. in
+  let arr = Array.make (2*d1*d2) 0. in
   for i=0 to pred (d1*d2) do
     let { re = re; im = im } = mat.{i/d2, i mod d2} in
     arr.(2*i) <- re ;
@@ -155,7 +155,7 @@ module Single =
   let to_complex_array (mat : matrix) =
     let d1 = Array2.dim1 mat in
     let d2 = Array2.dim2 mat in
-    let arr = Array.create (2*d1*d2) 0. in
+    let arr = Array.make (2*d1*d2) 0. in
     for i=0 to pred (d1*d2) do
       let { re = re; im = im } = mat.{i/d2, i mod d2} in
       arr.(2*i) <- re ;

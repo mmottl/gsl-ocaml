@@ -35,7 +35,7 @@ let of_complex_array arr =
 
 let to_complex_array barr =
   let n = Array1.dim barr in
-  let arr = Array.create (2*n) 0. in
+  let arr = Array.make (2*n) 0. in
   for i=0 to pred n do
     Gsl_complex.set arr i barr.{i}
   done ;
@@ -115,7 +115,7 @@ module Single =
 
   let to_complex_array barr =
     let n = Array1.dim barr in
-    let arr = Array.create (2*n) 0. in
+    let arr = Array.make (2*n) 0. in
     for i=0 to pred n do
       Gsl_complex.set arr i barr.{i}
     done ;

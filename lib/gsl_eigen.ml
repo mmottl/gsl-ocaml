@@ -2,7 +2,7 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Vectmat
+open Gsl_vectmat
 
 type symm_ws
 external _symm_alloc : int -> symm_ws
@@ -18,9 +18,9 @@ external _symm : mat -> vec -> symm_ws -> unit
     = "ml_gsl_eigen_symm"
 
 let symm ?protect a =
-  let a' = Vectmat.mat_convert ?protect a in
-  let (n, _) = Vectmat.dims a' in
-  let v = Vector.create n in
+  let a' = Gsl_vectmat.mat_convert ?protect a in
+  let (n, _) = Gsl_vectmat.dims a' in
+  let v = Gsl_vector.create n in
   let ws = _symm_alloc n in
   begin
     try _symm a' (`V v) ws 
@@ -43,10 +43,10 @@ external _symmv : mat -> vec -> mat -> symmv_ws -> unit
     = "ml_gsl_eigen_symmv"
 
 let symmv ?protect a =
-  let a' = Vectmat.mat_convert ?protect a in
-  let (n, _) = Vectmat.dims a' in
-  let v = Vector.create n in
-  let evec = Matrix.create n n in
+  let a' = Gsl_vectmat.mat_convert ?protect a in
+  let (n, _) = Gsl_vectmat.dims a' in
+  let v = Gsl_vector.create n in
+  let evec = Gsl_matrix.create n n in
   let ws = _symmv_alloc_v n in
   begin
     try _symmv a' (`V v) (`M evec) ws 
@@ -61,7 +61,7 @@ type sort =
   | ABS_ASC
   | ABS_DESC
 
-external symmv_sort : Vector.vector * Matrix.matrix -> sort -> unit    = "ml_gsl_eigen_symmv_sort"
+external symmv_sort : Gsl_vector.vector * Gsl_matrix.matrix -> sort -> unit    = "ml_gsl_eigen_symmv_sort"
 
 
 
@@ -81,9 +81,9 @@ external _herm : cmat -> vec -> herm_ws -> unit
     = "ml_gsl_eigen_herm"
 
 let herm ?protect a =
-  let a' = Vectmat.cmat_convert ?protect a in
-  let (n, _) = Vectmat.dims a' in
-  let v = Vector.create n in
+  let a' = Gsl_vectmat.cmat_convert ?protect a in
+  let (n, _) = Gsl_vectmat.dims a' in
+  let v = Gsl_vector.create n in
   let ws = _herm_alloc n in
   begin
     try  _herm a' (`V v) ws
@@ -106,10 +106,10 @@ external _hermv : cmat -> vec -> cmat -> hermv_ws -> unit
     = "ml_gsl_eigen_hermv"
 
 let hermv ?protect a =
-  let a' = Vectmat.cmat_convert ?protect a in
-  let (n, _) = Vectmat.dims a' in
-  let v = Vector.create n in
-  let evec = Matrix_complex.create n n in
+  let a' = Gsl_vectmat.cmat_convert ?protect a in
+  let (n, _) = Gsl_vectmat.dims a' in
+  let v = Gsl_vector.create n in
+  let evec = Gsl_matrix_complex.create n n in
   let ws = _hermv_alloc_v n in
   begin
     try _hermv a' (`V v) (`CM evec) ws
@@ -118,7 +118,7 @@ let hermv ?protect a =
   _hermv_free_v ws ;
   (v, evec)
 
-external hermv_sort : Vector.vector * Matrix_complex.matrix -> sort -> unit    = "ml_gsl_eigen_hermv_sort"
+external hermv_sort : Gsl_vector.vector * Gsl_matrix_complex.matrix -> sort -> unit    = "ml_gsl_eigen_hermv_sort"
 
 
 
@@ -139,9 +139,9 @@ external _nonsymm_Z : mat -> cvec -> mat -> nonsymm_ws -> unit
     = "ml_gsl_eigen_nonsymm_Z"
 
 let nonsymm ?protect a =
-  let a' = Vectmat.mat_convert ?protect a in
-  let (n, _) = Vectmat.dims a' in
-  let v = Vector_complex.create n in
+  let a' = Gsl_vectmat.mat_convert ?protect a in
+  let (n, _) = Gsl_vectmat.dims a' in
+  let v = Gsl_vector_complex.create n in
   let ws = _nonsymm_alloc n in
   begin
     try _nonsymm a' (`CV v) ws 
@@ -166,10 +166,10 @@ external _nonsymmv_Z : mat -> cvec -> cmat -> mat -> nonsymmv_ws -> unit
     = "ml_gsl_eigen_nonsymmv_Z"
 
 let nonsymmv ?protect a =
-  let a' = Vectmat.mat_convert ?protect a in
-  let (n, _) = Vectmat.dims a' in
-  let v = Vector_complex.create n in
-  let evec = Matrix_complex.create n n in
+  let a' = Gsl_vectmat.mat_convert ?protect a in
+  let (n, _) = Gsl_vectmat.dims a' in
+  let v = Gsl_vector_complex.create n in
+  let evec = Gsl_matrix_complex.create n n in
   let ws = _nonsymmv_alloc_v n in
   begin
     try _nonsymmv a' (`CV v) (`CM evec) ws 
@@ -178,4 +178,4 @@ let nonsymmv ?protect a =
   _nonsymmv_free_v ws ;
   (v, evec)
 
-external nonsymmv_sort : Vector_complex.vector * Matrix_complex.matrix -> sort -> unit    = "ml_gsl_eigen_nonsymmv_sort"
+external nonsymmv_sort : Gsl_vector_complex.vector * Gsl_matrix_complex.matrix -> sort -> unit    = "ml_gsl_eigen_nonsymmv_sort"

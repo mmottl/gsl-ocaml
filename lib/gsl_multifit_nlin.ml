@@ -2,8 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Fun
-open Vector
+open Gsl_fun
+open Gsl_vector
 
 type t
 
@@ -42,8 +42,8 @@ external get_state : t -> ?x:vector -> ?f:vector ->
 external test_delta : t -> epsabs:float -> epsrel:float -> bool
     = "ml_gsl_multifit_test_delta"
 
-external test_gradient : t -> Matrix.matrix -> epsabs:float -> vector -> bool
+external test_gradient : t -> Gsl_matrix.matrix -> epsabs:float -> vector -> bool
     = "ml_gsl_multifit_test_gradient"
 
-external covar : Matrix.matrix -> epsrel:float -> Matrix.matrix -> unit
+external covar : Gsl_matrix.matrix -> epsrel:float -> Gsl_matrix.matrix -> unit
     = "ml_gsl_multifit_covar"

@@ -18,7 +18,7 @@ let check v =
   v
 
 let create ?(init=0.) len = 
-  { data = Array.create len init; 
+  { data = Array.make len init; 
     off = 0; 
     len = len; 
     stride = 1; }

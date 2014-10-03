@@ -12,7 +12,7 @@ type vector = complex_vector_flat
 
 let create ?(init=Complex.zero) len = 
   let arr = { 
-    data = Array.create (2*len) init.Complex.re ; 
+    data = Array.make (2*len) init.Complex.re ; 
     off = 0; 
     len = len; 
     stride = 1; } in
@@ -56,21 +56,21 @@ let of_complex_array carr =
     len = (Array.length carr)/2; stride = 1; }
 
 let to_complex_array arr =
-  let carr = Array.create (2*arr.len) 0. in
+  let carr = Array.make (2*arr.len) 0. in
   for i=0 to pred arr.len do
     Gsl_complex.set carr i (get arr i)
   done ;
   carr
 
 let real carr =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~stride:(2 * carr.stride)
     ~off:(2 * carr.off)
     ~len:carr.len
     carr.data
 
 let imag carr =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~stride:(2 * carr.stride)
     ~off:(2 * carr.off + 1)
     ~len:carr.len

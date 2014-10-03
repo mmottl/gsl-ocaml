@@ -1,4 +1,55 @@
 # OASIS_START
-# DO NOT EDIT (digest: 9b937993547e3f552c8092685f70cc69)
+# DO NOT EDIT (digest: f4221b74b09aecb0cfdb6ca7b7fe9fc8)
 Gsl
+Gsl_blas
+Gsl_blas_flat
+Gsl_blas_gen
+Gsl_bspline
+Gsl_cdf
+Gsl_cheb
+Gsl_combi
+Gsl_const
+Gsl_deriv
+Gsl_eigen
+Gsl_error
+Gsl_fft
+Gsl_fit
+Gsl_fun
+Gsl_complex
+Gsl_sort
+Gsl_histo
+Gsl_ieee
+Gsl_integration
+Gsl_interp
+Gsl_linalg
+Gsl_math
+Gsl_matrix
+Gsl_matrix_complex
+Gsl_matrix_complex_flat
+Gsl_matrix_flat
+Gsl_min
+Gsl_misc
+Gsl_monte
+Gsl_multifit
+Gsl_multifit_nlin
+Gsl_multimin
+Gsl_multiroot
+Gsl_odeiv
+Gsl_permut
+Gsl_poly
+Gsl_qrng
+Gsl_randist
+Gsl_rng
+Gsl_root
+Gsl_sf
+Gsl_siman
+Gsl_stats
+Gsl_sum
+Gsl_vectmat
+Gsl_vector
+Gsl_vector_complex
+Gsl_vector_complex_flat
+Gsl_vector_flat
+Gsl_version
+Gsl_wavelet
 # OASIS_STOP

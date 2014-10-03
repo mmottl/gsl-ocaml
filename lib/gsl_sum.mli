@@ -8,7 +8,7 @@ type ws
 
 val make : int -> ws
 
-external accel : float array -> ws -> Fun.result
+external accel : float array -> ws -> Gsl_fun.result
     = "ml_gsl_sum_levin_u_accel"
 
 type ws_info = {
@@ -25,7 +25,7 @@ type ws
 
 val make : int -> ws
 
-external accel : float array -> ws -> Fun.result
+external accel : float array -> ws -> Gsl_fun.result
     = "ml_gsl_sum_levin_utrunc_accel"
 
 type ws_info = {

@@ -7,47 +7,47 @@
 (** {3 Real values} *)
 
 type vec = [
-  | `V of Vector.vector
-  | `VF of Vector_flat.vector ]
+  | `V of Gsl_vector.vector
+  | `VF of Gsl_vector_flat.vector ]
 
 val vec_convert :
   ?protect:bool ->
   [< `A of float array 
-   | `VF of Vector_flat.vector 
-   | `V of Vector.vector] -> [> vec]
+   | `VF of Gsl_vector_flat.vector 
+   | `V of Gsl_vector.vector] -> [> vec]
        
 type mat = [
-  | `M of Matrix.matrix
-  | `MF of Matrix_flat.matrix ]
+  | `M of Gsl_matrix.matrix
+  | `MF of Gsl_matrix_flat.matrix ]
 
 val mat_convert :
   ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] -> [> mat]
 
 val mat_flat :
   ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
-   | `AA of float array array] -> Matrix_flat.matrix
+   | `AA of float array array] -> Gsl_matrix_flat.matrix
     
 (** {3 Complex values} *)
 
 type cvec = [
-  | `CV  of Vector_complex.vector
-  | `CVF of Vector_complex_flat.vector ]
+  | `CV  of Gsl_vector_complex.vector
+  | `CVF of Gsl_vector_complex_flat.vector ]
 
 type cmat = [
-  | `CM  of Matrix_complex.matrix
-  | `CMF of Matrix_complex_flat.matrix ]
+  | `CM  of Gsl_matrix_complex.matrix
+  | `CMF of Gsl_matrix_complex_flat.matrix ]
 
 val cmat_convert :
   ?protect:bool ->
-  [< `CM of Matrix_complex.matrix
-   | `CMF of Matrix_complex_flat.matrix
+  [< `CM of Gsl_matrix_complex.matrix
+   | `CMF of Gsl_matrix_complex_flat.matrix
    | `CA of Gsl_complex.complex_array * int * int ] -> 
   [> cmat]
 
@@ -87,7 +87,7 @@ external v_minmax_index : [< vec] -> int * int
 (** {3 Generic matrix operations} *)
 
 val dims      : [< mat| cmat] -> int * int
-val tmp       : [< mat] -> [> `M of Matrix.matrix]
+val tmp       : [< mat] -> [> `M of Gsl_matrix.matrix]
 val to_arrays : [< mat] -> float array array
 val m_copy    : [< mat] -> [> mat]
 

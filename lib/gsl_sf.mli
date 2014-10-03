@@ -4,7 +4,7 @@
 
 (** Special functions *)
 
-open Fun
+open Gsl_fun
 
 (* AIRY functions *)
 external airy_Ai : float -> mode -> float = "ml_gsl_sf_airy_Ai"

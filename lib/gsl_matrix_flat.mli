@@ -47,7 +47,7 @@ external swap_rowcol : matrix -> int -> int -> unit = "ml_gsl_matrix_swap_rowcol
 external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_transpose_memcpy"
 external transpose_in_place : matrix -> unit = "ml_gsl_matrix_transpose"
 
-open Vector_flat
+open Gsl_vector_flat
 
 val submatrix : matrix -> k1:int -> k2:int -> 
   n1:int -> n2:int -> matrix

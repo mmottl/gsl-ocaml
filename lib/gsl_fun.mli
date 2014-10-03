@@ -43,13 +43,13 @@ type gsl_fun_fdf = {
 
 type monte_fun = float array -> float
 
-open Vector
+open Gsl_vector
 
 type multi_fun = x:vector -> f:vector -> unit
 type multi_fun_fdf = {
     multi_f   : x:vector -> f:vector -> unit ;
-    multi_df  : x:vector -> j:Matrix.matrix -> unit ;
-    multi_fdf : x:vector -> f:vector -> j:Matrix.matrix -> unit ;
+    multi_df  : x:vector -> j:Gsl_matrix.matrix -> unit ;
+    multi_fdf : x:vector -> f:vector -> j:Gsl_matrix.matrix -> unit ;
   } 
 
 type multim_fun = x:vector -> float

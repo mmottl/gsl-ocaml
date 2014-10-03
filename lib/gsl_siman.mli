@@ -18,8 +18,8 @@ type params = {
 } 
 
 val solve :
-  Rng.t -> 'a ->
+  Gsl_rng.t -> 'a ->
   energ_func:('a -> float) ->
-  step_func:(Rng.t -> 'a -> float -> 'a) ->
+  step_func:(Gsl_rng.t -> 'a -> float -> 'a) ->
   ?print_func:('a -> unit) -> 
   params -> 'a

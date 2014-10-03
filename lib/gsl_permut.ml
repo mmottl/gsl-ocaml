@@ -40,7 +40,7 @@ external _valid : permut -> bool
 
 let valid p =
   try _valid p
-  with Error.Gsl_exn (Error.FAILURE, _) -> false
+  with Gsl_error.Gsl_exn (Gsl_error.FAILURE, _) -> false
 
 external reverse : permut -> unit
     = "ml_gsl_permutation_reverse"

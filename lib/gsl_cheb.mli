@@ -13,11 +13,11 @@ external order : t -> int
 
 external coefs : t -> float array = "ml_gsl_cheb_coefs"
 
-external init : t -> Fun.gsl_fun -> a:float -> b:float -> unit
+external init : t -> Gsl_fun.gsl_fun -> a:float -> b:float -> unit
     = "ml_gsl_cheb_init"
 
 val eval     : t -> ?order:int -> float -> float
-val eval_err : t -> ?order:int -> float -> Fun.result
+val eval_err : t -> ?order:int -> float -> Gsl_fun.result
 
 val deriv : t -> t
 val integ : t -> t

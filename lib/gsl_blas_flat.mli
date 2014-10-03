@@ -3,30 +3,30 @@
 (* Distributed under the terms of the GPL version 3         *)
 
 
-type order = Blas.order =
+type order = Gsl_blas.order =
   | RowMajor
   | ColMajor
 
-type transpose = Blas.transpose =
+type transpose = Gsl_blas.transpose =
   | NoTrans
   | Trans
   | ConjTrans
 
-type uplo = Blas.uplo =
+type uplo = Gsl_blas.uplo =
   | Upper
   | Lower
 
-type diag = Blas.diag =
+type diag = Gsl_blas.diag =
   | NonUnit
   | Unit
 
-type side = Blas.side =
+type side = Gsl_blas.side =
   | Left
   | Right
 
 
-open Matrix_flat
-open Vector_flat
+open Gsl_matrix_flat
+open Gsl_vector_flat
 
 
 (* LEVEL 1 *)
@@ -90,8 +90,8 @@ external syr2k : uplo -> transpose ->
 
 
 
-open Vector_complex_flat
-open Matrix_complex_flat
+open Gsl_vector_complex_flat
+open Gsl_matrix_complex_flat
 open Gsl_complex
 
 module Complex :

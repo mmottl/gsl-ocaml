@@ -22,8 +22,8 @@ type side =
   | Left
   | Right
 
-open Matrix
-open Vector
+open Gsl_matrix
+open Gsl_vector
 
 (** {3 LEVEL 1} *)
 
@@ -118,8 +118,8 @@ external syr2k : uplo -> transpose ->
 
 (** {3 Single precision} *)
 
-open Vector.Single
-open Matrix.Single
+open Gsl_vector.Single
+open Gsl_matrix.Single
 
 module Single :
   sig
@@ -190,8 +190,8 @@ module Single :
 
 
 (** {3 Complex} *)
-open Vector_complex
-open Matrix_complex
+open Gsl_vector_complex
+open Gsl_matrix_complex
 open Gsl_complex
 
 module Complex :
@@ -274,9 +274,8 @@ module Complex :
 
 (** {3 Complex single precision} *)
 
-open Vector_complex.Single
-open Matrix_complex.Single
-open Gsl_complex
+open Gsl_vector_complex.Single
+open Gsl_matrix_complex.Single
 
 module Complex_Single :
   sig

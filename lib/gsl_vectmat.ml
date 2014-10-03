@@ -4,106 +4,106 @@
 
 
 type vec = [
-  | `V  of Vector.vector
-  | `VF of Vector_flat.vector ]
+  | `V  of Gsl_vector.vector
+  | `VF of Gsl_vector_flat.vector ]
 
 let vec_convert ?(protect=false) = function
   | `A arr when protect ->
-      `VF (Vector_flat.of_array arr)
+      `VF (Gsl_vector_flat.of_array arr)
   | `A arr ->
-      `VF (Vector_flat.view_array arr)
+      `VF (Gsl_vector_flat.view_array arr)
   | `VF vec when protect ->
-      `VF (Vector_flat.copy vec)
+      `VF (Gsl_vector_flat.copy vec)
   | `VF _ as v ->
       v
   | `V vec when protect ->
-      `V (Vector.copy vec)
+      `V (Gsl_vector.copy vec)
   | `V _ as v ->
       v
 
 type mat = [
-  | `M  of Matrix.matrix
-  | `MF of Matrix_flat.matrix ]
+  | `M  of Gsl_matrix.matrix
+  | `MF of Gsl_matrix_flat.matrix ]
 
 let mat_convert ?(protect=false) = function
   | `M mat when protect ->
-      `M (Matrix.copy mat)
+      `M (Gsl_matrix.copy mat)
   | `M _ as m ->
       m
   | `MF mat when protect ->
-      `MF (Matrix_flat.copy mat)
+      `MF (Gsl_matrix_flat.copy mat)
   | `MF _ as m ->
       m
   | `A (arr, d1, d2) when protect ->
-      `MF (Matrix_flat.of_array arr d1 d2)
+      `MF (Gsl_matrix_flat.of_array arr d1 d2)
   | `A (arr, d1, d2) ->
-      `MF (Matrix_flat.view_array arr d1 d2)
+      `MF (Gsl_matrix_flat.view_array arr d1 d2)
   | `AA arr ->
-      `MF (Matrix_flat.of_arrays arr)
+      `MF (Gsl_matrix_flat.of_arrays arr)
 
 let mat_flat ?(protect=false) = function
   | `M mat ->
-      let (d1, d2) = Matrix.dims mat in
-      let arr = Matrix.to_array mat in
-      Matrix_flat.view_array arr d1 d2
+      let (d1, d2) = Gsl_matrix.dims mat in
+      let arr = Gsl_matrix.to_array mat in
+      Gsl_matrix_flat.view_array arr d1 d2
   | `MF mat when protect ->
-      Matrix_flat.copy mat
+      Gsl_matrix_flat.copy mat
   | `MF mat ->
       mat
   | `A (arr, d1, d2) when protect ->
-      Matrix_flat.of_array arr d1 d2
+      Gsl_matrix_flat.of_array arr d1 d2
   | `A (arr, d1, d2) ->
-      Matrix_flat.view_array arr d1 d2
+      Gsl_matrix_flat.view_array arr d1 d2
   | `AA arr ->
-      Matrix_flat.of_arrays arr
+      Gsl_matrix_flat.of_arrays arr
 
 
 (* Complex values *)
 
 type cvec = [
-  | `CV  of Vector_complex.vector
-  | `CVF of Vector_complex_flat.vector ]
+  | `CV  of Gsl_vector_complex.vector
+  | `CVF of Gsl_vector_complex_flat.vector ]
 
 type cmat = [
-  | `CM  of Matrix_complex.matrix
-  | `CMF of Matrix_complex_flat.matrix ]
+  | `CM  of Gsl_matrix_complex.matrix
+  | `CMF of Gsl_matrix_complex_flat.matrix ]
 
 let cmat_convert ?(protect=false) = function
   | `CM mat when protect ->
-      `CM (Matrix_complex.copy mat)
+      `CM (Gsl_matrix_complex.copy mat)
   | `CM _ as m ->
       m
   | `CMF mat when protect ->
-      `CMF (Matrix_complex_flat.copy mat)
+      `CMF (Gsl_matrix_complex_flat.copy mat)
   | `CMF _ as m ->
       m
   | `CA (arr, d1, d2) when protect ->
-      `CMF (Matrix_complex_flat.of_complex_array arr d1 d2)
+      `CMF (Gsl_matrix_complex_flat.of_complex_array arr d1 d2)
   | `CA (arr, d1, d2) ->
-      `CMF (Matrix_complex_flat.view_complex_array arr d1 d2)
+      `CMF (Gsl_matrix_complex_flat.view_complex_array arr d1 d2)
 
 
 
 (* Generic vector operations *)
 
 let length = function
-  | `VF v -> Vector_flat.length v
-  | `V  v -> Vector.length v
-  | `CV  v -> Vector_complex.length v
-  | `CVF  v -> Vector_complex_flat.length v
+  | `VF v -> Gsl_vector_flat.length v
+  | `V  v -> Gsl_vector.length v
+  | `CV  v -> Gsl_vector_complex.length v
+  | `CVF  v -> Gsl_vector_complex_flat.length v
 
 let to_array = function
-  | `VF v -> Vector_flat.to_array v
-  | `V  v -> Vector.to_array v
+  | `VF v -> Gsl_vector_flat.to_array v
+  | `V  v -> Gsl_vector.to_array v
 
 let v_copy = function
-  | `VF v -> `VF (Vector_flat.copy v)
-  | `V  v -> `V (Vector.copy v)
+  | `VF v -> `VF (Gsl_vector_flat.copy v)
+  | `V  v -> `V (Gsl_vector.copy v)
 
 let subvector v ~off ~len = 
   match v with
-  | `VF v -> `VF (Vector_flat.subvector v ~off ~len)
-  | `V  v -> `V  (Vector.subvector v ~off ~len)
+  | `VF v -> `VF (Gsl_vector_flat.subvector v ~off ~len)
+  | `V  v -> `V  (Gsl_vector.subvector v ~off ~len)
 
 external v_memcpy : [< vec]-> [< vec]-> unit 
     = "ml_gsl_vector_memcpy"
@@ -140,22 +140,22 @@ external v_minmax_index : [< vec]-> int * int
 (* Generic matrix operations *)
 
 let dims = function
-  | `MF v -> Matrix_flat.dims v
-  | `M v  -> Matrix.dims v
-  | `CM m -> Matrix_complex.dims m
-  | `CMF m -> Matrix_complex_flat.dims m
+  | `MF v -> Gsl_matrix_flat.dims v
+  | `M v  -> Gsl_matrix.dims v
+  | `CM m -> Gsl_matrix_complex.dims m
+  | `CMF m -> Gsl_matrix_complex_flat.dims m
 
 let to_arrays = function
-  | `M mat  -> Matrix.to_arrays mat
-  | `MF mat -> Matrix_flat.to_arrays mat
+  | `M mat  -> Gsl_matrix.to_arrays mat
+  | `MF mat -> Gsl_matrix_flat.to_arrays mat
 
 let tmp mat = 
   let (d1, d2) = dims mat in
-  `M (Matrix.create d1 d2)
+  `M (Gsl_matrix.create d1 d2)
 
 let m_copy = function
-  | `MF v -> `MF (Matrix_flat.copy v)
-  | `M  v -> `M (Matrix.copy v)
+  | `MF v -> `MF (Gsl_matrix_flat.copy v)
+  | `M  v -> `M (Gsl_matrix.copy v)
 
 external m_memcpy : [< mat] -> [< mat] -> unit 
     = "ml_gsl_matrix_memcpy"

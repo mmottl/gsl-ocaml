@@ -4,8 +4,8 @@
 
 (** Multidimensional Minimization *)
 
-open Fun
-open Vector
+open Gsl_fun
+open Gsl_vector
 
 module Deriv :
 sig

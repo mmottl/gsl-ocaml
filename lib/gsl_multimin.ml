@@ -2,8 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Fun
-open Vector
+open Gsl_fun
+open Gsl_vector
 
 module Deriv = 
 struct

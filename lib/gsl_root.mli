@@ -13,7 +13,7 @@ type kind =
   | BRENT
 type t
 
-val make : kind -> Fun.gsl_fun -> float -> float -> t
+val make : kind -> Gsl_fun.gsl_fun -> float -> float -> t
 
 external name : t -> string
     = "ml_gsl_root_fsolver_name"
@@ -35,7 +35,7 @@ type kind =
   | STEFFENSON
 type t
 
-val make : kind -> Fun.gsl_fun_fdf -> float -> t
+val make : kind -> Gsl_fun.gsl_fun_fdf -> float -> t
 
 external name : t -> string
     = "ml_gsl_root_fdfsolver_name"

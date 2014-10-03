@@ -2,8 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Fun
-open Vector
+open Gsl_fun
+open Gsl_vector
 
 module NoDeriv = 
 struct
@@ -88,7 +88,7 @@ external iterate : t -> unit
 
 external get_state : t -> 
   ?x:vector -> ?f:vector -> 
-  ?j:Matrix.matrix -> ?dx:vector -> unit -> unit
+  ?j:Gsl_matrix.matrix -> ?dx:vector -> unit -> unit
     = "ml_gsl_multiroot_fdfsolver_get_state_bc" "ml_gsl_multiroot_fdfsolver_get_state"
 
 external test_delta : t -> epsabs:float -> epsrel:float -> bool

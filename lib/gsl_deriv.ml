@@ -5,11 +5,11 @@
 
 (* C code in mlgsl_deriv.c *)
 
-external central : f:(float -> float) -> x:float -> h:float -> Fun.result
+external central : f:(float -> float) -> x:float -> h:float -> Gsl_fun.result
   = "ml_gsl_deriv_central"
 
-external forward : f:(float -> float) -> x:float -> h:float -> Fun.result
+external forward : f:(float -> float) -> x:float -> h:float -> Gsl_fun.result
   = "ml_gsl_deriv_forward"
 
-external backward : f:(float -> float) -> x:float -> h:float -> Fun.result
+external backward : f:(float -> float) -> x:float -> h:float -> Gsl_fun.result
   = "ml_gsl_deriv_backward"

@@ -4,7 +4,7 @@
 
 (** Numerical Integration *)
 
-open Fun
+open Gsl_fun
 
 external qng :
   gsl_fun -> a:float -> b:float -> 

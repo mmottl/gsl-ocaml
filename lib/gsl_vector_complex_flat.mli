@@ -42,6 +42,6 @@ val reverse : vector -> unit
 val subvector : ?stride:int -> vector -> off:int -> len:int -> vector
 val view_complex_array : ?stride:int -> ?off:int -> ?len:int -> complex_array -> vector
 
-val real : vector -> Vector_flat.vector
-val imag : vector -> Vector_flat.vector
+val real : vector -> Gsl_vector_flat.vector
+val imag : vector -> Gsl_vector_flat.vector
 

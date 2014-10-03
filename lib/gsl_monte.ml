@@ -3,7 +3,7 @@
 (* Distributed under the terms of the GPL version 3         *)
 
 
-open Fun
+open Gsl_fun
 
 (* PLAIN algorithm *)
 type plain_state
@@ -20,7 +20,7 @@ external init_plain : plain_state -> unit
 
 
 external integrate_plain : monte_fun -> lo:float array -> up:float array ->
-  int -> Rng.t -> plain_state -> Fun.result
+  int -> Gsl_rng.t -> plain_state -> Gsl_fun.result
     = "ml_gsl_monte_plain_integrate_bc" "ml_gsl_monte_plain_integrate"
 
 
@@ -47,7 +47,7 @@ external init_miser : miser_state -> unit
 
 
 external integrate_miser : monte_fun -> lo:float array -> up:float array ->
-  int -> Rng.t -> miser_state -> Fun.result
+  int -> Gsl_rng.t -> miser_state -> Gsl_fun.result
     = "ml_gsl_monte_miser_integrate_bc" "ml_gsl_monte_miser_integrate"
 
 external get_miser_params : miser_state -> miser_params
@@ -86,7 +86,7 @@ external init_vegas : vegas_state -> unit
     = "ml_gsl_monte_vegas_init"
 
 external integrate_vegas : monte_fun -> lo:float array -> up:float array ->
-  int -> Rng.t -> vegas_state -> Fun.result
+  int -> Gsl_rng.t -> vegas_state -> Gsl_fun.result
     = "ml_gsl_monte_vegas_integrate_bc" "ml_gsl_monte_vegas_integrate"
 
 external get_vegas_info : vegas_state -> vegas_info

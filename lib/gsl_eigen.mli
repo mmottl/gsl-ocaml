@@ -4,7 +4,7 @@
 
 (** Eigensystems *)
 
-open Vectmat
+open Gsl_vectmat
 
 (** {3 Real Symmetric Matrices} *)
 
@@ -16,11 +16,11 @@ external _symm : mat -> vec -> symm_ws -> unit
 
 val symm : 
   ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] ->
-  Vector.vector
+  Gsl_vector.vector
 
 type symmv_ws
 val make_symmv_ws : int -> symmv_ws
@@ -30,11 +30,11 @@ external _symmv : mat -> vec -> mat -> symmv_ws -> unit
 
 val symmv : 
   ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] ->
-  Vector.vector * Matrix.matrix
+  Gsl_vector.vector * Gsl_matrix.matrix
 
 
 type sort =
@@ -43,7 +43,7 @@ type sort =
   | ABS_ASC
   | ABS_DESC
 
-external symmv_sort : Vector.vector * Matrix.matrix -> sort -> unit
+external symmv_sort : Gsl_vector.vector * Gsl_matrix.matrix -> sort -> unit
     = "ml_gsl_eigen_symmv_sort"
 
 
@@ -57,10 +57,10 @@ external _herm : cmat -> vec -> herm_ws -> unit
 
 val herm : 
   ?protect:bool ->
-  [< `CM of Matrix_complex.matrix
-   | `CMF of Matrix_complex_flat.matrix
+  [< `CM of Gsl_matrix_complex.matrix
+   | `CMF of Gsl_matrix_complex_flat.matrix
    | `CA of Gsl_complex.complex_array * int * int ] -> 
-  Vector.vector
+  Gsl_vector.vector
 
 type hermv_ws
 val make_hermv_ws : int -> hermv_ws
@@ -70,13 +70,13 @@ external _hermv : cmat -> vec -> cmat -> hermv_ws -> unit
 
 val hermv : 
   ?protect:bool ->
-  [< `CM of Matrix_complex.matrix
-   | `CMF of Matrix_complex_flat.matrix
+  [< `CM of Gsl_matrix_complex.matrix
+   | `CMF of Gsl_matrix_complex_flat.matrix
    | `CA of Gsl_complex.complex_array * int * int ] -> 
-  Vector.vector * Matrix_complex.matrix
+  Gsl_vector.vector * Gsl_matrix_complex.matrix
 
 external hermv_sort : 
-  Vector.vector * Matrix_complex.matrix -> 
+  Gsl_vector.vector * Gsl_matrix_complex.matrix -> 
     sort -> unit
     = "ml_gsl_eigen_hermv_sort"
 
@@ -93,11 +93,11 @@ external _nonsymm_Z : mat -> cvec -> mat -> nonsymm_ws -> unit
 
 val nonsymm : 
   ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] ->
-  Vector_complex.vector
+  Gsl_vector_complex.vector
 
 type nonsymmv_ws
 val make_nonsymmv_ws : int -> nonsymmv_ws
@@ -109,12 +109,12 @@ external _nonsymmv_Z : mat -> cvec -> cmat -> mat -> nonsymmv_ws -> unit
 
 val nonsymmv : 
   ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] ->
-  Vector_complex.vector * Matrix_complex.matrix
+  Gsl_vector_complex.vector * Gsl_matrix_complex.matrix
 
 
-external nonsymmv_sort : Vector_complex.vector * Matrix_complex.matrix -> sort -> unit
+external nonsymmv_sort : Gsl_vector_complex.vector * Gsl_matrix_complex.matrix -> sort -> unit
     = "ml_gsl_eigen_nonsymmv_sort"

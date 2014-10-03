@@ -1,5 +1,5 @@
 # OASIS_START
-# DO NOT EDIT (digest: 062f840a3733c02aa74c8cfaf651d916)
+# DO NOT EDIT (digest: 444afa44d255bdbb98225cdee942a2f2)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
@@ -15,56 +15,6 @@
 "_darcs": not_hygienic
 # Library gsl
 "lib/gsl.cmxs": use_gsl
-"lib/blas.cmx": for-pack(Gsl)
-"lib/blas_flat.cmx": for-pack(Gsl)
-"lib/blas_gen.cmx": for-pack(Gsl)
-"lib/bspline.cmx": for-pack(Gsl)
-"lib/cdf.cmx": for-pack(Gsl)
-"lib/cheb.cmx": for-pack(Gsl)
-"lib/combi.cmx": for-pack(Gsl)
-"lib/const.cmx": for-pack(Gsl)
-"lib/deriv.cmx": for-pack(Gsl)
-"lib/eigen.cmx": for-pack(Gsl)
-"lib/error.cmx": for-pack(Gsl)
-"lib/fft.cmx": for-pack(Gsl)
-"lib/fit.cmx": for-pack(Gsl)
-"lib/fun.cmx": for-pack(Gsl)
-"lib/gsl_complex.cmx": for-pack(Gsl)
-"lib/gsl_sort.cmx": for-pack(Gsl)
-"lib/histo.cmx": for-pack(Gsl)
-"lib/ieee.cmx": for-pack(Gsl)
-"lib/integration.cmx": for-pack(Gsl)
-"lib/interp.cmx": for-pack(Gsl)
-"lib/linalg.cmx": for-pack(Gsl)
-"lib/math.cmx": for-pack(Gsl)
-"lib/matrix.cmx": for-pack(Gsl)
-"lib/matrix_complex.cmx": for-pack(Gsl)
-"lib/matrix_complex_flat.cmx": for-pack(Gsl)
-"lib/matrix_flat.cmx": for-pack(Gsl)
-"lib/min.cmx": for-pack(Gsl)
-"lib/misc.cmx": for-pack(Gsl)
-"lib/monte.cmx": for-pack(Gsl)
-"lib/multifit.cmx": for-pack(Gsl)
-"lib/multifit_nlin.cmx": for-pack(Gsl)
-"lib/multimin.cmx": for-pack(Gsl)
-"lib/multiroot.cmx": for-pack(Gsl)
-"lib/odeiv.cmx": for-pack(Gsl)
-"lib/permut.cmx": for-pack(Gsl)
-"lib/poly.cmx": for-pack(Gsl)
-"lib/qrng.cmx": for-pack(Gsl)
-"lib/randist.cmx": for-pack(Gsl)
-"lib/rng.cmx": for-pack(Gsl)
-"lib/root.cmx": for-pack(Gsl)
-"lib/sf.cmx": for-pack(Gsl)
-"lib/siman.cmx": for-pack(Gsl)
-"lib/stats.cmx": for-pack(Gsl)
-"lib/sum.cmx": for-pack(Gsl)
-"lib/vectmat.cmx": for-pack(Gsl)
-"lib/vector.cmx": for-pack(Gsl)
-"lib/vector_complex.cmx": for-pack(Gsl)
-"lib/vector_complex_flat.cmx": for-pack(Gsl)
-"lib/vector_flat.cmx": for-pack(Gsl)
-"lib/wavelet.cmx": for-pack(Gsl)
 <lib/*.ml{,i}>: oasis_library_gsl_ccopt
 "lib/mlgsl_blas.c": oasis_library_gsl_ccopt
 "lib/mlgsl_blas_complex.c": oasis_library_gsl_ccopt
@@ -274,3 +224,4 @@ true: -traverse
 <examples/multifit_ex.ml>: camlp4of
 
 "lib/gsl.cmxs": use_libgsl_stubs
+<**/*>: no_alias_deps

@@ -12,7 +12,7 @@ type double_mat_flat =
 type matrix = double_mat_flat
 
 let create ?(init=0.) dim1 dim2 =
-  { data = Array.create (dim1 * dim2) init ;
+  { data = Array.make (dim1 * dim2) init ;
     off = 0 ; dim1 = dim1 ; dim2 = dim2 ;
     tda = dim2 }
 
@@ -98,34 +98,34 @@ let submatrix m ~k1 ~k2 ~n1 ~n2 =
     tda = m.tda ; }
       
 let row m i =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~off:(m.off + i * m.tda)
     ~len:m.dim2
     m.data
 
 let column m j =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~stride:m.tda
     ~off:(m.off + j)
     ~len:m.dim1
     m.data
 
 let diagonal m =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~stride:(m.tda + 1)
     ~off:m.off
     ~len:(min m.dim1 m.dim2)
     m.data
 
 let subdiagonal m k =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~stride:(m.tda + 1)
     ~off:(m.off + k * m.tda)
     ~len:(min (m.dim1 - k) m.dim2)
     m.data
 
 let superdiagonal m k =
-  Vector_flat.view_array
+  Gsl_vector_flat.view_array
     ~stride:(m.tda + 1)
     ~off:(m.off + k)
     ~len:(min m.dim1 (m.dim2 - k))
@@ -144,11 +144,11 @@ let view_vector v ?(off=0) dim1 ?tda dim2 =
   let tda = match tda with
   | None -> dim2
   | Some v -> v in
-  let len = Vector_flat.length v in
+  let len = Gsl_vector_flat.length v in
   if dim1 * tda > len - off || dim2 > tda
   then invalid_arg "view_vector" ;
-  { data = v.Vector_flat.data; 
-    off  = v.Vector_flat.off + off; 
+  { data = v.Gsl_vector_flat.data; 
+    off  = v.Gsl_vector_flat.off + off; 
     dim1 = dim1; dim2 = dim2; tda = tda }
 
 external add : matrix -> matrix -> unit = "ml_gsl_matrix_add"

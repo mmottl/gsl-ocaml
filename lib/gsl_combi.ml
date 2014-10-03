@@ -26,4 +26,4 @@ external _valid : t -> bool = "ml_gsl_combination_valid"
 
 let valid c =
   try _valid c
-  with Error.Gsl_exn (Error.FAILURE, _) -> false
+  with Gsl_error.Gsl_exn (Gsl_error.FAILURE, _) -> false

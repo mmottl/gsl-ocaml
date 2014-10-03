@@ -4,7 +4,7 @@
 
 (** Special functions *)
 
-open Fun
+open Gsl_fun
 
 (* AIRY functions *)
 << airy_Ai float mode >>

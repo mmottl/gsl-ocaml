@@ -11,7 +11,7 @@ type params = {
     t_min         : float ;
   }
 
-open Misc
+open Gsl_misc
 
 let solve rng conf0 
     ~energ_func ~step_func
@@ -42,7 +42,7 @@ let solve rng conf0
       
       if new_energ < !energ ||
         ( let lim = exp (~-. (new_energ -. !energ) /. (!t *. params.k)) in
-          Rng.uniform rng < lim )
+          Gsl_rng.uniform rng < lim )
       then begin
 	energ := new_energ ;
 	x := new_x ;

@@ -17,7 +17,7 @@ let check h =
 (** {3 Allocating histograms} *)
 
 let make n = 
-  { n = n ; range = Array.create (succ n) 0. ; bin = Array.create n 0. ; }
+  { n = n ; range = Array.make (succ n) 0. ; bin = Array.make n 0. ; }
 
 let copy h =
   { n = h.n ;

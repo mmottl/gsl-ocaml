@@ -57,7 +57,7 @@ external transpose : matrix -> matrix -> unit
 external transpose_in_place : matrix -> unit
   = "ml_gsl_matrix_complex_transpose"
 
-open Vector_complex_flat
+open Gsl_vector_complex_flat
 
 val submatrix :
   matrix ->

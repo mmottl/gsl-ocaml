@@ -44,15 +44,15 @@ type errno =
   | EOF      (** end of file *)
 
 exception Gsl_exn of errno * string
-(** [Gsl.Error.Gsl_exn] is raised by GSL to indicate an error.  The
+(** [Error.Gsl_exn] is raised by GSL to indicate an error.  The
     second argument gives the reason for the error. *)
 
-(** [GSL.Error.init ()] setups the GSL error handler so that
+(** [Error.init ()] setups the GSL error handler so that
     the OCaml function {!Error.handler} gets called in case of an error.
     This behavior is the default now. *)
 val init   : unit -> unit
 
-(** [Gsl.Error.uninit ()] reverts the GSL error handler to the default of
+(** [Error.uninit ()] reverts the GSL error handler to the default of
     the GSL C-library.  The default GSL error simply aborts the program. *)
 val uninit : unit -> unit
 
@@ -75,5 +75,5 @@ val string_of_errno : errno -> string
 (** [string_of_errno e] returns the name of [e]. *)
 
 val printer : exn -> string option
-(** [printer] is an exceoption printer for {!Gsl_exn}.  It is
+(** [printer] is an exceoption printer for {!Exn}.  It is
     registered by default with [Printexc]. *)

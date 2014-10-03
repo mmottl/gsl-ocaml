@@ -2,7 +2,7 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Fun
+open Gsl_fun
 
 external qng :
   gsl_fun -> a:float -> b:float -> epsabs:float -> epsrel:float -> 

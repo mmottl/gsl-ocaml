@@ -33,7 +33,7 @@ val set_id   : matrix -> unit
 val memcpy : src:matrix -> dst:matrix -> unit
 val copy   : matrix -> matrix
 
-val row : matrix -> int -> Vector_complex.vector
+val row : matrix -> int -> Gsl_vector_complex.vector
 
 external add : matrix -> matrix -> unit = "ml_gsl_matrix_complex_add"
 external sub : matrix -> matrix -> unit = "ml_gsl_matrix_complex_sub"
@@ -79,7 +79,7 @@ module Single : sig
   val memcpy : src:matrix -> dst:matrix -> unit
   val copy   : matrix -> matrix
 
-  val row : matrix -> int -> Vector_complex.Single.vector
+  val row : matrix -> int -> Gsl_vector_complex.Single.vector
 
   external add : matrix -> matrix -> unit = "ml_gsl_matrix_complex_float_add"
   external sub : matrix -> matrix -> unit = "ml_gsl_matrix_complex_float_sub"

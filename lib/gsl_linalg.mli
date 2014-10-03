@@ -4,7 +4,7 @@
 
 (** Simple linear algebra operations *)
 
-open Vectmat
+open Gsl_vectmat
 open Gsl_complex
 
 (** {3 Simple matrix multiplication} *)
@@ -14,7 +14,7 @@ open Gsl_complex
    of either matrix, so it can compute a.b or Trans(a).b or a.Trans(b)
    or Trans(a).Trans(b) . 
 
-   See also {!Blas.gemm}. *)
+   See also {!Gsl.Blas.gemm}. *)
 external matmult : 
   a:mat -> ?transpa:bool -> 
   b:mat -> ?transpb:bool -> mat -> unit
@@ -25,20 +25,20 @@ external matmult :
 
 (** {4 Low-level functions } *)
 
-external _LU_decomp : mat -> Permut.permut -> int
+external _LU_decomp : mat -> Gsl_permut.permut -> int
     = "ml_gsl_linalg_LU_decomp"
 
-external _LU_solve : mat -> Permut.permut -> b:vec -> x:vec -> unit
+external _LU_solve : mat -> Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_LU_solve"
 
-external _LU_svx : mat -> Permut.permut -> vec -> unit
+external _LU_svx : mat -> Gsl_permut.permut -> vec -> unit
     = "ml_gsl_linalg_LU_svx"
 
-external _LU_refine : a:mat -> lu:mat -> Permut.permut -> 
+external _LU_refine : a:mat -> lu:mat -> Gsl_permut.permut -> 
   b:vec -> x:vec -> res:vec -> unit
     = "ml_gsl_linalg_LU_refine_bc" "ml_gsl_linalg_LU_refine"
 
-external _LU_invert : mat -> Permut.permut -> mat -> unit
+external _LU_invert : mat -> Gsl_permut.permut -> mat -> unit
     = "ml_gsl_linalg_LU_invert"
 
 external _LU_det : mat -> int -> float
@@ -56,50 +56,50 @@ external _LU_sgndet : mat -> int -> int
 intermediate datastructures are allocated; *)
 
 val decomp_LU : ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
-   | `AA of float array array] -> mat * Permut.permut * int
+   | `AA of float array array] -> mat * Gsl_permut.permut * int
 
 val solve_LU : ?protect:bool -> 
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] ->
   [< `A of float array 
-   | `VF of Vector_flat.vector 
-   | `V of Vector.vector] -> float array
+   | `VF of Gsl_vector_flat.vector 
+   | `V of Gsl_vector.vector] -> float array
 
 val det_LU : ?protect:bool ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] -> float
 
 val invert_LU : ?protect:bool ->
   ?result:mat ->
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] -> mat
 
 
 (** {3 Complex LU decomposition} *)
 
-external complex_LU_decomp : cmat -> Permut.permut -> int
+external complex_LU_decomp : cmat -> Gsl_permut.permut -> int
     = "ml_gsl_linalg_complex_LU_decomp"
 
-external complex_LU_solve : cmat -> Permut.permut -> b:cvec -> x:cvec -> unit
+external complex_LU_solve : cmat -> Gsl_permut.permut -> b:cvec -> x:cvec -> unit
     = "ml_gsl_linalg_complex_LU_solve"
 
-external complex_LU_svx : cmat -> Permut.permut -> cvec -> unit
+external complex_LU_svx : cmat -> Gsl_permut.permut -> cvec -> unit
     = "ml_gsl_linalg_complex_LU_svx"
 
-external complex_LU_refine : a:cmat -> lu:cmat -> Permut.permut -> 
+external complex_LU_refine : a:cmat -> lu:cmat -> Gsl_permut.permut -> 
   b:cvec -> x:cvec -> res:cvec -> unit
     = "ml_gsl_linalg_complex_LU_refine_bc" "ml_gsl_linalg_complex_LU_refine"
 
-external complex_LU_invert : cmat -> Permut.permut -> cmat -> unit
+external complex_LU_invert : cmat -> Gsl_permut.permut -> cmat -> unit
     = "ml_gsl_linalg_complex_LU_invert"
 
 external complex_LU_det : cmat -> int -> complex
@@ -157,28 +157,28 @@ external _R_solve : r:mat -> b:vec -> x:vec -> unit
 
 (** {3 QR Decomposition with Column Pivoting} *)
 
-external _QRPT_decomp : a:mat -> tau:vec -> p:Permut.permut -> norm:vec -> int
+external _QRPT_decomp : a:mat -> tau:vec -> p:Gsl_permut.permut -> norm:vec -> int
     = "ml_gsl_linalg_QRPT_decomp"
 
-external _QRPT_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> p:Permut.permut -> norm:vec -> int
+external _QRPT_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> p:Gsl_permut.permut -> norm:vec -> int
     = "ml_gsl_linalg_QRPT_decomp2_bc" "ml_gsl_linalg_QRPT_decomp2"
 
-external _QRPT_solve : qr:mat -> tau:vec -> p:Permut.permut -> b:vec -> x:vec -> unit
+external _QRPT_solve : qr:mat -> tau:vec -> p:Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_solve"
 
-external _QRPT_svx : qr:mat -> tau:vec -> p:Permut.permut -> x:vec -> unit
+external _QRPT_svx : qr:mat -> tau:vec -> p:Gsl_permut.permut -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_svx"
 
-external _QRPT_QRsolve : q:mat -> r:mat -> p:Permut.permut -> b:vec -> x:vec -> unit
+external _QRPT_QRsolve : q:mat -> r:mat -> p:Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_QRsolve"
 
-external _QRPT_update : q:mat -> r:mat -> p:Permut.permut -> u:vec -> v:vec -> unit
+external _QRPT_update : q:mat -> r:mat -> p:Gsl_permut.permut -> u:vec -> v:vec -> unit
     = "ml_gsl_linalg_QRPT_update"
 
-external _QRPT_Rsolve : qr:mat -> p:Permut.permut -> b:vec -> x:vec -> unit
+external _QRPT_Rsolve : qr:mat -> p:Gsl_permut.permut -> b:vec -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_Rsolve"
 
-external _QRPT_Rsvx : qr:mat -> p:Permut.permut -> x:vec -> unit
+external _QRPT_Rsvx : qr:mat -> p:Gsl_permut.permut -> x:vec -> unit
     = "ml_gsl_linalg_QRPT_Rsolve"
 
 
@@ -219,14 +219,14 @@ external _LQ_LQsolve : q:mat -> l:mat -> b:vec -> x:vec -> unit = "ml_gsl_linalg
 
 (** {3 P^T L Q decomposition} *)
 
-external _PTLQ_decomp : a:mat -> tau:vec -> Permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp"
-external _PTLQ_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> Permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp2_bc" "ml_gsl_linalg_PTLQ_decomp2"
-external _PTLQ_solve_T : qr:mat -> tau:vec -> Permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_solve_T"
-external _PTLQ_svx_T : lq:mat -> tau:vec -> Permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_svx_T"
-external _PTLQ_LQsolve_T : q:mat -> l:mat -> Permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_LQsolve_T"
-external _PTLQ_Lsolve_T : lq:mat -> Permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsolve_T"
-external _PTLQ_Lsvx_T : lq:mat -> Permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsvx_T"
-external _PTLQ_update : q:mat -> l:mat -> Permut.permut -> v:vec -> w:vec -> unit  = "ml_gsl_linalg_PTLQ_update"
+external _PTLQ_decomp : a:mat -> tau:vec -> Gsl_permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp"
+external _PTLQ_decomp2 : a:mat -> q:mat -> r:mat -> tau:vec -> Gsl_permut.permut -> norm:vec -> int = "ml_gsl_linalg_PTLQ_decomp2_bc" "ml_gsl_linalg_PTLQ_decomp2"
+external _PTLQ_solve_T : qr:mat -> tau:vec -> Gsl_permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_solve_T"
+external _PTLQ_svx_T : lq:mat -> tau:vec -> Gsl_permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_svx_T"
+external _PTLQ_LQsolve_T : q:mat -> l:mat -> Gsl_permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_LQsolve_T"
+external _PTLQ_Lsolve_T : lq:mat -> Gsl_permut.permut -> b:vec -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsolve_T"
+external _PTLQ_Lsvx_T : lq:mat -> Gsl_permut.permut -> x:vec -> unit = "ml_gsl_linalg_PTLQ_Lsvx_T"
+external _PTLQ_update : q:mat -> l:mat -> Gsl_permut.permut -> v:vec -> w:vec -> unit  = "ml_gsl_linalg_PTLQ_update"
 
 
 
@@ -297,13 +297,13 @@ external _HH_svx : mat -> vec -> unit
     = "ml_gsl_linalg_HH_svx"
 
 val solve_HH : ?protect:bool -> 
-  [< `M of Matrix.matrix
-   | `MF of Matrix_flat.matrix
+  [< `M of Gsl_matrix.matrix
+   | `MF of Gsl_matrix_flat.matrix
    | `A of float array * int * int
    | `AA of float array array] ->
   [< `A of float array 
-   | `VF of Vector_flat.vector 
-   | `V of Vector.vector] -> float array
+   | `VF of Gsl_vector_flat.vector 
+   | `V of Gsl_vector.vector] -> float array
 
 
 
@@ -325,10 +325,10 @@ external solve_cyc_tridiag : diag:vec -> abovediag:vec -> belowdiag:vec -> b:vec
 
 (** {3 Exponential} *)
 
-external _exponential : mat -> mat -> Fun.mode -> unit
+external _exponential : mat -> mat -> Gsl_fun.mode -> unit
     = "ml_gsl_linalg_exponential_ss"
 
-val exponential : ?mode:Fun.mode -> 
-    [< `M of Matrix.matrix
-     | `MF of Matrix_flat.matrix
-     | `A of float array * int * int] -> [ `M of Matrix.matrix]
+val exponential : ?mode:Gsl_fun.mode -> 
+    [< `M of Gsl_matrix.matrix
+     | `MF of Gsl_matrix_flat.matrix
+     | `A of float array * int * int] -> [ `M of Gsl_matrix.matrix]

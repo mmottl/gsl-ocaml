@@ -14,7 +14,7 @@ external _alloc : kind -> t
 external _free : t -> unit
     = "ml_gsl_min_fminimizer_free"
 
-external _set : t -> Fun.gsl_fun -> min:float -> lo:float -> up:float -> unit
+external _set : t -> Gsl_fun.gsl_fun -> min:float -> lo:float -> up:float -> unit
     = "ml_gsl_min_fminimizer_set"
 
 let make k f ~min ~lo ~up =

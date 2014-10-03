@@ -15,7 +15,7 @@ open Gsl_complex
 
 let create ?(init=Complex.zero) dim1 dim2 =
   let mat = { 
-    data = Array.create (2 * dim1 * dim2) init.Complex.re ;
+    data = Array.make (2 * dim1 * dim2) init.Complex.re ;
     off = 0 ; dim1 = dim1 ; dim2 = dim2 ; tda = dim2 } in
   if init.Complex.im <> init.Complex.re
   then for i=0 to pred (dim1*dim2) do
@@ -94,7 +94,7 @@ let to_complex_array mat =
   if mat.tda = mat.dim2 && mat.off = 0
   then Array.copy mat.data
   else begin
-    let tab = Array.create (2*mat.dim1*mat.dim2) 0. in
+    let tab = Array.make (2*mat.dim1*mat.dim2) 0. in
     for i=0 to pred mat.dim1 do
       for j=0 to pred mat.dim2 do
 	      Gsl_complex.set tab (i*mat.dim2 + j) (get mat i j)
@@ -164,34 +164,34 @@ external transpose : matrix -> matrix -> unit = "ml_gsl_matrix_complex_transpose
 external transpose_in_place : matrix -> unit = "ml_gsl_matrix_complex_transpose"
 
 let row m i =
-  Vector_complex_flat.view_complex_array
+  Gsl_vector_complex_flat.view_complex_array
     ~off:(m.off + i * m.tda)
     ~len:m.dim2
     m.data
 
 let column m j =
-  Vector_complex_flat.view_complex_array
+  Gsl_vector_complex_flat.view_complex_array
     ~stride:m.tda
     ~off:(m.off + j)
     ~len:m.dim1
     m.data
 
 let diagonal m =
-  Vector_complex_flat.view_complex_array
+  Gsl_vector_complex_flat.view_complex_array
     ~stride:(m.tda + 1)
     ~off:m.off
     ~len:(min m.dim1 m.dim2)
     m.data
 
 let subdiagonal m k =
-  Vector_complex_flat.view_complex_array
+  Gsl_vector_complex_flat.view_complex_array
     ~stride:(m.tda + 1)
     ~off:(m.off + k * m.tda)
     ~len:(min (m.dim1 - k) m.dim2)
     m.data
 
 let superdiagonal m k =
-  Vector_complex_flat.view_complex_array
+  Gsl_vector_complex_flat.view_complex_array
     ~stride:(m.tda + 1)
     ~off:(m.off + k)
     ~len:(min m.dim1 (m.dim2 - k))
@@ -201,9 +201,9 @@ let view_vector v ?(off=0) dim1 ?tda dim2 =
   let tda = match tda with
   | None -> dim2
   | Some v -> v in
-  let len = Vector_complex_flat.length v in
+  let len = Gsl_vector_complex_flat.length v in
   if dim1 * tda > len - off || dim2 > tda
   then invalid_arg "view_vector" ;
-  { data = v.Vector_complex_flat.data; 
-    off  = v.Vector_complex_flat.off + off; 
+  { data = v.Gsl_vector_complex_flat.data;
+    off  = v.Gsl_vector_complex_flat.off + off;
     dim1 = dim1; dim2 = dim2; tda = tda }

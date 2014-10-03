@@ -28,11 +28,11 @@ val transform_inverse :
   t -> ?ws:ws -> ?stride:int -> ?off:int -> ?len:int -> float array -> unit
 
 val transform_vector_flat :
-  t -> direction -> ?ws:ws -> Vector_flat.vector -> unit
+  t -> direction -> ?ws:ws -> Gsl_vector_flat.vector -> unit
 val transform_vector :
-  t -> direction -> ?ws:ws -> Vector.vector -> unit
+  t -> direction -> ?ws:ws -> Gsl_vector.vector -> unit
 val transform_gen :
-  t -> direction -> ?ws:ws -> [< Vectmat.vec] -> unit
+  t -> direction -> ?ws:ws -> [< Gsl_vectmat.vec] -> unit
 
 (** {3 2D transforms} *)
 
@@ -41,8 +41,8 @@ type ordering =
   | NON_STANDARD
 
 val transform_matrix_flat :
-  t -> ordering -> direction -> ?ws:ws -> Matrix_flat.matrix -> unit
+  t -> ordering -> direction -> ?ws:ws -> Gsl_matrix_flat.matrix -> unit
 val transform_matrix :
-  t -> ordering -> direction -> ?ws:ws -> Matrix.matrix -> unit
+  t -> ordering -> direction -> ?ws:ws -> Gsl_matrix.matrix -> unit
 val transform_matrix_gen :
-  t -> ordering -> direction -> ?ws:ws -> [< Vectmat.mat] -> unit
+  t -> ordering -> direction -> ?ws:ws -> [< Gsl_vectmat.mat] -> unit

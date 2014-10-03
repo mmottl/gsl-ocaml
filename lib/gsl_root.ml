@@ -18,7 +18,7 @@ external _alloc : kind -> t
 external _free : t -> unit
     = "ml_gsl_root_fsolver_free"
 
-external _set : t -> Fun.gsl_fun -> float -> float -> unit
+external _set : t -> Gsl_fun.gsl_fun -> float -> float -> unit
     = "ml_gsl_root_fsolver_set"
 
 let make kind f x y  =
@@ -58,7 +58,7 @@ external _alloc : kind -> t
 external _free : t -> unit
     = "ml_gsl_root_fdfsolver_free"
 
-external _set : t -> Fun.gsl_fun_fdf -> float -> unit
+external _set : t -> Gsl_fun.gsl_fun_fdf -> float -> unit
     = "ml_gsl_root_fdfsolver_set"
 
 let make kind f r =
