@@ -1,3 +1,7 @@
+in 1.18.1  (gsl-ocaml fork)
+
+  - Improvements to distribution process
+
 in 1.18.0  (gsl-ocaml fork)
 
   - Exploit the new module alias feature in OCaml 4.02 to improve compilation
