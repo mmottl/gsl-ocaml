@@ -8,7 +8,7 @@ Description:      gsl-ocaml branched off from Olivier Andrieu's distribution
 Authors:          Olivier Andrieu <oandrieu@gmail.com>,
                   Markus Mottl <markus.mottl@gmail.com>
 Copyrights:       (C) 2002-2012 Olivier Andrieu <oandrieu@gmail.com>
-                  (C) 2009-2014 Markusk Mottl <markus.mottl@gmail.com>
+                  (C) 2009-2014 Markus Mottl <markus.mottl@gmail.com>
 Maintainers:      Markus Mottl <markus.mottl@gmail.com>
 LicenseFile:      COPYING.txt
 License:          GPL-3+
