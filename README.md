@@ -8,6 +8,7 @@ in the future.
 
 GSL-OCaml is an interface to the [GSL](http://www.gnu.org/software/gsl)
 (GNU scientific library) for the [OCaml](http://www.ocaml.org)-language.
+The currently latest GSL-version known to be compatible is 1.16.
 
 Requirements
 ------------
