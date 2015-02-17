@@ -1,8 +1,9 @@
 # OASIS_START
-# DO NOT EDIT (digest: fc43b50961e4b3175ce07560954c0a91)
+# DO NOT EDIT (digest: dfae2956b8c8eb9ef764e8a0cf3fcd70)
 # Ignore VCS directories, you can use the same kind of rule outside
 # OASIS_START/STOP if you want to exclude directories that contains
 # useless stuff for the build process
+true: annot, bin_annot
 <**/.svn>: -traverse
 <**/.svn>: not_hygienic
 ".bzr": -traverse
@@ -15,7 +16,7 @@
 "_darcs": not_hygienic
 # Library gsl
 "lib/gsl.cmxs": use_gsl
-<lib/*.ml{,i}>: oasis_library_gsl_ccopt
+<lib/*.ml{,i,y}>: oasis_library_gsl_ccopt
 "lib/mlgsl_blas.c": oasis_library_gsl_ccopt
 "lib/mlgsl_blas_complex.c": oasis_library_gsl_ccopt
 "lib/mlgsl_blas_complex_float.c": oasis_library_gsl_ccopt
@@ -67,8 +68,8 @@
 "lib/libgsl_stubs.a": oasis_library_gsl_cclib
 "lib/dllgsl_stubs.so": oasis_library_gsl_cclib
 <lib/gsl.{cma,cmxa}>: use_libgsl_stubs
-<lib/*.ml{,i}>: pkg_bigarray
-<lib/*.ml{,i}>: pkg_camlp4
+<lib/*.ml{,i,y}>: pkg_bigarray
+<lib/*.ml{,i,y}>: pkg_camlp4
 "lib/mlgsl_blas.c": pkg_bigarray
 "lib/mlgsl_blas.c": pkg_camlp4
 "lib/mlgsl_blas_complex.c": pkg_bigarray
@@ -291,9 +292,9 @@
 <examples/wavelet_ex.{native,byte}>: pkg_bigarray
 <examples/wavelet_ex.{native,byte}>: pkg_camlp4
 <examples/wavelet_ex.{native,byte}>: use_gsl
-<examples/*.ml{,i}>: pkg_bigarray
-<examples/*.ml{,i}>: pkg_camlp4
-<examples/*.ml{,i}>: use_gsl
+<examples/*.ml{,i,y}>: pkg_bigarray
+<examples/*.ml{,i,y}>: pkg_camlp4
+<examples/*.ml{,i,y}>: use_gsl
 # OASIS_STOP
 
 true: -traverse
