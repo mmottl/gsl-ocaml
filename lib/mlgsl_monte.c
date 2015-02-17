@@ -26,6 +26,8 @@
 #include "wrappers.h"
 #include "mlgsl_fun.h"
 #include "mlgsl_rng.h"
+
+#include <stdint.h>
 #include "io.h"
 
 #define CallbackParams_val(v)   ((struct callback_params *)Field((v), 1))
