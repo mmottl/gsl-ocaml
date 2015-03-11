@@ -1,6 +1,6 @@
 OASISFormat:      0.4
 Name:             gsl
-Version:          1.18.2
+Version:          1.18.3
 Synopsis:         GSL - Bindings to the GNU Scientific Library
 Description:      gsl-ocaml branched off from Olivier Andrieu's distribution
                   (ocamlgsl) and includes bug fixes as well as numerous
@@ -149,7 +149,7 @@ Library gsl
                   mlgsl_vector_double.h,
                   mlgsl_vector_float.h,
                   wrappers.h
-  BuildDepends:   bigarray, camlp4
+  BuildDepends:   bigarray
   CCOpt:          -g -O2 -fPIC -DPIC
   if flag(strict) && ccomp_type(cc)
 # FIXME: eliminate all pedantic and extra warnings
@@ -321,7 +321,7 @@ Executable multifit_ex
   Path:           examples
   MainIs:         multifit_ex.ml
   Build$:         flag(examples)
-  BuildDepends:   gsl
+  BuildDepends:   gsl, camlp4
   Install:        false
   CompiledObject: best
 

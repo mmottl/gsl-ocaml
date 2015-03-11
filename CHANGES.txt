@@ -1,3 +1,7 @@
+in 1.18.3  (gsl-ocaml fork)
+
+  - Removed superfluous camlp4 dependency from library.
+
 in 1.18.2  (gsl-ocaml fork)
 
   - Better expected compatibility with OCaml versions larger than 4.02.1
