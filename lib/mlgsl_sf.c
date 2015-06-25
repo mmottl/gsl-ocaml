@@ -258,7 +258,7 @@ SF3(ellint_F, Double_val, Double_val, GSL_MODE_val)
 SF3(ellint_E, Double_val, Double_val, GSL_MODE_val)
 SF4(ellint_P, Double_val, Double_val, Double_val, GSL_MODE_val)
 
-#if GSL_MAJOR_VERSION > 1 || (GSL_MAJOR_VERSION >= 1 && GSL_MINOR_VERSION >= 16)
+#if GSL_MAJOR_VERSION > 1 || (GSL_MAJOR_VERSION >= 1 && GSL_MINOR_VERSION >= 17)
 SF3(ellint_D, Double_val, Double_val, GSL_MODE_val)
 #else
 CAMLprim value ml_gsl_sf_ellint_D(value arg1, value arg2, value arg3)
