@@ -324,7 +324,7 @@ Executable "multifit_data_ex"
 Executable multifit_ex
   Path:           examples
   MainIs:         multifit_ex.ml
-  Build$:         flag(examples)
+  Build$:         flag(examples) && flag(camlp4)
   BuildDepends:   gsl, camlp4
   Install:        false
   CompiledObject: best
