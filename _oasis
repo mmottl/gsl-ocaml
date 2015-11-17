@@ -1,6 +1,6 @@
 OASISFormat:      0.4
 Name:             gsl
-Version:          1.18.5
+Version:          1.19.0
 Synopsis:         GSL - Bindings to the GNU Scientific Library
 Description:      gsl-ocaml branched off from Olivier Andrieu's distribution
                   (ocamlgsl) and includes bug fixes as well as numerous

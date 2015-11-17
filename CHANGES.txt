@@ -1,6 +1,10 @@
+in 1.19.0  (gsl-ocaml fork)
+
+  - Fixed incompatibilities with GSL 2.0
+
 in 1.18.5  (gsl-ocaml fork)
 
-  - Fixed buliding of examples that depend on camlp4
+  - Fixed building of examples that depend on camlp4
 
     Thanks to Akinori Abe for the patch!
 
