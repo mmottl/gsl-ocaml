@@ -618,12 +618,10 @@ external legendre_sphPlm : int -> int -> float -> float
 external legendre_sphPlm_e : int -> int -> float -> result
   = "ml_gsl_sf_legendre_sphPlm_e"
 
-external legendre_sphPlm_array : int -> int -> float -> float array -> unit
-  = "ml_gsl_sf_legendre_sphPlm_array"
-
-external legendre_array_size : int -> int -> int
-  = "ml_gsl_sf_legendre_array_size"
-
+(* FIXME: linking problem with GSL 2.0 *)
+(* <:ext< legendre_sphPlm_array@ml_gsl_sf_legendre_sphPlm_array,int,int,float,float array,unit >> *)
+(* FIXME: linking problem with GSL 2.0 *)
+(* <:ext< legendre_array_size@ml_gsl_sf_legendre_array_size,int,int,int >> *)
 
 (* LOGARITHM and related functions *)
 external log : float -> float = "ml_gsl_sf_log"
