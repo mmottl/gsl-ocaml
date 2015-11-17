@@ -20,12 +20,6 @@ external _linear : ?weight:vec -> x:mat -> y:vec -> c:vec -> cov:mat ->
       ws -> float
 	  = "ml_gsl_multifit_linear_bc" "ml_gsl_multifit_linear"
 
-external _linear_svd : 
-  ?weight:vec -> x:mat -> y:vec -> 
-  tol:float -> c:vec -> cov:mat -> 
-  ws -> int * float
-    = "ml_gsl_multifit_linear_svd_bc" "ml_gsl_multifit_linear_svd"
-
 let linear ?weight x y =
   let (n,p) = Gsl_vectmat.dims x in
   let dy = Gsl_vectmat.length y in

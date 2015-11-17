@@ -140,48 +140,6 @@ CAMLprim value ml_gsl_multifit_linear_bc(value *args, int argc)
 }
 
 
-CAMLprim value ml_gsl_multifit_linear_svd(value wo, value x, value y, 
-					  value tol, value c, value cov, 
-					  value ws)
-{
-  size_t rank;
-  double chisq;
-  _DECLARE_MATRIX2(x,cov);
-  _DECLARE_VECTOR2(y,c);
-  _CONVERT_MATRIX2(x,cov);
-  _CONVERT_VECTOR2(y,c);
-  if(wo == Val_none)
-    gsl_multifit_linear_svd(&m_x, &v_y, 
-			    Double_val(tol), &rank,
-			    &v_c, &m_cov, 
-			    &chisq, MultifitWS_val(ws));
-  else {
-    value w=Field(wo, 0);
-    _DECLARE_VECTOR(w);
-    _CONVERT_VECTOR(w);
-    gsl_multifit_wlinear_svd(&m_x, &v_w, &v_y, 
-			     Double_val(tol), &rank,
-			     &v_c, &m_cov, 
-			     &chisq, MultifitWS_val(ws));
-  }
-  {
-    CAMLparam0();
-    CAMLlocal2(r, v_chisq);
-    v_chisq = copy_double (chisq);
-    r = alloc_small (2, 0);
-    Field (r, 0) = Val_long (rank);
-    Field (r, 1) = v_chisq;
-    CAMLreturn(r);
-  }
-}
-
-CAMLprim value ml_gsl_multifit_linear_svd_bc(value *args, int argc)
-{
-  return ml_gsl_multifit_linear_svd(args[0], args[1], args[2],
-				    args[3], args[4], args[5], 
-				    args[6]);
-}
-
 CAMLprim value ml_gsl_multifit_linear_est (value x, value c, value cov)
 {
   double y, y_err;

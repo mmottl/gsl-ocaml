@@ -15,12 +15,6 @@ external _linear :
   c:vec -> cov:mat -> ws -> float
   = "ml_gsl_multifit_linear_bc" "ml_gsl_multifit_linear"
 
-external _linear_svd :
-  ?weight:vec ->
-  x:mat -> y:vec -> tol:float ->
-  c:vec -> cov:mat -> ws -> int * float
-  = "ml_gsl_multifit_linear_svd_bc" "ml_gsl_multifit_linear_svd"
-
 val linear :
   ?weight:vec -> mat -> vec -> 
     Gsl_vector.vector * Gsl_matrix.matrix * float
