@@ -200,10 +200,13 @@ open Gsl_fun
 
 (* Associated LEGENDRE functions *)
 << legendre_Plm int int float >>
-<:ext< legendre_Plm_array@ml_gsl_sf_legendre_Plm_array,int,int,float,float array,unit >>
+(* FIXME: linking problem with GSL 2.0 *)
+(* <:ext< legendre_Plm_array@ml_gsl_sf_legendre_Plm_array,int,int,float,float array,unit >> *)
 << legendre_sphPlm int int float >>
-<:ext< legendre_sphPlm_array@ml_gsl_sf_legendre_sphPlm_array,int,int,float,float array,unit >>
-<:ext< legendre_array_size@ml_gsl_sf_legendre_array_size,int,int,int >>
+(* FIXME: linking problem with GSL 2.0 *)
+(* <:ext< legendre_sphPlm_array@ml_gsl_sf_legendre_sphPlm_array,int,int,float,float array,unit >> *)
+(* FIXME: linking problem with GSL 2.0 *)
+(* <:ext< legendre_array_size@ml_gsl_sf_legendre_array_size,int,int,int >> *)
 
 (* LOGARITHM and related functions *)
 << log float >>

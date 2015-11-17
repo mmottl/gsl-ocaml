@@ -475,6 +475,9 @@ SF2(legendre_Ql, Int_val, Double_val)
 
 /* Associated Legendre Polynomials and Spherical Harmonics  */
 SF3(legendre_Plm, Int_val, Int_val, Double_val) 
+
+/* FIXME: linking problem with GSL 2.0 */
+#if 0
 CAMLprim value 
 ml_gsl_sf_legendre_Plm_array(value lmax, value m, value x, value result_array)
 {
@@ -484,8 +487,12 @@ ml_gsl_sf_legendre_Plm_array(value lmax, value m, value x, value result_array)
                             Double_array_val(result_array));
   return Val_unit;
 }
+#endif
 
+/* FIXME: linking problem with GSL 2.0 */
+#if 0
 SF3(legendre_sphPlm, Int_val, Int_val, Double_val) 
+
 CAMLprim value 
 ml_gsl_sf_legendre_sphPlm_array(value lmax, value m, 
                                 value x, value result_array)
@@ -496,7 +503,10 @@ ml_gsl_sf_legendre_sphPlm_array(value lmax, value m,
                                Double_array_val(result_array));
   return Val_unit;
 }
+#endif
 
+/* FIXME: linking problem with GSL 2.0 */
+#if 0
 CAMLprim value
 ml_gsl_sf_legendre_array_size(value lmax, value m)
 {
@@ -509,6 +519,7 @@ ml_gsl_sf_legendre_array_size(value lmax, value m)
   ret = Val_int(gsl_ret);
   CAMLreturn(ret);
 }
+#endif
 
 /* LOGARITHM and related functions */
 SF1(log, Double_val)

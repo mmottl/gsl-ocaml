@@ -611,9 +611,8 @@ external legendre_Plm : int -> int -> float -> float
 external legendre_Plm_e : int -> int -> float -> result
   = "ml_gsl_sf_legendre_Plm_e"
 
-external legendre_Plm_array : int -> int -> float -> float array -> unit
-  = "ml_gsl_sf_legendre_Plm_array"
-
+(* FIXME: linking problem with GSL 2.0 *)
+(* <:ext< legendre_Plm_array@ml_gsl_sf_legendre_Plm_array,int,int,float,float array,unit >> *)
 external legendre_sphPlm : int -> int -> float -> float
   = "ml_gsl_sf_legendre_sphPlm"
 external legendre_sphPlm_e : int -> int -> float -> result
