@@ -1,3 +1,7 @@
+in 1.19.1  (gsl-ocaml fork)
+
+  - Fixed linking problem
+
 in 1.19.0  (gsl-ocaml fork)
 
   - Fixed incompatibilities with GSL 2.0
