@@ -489,10 +489,10 @@ ml_gsl_sf_legendre_Plm_array(value lmax, value m, value x, value result_array)
 }
 #endif
 
-/* FIXME: linking problem with GSL 2.0 */
-#if 0
 SF3(legendre_sphPlm, Int_val, Int_val, Double_val) 
 
+/* FIXME: linking problem with GSL 2.0 */
+#if 0
 CAMLprim value 
 ml_gsl_sf_legendre_sphPlm_array(value lmax, value m, 
                                 value x, value result_array)
