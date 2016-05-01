@@ -9,6 +9,7 @@
 #include <caml/mlvalues.h>
 #include <caml/alloc.h>
 #include <caml/memory.h>
+#include <caml/fail.h>
 
 #include "wrappers.h"
 
@@ -474,52 +475,28 @@ SF1(legendre_Q1, Double_val)
 SF2(legendre_Ql, Int_val, Double_val)
 
 /* Associated Legendre Polynomials and Spherical Harmonics  */
-SF3(legendre_Plm, Int_val, Int_val, Double_val) 
 
-/* FIXME: linking problem with GSL 2.0 */
-#if 0
 CAMLprim value 
-ml_gsl_sf_legendre_Plm_array(value lmax, value m, value x, value result_array)
+ml_gsl_sf_legendre_array(value norm, value vlmax, value m, value x,
+                         value result_array)
 {
-  gsl_sf_legendre_Plm_array(Int_val(lmax),
-                            Int_val(m),
-                            Double_val(x),
-                            Double_array_val(result_array));
+  const size_t lmax = Int_val(vlmax);
+  if (Double_array_length(result_array) < gsl_sf_legendre_array_n(lmax)) {
+    caml_invalid_argument("Gsl_sf.legendre_array: array too small");
+  }
+  gsl_sf_legendre_array(Int_val(norm),
+                        lmax,
+                        Double_val(x),
+                        Double_array_val(result_array));
   return Val_unit;
 }
-#endif
 
+ML1(gsl_sf_legendre_array_n, Int_val, Val_int)
+ML2(gsl_sf_legendre_array_index, Int_val, Int_val, Val_int)
+
+SF3(legendre_Plm, Int_val, Int_val, Double_val) 
 SF3(legendre_sphPlm, Int_val, Int_val, Double_val) 
 
-/* FIXME: linking problem with GSL 2.0 */
-#if 0
-CAMLprim value 
-ml_gsl_sf_legendre_sphPlm_array(value lmax, value m, 
-                                value x, value result_array)
-{
-  gsl_sf_legendre_sphPlm_array(Int_val(lmax),
-                               Int_val(m),
-                               Double_val(x),
-                               Double_array_val(result_array));
-  return Val_unit;
-}
-#endif
-
-/* FIXME: linking problem with GSL 2.0 */
-#if 0
-CAMLprim value
-ml_gsl_sf_legendre_array_size(value lmax, value m)
-{
-  CAMLparam2(lmax, m);
-  CAMLlocal1(ret);
-  int gsl_ret;
-
-  gsl_ret = gsl_sf_legendre_array_size(Int_val(lmax), Int_val(m));
-  
-  ret = Val_int(gsl_ret);
-  CAMLreturn(ret);
-}
-#endif
 
 /* LOGARITHM and related functions */
 SF1(log, Double_val)

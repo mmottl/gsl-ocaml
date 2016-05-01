@@ -675,6 +675,39 @@ external legendre_Ql_e : int -> float -> result = "ml_gsl_sf_legendre_Ql_e"
 
 (** {2 Associated Legendre functions and Spherical Harmonics} *)
 
+(** Normalization of Legendre functions.
+    See {{:https://www.gnu.org/software/gsl/manual/html_node/Associated-Legendre-Polynomials-and-Spherical-Harmonics.html#Associated-Legendre-Polynomials-and-Spherical-Harmonics}
+    the GSL documentation}. *)
+type legendre_t =
+  | None (** Specifies the computation of the unnormalized associated
+             Legendre polynomials Pₗᵐ(x). *)
+  | Schmidt (** Specifies the computation of the Schmidt semi-normalized
+                associated Legendre polynomials Sₗᵐ(x). *)
+  | Spharm (** Specifies the computation of the spherical harmonic
+               associated Legendre polynomials Yₗᵐ(x). *)
+  | Full (** Specifies the computation of the fully normalized associated
+             Legendre polynomials Nₗᵐ(x). *)
+
+external legendre_array : legendre_t -> int -> float -> float array -> unit
+  = "ml_gsl_sf_legendre_array"
+
+(** [legendre_array norm lmax x a] and [legendre_array_e norm lmax x
+    a] calculate all normalized associated Legendre polynomials for 0
+    ≤ [l] ≤ [lmax] and 0 ≤ [m] ≤ [l] for |x| ≤ 1.  The [norm]
+    parameter specifies which normalization is used.  The normalized
+    Pₗᵐ(x) values are stored in [a], whose minimum size can be
+    obtained from calling {!legendre_array_n}.  The array index of
+    Pₗᵐ(x) is obtained from calling {!legendre_array_index}[(l, m)].
+    To include or exclude the Condon-Shortley phase factor of (-1)ᵐ,
+    set the parameter csphase to either -1 or 1 respectively in the _e
+    function. This factor is included by default.  *)
+
+external legendre_array_n : int -> int = "ml_gsl_sf_legendre_array_n"
+
+external legendre_array_index : int -> int -> int
+  = "ml_gsl_sf_legendre_array_index"
+
+
 external legendre_Plm : int -> int -> float -> float
   = "ml_gsl_sf_legendre_Plm"
 external legendre_Plm_e : int -> int -> float -> result

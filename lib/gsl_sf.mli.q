@@ -268,13 +268,56 @@ open Gsl_fun
 
 (** {2 Associated Legendre functions and Spherical Harmonics} *)
 
+(** Normalization of Legendre functions.
+    See {{:https://www.gnu.org/software/gsl/manual/html_node/Associated-Legendre-Polynomials-and-Spherical-Harmonics.html#Associated-Legendre-Polynomials-and-Spherical-Harmonics}
+    the GSL documentation}. *)
+type legendre_t =
+  | Schmidt (** Specifies the computation of the Schmidt semi-normalized
+                associated Legendre polynomials Sₗᵐ(x). *)
+  | Spharm (** Specifies the computation of the spherical harmonic
+               associated Legendre polynomials Yₗᵐ(x). *)
+  | Full (** Specifies the computation of the fully normalized associated
+             Legendre polynomials Nₗᵐ(x). *)
+  | None (** Specifies the computation of the unnormalized associated
+             Legendre polynomials Pₗᵐ(x). *)
+(* FIXME: keep in the same order as the C definition in gsl_sf_legendre.h *)
+
+(* FIXME: to avoid repetitive checks on the length of the array,
+   it would be better to structure the code in a more abstract way. *)
+<:ext< legendre_array@ml_gsl_sf_legendre_array,legendre_t,int,float,float array,unit >>
+(** [legendre_array norm lmax x result] calculate all normalized
+    associated Legendre polynomials for 0 ≤ [l] ≤ [lmax] and
+    [0 ≤ m ≤ l] for [|x| ≤ 1].  The [norm] parameter specifies which
+    normalization is used.  The normalized Pₗᵐ(x) values are stored in
+    [result], whose minimum size can be obtained from calling
+    {!legendre_array_n}.  The array index of Pₗᵐ(x) is obtained from
+    calling {!legendre_array_index}[(l, m)].  To include or exclude
+    the Condon-Shortley phase factor of (-1)ᵐ, set the parameter
+    csphase to either -1 or 1 respectively in the _e function. This
+    factor is included by default.  *)
+
+(* FIXME: more associated Legendre functions to bind. *)
+
+<:ext< legendre_array_n@ml_gsl_sf_legendre_array_n,int,int >>
+(** [legendre_array_n lmax] returns the minimum array size for maximum
+    degree lmax needed for the array versions of the associated
+    Legendre functions.  Size is calculated as the total number of
+    Pₗᵐ(x) functions, plus extra space for precomputing multiplicative
+    factors used in the recurrence relations.  *)
+
+<:ext< legendre_array_index@ml_gsl_sf_legendre_array_index,int,int,int >>
+(** [legendre_array_index l m] returns the index into the [result]
+    array of {!legendre_array}, {!legendre_deriv_array},
+    {!legendre_deriv_alt_array}, {!legendre_deriv2_array}, and
+    {!legendre_deriv2_alt_array} corresponding to Pₗᵐ(x), ∂ₓPₗᵐ(x),
+    or ∂ₓ²Pₗₗᵐ(x).  The index is given by l(l+1)/2 + m.  *)
+(* FIXME: it would likely be more efficient to implement this function
+   directly in OCaml. *)
+
 << legendre_Plm int int float >>
 (** [legendre_Plm l m x] and [legendre_Plm_e l m x] compute the
     associated Legendre polynomial Pₗᵐ(x) for [m ≥ 0], [l ≥ m],
     [|x| ≤ 1].  *)
-
-(* FIXME: linking problem with GSL 2.0 *)
-(* <:ext< legendre_Plm_array@ml_gsl_sf_legendre_Plm_array,int,int,float,float array,unit >> *)
 
 << legendre_sphPlm int int float >>
 (** [legendre_sphPlm l m x] and [legendre_Plm_e] compute the
@@ -284,10 +327,6 @@ open Gsl_fun
     routines avoid the overflows that occur for the standard
     normalization of Pₗᵐ(x).  *)
 
-(* FIXME: linking problem with GSL 2.0 *)
-(* <:ext< legendre_sphPlm_array@ml_gsl_sf_legendre_sphPlm_array,int,int,float,float array,unit >> *)
-(* FIXME: linking problem with GSL 2.0 *)
-(* <:ext< legendre_array_size@ml_gsl_sf_legendre_array_size,int,int,int >> *)
 
 (** {2 Logarithm and related functions} *)
 
