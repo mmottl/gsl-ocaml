@@ -1,12 +1,13 @@
 (* gsl-ocaml - OCaml interface to GSL                       *)
-(* Copyright (�) 2002-2012 - Olivier Andrieu                *)
+(* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-(** Special functions *)
+(** {1 Special functions} *)
 
 open Gsl_fun
 
-(* AIRY functions *)
+(** {2 Airy functions} *)
+
 external airy_Ai : float -> mode -> float = "ml_gsl_sf_airy_Ai"
 external airy_Ai_e : float -> mode -> result = "ml_gsl_sf_airy_Ai_e"
 
@@ -47,7 +48,8 @@ external airy_zero_Bi : int -> float = "ml_gsl_sf_airy_zero_Bi"
 external airy_zero_Bi_e : int -> result = "ml_gsl_sf_airy_zero_Bi_e"
 
 
-(* BESSEL functions *)
+(** {2 Bessel functions} *)
+
 external bessel_J0 : float -> float = "ml_gsl_sf_bessel_J0"
 external bessel_J0_e : float -> result = "ml_gsl_sf_bessel_J0_e"
 external bessel_J1 : float -> float = "ml_gsl_sf_bessel_J1"
@@ -205,12 +207,14 @@ external bessel_zero_Jnu_e : float -> int -> result
   = "ml_gsl_sf_bessel_zero_Jnu_e"
 
 
-(* CLAUSEN functions *)
+(** {2 Clausen functions} *)
+
 external clausen : float -> float = "ml_gsl_sf_clausen"
 external clausen_e : float -> result = "ml_gsl_sf_clausen_e"
 
 
-(* COULOMB functions *)
+(** {2 Coulomb functions} *)
+
 external hydrogenicR_1 : float -> float -> float = "ml_gsl_sf_hydrogenicR_1"
 external hydrogenicR_1_e : float -> float -> result
   = "ml_gsl_sf_hydrogenicR_1_e"
@@ -220,7 +224,9 @@ external hydrogenicR : int -> int -> float -> float -> float
 external hydrogenicR_e : int -> int -> float -> float -> result
   = "ml_gsl_sf_hydrogenicR_e"
 
+
 (* FIXME: COULOMB wave functions *)
+
 external coulomb_CL_e : float -> float -> result = "ml_gsl_sf_coulomb_CL_e"
 
 external coulomb_CL_array : float -> float -> float array -> unit
@@ -229,12 +235,14 @@ external coulomb_CL_array : float -> float -> float array -> unit
 
 (* FIXME: coupling coeffs *)
 
-(* DAWSON functions *)
+(** {2 Dawson functions} *)
+
 external dawson : float -> float = "ml_gsl_sf_dawson"
 external dawson_e : float -> result = "ml_gsl_sf_dawson_e"
 
 
-(* DEBYE functions *)
+(** {2 Debye functions} *)
+
 external debye_1 : float -> float = "ml_gsl_sf_debye_1"
 external debye_1_e : float -> result = "ml_gsl_sf_debye_1_e"
 
@@ -254,7 +262,8 @@ external debye_6 : float -> float = "ml_gsl_sf_debye_6"
 external debye_6_e : float -> result = "ml_gsl_sf_debye_6_e"
 
 
-(* DILOGARITHM *)
+(** {2 Dilogarithm} *)
+
 external dilog : float -> float = "ml_gsl_sf_dilog"
 external dilog_e : float -> result = "ml_gsl_sf_dilog_e"
 
@@ -268,14 +277,16 @@ external complex_spence_xy_e : float -> float -> result * result
   = "ml_gsl_sf_complex_spence_xy_e"
 
 
-(* ELEMENTARY operations *)
+(** {2 Elementary operations} *)
+
 external multiply_e : float -> float -> result = "ml_gsl_sf_multiply_e"
 
 external multiply_err_e : x:float -> dx:float -> y:float -> dy:float -> result
   = "ml_gsl_sf_multiply_err_e"
 
 
-(* ELLIPTIC integrals *)
+(** {2 Elliptic integrals} *)
+
 external ellint_Kcomp : float -> mode -> float = "ml_gsl_sf_ellint_Kcomp"
 external ellint_Kcomp_e : float -> mode -> result
   = "ml_gsl_sf_ellint_Kcomp_e"
@@ -331,7 +342,8 @@ external ellint_RJ_e : float -> float -> float -> float -> mode -> result
 
 (* FIXME: elljac_e *)
 
-(* ERROR function *)
+(** {2 Error function} *)
+
 external erf : float -> float = "ml_gsl_sf_erf" "gsl_sf_erf" "float"
 external erf_e : float -> result = "ml_gsl_sf_erf_e"
 
@@ -349,30 +361,64 @@ external erf_Q : float -> float = "ml_gsl_sf_erf_Q" "gsl_sf_erf_Q" "float"
 external erf_Q_e : float -> result = "ml_gsl_sf_erf_Q_e"
 
 
-(* EXPONENTIAL functions *)
+(** {2 Exponential functions} *)
+
 external exp : float -> float = "ml_gsl_sf_exp" "gsl_sf_exp" "float"
 external exp_e : float -> result = "ml_gsl_sf_exp_e"
 
+(** [exp x] computes the exponential function eˣ using GSL semantics
+    and error checking.  *)
+
 external exp_e10 : float -> result_e10 = "ml_gsl_sf_exp_e10_e"
+
+(** [exp_e10 x] computes the exponential eˣ and returns a result with
+    extended range. This function may be useful if the value of eˣ
+    would overflow the numeric range of double.  *)
 
 external exp_mult : float -> float -> float = "ml_gsl_sf_exp_mult"
 external exp_mult_e : float -> float -> result = "ml_gsl_sf_exp_mult_e"
 
+(** [exp_mult x y] exponentiate [x] and multiply by the factor [y] to
+    return the product y eˣ.  *)
+
 external exp_mult_e10 : float -> float -> result_e10
   = "ml_gsl_sf_exp_mult_e10_e"
 
+(** Same as {!exp_e10} but return a result with extended numeric range. *)
 
 external expm1 : float -> float = "ml_gsl_sf_expm1"
 external expm1_e : float -> result = "ml_gsl_sf_expm1_e"
 
+(** [expm1 x] compute the quantity eˣ-1 using an algorithm that is
+    accurate for small [x].  *)
+
 external exprel : float -> float = "ml_gsl_sf_exprel"
 external exprel_e : float -> result = "ml_gsl_sf_exprel_e"
+
+(** [exprel x] compute the quantity (eˣ-1)/x using an algorithm that
+    is accurate for small [x].  For small [x] the algorithm is based
+    on the expansion (eˣ-1)/x = 1 + x/2 + x²/(2*3) + x³/(2*3*4) + ⋯  *)
 
 external exprel_2 : float -> float = "ml_gsl_sf_exprel_2"
 external exprel_2_e : float -> result = "ml_gsl_sf_exprel_2_e"
 
+(** [exprel_2 x] compute the quantity 2(eˣ-1-x)/x² using an algorithm
+    that is accurate for small [x].  For small x the algorithm is
+    based on the expansion 2(eˣ-1-x)/x^2 = 1 + x/3 + x²/(3*4) +
+    x³/(3*4*5) + ⋯ *)
+
 external exprel_n : int -> float -> float = "ml_gsl_sf_exprel_n"
 external exprel_n_e : int -> float -> result = "ml_gsl_sf_exprel_n_e"
+
+(** [exprel_n x] compute the [n]-relative exponential, which is the
+    n-th generalization of the functions {!exprel} and
+    {!exprel_2}. The N-relative exponential is given by,
+    {[
+                             n-1
+    exprel_n x = n!/xⁿ (aˣ -  ∑ xᵏ/k!)
+                             k=0
+               = 1 + x/(N+1) + x²/((N+1)(N+2)) + ⋯
+    ]}*)
 
 external exp_err_e : x:float -> dx:float -> result = "ml_gsl_sf_exp_err_e"
 
@@ -386,7 +432,8 @@ external exp_mult_err_e10_e : x:float -> dx:float -> y:float -> dy:float -> resu
   = "ml_gsl_sf_exp_mult_err_e10_e"
 
 
-(* EXPONENTIAL integrals *)
+(** {2 Exponential integrals} *)
+
 external expint_E1 : float -> float = "ml_gsl_sf_expint_E1"
 external expint_E1_e : float -> result = "ml_gsl_sf_expint_E1_e"
 
@@ -423,7 +470,8 @@ external atanint : float -> float = "ml_gsl_sf_atanint"
 external atanint_e : float -> result = "ml_gsl_sf_atanint_e"
 
 
-(* fermi-dirac *)
+(** {2 Fermi-Dirac function} *)
+
 external fermi_dirac_m1 : float -> float = "ml_gsl_sf_fermi_dirac_m1"
 external fermi_dirac_m1_e : float -> result = "ml_gsl_sf_fermi_dirac_m1_e"
 
@@ -459,7 +507,8 @@ external fermi_dirac_inc_0_e : float -> float -> result
   = "ml_gsl_sf_fermi_dirac_inc_0_e"
 
 
-(* Gamma function *)
+(** {2 Gamma function} *)
+
 external gamma : float -> float = "ml_gsl_sf_gamma"
 
 external gamma_e : float -> result = "ml_gsl_sf_gamma_e"
@@ -534,29 +583,46 @@ external beta_inc_e : float -> float -> float -> result
   = "ml_gsl_sf_beta_inc_e"
 
 
-(* GEGENBAUER functions *)
+(** {2 Gegenbauer functions aka Ultraspherical polynomials}
+
+    Gegenbauer functions are defined in {{:http://dlmf.nist.gov/18.3} DLMF}. *)
+
 external gegenpoly_1 : float -> float -> float = "ml_gsl_sf_gegenpoly_1"
 external gegenpoly_1_e : float -> float -> result = "ml_gsl_sf_gegenpoly_1_e"
+
+(** [gegenpoly_1 l x] = C₁⁽ˡ⁾(x). *)
 
 external gegenpoly_2 : float -> float -> float = "ml_gsl_sf_gegenpoly_2"
 external gegenpoly_2_e : float -> float -> result = "ml_gsl_sf_gegenpoly_2_e"
 
+(** [gegenpoly_2 l x] = C₂⁽ˡ⁾(x). *)
+
 external gegenpoly_3 : float -> float -> float = "ml_gsl_sf_gegenpoly_3"
 external gegenpoly_3_e : float -> float -> result = "ml_gsl_sf_gegenpoly_3_e"
+
+(** [gegenpoly_3 l x] = C₃⁽ˡ⁾(x). *)
 
 external gegenpoly_n : int -> float -> float -> float
   = "ml_gsl_sf_gegenpoly_n"
 external gegenpoly_n_e : int -> float -> float -> result
   = "ml_gsl_sf_gegenpoly_n_e"
 
+(** [gegenpoly_n n l x] = Cₙ⁽ˡ⁾(x).  Constraints: l > -1/2, n ≥ 0. *)
+
 external gegenpoly_array : float -> float -> float array -> unit
   = "ml_gsl_sf_gegenpoly_array"
 
+(** [gegenpoly_array l x c] computes an array of Gegenbauer
+    polynomials c.(n) = Cₙ⁽ˡ⁾(x) for n = 0, 1, 2,̣..., [Array.length c - 1].
+    Constraints: l > -1/2. *)
 
-(* HYPERGEOMETRIC functions *)
+
+(** {2 Hypergeometric functions} *)
+
 (* FIXME *)
 
-(* LAGUERRE functions *)
+(** {2 Laguerre functions} *)
+
 external laguerre_1 : float -> float -> float = "ml_gsl_sf_laguerre_1"
 external laguerre_1_e : float -> float -> result = "ml_gsl_sf_laguerre_1_e"
 
@@ -571,7 +637,8 @@ external laguerre_n_e : int -> float -> float -> result
   = "ml_gsl_sf_laguerre_n_e"
 
 
-(* LAMBERT W functions *)
+(** {2 Lambert W functions} *)
+
 external lambert_W0 : float -> float = "ml_gsl_sf_lambert_W0"
 external lambert_W0_e : float -> result = "ml_gsl_sf_lambert_W0_e"
 
@@ -579,7 +646,8 @@ external lambert_Wm1 : float -> float = "ml_gsl_sf_lambert_Wm1"
 external lambert_Wm1_e : float -> result = "ml_gsl_sf_lambert_Wm1_e"
 
 
-(* LEGENDRE functions *)
+(** {2 Legendre functions} *)
+
 external legendre_P1 : float -> float = "ml_gsl_sf_legendre_P1"
 external legendre_P1_e : float -> result = "ml_gsl_sf_legendre_P1_e"
 
@@ -605,25 +673,39 @@ external legendre_Ql : int -> float -> float = "ml_gsl_sf_legendre_Ql"
 external legendre_Ql_e : int -> float -> result = "ml_gsl_sf_legendre_Ql_e"
 
 
-(* Associated LEGENDRE functions *)
+(** {2 Associated Legendre functions and Spherical Harmonics} *)
+
 external legendre_Plm : int -> int -> float -> float
   = "ml_gsl_sf_legendre_Plm"
 external legendre_Plm_e : int -> int -> float -> result
   = "ml_gsl_sf_legendre_Plm_e"
 
+(** [legendre_Plm l m x] and [legendre_Plm_e l m x] compute the
+    associated Legendre polynomial Pₗᵐ(x) for [m ≥ 0], [l ≥ m],
+    [|x| ≤ 1].  *)
+
 (* FIXME: linking problem with GSL 2.0 *)
 (* <:ext< legendre_Plm_array@ml_gsl_sf_legendre_Plm_array,int,int,float,float array,unit >> *)
+
 external legendre_sphPlm : int -> int -> float -> float
   = "ml_gsl_sf_legendre_sphPlm"
 external legendre_sphPlm_e : int -> int -> float -> result
   = "ml_gsl_sf_legendre_sphPlm_e"
+
+(** [legendre_sphPlm l m x] and [legendre_Plm_e] compute the
+    normalized associated Legendre polynomial √((2l+1)/(4\pi))
+    √((l-m)!/(l+m)!) Pₗᵐ(x) suitable for use in spherical harmonics.
+    The parameters must satisfy [m ≥ 0], [l ≥ m], [|x| ≤ 1].  Theses
+    routines avoid the overflows that occur for the standard
+    normalization of Pₗᵐ(x).  *)
 
 (* FIXME: linking problem with GSL 2.0 *)
 (* <:ext< legendre_sphPlm_array@ml_gsl_sf_legendre_sphPlm_array,int,int,float,float array,unit >> *)
 (* FIXME: linking problem with GSL 2.0 *)
 (* <:ext< legendre_array_size@ml_gsl_sf_legendre_array_size,int,int,int >> *)
 
-(* LOGARITHM and related functions *)
+(** {2 Logarithm and related functions} *)
+
 external log : float -> float = "ml_gsl_sf_log"
 external log_e : float -> result = "ml_gsl_sf_log_e"
 
@@ -640,12 +722,14 @@ external log_1plusx_mx : float -> float = "ml_gsl_sf_log_1plusx_mx"
 external log_1plusx_mx_e : float -> result = "ml_gsl_sf_log_1plusx_mx_e"
 
 
-(* POWER function *)
+(** {2 Power function} *)
+
 external pow_int : float -> int -> float = "ml_gsl_sf_pow_int"
 external pow_int_e : float -> int -> result = "ml_gsl_sf_pow_int_e"
 
 
-(* PSI function *)
+(** {2 Psi (Digamma) function} *)
+
 external psi_int : int -> float = "ml_gsl_sf_psi_int"
 external psi_int_e : int -> result = "ml_gsl_sf_psi_int_e"
 
@@ -668,7 +752,8 @@ external psi_n : int -> float -> float = "ml_gsl_sf_psi_n"
 external psi_n_e : int -> float -> result = "ml_gsl_sf_psi_n_e"
 
 
-(* SYNCHROTRON functions *)
+(** {2 Synchrotron functions} *)
+
 external synchrotron_1 : float -> float = "ml_gsl_sf_synchrotron_1"
 external synchrotron_1_e : float -> result = "ml_gsl_sf_synchrotron_1_e"
 
@@ -676,7 +761,8 @@ external synchrotron_2 : float -> float = "ml_gsl_sf_synchrotron_2"
 external synchrotron_2_e : float -> result = "ml_gsl_sf_synchrotron_2_e"
 
 
-(* TRANSPORT functions *)
+(** {2 Transport functions} *)
+
 external transport_2 : float -> float = "ml_gsl_sf_transport_2"
 external transport_2_e : float -> result = "ml_gsl_sf_transport_2_e"
 
@@ -690,7 +776,8 @@ external transport_5 : float -> float = "ml_gsl_sf_transport_5"
 external transport_5_e : float -> result = "ml_gsl_sf_transport_5_e"
 
 
-(* TRIGONOMETRIC functions *)
+(** {2 Trigonometric functions} *)
+
 external sin : float -> float = "ml_gsl_sf_sin" "gsl_sf_sin" "float"
 external sin_e : float -> result = "ml_gsl_sf_sin_e"
 
@@ -734,7 +821,8 @@ external sin_err_e : float -> dx:float -> result = "ml_gsl_sf_sin_err_e"
 external cos_err_e : float -> dx:float -> result = "ml_gsl_sf_cos_err_e"
 
 
-(* ZETA functions *)
+(** {2 Zeta functions} *)
+
 external zeta_int : int -> float = "ml_gsl_sf_zeta_int"
 external zeta_int_e : int -> result = "ml_gsl_sf_zeta_int_e"
 

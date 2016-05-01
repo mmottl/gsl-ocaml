@@ -17,6 +17,7 @@ FindlibVersion:   >= 1.3.1
 Homepage:         http://mmottl.github.io/gsl-ocaml
 #Categories:
 FilesAB:          lib/gsl_version.ml.ab
+AlphaFeatures:    ocamlbuild_more_args
 
 Plugins:          META (0.4), StdFiles (0.4), DevFiles (0.4)
 XStdFilesREADME:  false
@@ -441,6 +442,9 @@ Document API
   InstallDir:           $docdir/api
   XOCamlbuildPath:      .
   XOCamlbuildLibraries: gsl
+  XOCamlbuildExtraArgs:
+    "-docflags '-colorize-code -keep-code -charset utf-8'"
+
 
 SourceRepository head
   Type:       Git

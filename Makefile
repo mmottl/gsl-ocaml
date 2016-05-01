@@ -45,12 +45,17 @@ setup.ml: _oasis
 
 GSLINCDIR := $(shell gsl-config --prefix)/include
 
+GENERATED = $(addprefix lib/, gsl_const.mli gsl_const.ml \
+		gsl_sf.mli gsl_sf.ml)
+
 .PHONY: post-conf
 post-conf:
+	-$(RM) -f $(GENERATED)
 	ocaml do_const.ml --mli > lib/gsl_const.mli
 	ocaml do_const.ml > lib/gsl_const.ml
 	ocaml do_sf.ml < lib/gsl_sf.mli.q > lib/gsl_sf.mli
 	cp lib/gsl_sf.mli lib/gsl_sf.ml
+	-chmod 0400 $(GENERATED)
 	ocaml do_cdf.ml < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/gsl_cdf.mli
 	cp lib/gsl_cdf.mli lib/gsl_cdf.ml
 	ocaml do_cdf.ml --c < $(GSLINCDIR)/gsl/gsl_cdf.h > lib/mlgsl_cdf.c
