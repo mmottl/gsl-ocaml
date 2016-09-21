@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="gsl-ocaml : OCaml bindings to the GSL (GNU Scientific Library)." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>gsl-ocaml</title>
+    <meta charset="UTF-8">
+    <title>gsl-ocaml by mmottl</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">gsl-ocaml</h1>
+      <h2 class="project-tagline">OCaml bindings to the GSL (GNU Scientific Library).</h2>
+      <a href="https://github.com/mmottl/gsl-ocaml" class="btn">View on GitHub</a>
+      <a href="https://github.com/mmottl/gsl-ocaml/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/mmottl/gsl-ocaml/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/mmottl/gsl-ocaml">View on GitHub</a>
-
-          <h1 id="project_title">gsl-ocaml</h1>
-          <h2 id="project_tagline">OCaml bindings to the GSL (GNU Scientific Library).</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/mmottl/gsl-ocaml/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/mmottl/gsl-ocaml/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="gsl-ocaml---gsl-bindings-for-ocaml" class="anchor" href="#gsl-ocaml---gsl-bindings-for-ocaml"><span class="octicon octicon-link"></span></a>GSL-OCaml - GSL-Bindings for OCaml</h1>
+    <section class="main-content">
+      <h1>
+<a id="gsl-ocaml---gsl-bindings-for-ocaml" class="anchor" href="#gsl-ocaml---gsl-bindings-for-ocaml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>GSL-OCaml - GSL-Bindings for OCaml</h1>
 
 <p>This library was written by <a href="http://oandrieu.nerim.net/ocaml">Olivier Andrieu</a>.
 This version (gsl-ocaml) contains patches by <a href="http://www.ocaml.info">Markus
@@ -43,30 +31,28 @@ in the future.</p>
 (GNU scientific library) for the <a href="http://www.ocaml.org">OCaml</a>-language.</p>
 
 <h2>
-<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
 
 <p>The platform must not align doubles on double-word addresses, i.e. the C-macro
 <code>ARCH_ALIGN_DOUBLE</code> must be undefined in the OCaml C-configuration header in
 <code>&lt;caml/config.h&gt;</code>.</p>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
 
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span>./configure
-<span class="nv">$ </span>make
-<span class="nv">$ </span>make install
-</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ ./configure
+$ make
+$ make install</pre></div>
 
 <h3>
-<a name="configuring-alternative-blas-libraries" class="anchor" href="#configuring-alternative-blas-libraries"><span class="octicon octicon-link"></span></a>Configuring alternative BLAS-libraries</h3>
+<a id="configuring-alternative-blas-libraries" class="anchor" href="#configuring-alternative-blas-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configuring alternative BLAS-libraries</h3>
 
 <p>The underlying GSL-library depends on a C-implementation of the BLAS-library
 (Basic Linear Algebra Subroutines).  It comes with its own implementation,
 <code>gslcblas</code>, which GSL will link with by default, e.g.:</p>
 
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span>gsl-config --libs
--L/opt/local/lib -lgsl -lgslcblas
-</pre></div>
+<div class="highlight highlight-source-shell"><pre>$ gsl-config --libs
+-L/opt/local/lib -lgsl -lgslcblas</pre></div>
 
 <p>This implementation is usually considerably slower than alternatives like
 <a href="http://www.openblas.net">OpenBLAS</a> or <a href="http://math-atlas.sourceforge.net">ATLAS (Automatically Tuned Linear
@@ -78,11 +64,10 @@ default, you will need to set an environment variable before starting
 the build process.  For example, if you are installing the package via
 <a href="http://opam.ocamlpro.com">OPAM</a>, you may want to do the following:</p>
 
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span><span class="nb">export </span><span class="nv">GSL_CBLAS_LIB</span><span class="o">=</span>-lopenblas
-<span class="nv">$ </span>gsl-config --libs
+<div class="highlight highlight-source-shell"><pre>$ <span class="pl-k">export</span> GSL_CBLAS_LIB=-lopenblas
+$ gsl-config --libs
 -L/opt/local/lib -lgsl -lopenblas
-<span class="nv">$ </span>opam install gsl-ocaml
-</pre></div>
+$ opam install gsl-ocaml</pre></div>
 
 <p>The above shows that after setting the environment variable <code>GSL_CBLAS_LIB</code>,
 <code>gsl-config</code> will return the correct linking flags to the build process
@@ -93,7 +78,7 @@ vendor library <code>vecLib</code>, which is part of the Accelerate-framework, a
 automatically link with it.</p>
 
 <h2>
-<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
 <p>Check the <a href="http://www.gnu.org/software/gsl/manual/html_node">GSL manual</a>
 to learn more about the GNU Scientific Library.</p>
@@ -103,10 +88,10 @@ in directory <code>API.docdir</code> after building the documentation with <code
 It is also available <a href="http://mmottl.github.io/gsl-ocaml/api">online</a>.</p>
 
 <h2>
-<a name="usage-hints" class="anchor" href="#usage-hints"><span class="octicon octicon-link"></span></a>Usage Hints</h2>
+<a id="usage-hints" class="anchor" href="#usage-hints" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage Hints</h2>
 
 <h3>
-<a name="vectors-and-matrices" class="anchor" href="#vectors-and-matrices"><span class="octicon octicon-link"></span></a>Vectors and Matrices</h3>
+<a id="vectors-and-matrices" class="anchor" href="#vectors-and-matrices" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vectors and Matrices</h3>
 
 <p>There are several data types for handling vectors and matrices.</p>
 
@@ -121,20 +106,20 @@ the equivalent of the <code>gsl_vector</code> and <code>gsl_matrix</code> struct
 <p>Module <code>Gsl.Vectmat</code> defines a sum type with polymorphic variants
 that regroups these two representations.  For instance:</p>
 
-<div class="highlight highlight-ocaml"><pre><span class="nn">Gsl</span><span class="p">.</span><span class="nn">Vectmat</span><span class="p">.</span><span class="n">v_add</span> <span class="o">(`</span><span class="nc">V</span> <span class="n">v1</span><span class="o">)</span> <span class="o">(`</span><span class="nc">VF</span> <span class="n">v2</span><span class="o">)</span>
-</pre></div>
+<div class="highlight highlight-source-ocaml"><pre><span class="pl-c1">Gsl.Vectmat.</span>v_add (<span class="pl-en">`V</span> v1) (<span class="pl-en">`VF</span> v2)</pre></div>
 
 <p>adds a vector in an OCaml array to a bigarray.</p>
 </li>
 <li><p>Modules <code>Gsl.Blas Gsl.Blas_flat</code> and <code>Gsl.Blas_gen</code> provide a (quite
 incomplete) interface to CBLAS for these types.</p></li>
-</ul><h3>
-<a name="error-handling" class="anchor" href="#error-handling"><span class="octicon octicon-link"></span></a>ERROR HANDLING</h3>
+</ul>
+
+<h3>
+<a id="error-handling" class="anchor" href="#error-handling" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ERROR HANDLING</h3>
 
 <p>Errors in GSL functions are reported as exceptions:</p>
 
-<div class="highlight highlight-ocaml"><pre><span class="nn">Gsl</span><span class="p">.</span><span class="nn">Error</span><span class="p">.</span><span class="nc">Gsl_exn</span> <span class="o">(</span><span class="n">errno</span><span class="o">,</span> <span class="n">msg</span><span class="o">)</span>
-</pre></div>
+<div class="highlight highlight-source-ocaml"><pre><span class="pl-c1">Gsl.Error.</span><span class="pl-en">Gsl_exn</span> (errno, msg)</pre></div>
 
 <p>You have to call <code>Gsl.Error.init ()</code> to initialize error reporting.  Otherwise,
 the default GSL error handler is used and aborts the program, leaving a core
@@ -145,18 +130,15 @@ either returns <code>GSL_FAILURE</code> or <code>NaN</code> to GSL depending on 
 In either case the original OCaml exception is not propagated.  The GSL
 function will either return normally (but probably with values containing
 <code>NaN</code>s somewhere) or raise a <code>Gsl_exn</code> exception.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">gsl-ocaml maintained by <a href="https://github.com/mmottl">mmottl</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/mmottl/gsl-ocaml">gsl-ocaml</a> is maintained by <a href="https://github.com/mmottl">mmottl</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
