@@ -1,0 +1,155 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Gsl" rel="Chapter" href="Gsl.html">
+<link title="Gsl_blas" rel="Chapter" href="Gsl_blas.html">
+<link title="Gsl_blas_flat" rel="Chapter" href="Gsl_blas_flat.html">
+<link title="Gsl_blas_gen" rel="Chapter" href="Gsl_blas_gen.html">
+<link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html">
+<link title="Gsl_cheb" rel="Chapter" href="Gsl_cheb.html">
+<link title="Gsl_combi" rel="Chapter" href="Gsl_combi.html">
+<link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
+<link title="Gsl_deriv" rel="Chapter" href="Gsl_deriv.html">
+<link title="Gsl_eigen" rel="Chapter" href="Gsl_eigen.html">
+<link title="Gsl_error" rel="Chapter" href="Gsl_error.html">
+<link title="Gsl_fft" rel="Chapter" href="Gsl_fft.html">
+<link title="Gsl_fit" rel="Chapter" href="Gsl_fit.html">
+<link title="Gsl_fun" rel="Chapter" href="Gsl_fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Gsl_histo" rel="Chapter" href="Gsl_histo.html">
+<link title="Gsl_ieee" rel="Chapter" href="Gsl_ieee.html">
+<link title="Gsl_integration" rel="Chapter" href="Gsl_integration.html">
+<link title="Gsl_interp" rel="Chapter" href="Gsl_interp.html">
+<link title="Gsl_linalg" rel="Chapter" href="Gsl_linalg.html">
+<link title="Gsl_math" rel="Chapter" href="Gsl_math.html">
+<link title="Gsl_matrix" rel="Chapter" href="Gsl_matrix.html">
+<link title="Gsl_matrix_complex" rel="Chapter" href="Gsl_matrix_complex.html">
+<link title="Gsl_matrix_complex_flat" rel="Chapter" href="Gsl_matrix_complex_flat.html">
+<link title="Gsl_matrix_flat" rel="Chapter" href="Gsl_matrix_flat.html">
+<link title="Gsl_min" rel="Chapter" href="Gsl_min.html">
+<link title="Gsl_misc" rel="Chapter" href="Gsl_misc.html">
+<link title="Gsl_monte" rel="Chapter" href="Gsl_monte.html">
+<link title="Gsl_multifit" rel="Chapter" href="Gsl_multifit.html">
+<link title="Gsl_multifit_nlin" rel="Chapter" href="Gsl_multifit_nlin.html">
+<link title="Gsl_multimin" rel="Chapter" href="Gsl_multimin.html">
+<link title="Gsl_multiroot" rel="Chapter" href="Gsl_multiroot.html">
+<link title="Gsl_odeiv" rel="Chapter" href="Gsl_odeiv.html">
+<link title="Gsl_permut" rel="Chapter" href="Gsl_permut.html">
+<link title="Gsl_poly" rel="Chapter" href="Gsl_poly.html">
+<link title="Gsl_qrng" rel="Chapter" href="Gsl_qrng.html">
+<link title="Gsl_randist" rel="Chapter" href="Gsl_randist.html">
+<link title="Gsl_rng" rel="Chapter" href="Gsl_rng.html">
+<link title="Gsl_root" rel="Chapter" href="Gsl_root.html">
+<link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
+<link title="Gsl_siman" rel="Chapter" href="Gsl_siman.html">
+<link title="Gsl_stats" rel="Chapter" href="Gsl_stats.html">
+<link title="Gsl_sum" rel="Chapter" href="Gsl_sum.html">
+<link title="Gsl_vectmat" rel="Chapter" href="Gsl_vectmat.html">
+<link title="Gsl_vector" rel="Chapter" href="Gsl_vector.html">
+<link title="Gsl_vector_complex" rel="Chapter" href="Gsl_vector_complex.html">
+<link title="Gsl_vector_complex_flat" rel="Chapter" href="Gsl_vector_complex_flat.html">
+<link title="Gsl_vector_flat" rel="Chapter" href="Gsl_vector_flat.html">
+<link title="Gsl_version" rel="Chapter" href="Gsl_version.html">
+<link title="Gsl_wavelet" rel="Chapter" href="Gsl_wavelet.html"><title>Gsl_rng</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;rng_type&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">BOROSH13</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">COVEYOU</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">CMRG</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FISHMAN18</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FISHMAN20</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FISHMAN2X</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GFSR4</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">KNUTHRAN</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">KNUTHRAN2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">KNUTHRAN2002</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">LECUYER21</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MINSTD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MRG</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MT19937</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MT19937_1999</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">MT19937_1998</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">R250</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RAN0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RAN1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RAN2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RAN3</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RAND</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RAND48</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM128_BSD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM128_GLIBC2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM128_LIBC5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM256_BSD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM256_GLIBC2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM256_LIBC5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM32_BSD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM32_GLIBC2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM32_LIBC5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM64_BSD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM64_GLIBC2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM64_LIBC5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM8_BSD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM8_GLIBC2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM8_LIBC5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM_BSD</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM_GLIBC2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDOM_LIBC5</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANDU</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANF</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLUX</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLUX389</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLXD1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLXD2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLXS0</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLXS1</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANLXS2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">RANMAR</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">SLATEC</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TAUS</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TAUS_2</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TAUS_113</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TRANSPUTER</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">TT800</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">UNI</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">UNI32</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">VAX</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">WATERMAN14</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ZUF</span>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;default&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_rng</span>.rng_type&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_get_default"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;default_seed&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;nativeint&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_get_default_seed"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_default&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.rng_type&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_set_default"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_default_seed&nbsp;:&nbsp;nativeint&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_set_default_seed"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;env_setup&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_env_setup"</span>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;make&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.rng_type&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_rng</span>.t
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;nativeint&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_set"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;name&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_name"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get_type&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_rng</span>.rng_type&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_get_type"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;max&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;nativeint&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_max"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;min&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;nativeint&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_min"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;memcpy&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_memcpy"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;clone&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_clone"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;dump_state&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;*&nbsp;string
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_dump_state"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;set_state&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;*&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_set_state"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;get&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;nativeint&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_get"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;uniform&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_uniform"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;uniform_pos&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_uniform_pos"</span>
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;uniform_int&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_uniform_int"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;[@@noalloc]
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;uniform_arr&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_uniform_arr"</span>&nbsp;[@@noalloc]
+&nbsp;&nbsp;<span class="keyword">external</span>&nbsp;uniform_pos_arr&nbsp;:&nbsp;<span class="constructor">Gsl_rng</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;array&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;<span class="string">"ml_gsl_rng_uniform_pos_arr"</span>&nbsp;[@@noalloc]
+<span class="keyword">end</span></code></body></html>

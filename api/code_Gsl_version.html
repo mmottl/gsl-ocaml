@@ -1,0 +1,87 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Gsl" rel="Chapter" href="Gsl.html">
+<link title="Gsl_blas" rel="Chapter" href="Gsl_blas.html">
+<link title="Gsl_blas_flat" rel="Chapter" href="Gsl_blas_flat.html">
+<link title="Gsl_blas_gen" rel="Chapter" href="Gsl_blas_gen.html">
+<link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html">
+<link title="Gsl_cheb" rel="Chapter" href="Gsl_cheb.html">
+<link title="Gsl_combi" rel="Chapter" href="Gsl_combi.html">
+<link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
+<link title="Gsl_deriv" rel="Chapter" href="Gsl_deriv.html">
+<link title="Gsl_eigen" rel="Chapter" href="Gsl_eigen.html">
+<link title="Gsl_error" rel="Chapter" href="Gsl_error.html">
+<link title="Gsl_fft" rel="Chapter" href="Gsl_fft.html">
+<link title="Gsl_fit" rel="Chapter" href="Gsl_fit.html">
+<link title="Gsl_fun" rel="Chapter" href="Gsl_fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Gsl_histo" rel="Chapter" href="Gsl_histo.html">
+<link title="Gsl_ieee" rel="Chapter" href="Gsl_ieee.html">
+<link title="Gsl_integration" rel="Chapter" href="Gsl_integration.html">
+<link title="Gsl_interp" rel="Chapter" href="Gsl_interp.html">
+<link title="Gsl_linalg" rel="Chapter" href="Gsl_linalg.html">
+<link title="Gsl_math" rel="Chapter" href="Gsl_math.html">
+<link title="Gsl_matrix" rel="Chapter" href="Gsl_matrix.html">
+<link title="Gsl_matrix_complex" rel="Chapter" href="Gsl_matrix_complex.html">
+<link title="Gsl_matrix_complex_flat" rel="Chapter" href="Gsl_matrix_complex_flat.html">
+<link title="Gsl_matrix_flat" rel="Chapter" href="Gsl_matrix_flat.html">
+<link title="Gsl_min" rel="Chapter" href="Gsl_min.html">
+<link title="Gsl_misc" rel="Chapter" href="Gsl_misc.html">
+<link title="Gsl_monte" rel="Chapter" href="Gsl_monte.html">
+<link title="Gsl_multifit" rel="Chapter" href="Gsl_multifit.html">
+<link title="Gsl_multifit_nlin" rel="Chapter" href="Gsl_multifit_nlin.html">
+<link title="Gsl_multimin" rel="Chapter" href="Gsl_multimin.html">
+<link title="Gsl_multiroot" rel="Chapter" href="Gsl_multiroot.html">
+<link title="Gsl_odeiv" rel="Chapter" href="Gsl_odeiv.html">
+<link title="Gsl_permut" rel="Chapter" href="Gsl_permut.html">
+<link title="Gsl_poly" rel="Chapter" href="Gsl_poly.html">
+<link title="Gsl_qrng" rel="Chapter" href="Gsl_qrng.html">
+<link title="Gsl_randist" rel="Chapter" href="Gsl_randist.html">
+<link title="Gsl_rng" rel="Chapter" href="Gsl_rng.html">
+<link title="Gsl_root" rel="Chapter" href="Gsl_root.html">
+<link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
+<link title="Gsl_siman" rel="Chapter" href="Gsl_siman.html">
+<link title="Gsl_stats" rel="Chapter" href="Gsl_stats.html">
+<link title="Gsl_sum" rel="Chapter" href="Gsl_sum.html">
+<link title="Gsl_vectmat" rel="Chapter" href="Gsl_vectmat.html">
+<link title="Gsl_vector" rel="Chapter" href="Gsl_vector.html">
+<link title="Gsl_vector_complex" rel="Chapter" href="Gsl_vector_complex.html">
+<link title="Gsl_vector_complex_flat" rel="Chapter" href="Gsl_vector_complex_flat.html">
+<link title="Gsl_vector_flat" rel="Chapter" href="Gsl_vector_flat.html">
+<link title="Gsl_version" rel="Chapter" href="Gsl_version.html">
+<link title="Gsl_wavelet" rel="Chapter" href="Gsl_wavelet.html"><title>Gsl_version</title>
+</head>
+<body>
+<code class="code"><span class="comment">(*&nbsp;File:&nbsp;version.ml
+
+&nbsp;&nbsp;&nbsp;Copyright&nbsp;(C)&nbsp;2014-
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Markus&nbsp;Mottl
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email:&nbsp;markus.mottl@gmail.com
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WWW:&nbsp;http://www.ocaml.info
+
+&nbsp;&nbsp;&nbsp;This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or
+&nbsp;&nbsp;&nbsp;modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+&nbsp;&nbsp;&nbsp;License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either
+&nbsp;&nbsp;&nbsp;version&nbsp;2&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.
+
+&nbsp;&nbsp;&nbsp;This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,
+&nbsp;&nbsp;&nbsp;but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of
+&nbsp;&nbsp;&nbsp;MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the&nbsp;GNU
+&nbsp;&nbsp;&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.
+
+&nbsp;&nbsp;&nbsp;You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public
+&nbsp;&nbsp;&nbsp;License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software
+&nbsp;&nbsp;&nbsp;Foundation,&nbsp;Inc.,&nbsp;59&nbsp;Temple&nbsp;Place,&nbsp;Suite&nbsp;330,&nbsp;Boston,&nbsp;MA&nbsp;&nbsp;02111-1307&nbsp;&nbsp;USA
+*)</span>
+
+<span class="keyword">let</span>&nbsp;version&nbsp;=&nbsp;<span class="string">"1.19.1"</span>
+</code></body></html>

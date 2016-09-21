@@ -1,0 +1,108 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Gsl" rel="Chapter" href="Gsl.html">
+<link title="Gsl_blas" rel="Chapter" href="Gsl_blas.html">
+<link title="Gsl_blas_flat" rel="Chapter" href="Gsl_blas_flat.html">
+<link title="Gsl_blas_gen" rel="Chapter" href="Gsl_blas_gen.html">
+<link title="Gsl_bspline" rel="Chapter" href="Gsl_bspline.html">
+<link title="Gsl_cdf" rel="Chapter" href="Gsl_cdf.html">
+<link title="Gsl_cheb" rel="Chapter" href="Gsl_cheb.html">
+<link title="Gsl_combi" rel="Chapter" href="Gsl_combi.html">
+<link title="Gsl_const" rel="Chapter" href="Gsl_const.html">
+<link title="Gsl_deriv" rel="Chapter" href="Gsl_deriv.html">
+<link title="Gsl_eigen" rel="Chapter" href="Gsl_eigen.html">
+<link title="Gsl_error" rel="Chapter" href="Gsl_error.html">
+<link title="Gsl_fft" rel="Chapter" href="Gsl_fft.html">
+<link title="Gsl_fit" rel="Chapter" href="Gsl_fit.html">
+<link title="Gsl_fun" rel="Chapter" href="Gsl_fun.html">
+<link title="Gsl_complex" rel="Chapter" href="Gsl_complex.html">
+<link title="Gsl_sort" rel="Chapter" href="Gsl_sort.html">
+<link title="Gsl_histo" rel="Chapter" href="Gsl_histo.html">
+<link title="Gsl_ieee" rel="Chapter" href="Gsl_ieee.html">
+<link title="Gsl_integration" rel="Chapter" href="Gsl_integration.html">
+<link title="Gsl_interp" rel="Chapter" href="Gsl_interp.html">
+<link title="Gsl_linalg" rel="Chapter" href="Gsl_linalg.html">
+<link title="Gsl_math" rel="Chapter" href="Gsl_math.html">
+<link title="Gsl_matrix" rel="Chapter" href="Gsl_matrix.html">
+<link title="Gsl_matrix_complex" rel="Chapter" href="Gsl_matrix_complex.html">
+<link title="Gsl_matrix_complex_flat" rel="Chapter" href="Gsl_matrix_complex_flat.html">
+<link title="Gsl_matrix_flat" rel="Chapter" href="Gsl_matrix_flat.html">
+<link title="Gsl_min" rel="Chapter" href="Gsl_min.html">
+<link title="Gsl_misc" rel="Chapter" href="Gsl_misc.html">
+<link title="Gsl_monte" rel="Chapter" href="Gsl_monte.html">
+<link title="Gsl_multifit" rel="Chapter" href="Gsl_multifit.html">
+<link title="Gsl_multifit_nlin" rel="Chapter" href="Gsl_multifit_nlin.html">
+<link title="Gsl_multimin" rel="Chapter" href="Gsl_multimin.html">
+<link title="Gsl_multiroot" rel="Chapter" href="Gsl_multiroot.html">
+<link title="Gsl_odeiv" rel="Chapter" href="Gsl_odeiv.html">
+<link title="Gsl_permut" rel="Chapter" href="Gsl_permut.html">
+<link title="Gsl_poly" rel="Chapter" href="Gsl_poly.html">
+<link title="Gsl_qrng" rel="Chapter" href="Gsl_qrng.html">
+<link title="Gsl_randist" rel="Chapter" href="Gsl_randist.html">
+<link title="Gsl_rng" rel="Chapter" href="Gsl_rng.html">
+<link title="Gsl_root" rel="Chapter" href="Gsl_root.html">
+<link title="Gsl_sf" rel="Chapter" href="Gsl_sf.html">
+<link title="Gsl_siman" rel="Chapter" href="Gsl_siman.html">
+<link title="Gsl_stats" rel="Chapter" href="Gsl_stats.html">
+<link title="Gsl_sum" rel="Chapter" href="Gsl_sum.html">
+<link title="Gsl_vectmat" rel="Chapter" href="Gsl_vectmat.html">
+<link title="Gsl_vector" rel="Chapter" href="Gsl_vector.html">
+<link title="Gsl_vector_complex" rel="Chapter" href="Gsl_vector_complex.html">
+<link title="Gsl_vector_complex_flat" rel="Chapter" href="Gsl_vector_complex_flat.html">
+<link title="Gsl_vector_flat" rel="Chapter" href="Gsl_vector_flat.html">
+<link title="Gsl_version" rel="Chapter" href="Gsl_version.html">
+<link title="Gsl_wavelet" rel="Chapter" href="Gsl_wavelet.html"><title>Gsl_error</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;version&nbsp;:&nbsp;string
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;errno&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">CONTINUE</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FAILURE</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EDOM</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ERANGE</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EFAULT</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EINVAL</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EFAILED</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EFACTOR</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ESANITY</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ENOMEM</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EBADFUNC</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ERUNAWAY</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EMAXITER</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EZERODIV</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EBADTOL</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ETOL</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EUNDRFLW</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EOVRFLW</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ELOSS</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EROUND</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EBADLEN</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ENOTSQR</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ESING</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EDIVERGE</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EUNSUP</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EUNIMPL</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ECACHE</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ETABLE</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ENOPROG</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ENOPROGJ</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ETOLF</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ETOLX</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">ETOLG</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">EOF</span>
+&nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Gsl_exn</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Gsl_error</span>.errno&nbsp;*&nbsp;string
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;init&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;uninit&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;handler&nbsp;:&nbsp;(<span class="constructor">Gsl_error</span>.errno&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="constructor">Pervasives</span>.ref
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;default_handler&nbsp;:&nbsp;<span class="constructor">Gsl_error</span>.errno&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;strerror&nbsp;:&nbsp;<span class="constructor">Gsl_error</span>.errno&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;string_of_errno&nbsp;:&nbsp;<span class="constructor">Gsl_error</span>.errno&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;printer&nbsp;:&nbsp;exn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;option
+<span class="keyword">end</span></code></body></html>
