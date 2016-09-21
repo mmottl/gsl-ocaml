@@ -116,3 +116,18 @@ either returns `GSL_FAILURE` or `NaN` to GSL depending on the type of callback.
 In either case the original OCaml exception is not propagated.  The GSL
 function will either return normally (but probably with values containing
 `NaN`s somewhere) or raise a `Gsl_exn` exception.
+
+---------------------------------------------------------------------------
+
+Contact Information and Contributing
+------------------------------------
+
+In the case of bugs, feature requests, contributions and similar, you can
+contact me here: <markus.mottl@gmail.com>
+
+Up-to-date information should be available at:
+<http://mmottl.github.io/gsl-ocaml>
+
+Enjoy!
+
+Markus Mottl on September 21, 2016
