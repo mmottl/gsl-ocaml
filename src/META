@@ -1,6 +1,6 @@
 # OASIS_START
-# DO NOT EDIT (digest: 1ad74c503fcaa170acf0f69001f21e76)
-version = "1.19.1"
+# DO NOT EDIT (digest: 40081c1bf8f52dedfef2fdd9eab4f297)
+version = "1.19.2"
 description = "GSL - Bindings to the GNU Scientific Library"
 requires = "bigarray"
 archive(byte) = "gsl.cma"

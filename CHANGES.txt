@@ -1,3 +1,7 @@
+in 1.19.2  (gsl-ocaml fork)
+
+  - Link to Accelerate Framework on Mac OS X
+
 in 1.19.1  (gsl-ocaml fork)
 
   - Fixed linking problem
