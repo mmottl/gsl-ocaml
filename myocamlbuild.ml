@@ -829,8 +829,7 @@ module MyOCamlbuildBase = struct
                    flag ["link"; "library"; "ocaml"; "native"; tag_libstubs lib]
                      (S[A"-cclib"; A("-l"^(nm_libstubs lib))]);
 
-                   if bool_of_string (BaseEnvLight.var_get "native_dynlink" env) then
-                     flag ["link"; "program"; "ocaml"; "byte"; tag_libstubs lib]
+                   if bool_of_string (BaseEnvLight.var_get "native_dynlink" env) then flag ["link"; "program"; "ocaml"; "byte"; tag_libstubs lib]
                          (S[A"-dllib"; A("dll"^(nm_libstubs lib))]);
 
                    (* When ocaml link something that use the C library, then one
@@ -975,8 +974,16 @@ let () =
   let additional_rules = function
     | After_rules ->
         (* Add correct GSL compilation and link flags *)
+        let env = BaseEnvLight.load ~allow_empty:true () in
         let gsl_clibs, ogsl_cflags, ogsl_clibs =
-          let ic = Unix.open_process_in "gsl-config --cflags --libs" in
+          let ic =
+            let libs_flag =
+              match BaseEnvLight.var_get "system" env with
+              | "macosx" -> "--libs-without-cblas"
+              | _ -> "--libs"
+            in
+            Unix.open_process_in ("gsl-config --cflags " ^ libs_flag)
+          in
           try
             let gsl_cflags = input_line ic in
             let gsl_clibs = input_line ic in
