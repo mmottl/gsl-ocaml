@@ -476,6 +476,7 @@ SF2(legendre_Ql, Int_val, Double_val)
 
 /* Associated Legendre Polynomials and Spherical Harmonics  */
 
+#if GSL_MAJOR_VERSION > 1
 CAMLprim value 
 ml_gsl_sf_legendre_array(value norm, value vlmax, value m, value x,
                          value result_array)
@@ -493,6 +494,24 @@ ml_gsl_sf_legendre_array(value norm, value vlmax, value m, value x,
 
 ML1(gsl_sf_legendre_array_n, Int_val, Val_int)
 ML2(gsl_sf_legendre_array_index, Int_val, Int_val, Val_int)
+#else
+CAMLprim value 
+ml_gsl_sf_legendre_array(value norm, value vlmax, value m, value x,
+                         value result_array)
+{
+  caml_failwith("Gsl_sf.legendre_array: not supported by GSL version 1");
+}
+
+CAMLprim value ml_gsl_sf_legendre_array_n(value arg1)
+{
+  caml_failwith("Gsl_sf.legendre_array_n: not supported by GSL version 1");
+}
+
+CAMLprim value ml_gsl_sf_legendre_array_index(value arg1, value arg2)
+{
+  caml_failwith("Gsl_sf.legendre_array_index: not supported by GSL version 1");
+}
+#endif
 
 SF3(legendre_Plm, Int_val, Int_val, Double_val) 
 SF3(legendre_sphPlm, Int_val, Int_val, Double_val) 
