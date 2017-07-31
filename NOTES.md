@@ -1,5 +1,4 @@
-COMPLETE
---------
+### COMPLETE
 
   * Fast Fourier Transforms
   * Random Number Generation
@@ -31,16 +30,14 @@ COMPLETE
   * Complex Numbers
   * Wavelet Transforms
 
-PARTIAL
--------
+### PARTIAL
 
   * Special Functions
   * Permutations
   * Histograms
   * Sorting
 
-NOT YET
--------
+### NOT YET
 
   * Combinations
   * N-tuples

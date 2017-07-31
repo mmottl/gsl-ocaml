@@ -1,3 +1,5 @@
+### TODO
+
   * custom blocks ?
 
   * 2D histograms
@@ -6,18 +8,16 @@
   * remaining modules
   * polymorphic variants for FFT ?
 
-CHECK
------
+### CHECK
 
   * complex matrices
   * BLAS functions
 
-DONE
-----
+### DONE
 
   * put .mli only modules back
   * complex funs in linalg and eigen
   * complex funs for vectmat sum types
   * rewrite siman in ML
-  * drop gsl_fun type : use closures directly
+  * drop gsl_fun type: use closures directly
   * check the "noalloc" directives in externals (removed most of them)
