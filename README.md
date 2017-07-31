@@ -1,5 +1,4 @@
-GSL-OCaml - GSL-Bindings for OCaml
-==================================
+## GSL-OCaml - GSL-Bindings for OCaml
 
 This library was written by [Olivier Andrieu](http://oandrieu.nerim.net/ocaml).
 This version (gsl-ocaml) contains patches by [Markus
@@ -10,15 +9,13 @@ GSL-OCaml is an interface to the [GSL](http://www.gnu.org/software/gsl)
 (GNU scientific library) for the [OCaml](http://www.ocaml.org)-language.
 The currently latest GSL-version known to be compatible is 2.0.
 
-Requirements
-------------
+### Requirements
 
 The platform must not align doubles on double-word addresses, i.e. the C-macro
 `ARCH_ALIGN_DOUBLE` must be undefined in the OCaml C-configuration header in
 `<caml/config.h>`.
 
-Installation
-------------
+### Installation
 
 ```sh
 $ ./configure
@@ -26,7 +23,7 @@ $ make
 $ make install
 ```
 
-### Configuring alternative BLAS-libraries
+#### Configuring alternative BLAS-libraries
 
 The underlying GSL-library depends on a C-implementation of the BLAS-library
 (Basic Linear Algebra Subroutines).  It comes with its own implementation,
@@ -62,8 +59,7 @@ Note that on Mac OS X GSL-OCaml requires the Apple-specific, highly optimized
 vendor library `vecLib`, which is part of the Accelerate-framework, and will
 automatically link with it.
 
-Documentation
--------------
+### Documentation
 
 Check the [GSL manual](http://www.gnu.org/software/gsl/manual/html_node)
 to learn more about the GNU Scientific Library.
@@ -72,10 +68,9 @@ You can browse the OCaml module interfaces as `ocamldoc`-generated HTML files
 in directory `API.docdir` after building the documentation with `make doc`.
 It is also available [online](http://mmottl.github.io/gsl-ocaml/api).
 
-Usage Hints
------------
+### Usage Hints
 
-### Vectors and Matrices
+#### Vectors and Matrices
 
 There are several data types for handling vectors and matrices.
 
@@ -99,7 +94,7 @@ There are several data types for handling vectors and matrices.
   * Modules `Gsl.Blas Gsl.Blas_flat` and `Gsl.Blas_gen` provide a (quite
     incomplete) interface to CBLAS for these types.
 
-### ERROR HANDLING
+#### ERROR HANDLING
 
 Errors in GSL functions are reported as exceptions:
 
@@ -117,17 +112,9 @@ In either case the original OCaml exception is not propagated.  The GSL
 function will either return normally (but probably with values containing
 `NaN`s somewhere) or raise a `Gsl_exn` exception.
 
----------------------------------------------------------------------------
+### Contact Information and Contributing
 
-Contact Information and Contributing
-------------------------------------
+Please submit bugs reports, feature requests, contributions and similar to
+the [GitHub issue tracker](https://github.com/mmottl/gsl-ocaml/issues).
 
-In the case of bugs, feature requests, contributions and similar, you can
-contact me here: <markus.mottl@gmail.com>
-
-Up-to-date information should be available at:
-<http://mmottl.github.io/gsl-ocaml>
-
-Enjoy!
-
-Markus Mottl on September 21, 2016
+Up-to-date information is available at: <https://mmottl.github.io/gsl-ocaml>
