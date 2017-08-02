@@ -14,24 +14,25 @@ let () =
         libs = ["-lgsl"; "-lgslcblas"; "-lm"];
         cflags = []
       } in
+      let write_gsl_include gsl_include =
+        write_sexp "gsl_include.sexp" (sexp_of_string gsl_include)
+      in
       match C.Pkg_config.get c with
-      | None ->
-          Out_channel.(with_file "gsl_include.sexp" ~f:(fun oc ->
-            output_string oc "/usr/include"));
-          default
+      | None -> write_gsl_include "/usr/include"; default
       | Some pc ->
           Option.value_map (C.Pkg_config.query pc ~package:"gsl") ~default
             ~f:(fun conf ->
-              let has_include_flag =
-                List.exists conf.cflags ~f:(fun cflag ->
-                  let len = String.length cflag in
-                  len >= 2 && Char.(cflag.[0] = '-' && cflag.[1] = 'I') &&
-                  let gsl_include = String.sub cflag ~pos:2 ~len:(len - 2) in
-                  write_sexp "gsl_include.sexp" (sexp_of_string gsl_include);
-                  true)
+              let gsl_include =
+                try
+                  List.find_map_exn conf.cflags ~f:(fun cflag ->
+                    let len = String.length cflag in
+                    if len >= 2 && Char.(cflag.[0] = '-' && cflag.[1] = 'I')
+                    then Some (String.sub cflag ~pos:2 ~len:(len - 2))
+                    else None)
+                with Not_found -> "/usr/include"
               in
-              if has_include_flag then conf
-              else failwith "gsl-ocaml configurator: no include flag found")
+              write_gsl_include gsl_include;
+              conf)
     in
     let conf =
       let without_cblas () =
