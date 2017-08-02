@@ -60,6 +60,8 @@
     (:include c_flags.sexp) -g -O2 -fPIC -DPIC
     ; NOTE: for debugging before releases
     ; -Wall -pedantic -Wextra -Wunused -Wno-long-long -Wno-keyword-macro
+    ; NOTE: for limiting excessive warning about unused parameters
+    ; -Wno-unused-parameter
   ))
   (c_library_flags (:include c_library_flags.sexp))
   (libraries (bigarray))
