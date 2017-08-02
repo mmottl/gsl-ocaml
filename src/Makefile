@@ -1,4 +1,4 @@
-TARGETS = gsl.cma
+TARGETS = gsl.cma libgsl_stubs.a
 
 .PHONY: all clean
 
