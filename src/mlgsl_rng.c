@@ -229,7 +229,7 @@ value ml_gsl_rng_uniform_arr(value rng, value arr)
 {
   gsl_rng *c_rng = Rng_val(rng) ;
   mlsize_t len = Double_array_length(arr);
-  register int i;
+  mlsize_t i;
   for(i=0; i<len; i++)
     Store_double_field(arr, i, gsl_rng_uniform(c_rng)) ;
   return Val_unit;
@@ -239,7 +239,7 @@ value ml_gsl_rng_uniform_pos_arr(value rng, value arr)
 {
   gsl_rng *c_rng = Rng_val(rng) ;
   mlsize_t len = Double_array_length(arr);
-  register int i;
+  mlsize_t i;
   for(i=0; i<len; i++)
     Store_double_field(arr, i, gsl_rng_uniform_pos(c_rng)) ;
   return Val_unit;

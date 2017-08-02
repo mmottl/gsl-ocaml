@@ -117,7 +117,7 @@ CAMLprim value ml_gsl_interp_eval_array(value i, value xa, value ya)
 {
   mlsize_t lx = Double_array_length(xa);
   mlsize_t ly = Double_array_length(ya);
-  register int j;
+  mlsize_t j;
   gsl_interp *c_i = Interp_val(Field(i, 0));
   gsl_interp_accel *c_A = InterpAccel_val(Field(i, 1));
   double *c_x = Double_array_val(Field(i, 2));

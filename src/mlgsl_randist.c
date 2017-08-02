@@ -213,12 +213,12 @@ ML3(gsl_ran_binomial_pdf, Int_val, Double_val, Int_val, copy_double)
 /* MULTINOMIAL */
 CAMLprim value ml_gsl_ran_multinomial(value rng, value n, value p)
 {
-  const size_t K = Double_array_length(p);
+  mlsize_t K = Double_array_length(p);
   LOCALARRAY(unsigned int, N, K); 
   value r;
   gsl_ran_multinomial(Rng_val(rng), K, Int_val(n), Double_array_val(p), N);
   {
-    register int i;
+    mlsize_t i;
     r = alloc(K, 0);
     for(i=0; i<K; i++)
       Store_field(r, i, Val_int(N[i]));
@@ -228,10 +228,10 @@ CAMLprim value ml_gsl_ran_multinomial(value rng, value n, value p)
 
 CAMLprim value ml_gsl_ran_multinomial_pdf(value p, value n)
 {
-  const size_t K = Double_array_length(p);
+  mlsize_t K = Double_array_length(p);
   LOCALARRAY(unsigned int, N, K); 
   double r;
-  register int i;
+  mlsize_t i;
   for(i=0; i<K; i++)
     N[i] = Int_val(Field(n, i));
   r = gsl_ran_multinomial_pdf(K, Double_array_val(p), N);
@@ -240,10 +240,10 @@ CAMLprim value ml_gsl_ran_multinomial_pdf(value p, value n)
 
 CAMLprim value ml_gsl_ran_multinomial_lnpdf(value p, value n)
 {
-  const size_t K = Double_array_length(p);
+  mlsize_t K = Double_array_length(p);
   LOCALARRAY(unsigned int, N, K); 
   double r;
-  register int i;
+  mlsize_t i;
   for(i=0; i<K; i++)
     N[i] = Int_val(Field(n, i));
   r = gsl_ran_multinomial_lnpdf(K, Double_array_val(p), N);
