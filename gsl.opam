@@ -16,8 +16,8 @@ build: [
 ]
 
 depends: [
-  "conf-gsl"
-  "conf-pkg-config"
+  "conf-gsl" {build}
+  "conf-pkg-config" {build}
   "base" {build}
   "stdio" {build}
   "configurator" {build}
