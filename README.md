@@ -33,7 +33,10 @@ Note that on Mac OS X GSL-OCaml requires the Apple-specific, highly optimized
 vendor library `vecLib`, which is part of the Accelerate-framework, and will
 automatically link with it. If you do not wish to use Accelerate you can 
 override it; for a Homebrew-installed OpenBlas in the usual place you then
-need to `export GSL_CBLAS_LIB="-L/usr/local/opt/openblas/lib/ -lopenblas"`.
+need to 
+```sh
+export GSL_CBLAS_LIB="-L/usr/local/opt/openblas/lib/ -lopenblas"
+```
 
 ### Documentation
 
