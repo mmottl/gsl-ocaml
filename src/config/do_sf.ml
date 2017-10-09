@@ -5,7 +5,6 @@
 
 open Base
 open Stdio
-open Do_common
 
 module Printf = Caml.Printf
 module Format = Caml.Format
@@ -63,7 +62,7 @@ let ext_quot =
         then begin
           if List.length args <= 6 then
             Format.fprintf bh "\"%s\"" name_c;
-          Format.fprintf bh " \"%s\" \"float\"" name_float
+          Format.fprintf bh " \"%s\" [%@%@unboxed] [%@%@noalloc]" name_float
         end else Format.fprintf bh "\"%s\"" name_c;
         Format.fprintf bh "@]@\n%!";
         Buffer.contents b

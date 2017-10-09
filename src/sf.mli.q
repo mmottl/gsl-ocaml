@@ -4,7 +4,7 @@
 
 (** {1 Special functions} *)
 
-open Gsl_fun
+open Fun
 
 (** {2 Airy functions} *)
 
