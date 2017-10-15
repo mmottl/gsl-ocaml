@@ -1,3 +1,8 @@
+### 1.20.2 (2017-10-15)
+
+  * Fixed a configuration bug leading to wrong include paths
+
+
 ### 1.20.1 (2017-10-10)
 
   * Fixed automatic generation of special functions
