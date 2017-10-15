@@ -17,8 +17,9 @@ let () =
       let write_gsl_include gsl_include =
         write_sexp "gsl_include.sexp" (sexp_of_string gsl_include)
       in
+      let default_gsl_include = "/usr/include" in
       match C.Pkg_config.get c with
-      | None -> write_gsl_include ""; default
+      | None -> write_gsl_include default_gsl_include; default
       | Some pc ->
           Option.value_map (C.Pkg_config.query pc ~package:"gsl") ~default
             ~f:(fun conf ->
@@ -29,7 +30,7 @@ let () =
                     if len >= 2 && Char.(cflag.[0] = '-' && cflag.[1] = 'I')
                     then Some (String.sub cflag ~pos:2 ~len:(len - 2))
                     else None)
-                with Not_found -> ""
+                with Not_found -> default_gsl_include
               in
               write_gsl_include gsl_include;
               conf)
