@@ -9,6 +9,8 @@
 
 #include "wrappers.h"
 #include "mlgsl_rng.h"
+#include "mlgsl_vector_double.h"
+#include "mlgsl_matrix_double.h"
 
 /* GAUSSIAN */
 ML2(gsl_ran_gaussian, Rng_val, Double_val, copy_double)
@@ -41,6 +43,20 @@ CAMLprim value ml_gsl_ran_bivariate_gaussian(value rng, value sigma_x, value sig
 }
 ML5(gsl_ran_bivariate_gaussian_pdf, Double_val, Double_val, Double_val, Double_val, Double_val, copy_double)
 
+/* MULTIVARIATE */
+CAMLprim value ml_gsl_ran_multivariate_gaussian(value rng, value mu, value l, value out)
+{
+  gsl_vector v_mu, v_out;
+  gsl_matrix m_l;
+
+  mlgsl_vec_of_value(&v_mu, mu);
+  mlgsl_vec_of_value(&v_out, out);
+  mlgsl_mat_of_value(&m_l, l);
+
+  gsl_ran_multivariate_gaussian(Rng_val(rng), &v_mu, &m_l, &v_out);
+
+  return Val_unit;
+}
 
 /* EXPONENTIAL */
 ML2(gsl_ran_exponential, Rng_val, Double_val, copy_double)
