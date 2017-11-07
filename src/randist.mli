@@ -39,6 +39,9 @@ external bivariate_gaussian_pdf :
   x:float -> y:float -> sigma_x:float -> sigma_y:float -> rho:float -> float
   = "ml_gsl_ran_bivariate_gaussian_pdf"
 
+external multivariate_gaussian :
+  Rng.t -> mu:Vector.vector -> l:Matrix.matrix -> out:Vector.vector -> unit
+  = "ml_gsl_ran_multivariate_gaussian"
 
 
 external exponential : Rng.t -> mu:float -> float

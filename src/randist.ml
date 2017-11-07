@@ -1,8 +1,6 @@
 (* gsl-ocaml - OCaml interface to GSL                       *)
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
-
-
 (* GAUSSIAN *)
 external gaussian : Rng.t -> sigma:float -> float
     = "ml_gsl_ran_gaussian"
@@ -49,6 +47,12 @@ external bivariate_gaussian :
 external bivariate_gaussian_pdf : 
     x:float -> y:float -> sigma_x:float -> sigma_y:float -> rho:float -> float
     = "ml_gsl_ran_bivariate_gaussian_pdf"
+
+
+(* MULTIVARIATE *)
+external multivariate_gaussian :
+  Rng.t -> mu:Vector.vector -> l:Matrix.matrix -> out:Vector.vector -> unit
+  = "ml_gsl_ran_multivariate_gaussian"
 
 
 (* EXPONENTIAL *)
