@@ -3,29 +3,49 @@
 (library (
   (name do_common)
   (modules do_common)
+  (flags (
+    :standard
+    -w -9 -strict-sequence -principal -short-paths
+  ))
   (libraries (base stdio))
 ))
 
 (executable (
   (name discover)
   (modules discover)
+  (flags (
+    :standard
+    -w -9 -strict-sequence -principal -short-paths
+  ))
   (libraries (stdio configurator))
 ))
 
 (executable (
   (name do_cdf)
   (modules do_cdf)
+  (flags (
+    :standard
+    -w -9 -strict-sequence -principal -short-paths
+  ))
   (libraries (do_common str))
 ))
 
 (executable (
   (name do_const)
   (modules do_const)
+  (flags (
+    :standard
+    -w -9 -strict-sequence -principal -short-paths
+  ))
   (libraries (do_common str))
 ))
 
 (executable (
   (name do_sf)
   (modules do_sf)
+  (flags (
+    :standard
+    -w -9 -strict-sequence -principal -short-paths
+  ))
   (libraries (do_common str))
 ))

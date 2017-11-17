@@ -8,9 +8,10 @@ let write_sexp file sexp =
 
 let () =
   let module C = Configurator in
+  let open C.Pkg_config in
   C.main ~name:"gsl" (fun c ->
     let conf =
-      let default : C.Pkg_config.package_conf = {
+      let default = {
         libs = ["-lgsl"; "-lgslcblas"; "-lm"];
         cflags = []
       } in
