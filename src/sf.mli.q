@@ -241,7 +241,60 @@ open Fun
 
 (** {2 Hypergeometric functions} *)
 
-(* FIXME *)
+<< hyperg_0F1 float float >>
+(** [hyperg_0F1 c x] computes the hypergeometric function ₀F₁(c; x).*)
+
+<< hyperg_1F1_int int int float >>
+(** [hyperg_1F1_int m n x] computes the confluent hypergeometric
+   function ₁F₁(m;n;x) = M(m,n,x) for integer parameters [m], [n].  *)
+
+<< hyperg_1F1 float float float >>
+(** [hyperg_1F1 a b x] computes the confluent hypergeometric function
+   ₁F₁(a;b;x) = M(a,b,x) for general parameters [a], [b]. *)
+
+<< hyperg_U_int int int float >>
+(** [hyperg_U_int m n x] computes the confluent hypergeometric function
+   U(m,n,x) for integer parameters [m], [n]. *)
+
+<:ext< hyperg_U_int_e10@ml_gsl_sf_hyperg_U_int_e10_e,int,int,float,result_e10 >>
+(** [hyperg_U_int_e10] computes the confluent hypergeometric function
+   U(m,n,x) for integer parameters [m], [n] with extended range. *)
+
+<< hyperg_U float float float >>
+(** [hyperg_U a b x] computes the confluent hypergeometric function U(a,b,x). *)
+
+<:ext< hyperg_U_e10@ml_gsl_sf_hyperg_U_e10_e,float,float,float,result_e10 >>
+(** [hyperg_U_e10 a b x] computes the confluent hypergeometric function
+   U(a,b,x) with extended range. *)
+
+<< hyperg_2F1 float float float float >>
+(** [hyperg_2F1 a b c x] computes the Gauss hypergeometric function
+   ₂F₁(a,b,c,x) = F(a,b,c,x) for |x| < 1.
+
+   If the arguments (a,b,c,x) are too close to a singularity then the
+   function can raise the exception [Error.Gsl_exn(Error.EMAXITER, _)]
+   when the series approximation converges too slowly.  This occurs in
+   the region of [x]=1, [c - a - b] ∈ ℤ. *)
+
+<< hyperg_2F1_conj float float float float >>
+(** [hyperg_2F1_conj aR aI c x] computes the Gauss hypergeometric
+   function ₂F₁(aR + i aI, aR - i aI, c, x) with complex parameters
+   for |x| < 1. *)
+
+<< hyperg_2F1_renorm float float float float >>
+(** [hyperg_2F1_renorm a b c x] computes the renormalized Gauss
+   hypergeometric function ₂F₁(a,b,c,x) / Γ(c) for |x| < 1. *)
+
+<< hyperg_2F1_conj_renorm float float float float >>
+(** [hyperg_2F1_conj_renorm aR aI c x] computes the renormalized Gauss
+   hypergeometric function ₂F₁(aR + i aI, aR - i aI, c, x) / Γ(c) for
+   |x| < 1. *)
+
+<< hyperg_2F0 float float float >>
+(** [hyperg_2F0 a b x] computes the hypergeometric function ₂F₀(a,b,x).
+   The series representation is a divergent hypergeometric series.
+   However, for x < 0 we have ₂F₀(a,b,x) = (-1/x)ᵃ U(a,1+a-b,-1/x) *)
+
 
 (** {2 Laguerre functions} *)
 
