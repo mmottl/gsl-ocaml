@@ -4,9 +4,19 @@
 
 (** {1 Special functions} *)
 
+(** The library includes routines for calculating the values of
+   {!Airy}, {!Bessel}, {!Clausen}, {!Coulomb}, {!Coupling}, {!Dawson},
+   {!Debye}, {!Dilogarithms}, {!Elliptic}, {!Jacobi}, {!Error},
+   {!Exponential}, {!ExponentialI}, {!FermiDirac}, {!Gamma},
+   {!Gegenbauer}, {!Hermite}, {!Hypergeometric}, {!Laguerre},
+   {!Lambert}, {!Legendre} and {!SphericalH}, {!log}, {!pow}, {!Psi},
+   {!Synchrotron}, {!Transport}, {!Trigonometric} and {!Zeta}.  Each
+   routine also computes an estimate of the numerical error in the
+   calculated value of the function. *)
+
 open Fun
 
-(** {2 Airy functions} *)
+(** {2:Airy Airy functions} *)
 
 << airy_Ai float mode >>
 << airy_Bi float mode >>
@@ -20,7 +30,7 @@ open Fun
 << airy_zero_Ai int >>
 << airy_zero_Bi int >>
 
-(** {2 Bessel functions} *)
+(** {2:Bessel Bessel functions} *)
 
 <:bessel< cyl J >>
 <:bessel< cyl Y >>
@@ -48,11 +58,11 @@ open Fun
 << bessel_zero_J1 int >>
 << bessel_zero_Jnu float int >>
 
-(** {2 Clausen functions} *)
+(** {2:Clausen Clausen functions} *)
 
 << clausen float >>
 
-(** {2 Coulomb functions} *)
+(** {2:Coulomb Coulomb functions} *)
 
 << hydrogenicR_1 float float >>
 << hydrogenicR int int float float >>
@@ -62,13 +72,14 @@ open Fun
 <:ext< coulomb_CL_e@ml_gsl_sf_coulomb_CL_e,float,float,result >>
 <:ext< coulomb_CL_array@ml_gsl_sf_coulomb_CL_array,float,float,float array,unit >>
 
+(** {2:Coupling Coupling coefficients} *)
 (* FIXME: coupling coeffs *)
 
-(** {2 Dawson functions} *)
+(** {2:Dawson The Dawson function} *)
 
 << dawson float >>
 
-(** {2 Debye functions} *)
+(** {2:Debye Debye functions} *)
 
 << debye_1 float >>
 << debye_2 float >>
@@ -77,19 +88,19 @@ open Fun
 << debye_5 float >>
 << debye_6 float >>
 
-(** {2 Dilogarithm} *)
+(** {2:Dilogarithms Dilogarithms} *)
 
 << dilog float >>
 <:ext< complex_dilog_xy_e@ml_gsl_sf_complex_dilog_xy_e,float,float,result * result >>
 <:ext< complex_dilog_e@ml_gsl_sf_complex_dilog_e,float,float,result * result >>
 <:ext< complex_spence_xy_e@ml_gsl_sf_complex_spence_xy_e,float,float,result * result >>
 
-(** {2 Elementary operations} *)
+(** {2:elem Elementary operations} *)
 
 <:ext< multiply_e@ml_gsl_sf_multiply_e,float,float,result >>
 <:ext< multiply_err_e@ml_gsl_sf_multiply_err_e,x:float,dx:float,y:float,dy:float,result >>
 
-(** {2 Elliptic integrals} *)
+(** {2:Elliptic Elliptic integrals} *)
 
 << ellint_Kcomp float mode >>
 << ellint_Ecomp float mode >>
@@ -105,7 +116,7 @@ open Fun
 << ellint_RJ float float float float mode >>
 (* FIXME: elljac_e *)
 
-(** {2 Error function} *)
+(** {2:Error Error function} *)
 
 << erf float @float >>
 << erfc float @float >>
@@ -113,7 +124,7 @@ open Fun
 << erf_Z float @float >>
 << erf_Q float @float >>
 
-(** {2 Exponential functions} *)
+(** {2:Exponential Exponential functions} *)
 
 << exp float @float >>
 (** [exp x] computes the exponential function eˣ using GSL semantics
@@ -162,7 +173,7 @@ open Fun
 <:ext< exp_mult_err_e@ml_gsl_sf_exp_mult_err_e,x:float,dx:float,y:float,dy:float,result >>
 <:ext< exp_mult_err_e10_e@ml_gsl_sf_exp_mult_err_e10_e,x:float,dx:float,y:float,dy:float,result_e10 >>
 
-(** {2 Exponential integrals} *)
+(** {2:ExponentialI Exponential integrals} *)
 
 << expint_E1 float >>
 << expint_E2 float >>
@@ -177,7 +188,7 @@ open Fun
 <:ext< ci@ml_gsl_sf_Ci,float,float >>
 << atanint float >>
 
-(** {2 Fermi-Dirac function} *)
+(** {2:FermiDirac Fermi-Dirac function} *)
 
 << fermi_dirac_m1 float >>
 << fermi_dirac_0 float >>
@@ -189,7 +200,7 @@ open Fun
 << fermi_dirac_3half float >>
 << fermi_dirac_inc_0 float float >>
 
-(** {2 Gamma function} *)
+(** {2:Gamma Gamma function} *)
 
 <:ext< gamma@ml_gsl_sf_gamma,float,float >>
 <:ext< gamma_e@ml_gsl_sf_gamma_e,float,result >>
@@ -217,7 +228,7 @@ open Fun
 <:ext< lnbeta_sgn_e@ml_gsl_sf_lnbeta_sgn_e,float,float,result * float >>
 << beta_inc float float float >>
 
-(** {2 Gegenbauer functions aka Ultraspherical polynomials}
+(** {2:Gegenbauer Gegenbauer functions aka Ultraspherical polynomials}
 
     Gegenbauer functions are defined in {{:http://dlmf.nist.gov/18.3} DLMF}. *)
 
@@ -239,7 +250,7 @@ open Fun
     Constraints: l > -1/2. *)
 
 
-(** {2 Hypergeometric functions} *)
+(** {2:Hypergeometric Hypergeometric functions} *)
 
 << hyperg_0F1 float float >>
 (** [hyperg_0F1 c x] computes the hypergeometric function ₀F₁(c; x).*)
@@ -296,19 +307,19 @@ open Fun
    However, for x < 0 we have ₂F₀(a,b,x) = (-1/x)ᵃ U(a,1+a-b,-1/x) *)
 
 
-(** {2 Laguerre functions} *)
+(** {2:Laguerre Laguerre functions} *)
 
 << laguerre_1 float float >>
 << laguerre_2 float float >>
 << laguerre_3 float float >>
 << laguerre_n int float float >>
 
-(** {2 Lambert W functions} *)
+(** {2:Lambert Lambert W functions} *)
 
 << lambert_W0 float >>
 << lambert_Wm1 float >>
 
-(** {2 Legendre functions} *)
+(** {2:Legendre Legendre functions} *)
 
 << legendre_P1 float >>
 << legendre_P2 float >>
@@ -319,7 +330,7 @@ open Fun
 << legendre_Q1 float >>
 << legendre_Ql int float >>
 
-(** {2 Associated Legendre functions and Spherical Harmonics} *)
+(** {2:SphericalH Associated Legendre functions and Spherical Harmonics} *)
 
 (** Normalization of Legendre functions.
     See {{:https://www.gnu.org/software/gsl/manual/html_node/Associated-Legendre-Polynomials-and-Spherical-Harmonics.html#Associated-Legendre-Polynomials-and-Spherical-Harmonics}
@@ -381,7 +392,7 @@ type legendre_t =
     normalization of Pₗᵐ(x).  *)
 
 
-(** {2 Logarithm and related functions} *)
+(** {2:log Logarithm and related functions} *)
 
 << log float >>
 << log_abs float >>
@@ -389,11 +400,11 @@ type legendre_t =
 << log_1plusx float >>
 << log_1plusx_mx float >>
 
-(** {2 Power function} *)
+(** {2:pow Power function} *)
 
 << pow_int float int >>
 
-(** {2 Psi (Digamma) function} *)
+(** {2:Psi Psi (Digamma) function} *)
 
 << psi_int int >>
 << psi float >>
@@ -403,19 +414,19 @@ type legendre_t =
 << psi_1 float >>
 << psi_n int float >>
 
-(** {2 Synchrotron functions} *)
+(** {2:Synchrotron Synchrotron functions} *)
 
 << synchrotron_1 float >>
 << synchrotron_2 float >>
 
-(** {2 Transport functions} *)
+(** {2:Transport Transport functions} *)
 
 << transport_2 float >>
 << transport_3 float >>
 << transport_4 float >>
 << transport_5 float >>
 
-(** {2 Trigonometric functions} *)
+(** {2:Trigonometric Trigonometric functions} *)
 
 << sin float @float >>
 << cos float @float >>
@@ -433,7 +444,7 @@ type legendre_t =
 <:ext< sin_err_e@ml_gsl_sf_sin_err_e,float,dx:float,result >>
 <:ext< cos_err_e@ml_gsl_sf_cos_err_e,float,dx:float,result >>
 
-(** {2 Zeta functions} *)
+(** {2:Zeta Zeta functions} *)
 
 << zeta_int int >>
 << zeta float >>
