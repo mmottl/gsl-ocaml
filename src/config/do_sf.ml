@@ -96,7 +96,7 @@ let sf_quot =
           bprintf b "result";
           Buffer.contents b
         in
-        String.concat (List.map ~f:ext_quot [ quot; quot_res ])
+        String.concat ~sep:"\n" (List.map ~f:ext_quot [ quot; quot_res ])
 
 let bessel_quot str =
   match words_list str with
