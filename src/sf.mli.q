@@ -334,7 +334,7 @@ open Fun
 (** {2:SphericalH Associated Legendre functions and Spherical Harmonics} *)
 
 (** Normalization of Legendre functions.
-    See {{:https://www.gnu.org/software/gsl/manual/html_node/Associated-Legendre-Polynomials-and-Spherical-Harmonics.html#Associated-Legendre-Polynomials-and-Spherical-Harmonics}
+    See {{:https://www.gnu.org/software/gsl/doc/html/specfunc.html#associated-legendre-polynomials-and-spherical-harmonics}
     the GSL documentation}. *)
 type legendre_t =
   | Schmidt (** Specifies the computation of the Schmidt semi-normalized
