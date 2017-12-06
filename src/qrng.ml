@@ -2,6 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
+let () = Error.init ()
+
 type qrng_type =
   | NIEDERREITER_2
   | SOBOL

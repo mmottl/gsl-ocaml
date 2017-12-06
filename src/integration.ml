@@ -4,6 +4,8 @@
 
 open Fun
 
+let () = Error.init ()
+
 external qng :
   gsl_fun -> a:float -> b:float -> epsabs:float -> epsrel:float -> 
     float * float * int 

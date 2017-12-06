@@ -2,6 +2,9 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 (* GAUSSIAN *)
+
+let () = Error.init ()
+
 external gaussian : Rng.t -> sigma:float -> float
     = "ml_gsl_ran_gaussian"
 

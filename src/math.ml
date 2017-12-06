@@ -2,6 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
+let () = Error.init ()
+
 let e          = 2.71828182845904523536028747135 (* e *)
 
 let log2e      = 1.44269504088896340735992468100 (* log_2 (e) *)

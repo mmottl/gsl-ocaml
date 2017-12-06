@@ -47,10 +47,10 @@ exception Gsl_exn of errno * string
 (** [Error.Gsl_exn] is raised by GSL to indicate an error.  The
     second argument gives the reason for the error. *)
 
-(** [Error.init ()] setups the GSL error handler so that
+(** [Error.init ()] sets up the GSL error handler so that
     the OCaml function {!Error.handler} gets called in case of an error.
     This behavior is the default now. *)
-val init   : unit -> unit
+val init : unit -> unit
 
 (** [Error.uninit ()] reverts the GSL error handler to the default of
     the GSL C-library.  The default GSL error simply aborts the program. *)

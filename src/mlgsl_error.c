@@ -44,7 +44,8 @@ static void ml_gsl_error_handler(const char *reason, const char *file,
 CAMLprim value ml_gsl_error_init(value init)
 {
   static gsl_error_handler_t *old;
-  if(ml_gsl_err_handler == NULL)
+
+  if (ml_gsl_err_handler == NULL)
     ml_gsl_err_handler = caml_named_value("mlgsl_err_handler");
 
   if (Bool_val(init)) {

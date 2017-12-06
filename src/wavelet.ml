@@ -1,6 +1,8 @@
 type t
 type ws
 
+let () = Error.init ()
+
 type kind =
   | DAUBECHIES
   | DAUBECHIES_CENTERED

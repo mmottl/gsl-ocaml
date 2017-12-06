@@ -4,6 +4,8 @@
 
 open Gsl_complex
 
+let () = Error.init ()
+
 exception Wrong_layout
 
 let _ = 

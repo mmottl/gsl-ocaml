@@ -3,6 +3,8 @@
 (* Distributed under the terms of the GPL version 3         *)
 
 
+let () = Error.init ()
+
 let maybe_or_else o def = 
   match o with
   | None -> def

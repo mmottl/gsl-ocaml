@@ -3,6 +3,8 @@
 (* Distributed under the terms of the GPL version 3         *)
 
 
+let () = Error.init ()
+
 type order = Blas.order =
   | RowMajor
   | ColMajor

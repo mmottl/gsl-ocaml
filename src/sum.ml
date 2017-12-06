@@ -3,6 +3,8 @@
 (* Distributed under the terms of the GPL version 3         *)
 
 
+let () = Error.init ()
+
 type ws
 
 external _alloc : int -> ws

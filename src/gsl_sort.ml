@@ -1,3 +1,4 @@
+let () = Error.init ()
 
 external vector : Vector.vector -> unit = "ml_gsl_sort_vector"
 external _vector_index : Permut.permut -> Vector.vector -> unit = "ml_gsl_sort_vector_index"

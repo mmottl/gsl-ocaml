@@ -1,4 +1,4 @@
-### ?.??.? (????-??-??)
+### 1.21.0 (2017-12-06)
 
   * Added `Randist.multivariate_gaussian`.
 
@@ -7,6 +7,8 @@
   * Added hypergeometric functions.
 
     Thanks to Christophe Troestler for this contribution!
+
+  * Fixed error handler initialization.
 
 
 ### 1.20.2 (2017-10-15)

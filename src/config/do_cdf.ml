@@ -113,4 +113,5 @@ let () =
               Out_channel.output_buffer cdf_oc buf;
               print_c cdfc_oc fn
             done
-          with End_of_file -> ()))))
+          with End_of_file -> ());
+        Out_channel.output_string cdf_oc "\nlet () = Error.init ()\n")))

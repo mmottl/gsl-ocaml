@@ -5,6 +5,8 @@
 
 (* C code in mlgsl_deriv.c *)
 
+let () = Error.init ()
+
 external central : f:(float -> float) -> x:float -> h:float -> Fun.result
   = "ml_gsl_deriv_central"
 

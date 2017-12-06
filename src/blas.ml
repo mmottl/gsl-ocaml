@@ -1,3 +1,4 @@
+let () = Error.init ()
 
 (** BLAS support *)
 

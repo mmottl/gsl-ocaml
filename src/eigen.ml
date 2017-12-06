@@ -4,6 +4,8 @@
 
 open Vectmat
 
+let () = Error.init ()
+
 type symm_ws
 external _symm_alloc : int -> symm_ws
     = "ml_gsl_eigen_symm_alloc"

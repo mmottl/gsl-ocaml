@@ -1,5 +1,7 @@
 open Bigarray
 
+let () = Error.init ()
+
 type t = {
   n    : int;
   k    : int;

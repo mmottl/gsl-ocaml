@@ -2,7 +2,8 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-
+let () = Error.init ()
+
 type result = {
     res : float ;
     err : float ; }
@@ -21,7 +22,6 @@ type mode =
 external smash : result_e10 -> result 
     = "ml_gsl_sf_result_smash_e"
 
-
 type gsl_fun = float -> float
 type gsl_fun_fdf = {
    f   : float -> float ;

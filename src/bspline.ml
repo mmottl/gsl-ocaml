@@ -2,6 +2,8 @@
 (* Copyright (©) 2007 - Olivier Andrieu                     *)
 (* Distributed under the terms of the GPL version 3         *)
 
+let () = Error.init ()
+
 type ws
 
 external _alloc : k:int -> nbreak:int -> ws = "ml_gsl_bspline_alloc"

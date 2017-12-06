@@ -3,6 +3,8 @@
 (* Distributed under the terms of the GPL version 3         *)
 
 
+let () = Error.init ()
+
 type linear_fit_coeffs = {
     c0 : float; c1 : float;
     cov00 : float ; cov01 : float ; cov11 : float;

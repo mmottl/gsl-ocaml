@@ -42,4 +42,5 @@ let () =
           loop ())
       in
       let gsl_consts = [| "cgs"; "cgsm"; "mks"; "mksa"; "num" |] in
-      Array.iter ~f:act gsl_consts))
+      Array.iter ~f:act gsl_consts;
+      Out_channel.output_string ml_oc "\nlet () = Error.init ()\n"))

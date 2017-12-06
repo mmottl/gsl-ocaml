@@ -52,13 +52,6 @@ let handler = ref default_handler
 
 external setup_caml_error_handler : bool -> unit = "ml_gsl_error_init"
 
-let init () = setup_caml_error_handler true
-let uninit () = setup_caml_error_handler false
-
-let () =
-  Callback.register "mlgsl_err_handler" handler;
-  init ()
-
 external strerror : errno -> string = "ml_gsl_strerror"
 
 let string_of_errno = function
@@ -102,5 +95,28 @@ let printer = function
      Some(sprintf "Gsl.Error.Gsl_exn(%s, %S)" (string_of_errno errno) msg)
   | _ -> None
 
-let () =
-  Printexc.register_printer printer
+let registered = ref false
+
+let register () =
+  if not !registered then begin
+    registered := true;
+    Callback.register "mlgsl_err_handler" handler;
+    Printexc.register_printer printer;
+  end
+
+let initialized = ref false
+
+let init () =
+  if not !initialized then begin
+    initialized := true;
+    register ();
+    setup_caml_error_handler true;
+  end
+
+let uninit () =
+  if !initialized then begin
+    setup_caml_error_handler false;
+    initialized := false;
+  end
+
+let () = init ()

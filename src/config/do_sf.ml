@@ -169,4 +169,5 @@ let () =
           Out_channel.output_string mli_oc nl;
           Out_channel.output_string ml_oc nl;
           Out_channel.output_char mli_oc '\n';
-          Out_channel.output_char ml_oc '\n'))))
+          Out_channel.output_char ml_oc '\n');
+        Out_channel.output_string ml_oc "\nlet () = Error.init ()\n")))
