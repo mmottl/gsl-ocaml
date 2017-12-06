@@ -446,7 +446,28 @@ CAMLprim value ml_gsl_sf_gegenpoly_array(value lambda, value x, value r_arr)
 }
 
 /* HYPERGEOMETRIC functions */
-/* FIXME */
+SF2(hyperg_0F1, Double_val, Double_val)
+SF3(hyperg_1F1_int, Int_val, Int_val, Double_val)
+SF3(hyperg_1F1, Double_val, Double_val, Double_val)
+SF3(hyperg_U_int, Int_val, Int_val, Double_val)
+CAMLprim value ml_gsl_sf_hyperg_U_int_e10_e(value m, value n, value x)
+{
+  gsl_sf_result_e10 res;
+  gsl_sf_hyperg_U_int_e10_e(Int_val(m), Int_val(n), Double_val(x), &res);
+  return val_of_result_e10(&res);
+}
+SF3(hyperg_U, Double_val, Double_val, Double_val)
+CAMLprim value ml_gsl_sf_hyperg_U_e10_e(value a, value b, value x)
+{
+  gsl_sf_result_e10 res;
+  gsl_sf_hyperg_U_e10_e(Double_val(a), Double_val(b), Double_val(x), &res);
+  return val_of_result_e10(&res);
+}
+SF4(hyperg_2F1 , Double_val, Double_val, Double_val, Double_val)
+SF4(hyperg_2F1_conj, Double_val, Double_val, Double_val, Double_val)
+SF4(hyperg_2F1_renorm, Double_val, Double_val, Double_val, Double_val)
+SF4(hyperg_2F1_conj_renorm, Double_val, Double_val, Double_val, Double_val)
+SF3(hyperg_2F0, Double_val, Double_val, Double_val)
 
 /* LAGUERRE functions */
 SF2(laguerre_1, Double_val, Double_val)

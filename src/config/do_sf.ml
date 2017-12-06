@@ -64,9 +64,11 @@ let ext_quot =
             Format.fprintf bh "\"%s\"" name_c;
           Format.fprintf bh " \"%s\" [%@%@unboxed] [%@%@noalloc]" name_float
         end else Format.fprintf bh "\"%s\"" name_c;
-        Format.fprintf bh "@]@\n%!";
+        Format.fprintf bh "@]%!";
         Buffer.contents b
 
+(** << fun1 arg1 arg2 >> → << fun1@ml_gsl_sf_fun1,arg1,arg2,float >>
+                         → << fun1_e@ml_gsl_sf_fun1_e,arg1,arg2,result >> *)
 let sf_quot =
   let b = Buffer.create 256 in
   fun str ->
