@@ -252,33 +252,34 @@ open Fun
 
 (** {2:Hypergeometric Hypergeometric functions} *)
 
-<< hyperg_0F1 float float >>
+<< hyperg_0F1 c:float float >>
 (** [hyperg_0F1 c x] computes the hypergeometric function ₀F₁(c; x).*)
 
-<< hyperg_1F1_int int int float >>
+<< hyperg_1F1_int m:int n:int float >>
 (** [hyperg_1F1_int m n x] computes the confluent hypergeometric
    function ₁F₁(m;n;x) = M(m,n,x) for integer parameters [m], [n].  *)
 
-<< hyperg_1F1 float float float >>
+<< hyperg_1F1 a:float b:float float >>
 (** [hyperg_1F1 a b x] computes the confluent hypergeometric function
    ₁F₁(a;b;x) = M(a,b,x) for general parameters [a], [b]. *)
 
-<< hyperg_U_int int int float >>
+<< hyperg_U_int m:int n:int float >>
 (** [hyperg_U_int m n x] computes the confluent hypergeometric function
    U(m,n,x) for integer parameters [m], [n]. *)
 
-<:ext< hyperg_U_int_e10@ml_gsl_sf_hyperg_U_int_e10_e,int,int,float,result_e10 >>
-(** [hyperg_U_int_e10] computes the confluent hypergeometric function
+<:ext< hyperg_U_int_e10@ml_gsl_sf_hyperg_U_int_e10_e,m:int,n:int,float,result_e10 >>
+(** [hyperg_U_int_e10 m n x] computes the confluent hypergeometric function
    U(m,n,x) for integer parameters [m], [n] with extended range. *)
 
-<< hyperg_U float float float >>
-(** [hyperg_U a b x] computes the confluent hypergeometric function U(a,b,x). *)
+<< hyperg_U a:float b:float float >>
+(** [hyperg_U a b x] computes the confluent hypergeometric function
+   U(a,b,x). *)
 
-<:ext< hyperg_U_e10@ml_gsl_sf_hyperg_U_e10_e,float,float,float,result_e10 >>
+<:ext< hyperg_U_e10@ml_gsl_sf_hyperg_U_e10_e,a:float,b:float,float,result_e10 >>
 (** [hyperg_U_e10 a b x] computes the confluent hypergeometric function
    U(a,b,x) with extended range. *)
 
-<< hyperg_2F1 float float float float >>
+<< hyperg_2F1 a:float b:float c:float float >>
 (** [hyperg_2F1 a b c x] computes the Gauss hypergeometric function
    ₂F₁(a,b,c,x) = F(a,b,c,x) for |x| < 1.
 
@@ -287,21 +288,21 @@ open Fun
    when the series approximation converges too slowly.  This occurs in
    the region of [x]=1, [c - a - b] ∈ ℤ. *)
 
-<< hyperg_2F1_conj float float float float >>
+<< hyperg_2F1_conj aR:float aI:float c:float float >>
 (** [hyperg_2F1_conj aR aI c x] computes the Gauss hypergeometric
    function ₂F₁(aR + i aI, aR - i aI, c, x) with complex parameters
    for |x| < 1. *)
 
-<< hyperg_2F1_renorm float float float float >>
+<< hyperg_2F1_renorm a:float b:float c:float float >>
 (** [hyperg_2F1_renorm a b c x] computes the renormalized Gauss
    hypergeometric function ₂F₁(a,b,c,x) / Γ(c) for |x| < 1. *)
 
-<< hyperg_2F1_conj_renorm float float float float >>
+<< hyperg_2F1_conj_renorm aR:float aI:float c:float float >>
 (** [hyperg_2F1_conj_renorm aR aI c x] computes the renormalized Gauss
    hypergeometric function ₂F₁(aR + i aI, aR - i aI, c, x) / Γ(c) for
    |x| < 1. *)
 
-<< hyperg_2F0 float float float >>
+<< hyperg_2F0 a:float b:float float >>
 (** [hyperg_2F0 a b x] computes the hypergeometric function ₂F₀(a,b,x).
    The series representation is a divergent hypergeometric series.
    However, for x < 0 we have ₂F₀(a,b,x) = (-1/x)ᵃ U(a,1+a-b,-1/x) *)
@@ -309,10 +310,10 @@ open Fun
 
 (** {2:Laguerre Laguerre functions} *)
 
-<< laguerre_1 float float >>
-<< laguerre_2 float float >>
-<< laguerre_3 float float >>
-<< laguerre_n int float float >>
+<< laguerre_1 a:float float >>
+<< laguerre_2 a:float float >>
+<< laguerre_3 a:float float >>
+<< laguerre_n n:int a:float float >>
 
 (** {2:Lambert Lambert W functions} *)
 
@@ -333,7 +334,7 @@ open Fun
 (** {2:SphericalH Associated Legendre functions and Spherical Harmonics} *)
 
 (** Normalization of Legendre functions.
-    See {{:https://www.gnu.org/software/gsl/manual/html_node/Associated-Legendre-Polynomials-and-Spherical-Harmonics.html#Associated-Legendre-Polynomials-and-Spherical-Harmonics}
+    See {{:https://www.gnu.org/software/gsl/doc/html/specfunc.html#associated-legendre-polynomials-and-spherical-harmonics}
     the GSL documentation}. *)
 type legendre_t =
   | Schmidt (** Specifies the computation of the Schmidt semi-normalized
