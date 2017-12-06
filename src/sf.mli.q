@@ -310,10 +310,10 @@ open Fun
 
 (** {2:Laguerre Laguerre functions} *)
 
-<< laguerre_1 float float >>
-<< laguerre_2 float float >>
-<< laguerre_3 float float >>
-<< laguerre_n int float float >>
+<< laguerre_1 a:float float >>
+<< laguerre_2 a:float float >>
+<< laguerre_3 a:float float >>
+<< laguerre_n n:int a:float float >>
 
 (** {2:Lambert Lambert W functions} *)
 
