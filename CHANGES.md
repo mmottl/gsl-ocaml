@@ -4,6 +4,10 @@
 
     Thanks to Ilias Garnier for this contribution!
 
+  * Added hypergeometric functions.
+
+    Thanks to Christophe Troestler for this contribution!
+
 
 ### 1.20.2 (2017-10-15)
 
