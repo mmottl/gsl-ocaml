@@ -152,7 +152,7 @@ let process_line =
     else
       let quot =
         try Str.matched_group 1 l
-        with Not_found -> ":sf" in
+        with Caml.Not_found -> ":sf" in
       let data = Str.matched_group 2 l in
       match quot with
       | ":ext" -> ext_quot data

@@ -25,13 +25,12 @@ let () =
           Option.value_map (C.Pkg_config.query pc ~package:"gsl") ~default
             ~f:(fun conf ->
               let gsl_include =
-                try
-                  List.find_map_exn conf.cflags ~f:(fun cflag ->
-                    let len = String.length cflag in
-                    if len >= 2 && Char.(cflag.[0] = '-' && cflag.[1] = 'I')
-                    then Some (String.sub cflag ~pos:2 ~len:(len - 2))
-                    else None)
-                with Not_found -> default_gsl_include
+                Option.value ~default:default_gsl_include @@
+                List.find_map conf.cflags ~f:(fun cflag ->
+                  let len = String.length cflag in
+                  if len >= 2 && Char.(cflag.[0] = '-' && cflag.[1] = 'I')
+                  then Some (String.sub cflag ~pos:2 ~len:(len - 2))
+                  else None)
               in
               write_gsl_include gsl_include;
               conf)
@@ -40,9 +39,9 @@ let () =
       let without_cblas () =
         List.filter conf.libs ~f:(String.(<>) "-lgslcblas")
       in
-      match Sys.getenv "GSL_CBLAS_LIB" with
-      | alt_blas -> { conf with libs = alt_blas :: without_cblas () }
-      | exception Not_found ->
+      match Sys.getenv_opt "GSL_CBLAS_LIB" with
+      | Some alt_blas -> { conf with libs = alt_blas :: without_cblas () }
+      | None ->
           Option.value_map (C.ocaml_config_var c "system") ~default:conf
             ~f:(function
               | "macosx" ->

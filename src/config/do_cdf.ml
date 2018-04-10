@@ -40,7 +40,7 @@ let parse_fun =
               acc := (ty, n) :: !acc;
               i := Str.match_end ()
             done
-          with Not_found -> ()
+          with Caml.Not_found -> ()
         end;
         List.rev !acc
       in

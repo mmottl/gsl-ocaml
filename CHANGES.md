@@ -1,3 +1,7 @@
+### ?.??.? (????-??-??)
+
+  * Fixed warnings and errors in configuration code due to upstream changes.
+
 ### 1.21.0 (2017-12-06)
 
   * Added `Randist.multivariate_gaussian`.
