@@ -1,4 +1,4 @@
-### ?.??.? (????-??-??)
+### 1.22.0 (2018-06-11)
 
   * Fixed warnings and errors in configuration code due to upstream changes.
 
