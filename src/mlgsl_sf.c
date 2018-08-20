@@ -504,7 +504,7 @@ ml_gsl_sf_legendre_array(value norm, value vlmax, value m, value x,
 {
   const size_t lmax = Int_val(vlmax);
   if (Double_array_length(result_array) < gsl_sf_legendre_array_n(lmax)) {
-    caml_invalid_argument("Gsl_sf.legendre_array: array too small");
+    caml_invalid_argument("Gsl.Sf.legendre_array: array too small");
   }
   gsl_sf_legendre_array(Int_val(norm),
                         lmax,
@@ -520,17 +520,17 @@ CAMLprim value
 ml_gsl_sf_legendre_array(value norm, value vlmax, value m, value x,
                          value result_array)
 {
-  caml_failwith("Gsl_sf.legendre_array: not supported by GSL version 1");
+  caml_failwith("Gsl.Sf.legendre_array: not supported by GSL version 1");
 }
 
 CAMLprim value ml_gsl_sf_legendre_array_n(value arg1)
 {
-  caml_failwith("Gsl_sf.legendre_array_n: not supported by GSL version 1");
+  caml_failwith("Gsl.Sf.legendre_array_n: not supported by GSL version 1");
 }
 
 CAMLprim value ml_gsl_sf_legendre_array_index(value arg1, value arg2)
 {
-  caml_failwith("Gsl_sf.legendre_array_index: not supported by GSL version 1");
+  caml_failwith("Gsl.Sf.legendre_array_index: not supported by GSL version 1");
 }
 #endif
 
