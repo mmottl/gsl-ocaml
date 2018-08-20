@@ -6,6 +6,7 @@
 
 #include <caml/alloc.h>
 #include <caml/memory.h>
+#include <caml/fail.h>
 
 #include "wrappers.h"
 #include "mlgsl_rng.h"
@@ -46,6 +47,7 @@ ML5(gsl_ran_bivariate_gaussian_pdf, Double_val, Double_val, Double_val, Double_v
 /* MULTIVARIATE */
 CAMLprim value ml_gsl_ran_multivariate_gaussian(value rng, value mu, value l, value out)
 {
+#if GSL_MAJOR_VERSION > 2 || (GSL_MAJOR_VERSION >= 2 && GSL_MINOR_VERSION >= 2)
   gsl_vector v_mu, v_out;
   gsl_matrix m_l;
 
@@ -56,6 +58,10 @@ CAMLprim value ml_gsl_ran_multivariate_gaussian(value rng, value mu, value l, va
   gsl_ran_multivariate_gaussian(Rng_val(rng), &v_mu, &m_l, &v_out);
 
   return Val_unit;
+#else
+  caml_failwith(
+    "Gsl.Randist.multivariate_gaussian: not supported by this GSL version");
+#endif
 }
 
 /* EXPONENTIAL */
