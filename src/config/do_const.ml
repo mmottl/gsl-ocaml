@@ -24,7 +24,8 @@ let () =
         fprintf mli_oc "\nmodule %s : sig\n" (String.uppercase const);
         fprintf ml_oc "\nmodule %s = struct\n" upper_const;
         let gsl_path =
-          Caml.Filename.concat gsl_include_dir (sprintf "gsl_const_%s.h" const)
+          Caml.Filename.concat gsl_include_dir
+            (sprintf "gsl_const_%s.h" const)
         in
         In_channel.with_file gsl_path ~f:(fun ic ->
           let rec loop () =

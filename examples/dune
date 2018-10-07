@@ -1,7 +1,5 @@
-(jbuild_version 1)
-
-(executables (
-  (names (
+(executables
+  (names
     blas_ex
     blas_speed_test
     bspline_ex
@@ -35,10 +33,6 @@
     stats_ex
     sum_ex
     wavelet_ex
-  ))
-  (flags (
-    :standard
-    -w -9 -strict-sequence -principal -short-paths
-  ))
-  (libraries (gsl))
-))
+  )
+  (libraries gsl)
+)

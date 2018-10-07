@@ -1,0 +1,29 @@
+(library
+  (name do_common)
+  (modules do_common)
+  (libraries base stdio)
+)
+
+(executable
+  (name discover)
+  (modules discover)
+  (libraries base dune.configurator)
+)
+
+(executable
+  (name do_cdf)
+  (modules do_cdf)
+  (libraries do_common str)
+)
+
+(executable
+  (name do_const)
+  (modules do_const)
+  (libraries do_common str)
+)
+
+(executable
+  (name do_sf)
+  (modules do_sf)
+  (libraries do_common str)
+)

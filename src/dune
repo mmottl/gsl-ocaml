@@ -1,9 +1,6 @@
-(jbuild_version 1)
-
-(library (
-  (name gsl)
+(library
   (public_name gsl)
-  (c_names (
+  (c_names
     mlgsl_blas
     mlgsl_blas_complex
     mlgsl_blas_complex_float
@@ -49,42 +46,38 @@
     mlgsl_vector_double
     mlgsl_vector_float
     mlgsl_wavelet
-  ))
-  (flags (
-    :standard
-    -w -9 -strict-sequence -principal -short-paths
-  ))
-  (c_flags (
+  )
+  (c_flags
     (:include c_flags.sexp) -g -O2 -fPIC -DPIC
     ; NOTE: for debugging before releases
     ; -Wall -pedantic -Wextra -Wunused -Wno-long-long -Wno-keyword-macro
     ; NOTE: for limiting excessive warning about unused parameters
     ; -Wno-unused-parameter
-  ))
+  )
   (c_library_flags (:include c_library_flags.sexp))
-  (libraries (bigarray))
-))
+  (libraries bigarray)
+)
 
-(rule (
-  (targets (c_flags.sexp c_library_flags.sexp gsl_include.sexp))
-  (deps (config/discover.exe))
-  (action (run ${<} -ocamlc ${OCAMLC}))
-))
+(rule
+  (targets c_flags.sexp c_library_flags.sexp gsl_include.sexp)
+  (deps (:discover config/discover.exe))
+  (action (run %{discover}))
+)
 
-(rule (
-  (targets (cdf.mli cdf.ml mlgsl_cdf.c))
-  (deps (config/do_cdf.exe gsl_include.sexp))
+(rule
+  (targets cdf.mli cdf.ml mlgsl_cdf.c)
+  (deps config/do_cdf.exe gsl_include.sexp)
   (action (run config/do_cdf.exe))
-))
+)
 
-(rule (
-  (targets (const.mli const.ml))
-  (deps (config/do_const.exe gsl_include.sexp))
+(rule
+  (targets const.mli const.ml)
+  (deps config/do_const.exe gsl_include.sexp)
   (action (run config/do_const.exe))
-))
+)
 
-(rule (
-  (targets (sf.mli sf.ml))
-  (deps (config/do_sf.exe sf.mli.q))
+(rule
+  (targets sf.mli sf.ml)
+  (deps config/do_sf.exe sf.mli.q)
   (action (run config/do_sf.exe))
-))
+)
