@@ -1,3 +1,8 @@
+### 1.24.0 (2018-10-24)
+
+  * Updated to OPAM 2.0
+
+
 ### 1.23.0 (2018-10-06)
 
   * Switched to dune and dune-release
