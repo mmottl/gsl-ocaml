@@ -48,11 +48,10 @@
     mlgsl_wavelet
   )
   (c_flags
-    (:include c_flags.sexp) -g -O2 -fPIC -DPIC
-    ; NOTE: for debugging before releases
-    ; -Wall -pedantic -Wextra -Wunused -Wno-long-long -Wno-keyword-macro
+    (:standard)
+    (:include c_flags.sexp) -fPIC -DPIC
     ; NOTE: for limiting excessive warning about unused parameters
-    ; -Wno-unused-parameter
+    -Wno-unused-parameter
   )
   (c_library_flags (:include c_library_flags.sexp))
   (libraries bigarray)
