@@ -23,8 +23,8 @@ enum mlgsl_fft_array_layout {
 static void check_layout(value fft_arr, 
 			 enum mlgsl_fft_array_layout layout)
 {
-  static value *layout_exn;
-  if(Int_val(Field(fft_arr, 0)) != layout) { 
+  static const value *layout_exn;
+  if((enum mlgsl_fft_array_layout) Int_val(Field(fft_arr, 0)) != layout) { 
     if(!layout_exn) {
       layout_exn = caml_named_value("mlgsl_layout_exn");
       if(!layout_exn) /* Gromeleu */

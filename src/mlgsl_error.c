@@ -22,7 +22,7 @@ CAMLprim value ml_gsl_strerror(value ml_errno)
   return caml_copy_string(gsl_strerror(gsl_errno));
 }
 
-static value *ml_gsl_err_handler = NULL;
+static const value *ml_gsl_err_handler = NULL;
 
 static void ml_gsl_error_handler(const char *reason, const char *file,
                                  int line, int gsl_errno)
