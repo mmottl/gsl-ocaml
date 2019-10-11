@@ -1,3 +1,8 @@
+### 1.24.1 (2019-10-11)
+
+  * Fixed warnings in C-stubs
+
+
 ### 1.24.0 (2018-10-24)
 
   * Updated to OPAM 2.0
