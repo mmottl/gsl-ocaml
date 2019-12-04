@@ -26,6 +26,7 @@ linear algebra, etc.")
   (depends
     (ocaml (>= 4.08))
     (dune (>= 1.10))
+    dune-configurator
     (conf-gsl :build)
     (conf-pkg-config :build)
     (base :build)
