@@ -184,8 +184,7 @@ value ml_gsl_rng_dump_state(value rng)
   void *state = gsl_rng_state(Rng_val(rng));
   const char *name = gsl_rng_name(Rng_val(rng));
   n = copy_string(name);
-  s = alloc_string(len);
-  memcpy(Bp_val(s), state, len);
+  s = caml_alloc_initialized_string(len, state);
   v = alloc_small(2, 0);
   Field(v, 0) = n;
   Field(v, 1) = s;
