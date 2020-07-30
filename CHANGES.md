@@ -2,6 +2,9 @@
 
   * Switched to OPAM file generation via `dune-project`
 
+  * Added support for const char strings in stubs due to stricter handling
+    in newer OCaml runtimes.  This eliminates C-compiler warnings.
+
 
 ### 1.24.1 (2019-10-11)
 
