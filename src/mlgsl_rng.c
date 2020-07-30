@@ -194,7 +194,7 @@ value ml_gsl_rng_dump_state(value rng)
 value ml_gsl_rng_set_state(value rng, value v)
 {
   gsl_rng *r = Rng_val(rng);
-  char *name = String_val(Field(v, 0));
+  const char *name = String_val(Field(v, 0));
   value state = Field(v, 1);
   if(strcmp(name, gsl_rng_name(r)) != 0 ||
      gsl_rng_size(r) != string_length(state) )
