@@ -1,4 +1,4 @@
-### ?.??.? (????-??-??)
+### 1.24.2 (2020-07-30)
 
   * Switched to OPAM file generation via `dune-project`
 
