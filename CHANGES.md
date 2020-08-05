@@ -1,3 +1,8 @@
+### 1.24.3 (2020-08-04)
+
+  * Removed `base` and `stdio` build dependencies.
+
+
 ### 1.24.2 (2020-07-30)
 
   * Switched to OPAM file generation via `dune-project`

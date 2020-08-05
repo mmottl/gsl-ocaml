@@ -1,11 +1,6 @@
-open Base
-open Stdio
-open Do_common
-
-module Printf = Caml.Printf
-module Filename = Caml.Filename
-
 open Printf
+
+open Do_common
 
 type arg_type = FLOAT | UINT
 
@@ -19,9 +14,10 @@ let parse_fun =
     if not (Str.string_match regexp_full s 0) then
       if not (Str.string_match regexp_partial s 0) then parse_fun ic
       else
-        match In_channel.input_line ic with
-        | Some line -> loop ic (s ^ " " ^ line)
-        | None -> eprintf "partial line at EOF\n"; raise End_of_file
+        match input_line ic with
+        | line -> loop ic (s ^ " " ^ line)
+        | exception End_of_file ->
+            eprintf "partial line at EOF\n"; raise End_of_file
     else
       let fun_name = Str.matched_group 1 s in
       let args =
@@ -40,7 +36,7 @@ let parse_fun =
               acc := (ty, n) :: !acc;
               i := Str.match_end ()
             done
-          with Caml.Not_found -> ()
+          with Not_found -> ()
         end;
         List.rev !acc
       in
@@ -51,19 +47,19 @@ let parse_fun =
           fun_name;
         parse_fun ic
       end
-  and parse_fun ic = loop ic (In_channel.input_line_exn ic) in
+  and parse_fun ic = loop ic (input_line ic) in
   parse_fun
 
 let all_float args =
-  List.for_all ~f:(function (FLOAT, _) -> true | _ -> false) args
+  List.for_all (function (FLOAT, _) -> true | _ -> false) args
 
 let print_all_float fun_name buf args =
   if all_float args
   then bprintf buf " \"gsl_cdf_%s\" [@@unboxed] [@@noalloc]" fun_name
 
 let print_ml_args buf args =
-  List.iter ~f:(fun (ty, a) ->
-    let l = String.lowercase a in
+  List.iter (fun (ty, a) ->
+    let l = String.lowercase_ascii a in
     match ty with
     | FLOAT -> bprintf buf "%s:float -> " l
     | UINT -> bprintf buf "%s:int -> " l)
@@ -78,10 +74,10 @@ let print_ml buf (fun_name, args) =
     (print_all_float fun_name) args
 
 let print_c_args buf args =
-  List.iter ~f:(fun (ty, _) ->
+  List.iter (fun (ty, _) ->
     match ty with
-    | FLOAT -> Out_channel.output_string buf " Double_val,"
-    | UINT -> Out_channel.output_string buf " Unsigned_int_val,")
+    | FLOAT -> output_string buf " Double_val,"
+    | UINT -> output_string buf " Unsigned_int_val,")
     args
 
 let print_c oc (fun_name, args) =
@@ -98,10 +94,10 @@ let () =
       Out_channel.with_file "cdf.ml" ~f:(fun cdf_oc ->
         Out_channel.with_file "mlgsl_cdf.c" ~f:(fun cdfc_oc ->
           let print_both str =
-            Out_channel.output_string cdfi_oc str;
-            Out_channel.output_string cdf_oc str
+            output_string cdfi_oc str;
+            output_string cdf_oc str
           in
-          Out_channel.output_string cdfc_oc
+          output_string cdfc_oc
             "#include <gsl/gsl_cdf.h>\n#include \"wrappers.h\"\n\n";
           print_both "(** Cumulative distribution functions *)\n\n";
           try
@@ -109,9 +105,9 @@ let () =
               let fn = parse_fun ic in
               let buf = Buffer.create 256 in
               print_ml buf fn;
-              Out_channel.output_buffer cdfi_oc buf;
-              Out_channel.output_buffer cdf_oc buf;
+              Buffer.output_buffer cdfi_oc buf;
+              Buffer.output_buffer cdf_oc buf;
               print_c cdfc_oc fn
             done
           with End_of_file -> ());
-        Out_channel.output_string cdf_oc "\nlet () = Error.init ()\n")))
+        output_string cdf_oc "\nlet () = Error.init ()\n")))

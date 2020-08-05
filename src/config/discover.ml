@@ -1,4 +1,24 @@
-open Base
+module Option = struct
+  include Option
+
+  let value_map ~default ~f = function
+    | Some x -> f x
+    | None -> default
+end  (* Option *)
+
+module List = struct
+  include List
+
+  let find_map t ~f =
+    let rec loop = function
+      | [] -> None
+      | x :: l ->
+          match f x with
+          | None -> loop l
+          | Some _ as r -> r
+    in
+    loop t
+end  (* List *)
 
 let () =
   let module C = Configurator.V1 in
@@ -20,8 +40,8 @@ let () =
                 Option.value ~default:default_gsl_include @@
                 List.find_map conf.cflags ~f:(fun cflag ->
                   let len = String.length cflag in
-                  if len >= 2 && Char.(cflag.[0] = '-' && cflag.[1] = 'I')
-                  then Some [String.sub cflag ~pos:2 ~len:(len - 2)]
+                  if len >= 2 && cflag.[0] = '-' && cflag.[1] = 'I'
+                  then Some [String.sub cflag 2 (len - 2)]
                   else None)
               in
               write_gsl_include gsl_include;
@@ -29,9 +49,9 @@ let () =
     in
     let conf =
       let without_cblas () =
-        List.filter conf.libs ~f:(fun x -> not (String.equal x "-lgslcblas"))
+        List.filter (fun x -> not (String.equal x "-lgslcblas")) conf.libs
       in
-      match Caml.Sys.getenv_opt "GSL_CBLAS_LIB" with
+      match Sys.getenv_opt "GSL_CBLAS_LIB" with
       | Some alt_blas -> { conf with libs = alt_blas :: without_cblas () }
       | None ->
           Option.value_map ~default:conf (C.ocaml_config_var c "system")

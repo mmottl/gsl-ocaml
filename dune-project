@@ -29,7 +29,5 @@ linear algebra, etc.")
     dune-configurator
     (conf-gsl :build)
     (conf-pkg-config :build)
-    (base :build)
-    (stdio :build)
   )
 )

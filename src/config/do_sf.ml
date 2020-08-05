@@ -3,21 +3,22 @@
 (* Copyright (©) 2002-2005 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-open Base
-open Stdio
-
-module Printf = Caml.Printf
-module Format = Caml.Format
 open Printf
+
+open Do_common
 
 let split ?(collapse=false) c s =
   let len = String.length s in
   let rec proc accu n =
-    let n' = Option.value (String.index_from s n c) ~default:len in
+    let n' =
+      match String.index_from s n c with
+      | i -> i
+      | exception Not_found -> len
+    in
     let accu' =
       if collapse && n' = n
       then accu
-      else (String.sub s ~pos:n ~len:(n' - n)) :: accu in
+      else (String.sub s n (n' - n)) :: accu in
     if n' >= len - 1
     then List.rev accu'
     else proc accu' (n' + 1)
@@ -44,21 +45,20 @@ let ext_quot =
     | _ :: [] -> failwith "ext_quot: no arguments"
     | name_r :: (arg1 :: argr as args) ->
         let name, name_c, name_float =
-          match String.split ~on:'@' name_r with
+          match String.split_on_char '@' name_r with
           | name :: [] -> name, name, ""
           | name :: name_c :: [] -> name, name_c, ""
           | name :: name_c :: name_f :: _ -> name, name_c, name_f
           | [] -> failwith "ext_quot: too many C function names"
         in
         Format.fprintf bh "@[<2>external %s : %s"
-          (String.strip name) (String.strip arg1);
-        List.iter argr ~f:(fun a ->
-          Format.fprintf bh " -> %s" (String.strip a));
+          (String.trim name) (String.trim arg1);
+        List.iter (fun a -> Format.fprintf bh " -> %s" (String.trim a)) argr;
         Format.fprintf bh "@ = ";
         if List.length args > 6 then Format.fprintf bh "\"%s_bc\"" name_c;
         if
           (* List.for_all ~f:((=) "float") args && *)
-          String.(name_float <> "")
+          (name_float <> "")
         then begin
           if List.length args <= 6 then
             Format.fprintf bh "\"%s\"" name_c;
@@ -73,8 +73,8 @@ let sf_quot =
   let b = Buffer.create 256 in
   fun str ->
     let wl = words_list str in
-    let flt, wl = List.partition_tf ~f:(String.(=) "@float") wl in
-    let has_float = not (List.is_empty flt) in
+    let flt, wl = List.partition ((=) "@float") wl in
+    let has_float = not (flt = []) in
     match wl with
     | [] -> failwith "sf_quot: empty quotation"
     | _ :: [] -> failwith "sf_quot: no arguments"
@@ -82,27 +82,27 @@ let sf_quot =
         let quot =
           Buffer.clear b;
           bprintf b "%s@ml_gsl_sf_%s%s," name name
-            (if has_float && List.for_all ~f:(String.(=) "float") args then
+            (if has_float && List.for_all ((=) "float") args then
                "@" ^ "gsl_sf_" ^ name
              else "");
-          List.iter ~f:(fun a -> bprintf b "%s," a) args;
+          List.iter (fun a -> bprintf b "%s," a) args;
           bprintf b "float";
           Buffer.contents b
         in
         let quot_res =
           Buffer.clear b;
           bprintf b "%s_e@ml_gsl_sf_%s_e," name name;
-          List.iter ~f:(fun a -> bprintf b "%s," a) args;
+          List.iter (fun a -> bprintf b "%s," a) args;
           bprintf b "result";
           Buffer.contents b
         in
-        String.concat ~sep:"\n" (List.map ~f:ext_quot [ quot; quot_res ])
+        String.concat "\n" (List.map ext_quot [ quot; quot_res ])
 
 let bessel_quot str =
   match words_list str with
   | "cyl" :: letter :: tl ->
-      let tl = String.concat ~sep:" " tl in
-      String.concat
+      let tl = String.concat " " tl in
+      String.concat ""
         [ sf_quot ("bessel_" ^ letter ^ "0 float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "1 float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "n int float " ^ tl);
@@ -111,8 +111,8 @@ let bessel_quot str =
                       int,float,float array,unit" letter letter);
         ]
   | "cyl_scaled" :: letter :: tl ->
-      let tl = String.concat ~sep:" " tl in
-      String.concat
+      let tl = String.concat " " tl in
+      String.concat ""
         [ sf_quot ("bessel_" ^ letter ^ "0_scaled float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "1_scaled float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "n_scaled int float " ^ tl);
@@ -122,8 +122,8 @@ let bessel_quot str =
                 int,float,float array,unit" letter letter);
         ]
   | "sph" :: letter :: tl ->
-      let tl = String.concat ~sep:" " tl in
-      String.concat
+      let tl = String.concat " " tl in
+      String.concat ""
         [ sf_quot ("bessel_" ^ letter ^ "0 float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "1 float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "2 float " ^ tl);
@@ -133,8 +133,8 @@ let bessel_quot str =
                       int,float,float array,unit" letter letter);
         ]
   | "sph_scaled" :: letter :: tl ->
-      let tl = String.concat ~sep:" " tl in
-      String.concat
+      let tl = String.concat " " tl in
+      String.concat ""
         [ sf_quot ("bessel_" ^ letter ^ "0_scaled float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "1_scaled float " ^ tl);
           sf_quot ("bessel_" ^ letter ^ "l_scaled int float " ^ tl);
@@ -152,7 +152,7 @@ let process_line =
     else
       let quot =
         try Str.matched_group 1 l
-        with Caml.Not_found -> ":sf" in
+        with Not_found -> ":sf" in
       let data = Str.matched_group 2 l in
       match quot with
       | ":ext" -> ext_quot data
@@ -166,8 +166,8 @@ let () =
       Out_channel.with_file "sf.ml" ~f:(fun ml_oc ->
         In_channel.iter_lines ic ~f:(fun l ->
           let nl = process_line l in
-          Out_channel.output_string mli_oc nl;
-          Out_channel.output_string ml_oc nl;
-          Out_channel.output_char mli_oc '\n';
-          Out_channel.output_char ml_oc '\n');
-        Out_channel.output_string ml_oc "\nlet () = Error.init ()\n")))
+          output_string mli_oc nl;
+          output_string ml_oc nl;
+          output_char mli_oc '\n';
+          output_char ml_oc '\n');
+        output_string ml_oc "\nlet () = Error.init ()\n")))
