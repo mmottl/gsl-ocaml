@@ -1,10 +1,10 @@
-(lang dune 1.10)
+(lang dune 2.7)
 (name gsl)
 
 (generate_opam_files true)
 
 (source (github mmottl/gsl-ocaml))
-(license "GPL-3+")
+(license "GPL-3.0+")
 (homepage "https://mmottl.github.io/gsl-ocaml")
 (documentation "https://mmottl.github.io/gsl-ocaml/api")
 
@@ -25,7 +25,6 @@ for optimization, differential equations, statistics, random number generation,
 linear algebra, etc.")
   (depends
     (ocaml (>= 4.08))
-    (dune (>= 1.10))
     dune-configurator
     (conf-gsl :build)
     (conf-pkg-config :build)

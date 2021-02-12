@@ -35,4 +35,5 @@
     wavelet_ex
   )
   (libraries gsl)
+  (modes byte exe)
 )
