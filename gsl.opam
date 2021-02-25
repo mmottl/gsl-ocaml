@@ -17,7 +17,7 @@ doc: "https://mmottl.github.io/gsl-ocaml/api"
 bug-reports: "https://github.com/mmottl/gsl-ocaml/issues"
 depends: [
   "dune" {>= "2.7"}
-  "ocaml" {>= "4.08"}
+  "ocaml" {>= "4.12"}
   "dune-configurator"
   "conf-gsl" {build}
   "conf-pkg-config" {build}
