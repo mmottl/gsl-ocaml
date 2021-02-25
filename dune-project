@@ -24,7 +24,7 @@ most frequently used functions for scientific computation including algorithms
 for optimization, differential equations, statistics, random number generation,
 linear algebra, etc.")
   (depends
-    (ocaml (>= 4.08))
+    (ocaml (>= 4.12))
     dune-configurator
     (conf-gsl :build)
     (conf-pkg-config :build)

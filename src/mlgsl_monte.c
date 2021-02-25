@@ -313,7 +313,7 @@ CAMLprim value ml_gsl_monte_vegas_get_params(value state)
   Store_field(r, 4, Val_int(s->verbose));
   {
     value vchan;
-    if(GSLVEGASSTREAM_VAL(state) != Val_none){
+    if(Is_some(GSLVEGASSTREAM_VAL(state))){
       vchan=alloc_small(1, 0);
       Field(vchan, 0)=GSLVEGASSTREAM_VAL(state);
     }

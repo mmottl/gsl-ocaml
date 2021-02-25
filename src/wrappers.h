@@ -17,7 +17,6 @@
 
 #define Unoption(v) (Field((v), 0))
 #define Opt_arg(v, conv, def) (Is_block(v) ? conv(Field((v),0)) : (def))
-#define Val_none Val_int(0)
 
 #define Val_negbool(x) Val_not(Val_bool(x))
 

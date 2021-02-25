@@ -68,14 +68,14 @@ CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
   p->dim = Int_val(dim);
   p->closure = func;
   register_global_root(&(p->closure));
-  p->jac_closure = (ojac == Val_none ? Val_unit : Unoption(ojac));
+  p->jac_closure = (Is_none(ojac) ? Val_unit : Unoption(ojac));
   register_global_root(&(p->jac_closure));
   p->arr1 = alloc(Int_val(dim) * Double_wosize, Double_array_tag);
   register_global_root(&(p->arr1));
   p->arr2 = alloc(Int_val(dim) * Double_wosize, Double_array_tag);
   register_global_root(&(p->arr2));
   p->mat =
-    (ojac == Val_none)
+    Is_none(ojac)
     ? Val_unit
     : alloc_bigarray_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
   register_global_root(&(p->mat));
@@ -137,9 +137,9 @@ CAMLprim value ml_gsl_odeiv_step_apply(value step, value t, value h, value y,
   LOCALARRAY(double, y_copy,  Double_array_length(y)); 
   LOCALARRAY(double, yerr_copy, Double_array_length(yerr)); 
   size_t len_dydt_in = 
-    odydt_in == Val_none ? 0 : Double_array_length(Unoption(odydt_in)) ;
+    Is_none(odydt_in) ? 0 : Double_array_length(Unoption(odydt_in)) ;
   size_t len_dydt_out = 
-    odydt_out == Val_none ? 0 : Double_array_length(Unoption(odydt_out)) ;
+    Is_none(odydt_out) ? 0 : Double_array_length(Unoption(odydt_out)) ;
   LOCALARRAY(double, dydt_in, len_dydt_in); 
   LOCALARRAY(double, dydt_out, len_dydt_out); 
   int status;

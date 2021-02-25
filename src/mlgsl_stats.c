@@ -21,7 +21,7 @@ CAMLprim value ml_gsl_stats_mean(value ow, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_mean(Double_array_val(data), 1, len);
   else {
     value w = Unoption(ow);
@@ -36,8 +36,8 @@ CAMLprim value ml_gsl_stats_variance(value ow, value omean, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
-    if(omean == Val_none)
+  if(Is_none(ow))
+    if(Is_none(omean))
       result = gsl_stats_variance(Double_array_val(data), 1, len);
     else
       result = gsl_stats_variance_m(Double_array_val(data), 1, len, 
@@ -45,7 +45,7 @@ CAMLprim value ml_gsl_stats_variance(value ow, value omean, value data)
   else {
     value w = Unoption(ow);
     check_array_size(data, w);
-    if(omean == Val_none)
+    if(Is_none(omean))
       result = gsl_stats_wvariance(Double_array_val(w), 1, 
 				   Double_array_val(data), 1, len);
     else
@@ -60,8 +60,8 @@ CAMLprim value ml_gsl_stats_sd(value ow, value omean, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
-    if(omean == Val_none)
+  if(Is_none(ow))
+    if(Is_none(omean))
       result = gsl_stats_sd(Double_array_val(data), 1, len);
     else
       result = gsl_stats_sd_m(Double_array_val(data), 1, len, 
@@ -69,7 +69,7 @@ CAMLprim value ml_gsl_stats_sd(value ow, value omean, value data)
   else {
     value w = Unoption(ow);
     check_array_size(data, w);
-    if(omean == Val_none)
+    if(Is_none(omean))
       result = gsl_stats_wsd(Double_array_val(w), 1, 
 			     Double_array_val(data), 1, len);
     else
@@ -85,7 +85,7 @@ CAMLprim value ml_gsl_stats_variance_with_fixed_mean(value ow,
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_variance_with_fixed_mean(Double_array_val(data), 
 						1, len, Double_val(mean));
   else {
@@ -103,7 +103,7 @@ CAMLprim value ml_gsl_stats_sd_with_fixed_mean(value ow,
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_sd_with_fixed_mean(Double_array_val(data), 
 					  1, len, Double_val(mean));
   else {
@@ -120,8 +120,8 @@ CAMLprim value ml_gsl_stats_absdev(value ow, value omean, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
-    if(omean == Val_none)
+  if(Is_none(ow))
+    if(Is_none(omean))
       result = gsl_stats_absdev(Double_array_val(data), 1, len);
     else
       result = gsl_stats_absdev_m(Double_array_val(data), 1, len, 
@@ -129,7 +129,7 @@ CAMLprim value ml_gsl_stats_absdev(value ow, value omean, value data)
   else {
     value w = Unoption(ow);
     check_array_size(data, w);
-    if(omean == Val_none)
+    if(Is_none(omean))
       result = gsl_stats_wabsdev(Double_array_val(w), 1, 
 				 Double_array_val(data), 1, len);
     else
@@ -144,7 +144,7 @@ CAMLprim value ml_gsl_stats_skew(value ow, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_skew(Double_array_val(data), 1, len);
   else {
     value w = Unoption(ow);
@@ -160,7 +160,7 @@ CAMLprim value ml_gsl_stats_skew_m_sd(value ow, value mean,
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_skew_m_sd(Double_array_val(data), 1, len,
 				 Double_val(mean), Double_val(sd));
   else {
@@ -177,7 +177,7 @@ CAMLprim value ml_gsl_stats_kurtosis(value ow, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_kurtosis(Double_array_val(data), 1, len);
   else {
     value w = Unoption(ow);
@@ -193,7 +193,7 @@ CAMLprim value ml_gsl_stats_kurtosis_m_sd(value ow, value mean,
 {
   size_t len = Double_array_length(data);
   double result;
-  if(ow == Val_none)
+  if(Is_none(ow))
     result = gsl_stats_kurtosis_m_sd(Double_array_val(data), 1, len,
 				     Double_val(mean), Double_val(sd));
   else {
@@ -210,7 +210,7 @@ CAMLprim value ml_gsl_stats_lag1_autocorrelation(value omean, value data)
 {
   size_t len = Double_array_length(data);
   double result;
-  if(omean == Val_none)
+  if(Is_none(omean))
     result = gsl_stats_lag1_autocorrelation(Double_array_val(data), 1, len);
   else
     result = gsl_stats_lag1_autocorrelation_m(Double_array_val(data), 1, len, 

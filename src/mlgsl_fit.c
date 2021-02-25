@@ -23,7 +23,7 @@ CAMLprim value ml_gsl_fit_linear(value wo, value x, value y)
   if(Double_array_length(y) != N)
     GSL_ERROR("array sizes differ", GSL_EBADLEN);
 
-  if(wo == Val_none)
+  if(Is_none(wo))
     gsl_fit_linear(Double_array_val(x), 1, 
 		   Double_array_val(y), 1, N,
 		   &c0, &c1, &cov00, &cov01, &cov11, &sumsq);
@@ -68,7 +68,7 @@ CAMLprim value ml_gsl_fit_mul(value wo, value x, value y)
   if(Double_array_length(y) != N)
     GSL_ERROR("array sizes differ", GSL_EBADLEN);
 
-  if(wo == Val_none)
+  if(Is_none(wo))
     gsl_fit_mul(Double_array_val(x), 1, Double_array_val(y), 1, N,
 		&c1, &cov11, &sumsq);
   else {
@@ -120,7 +120,7 @@ CAMLprim value ml_gsl_multifit_linear(value wo, value x, value y,
   _DECLARE_VECTOR2(y,c);
   _CONVERT_MATRIX2(x,cov);
   _CONVERT_VECTOR2(y,c);
-  if(wo == Val_none)
+  if(Is_none(wo))
     gsl_multifit_linear(&m_x, &v_y, &v_c, &m_cov, 
 			&chisq, MultifitWS_val(ws));
   else {
