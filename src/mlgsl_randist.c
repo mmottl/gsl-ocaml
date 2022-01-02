@@ -3,6 +3,7 @@
 /* Distributed under the terms of the GPL version 3         */
 
 #include <gsl/gsl_randist.h>
+#include <gsl/gsl_version.h>
 
 #include <caml/alloc.h>
 #include <caml/memory.h>
