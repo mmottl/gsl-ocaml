@@ -281,6 +281,9 @@ external binomial_pdf : int -> p:float -> n:int -> float
     = "ml_gsl_ran_binomial_pdf"
 
 (* MULTINOMIAL *)
+external multinomial_inplace : Rng.t -> n:int -> p:float array -> ret:int array -> int array
+    = "ml_gsl_ran_multinomial_inplace"
+
 external multinomial : Rng.t -> n:int -> p:float array -> int array
     = "ml_gsl_ran_multinomial"
 

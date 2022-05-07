@@ -218,6 +218,8 @@ external binomial_tpe : Rng.t -> p:float -> n:int -> int
 external binomial_pdf : int -> p:float -> n:int -> float
   = "ml_gsl_ran_binomial_pdf"
 
+external multinomial_inplace : Rng.t -> n:int -> p:float array -> ret:int array -> int array
+    = "ml_gsl_ran_multinomial_inplace"
 external multinomial : Rng.t -> n:int -> p:float array -> int array
     = "ml_gsl_ran_multinomial"
 external multinomial_pdf : p:float array -> n:int array -> float

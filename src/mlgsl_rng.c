@@ -126,6 +126,7 @@ value ml_gsl_rng_set_default_seed(value seed)
 
 value ml_gsl_rng_alloc(value type)
 {
+  void* x = malloc(2 * 16);
   value r;
   Abstract_ptr(r,gsl_rng_alloc(Rngtype_val(type))); 
   return r;

@@ -234,17 +234,32 @@ ML3(gsl_ran_binomial_tpe, Rng_val, Double_val, Int_val, Val_int)
 ML3(gsl_ran_binomial_pdf, Int_val, Double_val, Int_val, copy_double)
 
 /* MULTINOMIAL */
+CAMLprim value ml_gsl_ran_multinomial_inplace(value rng, value n, value p, value ret)
+{
+  mlsize_t K = Double_array_length(p);
+  LOCALARRAY(unsigned int, N, K); 
+  gsl_ran_multinomial(Rng_val(rng), K, Int_val(n), Double_array_val(p), N);
+  {
+    mlsize_t i; 
+    for(i=0; i<K; i++) {
+      Store_field(ret, i, Val_int(N[i]));
+    }
+  }
+  return ret;
+}
+
 CAMLprim value ml_gsl_ran_multinomial(value rng, value n, value p)
 {
   mlsize_t K = Double_array_length(p);
   LOCALARRAY(unsigned int, N, K); 
-  value r;
   gsl_ran_multinomial(Rng_val(rng), K, Int_val(n), Double_array_val(p), N);
+  value r;
   {
-    mlsize_t i;
+    mlsize_t i; 
     r = alloc(K, 0);
-    for(i=0; i<K; i++)
+    for(i=0; i<K; i++) {
       Store_field(r, i, Val_int(N[i]));
+    }
   }
   return r;
 }
