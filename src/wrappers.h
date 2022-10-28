@@ -30,8 +30,8 @@ static inline value copy_two_double(double a, double b)
 {
   CAMLparam0();
   CAMLlocal3(r, va, vb);
-  va = copy_double(a);
-  vb = copy_double(b);
+  va = caml_copy_double(a);
+  vb = caml_copy_double(b);
   r = alloc_small(2, 0);
   Field(r, 0) = va;
   Field(r, 1) = vb;
