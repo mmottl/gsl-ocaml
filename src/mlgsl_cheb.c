@@ -27,7 +27,7 @@ CAMLprim value ml_gsl_cheb_coefs(value c)
   CAMLlocal1(a);
   gsl_cheb_series *cs = CHEB_VAL(c);
   size_t len = cs->order + 1;
-  a = alloc(len * Double_wosize, Double_array_tag);
+  a = caml_alloc(len * Double_wosize, Double_array_tag);
   memcpy(Bp_val(a), cs->c, len * sizeof (double));
   CAMLreturn(a);
 }

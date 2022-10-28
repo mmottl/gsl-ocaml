@@ -29,7 +29,7 @@ CAMLprim value ml_gsl_poly_solve_quadratic(value a, value b, value c)
     if(n == 0)
       r = Val_int(0);
     else{
-      r = alloc(2, 0);
+      r = caml_alloc(2, 0);
       Store_field(r, 0, caml_copy_double(x0));
       Store_field(r, 1, caml_copy_double(x1));
     } ;
@@ -74,11 +74,11 @@ CAMLprim value ml_gsl_poly_solve_cubic(value a, value b, value c)
     case 0:
       break;
     case 1:
-      r = alloc(1, 0);
+      r = caml_alloc(1, 0);
       Store_field(r, 0, caml_copy_double(x0));
       break;
     case 3:
-      r = alloc(3, 1);
+      r = caml_alloc(3, 1);
       Store_field(r, 0, caml_copy_double(x0));
       Store_field(r, 1, caml_copy_double(x1));
       Store_field(r, 2, caml_copy_double(x2));

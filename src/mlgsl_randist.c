@@ -192,7 +192,7 @@ CAMLprim value ml_gsl_ran_dir_3d(value rng)
   {
     CAMLparam0();
     CAMLlocal1(r);
-    r=alloc_tuple(3);
+    r=caml_alloc_tuple(3);
     Store_field(r, 0, caml_copy_double(x));
     Store_field(r, 1, caml_copy_double(y));
     Store_field(r, 2, caml_copy_double(z));
@@ -241,7 +241,7 @@ CAMLprim value ml_gsl_ran_multinomial(value rng, value n, value p)
   gsl_ran_multinomial(Rng_val(rng), K, Int_val(n), Double_array_val(p), N);
   {
     mlsize_t i;
-    r = alloc(K, 0);
+    r = caml_alloc(K, 0);
     for(i=0; i<K; i++)
       Store_field(r, i, Val_int(N[i]));
   }

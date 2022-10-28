@@ -56,7 +56,7 @@ CAMLprim value ml_gsl_monte_plain_alloc(value d)
     params->gslfun.mf.dim = dim;
     params->gslfun.mf.params = params;
     params->closure = Val_unit;
-    params->dbl = alloc(dim * Double_wosize, Double_array_tag);
+    params->dbl = caml_alloc(dim * Double_wosize, Double_array_tag);
   
     register_global_root(&(params->closure));
     register_global_root(&(params->dbl));
@@ -131,7 +131,7 @@ CAMLprim value ml_gsl_monte_miser_alloc(value d)
     params->gslfun.mf.dim = dim;
     params->gslfun.mf.params = params;
     params->closure = Val_unit;
-    params->dbl = alloc(dim * Double_wosize, Double_array_tag);
+    params->dbl = caml_alloc(dim * Double_wosize, Double_array_tag);
   
     register_global_root(&(params->closure));
     register_global_root(&(params->dbl));
@@ -187,7 +187,7 @@ CAMLprim value ml_gsl_monte_miser_get_params(value state)
   CAMLparam0();
   CAMLlocal1(r);
   gsl_monte_miser_state *s = GSLMISERSTATE_VAL(state);
-  r=alloc_tuple(5);
+  r=caml_alloc_tuple(5);
   Store_field(r, 0, caml_copy_double(s->estimate_frac));
   Store_field(r, 1, Val_int(s->min_calls));
   Store_field(r, 2, Val_int(s->min_calls_per_bisection));
@@ -233,7 +233,7 @@ CAMLprim value ml_gsl_monte_vegas_alloc(value d)
     params->gslfun.mf.dim = dim;
     params->gslfun.mf.params = params;
     params->closure = Val_unit;
-    params->dbl = alloc(dim * Double_wosize, Double_array_tag);
+    params->dbl = caml_alloc(dim * Double_wosize, Double_array_tag);
     
     register_global_root(&(params->closure));
     register_global_root(&(params->dbl));
@@ -305,7 +305,7 @@ CAMLprim value ml_gsl_monte_vegas_get_params(value state)
   CAMLparam0(); 
   CAMLlocal1(r);
   gsl_monte_vegas_state *s = GSLVEGASSTATE_VAL(state);
-  r=alloc_tuple(6);
+  r=caml_alloc_tuple(6);
   Store_field(r, 0, caml_copy_double(s->alpha));
   Store_field(r, 1, Val_int(s->iterations));
   Store_field(r, 2, Val_int(s->stage));

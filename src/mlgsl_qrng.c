@@ -43,7 +43,7 @@ CAMLprim value ml_gsl_qrng_get(value qrng, value x)
 CAMLprim value ml_gsl_qrng_sample(value qrng)
 {
   gsl_qrng * q = Qrng_val(qrng);
-  value arr = alloc(q->dimension * Double_wosize, Double_array_tag);
+  value arr = caml_alloc(q->dimension * Double_wosize, Double_array_tag);
   gsl_qrng_get(q, Double_array_val(arr));
   return arr;
 }

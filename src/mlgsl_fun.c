@@ -97,8 +97,8 @@ int gsl_multiroot_callback(const gsl_vector *x, void *params, gsl_vector *F)
   int len = x->size;
   gsl_vector_view x_v, f_v;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  f_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
 
@@ -116,8 +116,8 @@ int gsl_multiroot_callback_f(const gsl_vector *x, void *params, gsl_vector *F)
   int len = x->size;
   gsl_vector_view x_v, f_v;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  f_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
 
@@ -136,8 +136,8 @@ int gsl_multiroot_callback_df(const gsl_vector *x, void *params, gsl_matrix *J)
   gsl_vector_view x_v;
   gsl_matrix_view j_v;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, len, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  j_barr = caml_ba_alloc_dims(barr_flags, 2, NULL, len, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), len, len);
 
@@ -157,9 +157,9 @@ int gsl_multiroot_callback_fdf(const gsl_vector *x, void *params,
   gsl_vector_view x_v, f_v;
   gsl_matrix_view j_v;
   
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, len, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  f_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  j_barr = caml_ba_alloc_dims(barr_flags, 2, NULL, len, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), len, len);
@@ -183,7 +183,7 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
   gsl_vector_view x_v;
   value res;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
@@ -200,7 +200,7 @@ double gsl_multimin_callback_f(const gsl_vector *x, void *params)
   gsl_vector_view x_v;
   value res;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
@@ -216,8 +216,8 @@ void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
   int len = x->size;
   gsl_vector_view x_v, g_v;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  g_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  g_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
   g_v = gsl_vector_view_array(Caml_ba_data_val(g_barr), len);
 
@@ -236,8 +236,8 @@ void gsl_multimin_callback_fdf(const gsl_vector *x, void *params,
   gsl_vector_view x_v, g_v;
   value res;
   
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  g_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
+  g_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, len);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
   g_v = gsl_vector_view_array(Caml_ba_data_val(g_barr), len);
 
@@ -259,8 +259,8 @@ int gsl_multifit_callback_f(const gsl_vector *X, void *params, gsl_vector *F)
   size_t n = F->size;
   gsl_vector_view x_v, f_v;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, p);
-  f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, n);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, p);
+  f_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, n);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), p);
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), n);
 
@@ -281,8 +281,8 @@ int gsl_multifit_callback_df(const gsl_vector *X, void *params, gsl_matrix *J)
   gsl_matrix_view j_v;
   value res;
 
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, p);
-  j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, n, p);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, p);
+  j_barr = caml_ba_alloc_dims(barr_flags, 2, NULL, n, p);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), p);
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), n, p);
 
@@ -305,9 +305,9 @@ int gsl_multifit_callback_fdf(const gsl_vector *X, void *params,
   gsl_vector_view x_v, f_v;
   gsl_matrix_view j_v;
   
-  x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, p);
-  f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, n);
-  j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, n, p);
+  x_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, p);
+  f_barr = caml_ba_alloc_dims(barr_flags, 1, NULL, n);
+  j_barr = caml_ba_alloc_dims(barr_flags, 2, NULL, n, p);
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), p);
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), n);
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), n, p);

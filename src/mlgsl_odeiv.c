@@ -70,14 +70,14 @@ CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
   register_global_root(&(p->closure));
   p->jac_closure = (Is_none(ojac) ? Val_unit : Unoption(ojac));
   register_global_root(&(p->jac_closure));
-  p->arr1 = alloc(Int_val(dim) * Double_wosize, Double_array_tag);
+  p->arr1 = caml_alloc(Int_val(dim) * Double_wosize, Double_array_tag);
   register_global_root(&(p->arr1));
-  p->arr2 = alloc(Int_val(dim) * Double_wosize, Double_array_tag);
+  p->arr2 = caml_alloc(Int_val(dim) * Double_wosize, Double_array_tag);
   register_global_root(&(p->arr2));
   p->mat =
     Is_none(ojac)
     ? Val_unit
-    : alloc_bigarray_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
+    : caml_ba_alloc_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
   register_global_root(&(p->mat));
 
   syst=stat_alloc(sizeof (*syst));
