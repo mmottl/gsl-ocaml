@@ -237,7 +237,7 @@ CAMLprim value ml_gsl_monte_vegas_alloc(value d)
     
     caml_register_global_root(&(params->closure));
     caml_register_global_root(&(params->dbl));
-    caml_register_global_root(&(Field(res, 2)));
+    caml_register_global_root((value*)&Field(res, 2));
     CAMLreturn(res);
   }
 }
@@ -252,7 +252,7 @@ CAMLprim value ml_gsl_monte_vegas_free(value state)
   caml_stat_free(CallbackParams_val(state));
   if(s->ostream != stdout && s->ostream != stderr)
     fclose(s->ostream);
-  caml_remove_global_root(&GSLVEGASSTREAM_VAL(state));
+  caml_remove_global_root((value*)&GSLVEGASSTREAM_VAL(state));
   gsl_monte_vegas_free(s);
   return Val_unit;
 }
