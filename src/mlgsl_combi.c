@@ -8,7 +8,7 @@ static void combi_of_val(gsl_combination *c, value vc)
 {
     c->n = Int_val(Field(vc, 0));
     c->k = Int_val(Field(vc, 1));
-    c->data = Data_bigarray_val(Field(vc, 2));
+    c->data = Caml_ba_data_val(Field(vc, 2));
 }
 
 CAMLprim value ml_gsl_combination_init_first(value vc)

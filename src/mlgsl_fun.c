@@ -99,8 +99,8 @@ int gsl_multiroot_callback(const gsl_vector *x, void *params, gsl_vector *F)
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
-  f_v = gsl_vector_view_array(Data_bigarray_val(f_barr), len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
+  f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   callback2(p->closure, x_barr, f_barr);
@@ -118,8 +118,8 @@ int gsl_multiroot_callback_f(const gsl_vector *x, void *params, gsl_vector *F)
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
-  f_v = gsl_vector_view_array(Data_bigarray_val(f_barr), len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
+  f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   callback2(Field(p->closure, 0), x_barr, f_barr);
@@ -138,8 +138,8 @@ int gsl_multiroot_callback_df(const gsl_vector *x, void *params, gsl_matrix *J)
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, len, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
-  j_v = gsl_matrix_view_array(Data_bigarray_val(j_barr), len, len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
+  j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), len, len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   callback2(Field(p->closure, 1), x_barr, j_barr);
@@ -160,9 +160,9 @@ int gsl_multiroot_callback_fdf(const gsl_vector *x, void *params,
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, len, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
-  f_v = gsl_vector_view_array(Data_bigarray_val(f_barr), len);
-  j_v = gsl_matrix_view_array(Data_bigarray_val(j_barr), len, len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
+  f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
+  j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), len, len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   callback3(Field(p->closure, 2), x_barr, f_barr, j_barr);
@@ -184,7 +184,7 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
   value res;
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   res=callback(p->closure, x_barr);
@@ -201,7 +201,7 @@ double gsl_multimin_callback_f(const gsl_vector *x, void *params)
   value res;
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   res=callback(Field(p->closure, 0), x_barr);
@@ -218,8 +218,8 @@ void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   g_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
-  g_v = gsl_vector_view_array(Data_bigarray_val(g_barr), len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
+  g_v = gsl_vector_view_array(Caml_ba_data_val(g_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   callback2(Field(p->closure, 1), x_barr, g_barr);
@@ -238,8 +238,8 @@ void gsl_multimin_callback_fdf(const gsl_vector *x, void *params,
   
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
   g_barr = alloc_bigarray_dims(barr_flags, 1, NULL, len);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), len);
-  g_v = gsl_vector_view_array(Data_bigarray_val(g_barr), len);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
+  g_v = gsl_vector_view_array(Caml_ba_data_val(g_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
   res=callback2(Field(p->closure, 2), x_barr, g_barr);
@@ -261,8 +261,8 @@ int gsl_multifit_callback_f(const gsl_vector *X, void *params, gsl_vector *F)
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, p);
   f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, n);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), p);
-  f_v = gsl_vector_view_array(Data_bigarray_val(f_barr), n);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), p);
+  f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), n);
 
   gsl_vector_memcpy(&x_v.vector, X);
   callback2(Field(parms->closure, 0), x_barr, f_barr);
@@ -283,8 +283,8 @@ int gsl_multifit_callback_df(const gsl_vector *X, void *params, gsl_matrix *J)
 
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, p);
   j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, n, p);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), p);
-  j_v = gsl_matrix_view_array(Data_bigarray_val(j_barr), n, p);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), p);
+  j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), n, p);
 
   gsl_vector_memcpy(&x_v.vector, X);
   res=callback2(Field(parms->closure, 1), x_barr, j_barr);
@@ -308,9 +308,9 @@ int gsl_multifit_callback_fdf(const gsl_vector *X, void *params,
   x_barr = alloc_bigarray_dims(barr_flags, 1, NULL, p);
   f_barr = alloc_bigarray_dims(barr_flags, 1, NULL, n);
   j_barr = alloc_bigarray_dims(barr_flags, 2, NULL, n, p);
-  x_v = gsl_vector_view_array(Data_bigarray_val(x_barr), p);
-  f_v = gsl_vector_view_array(Data_bigarray_val(f_barr), n);
-  j_v = gsl_matrix_view_array(Data_bigarray_val(j_barr), n, p);
+  x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), p);
+  f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), n);
+  j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), n, p);
 
   gsl_vector_memcpy(&x_v.vector, X);
   callback3(Field(parms->closure, 2), x_barr, f_barr, j_barr);

@@ -48,7 +48,7 @@ static int ml_gsl_odeiv_jacobian(double t, const double y[],
   args[0] = caml_copy_double(t);
   memcpy(Double_array_val(p->arr1), y, p->dim * sizeof(double));
   args[1] = p->arr1;
-  Data_bigarray_val(p->mat) = dfdy;
+  Caml_ba_data_val(p->mat) = dfdy;
   args[2] = p->mat;
   args[3] = p->arr2;
   res = callbackN_exn(p->jac_closure, 4, args);
