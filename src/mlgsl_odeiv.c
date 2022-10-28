@@ -51,7 +51,7 @@ static int ml_gsl_odeiv_jacobian(double t, const double y[],
   Caml_ba_data_val(p->mat) = dfdy;
   args[2] = p->mat;
   args[3] = p->arr2;
-  res = callbackN_exn(p->jac_closure, 4, args);
+  res = caml_callbackN_exn(p->jac_closure, 4, args);
   if(Is_exception_result(res))
     return GSL_FAILURE;
   memcpy(dfdt, Double_array_val(p->arr2), p->dim * sizeof(double));
