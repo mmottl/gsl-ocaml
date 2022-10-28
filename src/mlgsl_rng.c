@@ -198,7 +198,7 @@ value ml_gsl_rng_set_state(value rng, value v)
   value state = Field(v, 1);
   if(strcmp(name, gsl_rng_name(r)) != 0 ||
      gsl_rng_size(r) != string_length(state) )
-    invalid_argument("Gsl.Rng.set_state : wrong rng type");
+    caml_invalid_argument("Gsl.Rng.set_state : wrong rng type");
   memcpy(r->state, Bp_val(state), string_length(state));
   return Val_unit;
 }

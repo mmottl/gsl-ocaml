@@ -28,9 +28,9 @@ static void check_layout(value fft_arr,
     if(!layout_exn) {
       layout_exn = caml_named_value("mlgsl_layout_exn");
       if(!layout_exn) /* Gromeleu */
-	invalid_argument("wrong fft_array layout");
+	caml_invalid_argument("wrong fft_array layout");
     }
-    raise_constant(*layout_exn);
+    caml_raise_constant(*layout_exn);
   }
 }
 
