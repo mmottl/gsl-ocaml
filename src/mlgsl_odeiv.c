@@ -67,18 +67,18 @@ CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
   p=caml_stat_alloc(sizeof (*p));
   p->dim = Int_val(dim);
   p->closure = func;
-  register_global_root(&(p->closure));
+  caml_register_global_root(&(p->closure));
   p->jac_closure = (Is_none(ojac) ? Val_unit : Unoption(ojac));
-  register_global_root(&(p->jac_closure));
+  caml_register_global_root(&(p->jac_closure));
   p->arr1 = caml_alloc(Int_val(dim) * Double_wosize, Double_array_tag);
-  register_global_root(&(p->arr1));
+  caml_register_global_root(&(p->arr1));
   p->arr2 = caml_alloc(Int_val(dim) * Double_wosize, Double_array_tag);
-  register_global_root(&(p->arr2));
+  caml_register_global_root(&(p->arr2));
   p->mat =
     Is_none(ojac)
     ? Val_unit
     : caml_ba_alloc_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
-  register_global_root(&(p->mat));
+  caml_register_global_root(&(p->mat));
 
   syst=caml_stat_alloc(sizeof (*syst));
   syst->function = ml_gsl_odeiv_func;
@@ -95,11 +95,11 @@ CAMLprim value ml_gsl_odeiv_free_system(value vsyst)
 {
   gsl_odeiv_system *syst = ODEIV_SYSTEM_VAL(vsyst);
   struct mlgsl_odeiv_params *p = syst->params;
-  remove_global_root(&(p->closure));
-  remove_global_root(&(p->jac_closure));
-  remove_global_root(&(p->arr1));
-  remove_global_root(&(p->arr2));
-  remove_global_root(&(p->mat));
+  caml_remove_global_root(&(p->closure));
+  caml_remove_global_root(&(p->jac_closure));
+  caml_remove_global_root(&(p->arr1));
+  caml_remove_global_root(&(p->arr2));
+  caml_remove_global_root(&(p->mat));
   caml_stat_free(p);
   caml_stat_free(syst);
   return Val_unit;

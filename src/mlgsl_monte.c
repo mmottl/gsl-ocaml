@@ -58,8 +58,8 @@ CAMLprim value ml_gsl_monte_plain_alloc(value d)
     params->closure = Val_unit;
     params->dbl = caml_alloc(dim * Double_wosize, Double_array_tag);
   
-    register_global_root(&(params->closure));
-    register_global_root(&(params->dbl));
+    caml_register_global_root(&(params->closure));
+    caml_register_global_root(&(params->dbl));
     CAMLreturn(res);
   }
 }
@@ -68,8 +68,8 @@ ML1(gsl_monte_plain_init, GSLPLAINSTATE_VAL, Unit)
 
 CAMLprim value ml_gsl_monte_plain_free(value s)
 {
-  remove_global_root(&(CallbackParams_val(s)->closure));
-  remove_global_root(&(CallbackParams_val(s)->dbl));
+  caml_remove_global_root(&(CallbackParams_val(s)->closure));
+  caml_remove_global_root(&(CallbackParams_val(s)->dbl));
   caml_stat_free(CallbackParams_val(s));
   gsl_monte_plain_free(GSLPLAINSTATE_VAL(s));
   return Val_unit;
@@ -133,8 +133,8 @@ CAMLprim value ml_gsl_monte_miser_alloc(value d)
     params->closure = Val_unit;
     params->dbl = caml_alloc(dim * Double_wosize, Double_array_tag);
   
-    register_global_root(&(params->closure));
-    register_global_root(&(params->dbl));
+    caml_register_global_root(&(params->closure));
+    caml_register_global_root(&(params->dbl));
     CAMLreturn(res);
   }
 }
@@ -143,8 +143,8 @@ ML1(gsl_monte_miser_init, GSLMISERSTATE_VAL, Unit)
 
 CAMLprim value ml_gsl_monte_miser_free(value s)
 {
-  remove_global_root(&(CallbackParams_val(s)->closure));
-  remove_global_root(&(CallbackParams_val(s)->dbl));
+  caml_remove_global_root(&(CallbackParams_val(s)->closure));
+  caml_remove_global_root(&(CallbackParams_val(s)->dbl));
   caml_stat_free(CallbackParams_val(s));
   gsl_monte_miser_free(GSLMISERSTATE_VAL(s));
   return Val_unit;
@@ -235,9 +235,9 @@ CAMLprim value ml_gsl_monte_vegas_alloc(value d)
     params->closure = Val_unit;
     params->dbl = caml_alloc(dim * Double_wosize, Double_array_tag);
     
-    register_global_root(&(params->closure));
-    register_global_root(&(params->dbl));
-    register_global_root(&(Field(res, 2)));
+    caml_register_global_root(&(params->closure));
+    caml_register_global_root(&(params->dbl));
+    caml_register_global_root(&(Field(res, 2)));
     CAMLreturn(res);
   }
 }
@@ -247,12 +247,12 @@ ML1(gsl_monte_vegas_init, GSLVEGASSTATE_VAL, Unit)
 CAMLprim value ml_gsl_monte_vegas_free(value state)
 {
   gsl_monte_vegas_state *s=GSLVEGASSTATE_VAL(state);
-  remove_global_root(&(CallbackParams_val(state)->closure));
-  remove_global_root(&(CallbackParams_val(state)->dbl));
+  caml_remove_global_root(&(CallbackParams_val(state)->closure));
+  caml_remove_global_root(&(CallbackParams_val(state)->dbl));
   caml_stat_free(CallbackParams_val(state));
   if(s->ostream != stdout && s->ostream != stderr)
     fclose(s->ostream);
-  remove_global_root(&GSLVEGASSTREAM_VAL(state));
+  caml_remove_global_root(&GSLVEGASSTREAM_VAL(state));
   gsl_monte_vegas_free(s);
   return Val_unit;
 }

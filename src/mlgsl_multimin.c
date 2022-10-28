@@ -48,7 +48,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_alloc(value type, value d)
   params->gslfun.mmfdf.params = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit;
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   return res;
 }
 #define GSLMULTIMINFDFMINIMIZER_VAL(v) ((gsl_multimin_fdfminimizer *)(Field(v, 0)))
@@ -71,7 +71,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_set(value S, value fun, value X,
 CAMLprim value ml_gsl_multimin_fdfminimizer_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
-  remove_global_root(&(p->closure));
+  caml_remove_global_root(&(p->closure));
   caml_stat_free(p);
   gsl_multimin_fdfminimizer_free(GSLMULTIMINFDFMINIMIZER_VAL(S));
   return Val_unit;
@@ -145,7 +145,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_alloc(value type, value d)
   params->gslfun.mmf.params = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit;
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   return res;
 }
 #define GSLMULTIMINFMINIMIZER_VAL(v) ((gsl_multimin_fminimizer *)(Field(v, 0)))
@@ -166,7 +166,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_set(value S, value fun,
 CAMLprim value ml_gsl_multimin_fminimizer_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
-  remove_global_root(&(p->closure));
+  caml_remove_global_root(&(p->closure));
   caml_stat_free(p);
   gsl_multimin_fminimizer_free(GSLMULTIMINFMINIMIZER_VAL(S));
   return Val_unit;

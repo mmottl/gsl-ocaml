@@ -36,7 +36,7 @@ CAMLprim value ml_gsl_min_fminimizer_alloc(value t)
   params->gslfun.gf.params   = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit;
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   CAMLreturn(res);
 }
 #define Minimizer_val(v) ((gsl_min_fminimizer *)Field((v), 0))
@@ -53,7 +53,7 @@ CAMLprim value ml_gsl_min_fminimizer_set(value s, value f, value min, value lo, 
 
 CAMLprim value ml_gsl_min_fminimizer_free(value s)
 {
-  remove_global_root(&(Mparams_val(s)->closure));
+  caml_remove_global_root(&(Mparams_val(s)->closure));
   caml_stat_free(Mparams_val(s));
   gsl_min_fminimizer_free(Minimizer_val(s));
   return Val_unit;

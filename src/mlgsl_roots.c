@@ -48,7 +48,7 @@ CAMLprim value ml_gsl_root_fsolver_alloc(value t)
     params->closure = Val_unit;
     params->dbl     = Val_unit;
 
-    register_global_root(&(params->closure));
+    caml_register_global_root(&(params->closure));
     CAMLreturn(res);
   }
 }
@@ -74,7 +74,7 @@ CAMLprim value ml_gsl_root_fdfsolver_alloc(value t)
     params->closure = Val_unit;
     params->dbl     = Val_unit;
 
-    register_global_root(&(params->closure));
+    caml_register_global_root(&(params->closure));
     CAMLreturn(res);
   }
 }
@@ -105,7 +105,7 @@ CAMLprim value ml_gsl_root_fdfsolver_set(value s, value f, value r)
 CAMLprim value ml_gsl_root_fsolver_free(value s)
 {
   struct callback_params *p=Fparams_val(s);
-  remove_global_root(&(p->closure));
+  caml_remove_global_root(&(p->closure));
   caml_stat_free(p);
   gsl_root_fsolver_free(Fsolver_val(s));
   return Val_unit;
@@ -114,7 +114,7 @@ CAMLprim value ml_gsl_root_fsolver_free(value s)
 CAMLprim value ml_gsl_root_fdfsolver_free(value s)
 {
   struct callback_params *p=Fparams_val(s);
-  remove_global_root(&(p->closure));
+  caml_remove_global_root(&(p->closure));
   caml_stat_free(p);
   gsl_root_fdfsolver_free(FDFsolver_val(s));
   return Val_unit;
