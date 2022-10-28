@@ -50,7 +50,7 @@ CAMLprim value ml_gsl_ieee_set_mode(value oprecision, value orounding, value ex_
     GSL_IEEE_MASK_DENORMALIZED, GSL_IEEE_MASK_OVERFLOW,
     GSL_IEEE_MASK_UNDERFLOW, GSL_IEEE_MASK_ALL,
     GSL_IEEE_TRAP_INEXACT } ;
-  int mask = convert_flag_list(ex_list, mask_conv);
+  int mask = caml_convert_flag_list(ex_list, mask_conv);
 
 #define Lookup_precision(v) precision_conv[ Int_val(v) ]
 #define Lookup_round(v)     round_conv[ Int_val(v) ]
@@ -99,7 +99,7 @@ static int except_conv [] = {
 
 static int conv_excepts(value e)
 {
-  return convert_flag_list(e, except_conv);
+  return caml_convert_flag_list(e, except_conv);
 }
 
 static value rev_conv_excepts(int e)
