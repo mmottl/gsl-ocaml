@@ -99,7 +99,7 @@ static int int_of_rngtype(const gsl_rng_type *rngt)
   if(i < len)
     return i;
   else
-    failwith("should not happen") ;
+    caml_failwith("should not happen") ;
 }
 
 value ml_gsl_rng_get_default(value unit)

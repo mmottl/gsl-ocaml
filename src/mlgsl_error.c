@@ -35,7 +35,7 @@ static void ml_gsl_error_handler(const char *reason, const char *file,
   else if (GSL_CONTINUE <= gsl_errno && gsl_errno <= GSL_FAILURE)
     ml_errno = gsl_errno + 2;
   else
-    failwith("invalid GSL error code");
+    caml_failwith("invalid GSL error code");
 
   exn_msg = caml_copy_string(reason);
   caml_callback2(Field(*ml_gsl_err_handler,0), Val_int(ml_errno), exn_msg);
