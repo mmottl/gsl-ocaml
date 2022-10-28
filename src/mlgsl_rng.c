@@ -211,12 +211,12 @@ value ml_gsl_rng_get(value rng)
 
 value ml_gsl_rng_uniform(value rng)
 {
-  return copy_double(gsl_rng_uniform(Rng_val(rng))) ;
+  return caml_copy_double(gsl_rng_uniform(Rng_val(rng))) ;
 }
 
 value ml_gsl_rng_uniform_pos(value rng)
 {
-  return copy_double(gsl_rng_uniform_pos(Rng_val(rng))) ;
+  return caml_copy_double(gsl_rng_uniform_pos(Rng_val(rng))) ;
 }
 
 value ml_gsl_rng_uniform_int(value rng, value n)

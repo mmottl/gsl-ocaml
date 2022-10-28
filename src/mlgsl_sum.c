@@ -26,7 +26,7 @@ CAMLprim value ml_gsl_sum_levin_u_getinfo(value ws)
   gsl_sum_levin_u_workspace *W=WS_val(ws);
   CAMLparam0();
   CAMLlocal2(v, s);
-  s=copy_double(W->sum_plain);
+  s=caml_copy_double(W->sum_plain);
   v=alloc_small(3, 0);
   Field(v, 0)=Val_int(W->size);
   Field(v, 1)=Val_int(W->terms_used);
@@ -51,7 +51,7 @@ CAMLprim value ml_gsl_sum_levin_utrunc_getinfo(value ws)
   gsl_sum_levin_utrunc_workspace *W=WStrunc_val(ws);
   CAMLparam0();
   CAMLlocal2(v, s);
-  s=copy_double(W->sum_plain);
+  s=caml_copy_double(W->sum_plain);
   v=alloc_small(3, 0);
   Field(v, 0)=Val_int(W->size);
   Field(v, 1)=Val_int(W->terms_used);

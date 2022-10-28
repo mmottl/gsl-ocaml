@@ -125,8 +125,8 @@ ML1(gsl_root_fdfsolver_name, FDFsolver_val, copy_string)
 
 ML1(gsl_root_fsolver_iterate, Fsolver_val, Unit)
 ML1(gsl_root_fdfsolver_iterate, FDFsolver_val, Unit)
-ML1(gsl_root_fsolver_root, Fsolver_val, copy_double)
-ML1(gsl_root_fdfsolver_root, FDFsolver_val, copy_double)
+ML1(gsl_root_fsolver_root, Fsolver_val, caml_copy_double)
+ML1(gsl_root_fdfsolver_root, FDFsolver_val, caml_copy_double)
 
 CAMLprim value ml_gsl_root_fsolver_x_interv(value S)
 {

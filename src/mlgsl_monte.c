@@ -188,11 +188,11 @@ CAMLprim value ml_gsl_monte_miser_get_params(value state)
   CAMLlocal1(r);
   gsl_monte_miser_state *s = GSLMISERSTATE_VAL(state);
   r=alloc_tuple(5);
-  Store_field(r, 0, copy_double(s->estimate_frac));
+  Store_field(r, 0, caml_copy_double(s->estimate_frac));
   Store_field(r, 1, Val_int(s->min_calls));
   Store_field(r, 2, Val_int(s->min_calls_per_bisection));
-  Store_field(r, 3, copy_double(s->alpha));
-  Store_field(r, 4, copy_double(s->dither));
+  Store_field(r, 3, caml_copy_double(s->alpha));
+  Store_field(r, 4, caml_copy_double(s->dither));
   CAMLreturn(r);
 }
 
@@ -306,7 +306,7 @@ CAMLprim value ml_gsl_monte_vegas_get_params(value state)
   CAMLlocal1(r);
   gsl_monte_vegas_state *s = GSLVEGASSTATE_VAL(state);
   r=alloc_tuple(6);
-  Store_field(r, 0, copy_double(s->alpha));
+  Store_field(r, 0, caml_copy_double(s->alpha));
   Store_field(r, 1, Val_int(s->iterations));
   Store_field(r, 2, Val_int(s->stage));
   Store_field(r, 3, Val_int(s->mode + 1));

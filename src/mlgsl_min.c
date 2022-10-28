@@ -63,7 +63,7 @@ ML1(gsl_min_fminimizer_name, Minimizer_val, copy_string)
 
 ML1(gsl_min_fminimizer_iterate, Minimizer_val, Unit)
 
-ML1(gsl_min_fminimizer_x_minimum, Minimizer_val, copy_double)
+ML1(gsl_min_fminimizer_x_minimum, Minimizer_val, caml_copy_double)
 
 CAMLprim value ml_gsl_min_fminimizer_x_interv(value S)
 {

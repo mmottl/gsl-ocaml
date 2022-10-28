@@ -34,8 +34,8 @@ static inline value val_of_result_e10(gsl_sf_result_e10 *result)
 {
   CAMLparam0();
   CAMLlocal3(r, v, e) ;
-  v = copy_double(result->val);
-  e = copy_double(result->err);
+  v = caml_copy_double(result->val);
+  e = caml_copy_double(result->err);
   r = alloc_small(3, 0);
   Field(r, 0) = v;
   Field(r, 1) = e;
@@ -84,19 +84,19 @@ CAMLprim value ml_gsl_sf_result_smash_e(value e10)
     return val_of_result(&res); }
 
 #define SF1(name, conv1) \
-  ML1(gsl_sf_##name, conv1, copy_double) \
+  ML1(gsl_sf_##name, conv1, caml_copy_double) \
   ML1_res(gsl_sf_##name##_e, conv1)
 #define SF2(name, conv1, conv2) \
-  ML2(gsl_sf_##name, conv1, conv2, copy_double) \
+  ML2(gsl_sf_##name, conv1, conv2, caml_copy_double) \
   ML2_res(gsl_sf_##name##_e, conv1, conv2)
 #define SF3(name, conv1, conv2, conv3) \
-  ML3(gsl_sf_##name, conv1, conv2, conv3, copy_double) \
+  ML3(gsl_sf_##name, conv1, conv2, conv3, caml_copy_double) \
   ML3_res(gsl_sf_##name##_e, conv1, conv2, conv3)
 #define SF4(name, conv1, conv2, conv3, conv4) \
-  ML4(gsl_sf_##name, conv1, conv2, conv3, conv4, copy_double) \
+  ML4(gsl_sf_##name, conv1, conv2, conv3, conv4, caml_copy_double) \
   ML4_res(gsl_sf_##name##_e, conv1, conv2, conv3, conv4)
 #define SF5(name, conv1, conv2, conv3, conv4, conv5) \
-  ML5(gsl_sf_##name, conv1, conv2, conv3, conv4, conv5, copy_double) \
+  ML5(gsl_sf_##name, conv1, conv2, conv3, conv4, conv5, caml_copy_double) \
   ML5_res(gsl_sf_##name##_e, conv1, conv2, conv3, conv4, conv5)
 
 
@@ -269,7 +269,7 @@ CAMLprim value ml_gsl_sf_ellint_D(value arg1, value arg2, value arg3)
   double res =
     gsl_sf_ellint_D(
       Double_val(arg1), Double_val(arg2), dummy_n, GSL_MODE_val(arg3));
-  CAMLreturn(caml_copy_double(res));
+  CAMLreturn(caml_caml_copy_double(res));
 }
 
 CAMLprim value ml_gsl_sf_ellint_D_e(value arg1, value arg2, value arg3)
@@ -367,7 +367,7 @@ CAMLprim value ml_gsl_sf_lngamma_sgn_e(value x)
     CAMLparam0();
     CAMLlocal3(v,r,s);
     r=val_of_result(&res);
-    s=copy_double(sgn);
+    s=caml_copy_double(sgn);
     v=alloc_small(2, 0);
     Field(v, 0)=r;
     Field(v, 1)=s;
@@ -400,7 +400,7 @@ CAMLprim value ml_gsl_sf_lnpoch_sgn_e(value a, value x)
     CAMLparam0();
     CAMLlocal3(v,r,s);
     r=val_of_result(&res);
-    s=copy_double(sgn);
+    s=caml_copy_double(sgn);
     v=alloc_small(2, 0);
     Field(v, 0)=r;
     Field(v, 1)=s;
@@ -422,7 +422,7 @@ CAMLprim value ml_gsl_sf_lnbeta_sgn_e(value x, value y)
     CAMLparam0();
     CAMLlocal3(v,r,s);
     r=val_of_result(&res);
-    s=copy_double(sgn);
+    s=caml_copy_double(sgn);
     v=alloc_small(2, 0);
     Field(v, 0)=r;
     Field(v, 1)=s;
@@ -614,8 +614,8 @@ CAMLprim value ml_gsl_sf_rect_to_polar(value x, value y)
   gsl_sf_rect_to_polar(Double_val(x), Double_val(y), &r, &theta);
   return val_of_result_pair (&r, &theta);
 }
-ML1(gsl_sf_angle_restrict_symm, Double_val, copy_double)
-ML1(gsl_sf_angle_restrict_pos, Double_val, copy_double)
+ML1(gsl_sf_angle_restrict_symm, Double_val, caml_copy_double)
+ML1(gsl_sf_angle_restrict_pos, Double_val, caml_copy_double)
 ML2_res(gsl_sf_sin_err_e, Double_val, Double_val)
 ML2_res(gsl_sf_cos_err_e, Double_val, Double_val)
 

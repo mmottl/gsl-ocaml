@@ -105,7 +105,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_minimum(value ox, value odx, value o
       gsl_vector_memcpy(&v_g,  
 			gsl_multimin_fdfminimizer_gradient(t));
   }
-  return copy_double(gsl_multimin_fdfminimizer_minimum(t));
+  return caml_copy_double(gsl_multimin_fdfminimizer_minimum(t));
 }
 
 CAMLprim value ml_gsl_multimin_test_gradient(value S, value epsabs)
@@ -184,10 +184,10 @@ CAMLprim value ml_gsl_multimin_fminimizer_minimum(value ox, value T)
       _CONVERT_VECTOR(x);
       gsl_vector_memcpy(&v_x, gsl_multimin_fminimizer_x(t));
   }
-  return copy_double(gsl_multimin_fminimizer_minimum(t));
+  return caml_copy_double(gsl_multimin_fminimizer_minimum(t));
 }
 
-ML1(gsl_multimin_fminimizer_size, GSLMULTIMINFMINIMIZER_VAL, copy_double)
+ML1(gsl_multimin_fminimizer_size, GSLMULTIMINFMINIMIZER_VAL, caml_copy_double)
 
 CAMLprim value ml_gsl_multimin_test_size(value S, value epsabs)
 {

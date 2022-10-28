@@ -30,7 +30,7 @@ static int ml_gsl_odeiv_func(double t, const double y[],
 {
   struct mlgsl_odeiv_params *p = params;
   value vt, res;
-  vt  = copy_double(t);
+  vt  = caml_copy_double(t);
   memcpy(Double_array_val(p->arr1), y, p->dim * sizeof(double));
   res = callback3_exn(p->closure, vt, p->arr1, p->arr2);
   if(Is_exception_result(res))
@@ -45,7 +45,7 @@ static int ml_gsl_odeiv_jacobian(double t, const double y[],
 {
   struct mlgsl_odeiv_params *p = params;
   value res, args[4];
-  args[0] = copy_double(t);
+  args[0] = caml_copy_double(t);
   memcpy(Double_array_val(p->arr1), y, p->dim * sizeof(double));
   args[1] = p->arr1;
   Data_bigarray_val(p->mat) = dfdy;
@@ -231,7 +231,7 @@ CAMLprim value ml_gsl_odeiv_control_hadjust(value c, value s, value y,
   {
     CAMLparam0();
     CAMLlocal2(vh, r);
-    vh = copy_double(c_h);
+    vh = caml_copy_double(c_h);
     r = alloc_small(2, 0);
     Field(r, 0) = Val_int(status + 1);
     Field(r, 1) = vh;

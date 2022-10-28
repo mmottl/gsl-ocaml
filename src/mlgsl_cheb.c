@@ -40,7 +40,7 @@ CAMLprim value ml_gsl_cheb_init(value cs, value f, value a, value b)
   CAMLreturn(Val_unit);
 }
 
-ML2(gsl_cheb_eval, CHEB_VAL, Double_val, copy_double)
+ML2(gsl_cheb_eval, CHEB_VAL, Double_val, caml_copy_double)
 
 CAMLprim value ml_gsl_cheb_eval_err(value cheb, value x)
 {
@@ -49,7 +49,7 @@ CAMLprim value ml_gsl_cheb_eval_err(value cheb, value x)
   return copy_two_double_arr(res, err);
 }
 
-ML3(gsl_cheb_eval_n, CHEB_VAL, Int_val, Double_val, copy_double)
+ML3(gsl_cheb_eval_n, CHEB_VAL, Int_val, Double_val, caml_copy_double)
 
 CAMLprim value ml_gsl_cheb_eval_n_err(value cheb, value order, value x)
 {

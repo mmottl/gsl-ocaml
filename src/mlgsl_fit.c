@@ -130,7 +130,7 @@ CAMLprim value ml_gsl_multifit_linear(value wo, value x, value y,
     gsl_multifit_wlinear(&m_x, &v_w, &v_y, &v_c, &m_cov, 
 			 &chisq, MultifitWS_val(ws));
   }
-  return copy_double(chisq);
+  return caml_copy_double(chisq);
 }
 
 CAMLprim value ml_gsl_multifit_linear_bc(value *args, int argc)

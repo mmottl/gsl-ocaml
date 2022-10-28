@@ -14,22 +14,22 @@
 #include "mlgsl_matrix_double.h"
 
 /* GAUSSIAN */
-ML2(gsl_ran_gaussian, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_gaussian_ratio_method, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_gaussian_ziggurat, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_gaussian_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_gaussian, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_gaussian_ratio_method, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_gaussian_ziggurat, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_gaussian_pdf, Double_val, Double_val, caml_copy_double)
 
-ML1(gsl_ran_ugaussian, Rng_val, copy_double)
-ML1(gsl_ran_ugaussian_ratio_method, Rng_val, copy_double)
-ML1(gsl_ran_ugaussian_pdf, Double_val, copy_double)
+ML1(gsl_ran_ugaussian, Rng_val, caml_copy_double)
+ML1(gsl_ran_ugaussian_ratio_method, Rng_val, caml_copy_double)
+ML1(gsl_ran_ugaussian_pdf, Double_val, caml_copy_double)
 
 
 /* GAUSSIAN TAIL */
-ML3(gsl_ran_gaussian_tail, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_gaussian_tail_pdf, Double_val, Double_val, Double_val ,copy_double)
+ML3(gsl_ran_gaussian_tail, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_gaussian_tail_pdf, Double_val, Double_val, Double_val ,caml_copy_double)
 
-ML2(gsl_ran_ugaussian_tail, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_ugaussian_tail_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_ugaussian_tail, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_ugaussian_tail_pdf, Double_val, Double_val, caml_copy_double)
 
 
 /* BIVARIATE */
@@ -42,7 +42,7 @@ CAMLprim value ml_gsl_ran_bivariate_gaussian(value rng, value sigma_x, value sig
 			     Double_val(rho), &x, &y);
   return copy_two_double(x, y);
 }
-ML5(gsl_ran_bivariate_gaussian_pdf, Double_val, Double_val, Double_val, Double_val, Double_val, copy_double)
+ML5(gsl_ran_bivariate_gaussian_pdf, Double_val, Double_val, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* MULTIVARIATE */
 CAMLprim value ml_gsl_ran_multivariate_gaussian(value rng, value mu, value l, value out)
@@ -65,57 +65,57 @@ CAMLprim value ml_gsl_ran_multivariate_gaussian(value rng, value mu, value l, va
 }
 
 /* EXPONENTIAL */
-ML2(gsl_ran_exponential, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_exponential_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_exponential, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_exponential_pdf, Double_val, Double_val, caml_copy_double)
 
 /* LAPLACE */
-ML2(gsl_ran_laplace, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_laplace_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_laplace, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_laplace_pdf, Double_val, Double_val, caml_copy_double)
 
 /* EXPONENTIAL POWER */
-ML3(gsl_ran_exppow, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_exppow_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_exppow, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_exppow_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* CAUCHY */
-ML2(gsl_ran_cauchy, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_cauchy_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_cauchy, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_cauchy_pdf, Double_val, Double_val, caml_copy_double)
 
 /* RAYLEIGH */
-ML2(gsl_ran_rayleigh, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_rayleigh_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_rayleigh, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_rayleigh_pdf, Double_val, Double_val, caml_copy_double)
 
 /* RAYLEIGH TAIL */
-ML3(gsl_ran_rayleigh_tail, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_rayleigh_tail_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_rayleigh_tail, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_rayleigh_tail_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* LANDAU */
-ML1(gsl_ran_landau, Rng_val, copy_double)
-ML1(gsl_ran_landau_pdf, Double_val, copy_double)
+ML1(gsl_ran_landau, Rng_val, caml_copy_double)
+ML1(gsl_ran_landau_pdf, Double_val, caml_copy_double)
 
 /* LEVY ALPHA-STABLE */
-ML3(gsl_ran_levy, Rng_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_levy, Rng_val, Double_val, Double_val, caml_copy_double)
 
 /* LEVY SKEW ALPHA-STABLE */
-ML4(gsl_ran_levy_skew, Rng_val, Double_val, Double_val, Double_val, copy_double)
+ML4(gsl_ran_levy_skew, Rng_val, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* GAMMA */
-ML3(gsl_ran_gamma, Rng_val, Double_val, Double_val, copy_double)
-ML2(gsl_ran_gamma_int, Rng_val, Unsigned_int_val, copy_double)
-ML3(gsl_ran_gamma_pdf, Double_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_gamma_mt, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_gamma_knuth, Rng_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_gamma, Rng_val, Double_val, Double_val, caml_copy_double)
+ML2(gsl_ran_gamma_int, Rng_val, Unsigned_int_val, caml_copy_double)
+ML3(gsl_ran_gamma_pdf, Double_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_gamma_mt, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_gamma_knuth, Rng_val, Double_val, Double_val, caml_copy_double)
 
 /* FLAT */
-ML3(gsl_ran_flat, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_flat_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_flat, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_flat_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* LOGNORMAL */
-ML3(gsl_ran_lognormal, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_lognormal_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_lognormal, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_lognormal_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* CHISQ */
-ML2(gsl_ran_chisq, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_chisq_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_chisq, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_chisq_pdf, Double_val, Double_val, caml_copy_double)
 
 /* DIRICHLET */
 CAMLprim value ml_gsl_ran_dirichlet(value rng, value alpha, value theta)
@@ -136,7 +136,7 @@ CAMLprim value ml_gsl_ran_dirichlet_pdf(value alpha, value theta)
     GSL_ERROR("alpha and theta must have same size", GSL_EBADLEN);
   r = gsl_ran_dirichlet_pdf(K, Double_array_val(alpha), 
 			    Double_array_val(theta));
-  return copy_double(r);
+  return caml_copy_double(r);
 }
 
 CAMLprim value ml_gsl_ran_dirichlet_lnpdf(value alpha, value theta)
@@ -147,28 +147,28 @@ CAMLprim value ml_gsl_ran_dirichlet_lnpdf(value alpha, value theta)
     GSL_ERROR("alpha and theta must have same size", GSL_EBADLEN);
   r = gsl_ran_dirichlet_lnpdf(K, Double_array_val(alpha), 
 			      Double_array_val(theta));
-  return copy_double(r);
+  return caml_copy_double(r);
 }
 
 /* FDIST */
-ML3(gsl_ran_fdist, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_fdist_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_fdist, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_fdist_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* TDIST */
-ML2(gsl_ran_tdist, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_tdist_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_tdist, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_tdist_pdf, Double_val, Double_val, caml_copy_double)
 
 /* BETA */
-ML3(gsl_ran_beta, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_beta_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_beta, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_beta_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* LOGISTIC */
-ML2(gsl_ran_logistic, Rng_val, Double_val, copy_double)
-ML2(gsl_ran_logistic_pdf, Double_val, Double_val, copy_double)
+ML2(gsl_ran_logistic, Rng_val, Double_val, caml_copy_double)
+ML2(gsl_ran_logistic_pdf, Double_val, Double_val, caml_copy_double)
 
 /* PARETO */
-ML3(gsl_ran_pareto, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_pareto_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_pareto, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_pareto_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* SPHERICAL */
 CAMLprim value ml_gsl_ran_dir_2d(value rng)
@@ -193,9 +193,9 @@ CAMLprim value ml_gsl_ran_dir_3d(value rng)
     CAMLparam0();
     CAMLlocal1(r);
     r=alloc_tuple(3);
-    Store_field(r, 0, copy_double(x));
-    Store_field(r, 1, copy_double(y));
-    Store_field(r, 2, copy_double(z));
+    Store_field(r, 0, caml_copy_double(x));
+    Store_field(r, 1, caml_copy_double(y));
+    Store_field(r, 2, caml_copy_double(z));
     CAMLreturn(r);
   }
 }
@@ -207,30 +207,30 @@ CAMLprim value ml_gsl_ran_dir_nd(value rng, value x)
 }
 
 /* WEIBULL */
-ML3(gsl_ran_weibull, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_weibull_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_weibull, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_weibull_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* GUMBEL1 */
-ML3(gsl_ran_gumbel1, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_gumbel1_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_gumbel1, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_gumbel1_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* GUMBEL2 */
-ML3(gsl_ran_gumbel2, Rng_val, Double_val, Double_val, copy_double)
-ML3(gsl_ran_gumbel2_pdf, Double_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_gumbel2, Rng_val, Double_val, Double_val, caml_copy_double)
+ML3(gsl_ran_gumbel2_pdf, Double_val, Double_val, Double_val, caml_copy_double)
 
 /* POISSON */
 ML2(gsl_ran_poisson, Rng_val, Double_val, Val_int)
-ML2(gsl_ran_poisson_pdf, Int_val, Double_val, copy_double)
+ML2(gsl_ran_poisson_pdf, Int_val, Double_val, caml_copy_double)
 
 /* BERNOULLI */
 ML2(gsl_ran_bernoulli, Rng_val, Double_val, Val_int)
-ML2(gsl_ran_bernoulli_pdf, Int_val, Double_val, copy_double)
+ML2(gsl_ran_bernoulli_pdf, Int_val, Double_val, caml_copy_double)
 
 /* BINOMIAL */
 ML3(gsl_ran_binomial, Rng_val, Double_val, Int_val, Val_int)
 ML3(gsl_ran_binomial_knuth, Rng_val, Double_val, Int_val, Val_int)
 ML3(gsl_ran_binomial_tpe, Rng_val, Double_val, Int_val, Val_int)
-ML3(gsl_ran_binomial_pdf, Int_val, Double_val, Int_val, copy_double)
+ML3(gsl_ran_binomial_pdf, Int_val, Double_val, Int_val, caml_copy_double)
 
 /* MULTINOMIAL */
 CAMLprim value ml_gsl_ran_multinomial(value rng, value n, value p)
@@ -257,7 +257,7 @@ CAMLprim value ml_gsl_ran_multinomial_pdf(value p, value n)
   for(i=0; i<K; i++)
     N[i] = Int_val(Field(n, i));
   r = gsl_ran_multinomial_pdf(K, Double_array_val(p), N);
-  return copy_double(r);
+  return caml_copy_double(r);
 }
 
 CAMLprim value ml_gsl_ran_multinomial_lnpdf(value p, value n)
@@ -269,29 +269,29 @@ CAMLprim value ml_gsl_ran_multinomial_lnpdf(value p, value n)
   for(i=0; i<K; i++)
     N[i] = Int_val(Field(n, i));
   r = gsl_ran_multinomial_lnpdf(K, Double_array_val(p), N);
-  return copy_double(r);
+  return caml_copy_double(r);
 }
 
 
 /* NEGATIVE BINOMIAL */
 ML3(gsl_ran_negative_binomial, Rng_val, Double_val, Double_val, Val_int)
-ML3(gsl_ran_negative_binomial_pdf, Int_val, Double_val, Double_val, copy_double)
+ML3(gsl_ran_negative_binomial_pdf, Int_val, Double_val, Double_val, caml_copy_double)
 
 /* PASCAL */
 ML3(gsl_ran_pascal, Rng_val, Double_val, Int_val, Val_int)
-ML3(gsl_ran_pascal_pdf, Int_val, Double_val, Int_val, copy_double)
+ML3(gsl_ran_pascal_pdf, Int_val, Double_val, Int_val, caml_copy_double)
 
 /* GEOMETRIC */
 ML2(gsl_ran_geometric, Rng_val, Double_val, Val_int)
-ML2(gsl_ran_geometric_pdf, Int_val, Double_val, copy_double)
+ML2(gsl_ran_geometric_pdf, Int_val, Double_val, caml_copy_double)
 
 /* HYPERGEOMETRIC */
 ML4(gsl_ran_hypergeometric, Rng_val, Int_val, Int_val, Int_val, Val_int)
-ML4(gsl_ran_hypergeometric_pdf, Int_val, Int_val, Int_val, Int_val, copy_double)
+ML4(gsl_ran_hypergeometric_pdf, Int_val, Int_val, Int_val, Int_val, caml_copy_double)
 
 /* LOGARITHMIC */
 ML2(gsl_ran_logarithmic, Rng_val, Double_val, Val_int)
-ML2(gsl_ran_logarithmic_pdf, Int_val, Double_val, copy_double)
+ML2(gsl_ran_logarithmic_pdf, Int_val, Double_val, caml_copy_double)
 
 
 /* SHUFFLING */
@@ -349,5 +349,5 @@ CAMLprim value ml_gsl_ran_discrete_preproc(value p)
 
 #define Discrete_val(v) ((gsl_ran_discrete_t *)(Field(v, 0)))
 ML2(gsl_ran_discrete, Rng_val, Discrete_val, Val_int)
-ML2(gsl_ran_discrete_pdf, Int_val, Discrete_val, copy_double)
+ML2(gsl_ran_discrete_pdf, Int_val, Discrete_val, caml_copy_double)
 ML1(gsl_ran_discrete_free, Discrete_val, Unit)

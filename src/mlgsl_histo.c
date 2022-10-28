@@ -60,7 +60,7 @@ CAMLprim value ml_gsl_histogram_max_val(value vh)
 {
   gsl_histogram h;
   histo_of_val(&h, vh);
-  return copy_double(gsl_histogram_max_val(&h));
+  return caml_copy_double(gsl_histogram_max_val(&h));
 }
 
 CAMLprim value ml_gsl_histogram_max_bin(value vh)
@@ -74,7 +74,7 @@ CAMLprim value ml_gsl_histogram_min_val(value vh)
 {
   gsl_histogram h;
   histo_of_val(&h, vh);
-  return copy_double(gsl_histogram_min_val(&h));
+  return caml_copy_double(gsl_histogram_min_val(&h));
 }
 
 CAMLprim value ml_gsl_histogram_min_bin(value vh)
@@ -88,21 +88,21 @@ CAMLprim value ml_gsl_histogram_mean(value vh)
 {
   gsl_histogram h;
   histo_of_val(&h, vh);
-  return copy_double(gsl_histogram_mean(&h));
+  return caml_copy_double(gsl_histogram_mean(&h));
 }
 
 CAMLprim value ml_gsl_histogram_sigma(value vh)
 {
   gsl_histogram h;
   histo_of_val(&h, vh);
-  return copy_double(gsl_histogram_sigma(&h));
+  return caml_copy_double(gsl_histogram_sigma(&h));
 }
 
 CAMLprim value ml_gsl_histogram_sum(value vh)
 {
   gsl_histogram h;
   histo_of_val(&h, vh);
-  return copy_double(gsl_histogram_sum(&h));
+  return caml_copy_double(gsl_histogram_sum(&h));
 }
 
 CAMLprim value ml_gsl_histogram_equal_bins_p(value vh1, value vh2)
@@ -186,5 +186,5 @@ CAMLprim value ml_gsl_histogram_pdf_sample(value vp, value r)
 {
   gsl_histogram_pdf p;
   histopdf_of_val(&p, vp);
-  return copy_double(gsl_histogram_pdf_sample(&p, r));
+  return caml_copy_double(gsl_histogram_pdf_sample(&p, r));
 }

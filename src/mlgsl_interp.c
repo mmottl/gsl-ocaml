@@ -70,7 +70,7 @@ CAMLprim value ml_gsl_interp_accel_free(value ia)
 
 CAMLprim value ml_gsl_interp_eval(value i, value xa, value ya, value x, value A)
 {
-  return copy_double(gsl_interp_eval(Interp_val(i),
+  return caml_copy_double(gsl_interp_eval(Interp_val(i),
 				     Double_array_val(xa),
 				     Double_array_val(ya),
 				     Double_val(x),
@@ -80,7 +80,7 @@ CAMLprim value ml_gsl_interp_eval(value i, value xa, value ya, value x, value A)
 CAMLprim value ml_gsl_interp_eval_deriv(value i, value xa, value ya, 
 					value x, value A)
 {
-  return copy_double(gsl_interp_eval_deriv(Interp_val(i),
+  return caml_copy_double(gsl_interp_eval_deriv(Interp_val(i),
 					   Double_array_val(xa),
 					   Double_array_val(ya),
 					   Double_val(x),
@@ -90,7 +90,7 @@ CAMLprim value ml_gsl_interp_eval_deriv(value i, value xa, value ya,
 CAMLprim value ml_gsl_interp_eval_deriv2(value i, value xa, value ya, 
 					 value x, value A)
 {
-  return copy_double(gsl_interp_eval_deriv2(Interp_val(i),
+  return caml_copy_double(gsl_interp_eval_deriv2(Interp_val(i),
 					    Double_array_val(xa),
 					    Double_array_val(ya),
 					    Double_val(x),
@@ -100,7 +100,7 @@ CAMLprim value ml_gsl_interp_eval_deriv2(value i, value xa, value ya,
 CAMLprim value ml_gsl_interp_eval_integ(value i, value xa, value ya, 
 					value a, value b, value A)
 {
-  return copy_double(gsl_interp_eval_integ(Interp_val(i),
+  return caml_copy_double(gsl_interp_eval_integ(Interp_val(i),
 					   Double_array_val(xa),
 					   Double_array_val(ya),
 					   Double_val(a), Double_val(b),

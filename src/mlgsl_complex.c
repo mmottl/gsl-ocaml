@@ -38,7 +38,7 @@ CAMLprim value ml_gsl_complex_logabs(value Z)
 {
   _DECLARE_COMPLEX(Z);
   _CONVERT_COMPLEX(Z);
-  return copy_double(gsl_complex_logabs(z_Z));
+  return caml_copy_double(gsl_complex_logabs(z_Z));
 }
 
 
