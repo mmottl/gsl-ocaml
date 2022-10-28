@@ -22,7 +22,7 @@ double gslfun_callback(double x, void *params)
   struct callback_params *p=params;
   value res;
   value v_x = caml_copy_double(x);
-  res=callback(p->closure, v_x);
+  res=caml_callback(p->closure, v_x);
   return Double_val(res);
 }
 
@@ -32,7 +32,7 @@ double gslfun_callback_indir(double x, void *params)
   value res;
   value v_x = caml_copy_double(x);
   value *closure = params;
-  res=callback(*closure, v_x);
+  res=caml_callback(*closure, v_x);
   return Double_val(res);
 }
  
@@ -41,7 +41,7 @@ double gslfun_callback_f(double x, void *params)
   struct callback_params *p=params;
   value res;
   value v_x=caml_copy_double(x);
-  res=callback(Field(p->closure, 0), v_x);
+  res=caml_callback(Field(p->closure, 0), v_x);
   return Double_val(res);
 }
 
@@ -50,7 +50,7 @@ double gslfun_callback_df(double x, void *params)
   struct callback_params *p=params;
   value res;
   value v_x=caml_copy_double(x);
-  res=callback(Field(p->closure, 1), v_x);
+  res=caml_callback(Field(p->closure, 1), v_x);
   return Double_val(res);
 }
 
@@ -60,7 +60,7 @@ void gslfun_callback_fdf(double x, void *params,
   struct callback_params *p=params;
   value res;
   value v_x=caml_copy_double(x);
-  res=callback(Field(p->closure, 2), v_x);
+  res=caml_callback(Field(p->closure, 2), v_x);
   *f =Double_val(Field(res, 0));
   *df=Double_val(Field(res, 1));
 }
@@ -73,7 +73,7 @@ double gsl_monte_callback(double *x_arr, size_t dim, void *params)
   value res;
 
   memcpy(Double_array_val(p->dbl), x_arr, dim*sizeof(double));
-  res=callback(p->closure, p->dbl);
+  res=caml_callback(p->closure, p->dbl);
   return Double_val(res);
 }
 
@@ -82,7 +82,7 @@ double gsl_monte_callback_fast(double *x_arr, size_t dim, void *params)
   struct callback_params *p=params;
   value res;
 
-  res=callback(p->closure, (value)x_arr);
+  res=caml_callback(p->closure, (value)x_arr);
   return Double_val(res);
 }
 
