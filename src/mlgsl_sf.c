@@ -269,7 +269,7 @@ CAMLprim value ml_gsl_sf_ellint_D(value arg1, value arg2, value arg3)
   double res =
     gsl_sf_ellint_D(
       Double_val(arg1), Double_val(arg2), dummy_n, GSL_MODE_val(arg3));
-  CAMLreturn(caml_caml_copy_double(res));
+  CAMLreturn(caml_copy_double(res));
 }
 
 CAMLprim value ml_gsl_sf_ellint_D_e(value arg1, value arg2, value arg3)

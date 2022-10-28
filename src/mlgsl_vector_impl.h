@@ -77,14 +77,14 @@ CAMLprim value FUNCTION(ml_gsl_vector,max)(value a)
 {
   _DECLARE_VECTOR(a);
   _CONVERT_VECTOR(a);
-  return copy_double(FUNCTION(gsl_vector,max)(&v_a));
+  return caml_copy_double(FUNCTION(gsl_vector,max)(&v_a));
 }
 
 CAMLprim value FUNCTION(ml_gsl_vector,min)(value a)
 {
   _DECLARE_VECTOR(a);
   _CONVERT_VECTOR(a);
-  return copy_double(FUNCTION(gsl_vector,min)(&v_a));
+  return caml_copy_double(FUNCTION(gsl_vector,min)(&v_a));
 }
 
 CAMLprim value FUNCTION(ml_gsl_vector,minmax)(value a)
