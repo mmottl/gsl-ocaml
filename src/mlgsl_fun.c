@@ -103,7 +103,7 @@ int gsl_multiroot_callback(const gsl_vector *x, void *params, gsl_vector *F)
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  callback2(p->closure, x_barr, f_barr);
+  caml_callback2(p->closure, x_barr, f_barr);
   gsl_vector_memcpy(F, &f_v.vector);
   return GSL_SUCCESS;
 }
@@ -122,7 +122,7 @@ int gsl_multiroot_callback_f(const gsl_vector *x, void *params, gsl_vector *F)
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  callback2(Field(p->closure, 0), x_barr, f_barr);
+  caml_callback2(Field(p->closure, 0), x_barr, f_barr);
   gsl_vector_memcpy(F, &f_v.vector);
   return GSL_SUCCESS;
 }
@@ -142,7 +142,7 @@ int gsl_multiroot_callback_df(const gsl_vector *x, void *params, gsl_matrix *J)
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), len, len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  callback2(Field(p->closure, 1), x_barr, j_barr);
+  caml_callback2(Field(p->closure, 1), x_barr, j_barr);
   gsl_matrix_memcpy(J, &j_v.matrix);
   return GSL_SUCCESS;
 }
@@ -165,7 +165,7 @@ int gsl_multiroot_callback_fdf(const gsl_vector *x, void *params,
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), len, len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  callback3(Field(p->closure, 2), x_barr, f_barr, j_barr);
+  caml_callback3(Field(p->closure, 2), x_barr, f_barr, j_barr);
   gsl_vector_memcpy(F, &f_v.vector);
   gsl_matrix_memcpy(J, &j_v.matrix);
   return GSL_SUCCESS;
@@ -187,7 +187,7 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  res=callback(p->closure, x_barr);
+  res=caml_callback(p->closure, x_barr);
   return Double_val(res);
 }
 
@@ -204,7 +204,7 @@ double gsl_multimin_callback_f(const gsl_vector *x, void *params)
   x_v = gsl_vector_view_array(Caml_ba_data_val(x_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  res=callback(Field(p->closure, 0), x_barr);
+  res=caml_callback(Field(p->closure, 0), x_barr);
   return Double_val(res);
 }
 
@@ -222,7 +222,7 @@ void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
   g_v = gsl_vector_view_array(Caml_ba_data_val(g_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  callback2(Field(p->closure, 1), x_barr, g_barr);
+  caml_callback2(Field(p->closure, 1), x_barr, g_barr);
   gsl_vector_memcpy(G, &g_v.vector);
 }
 
@@ -242,7 +242,7 @@ void gsl_multimin_callback_fdf(const gsl_vector *x, void *params,
   g_v = gsl_vector_view_array(Caml_ba_data_val(g_barr), len);
 
   gsl_vector_memcpy(&x_v.vector, x);
-  res=callback2(Field(p->closure, 2), x_barr, g_barr);
+  res=caml_callback2(Field(p->closure, 2), x_barr, g_barr);
   gsl_vector_memcpy(G, &g_v.vector);
   *f=Double_val(res);
 }
@@ -265,7 +265,7 @@ int gsl_multifit_callback_f(const gsl_vector *X, void *params, gsl_vector *F)
   f_v = gsl_vector_view_array(Caml_ba_data_val(f_barr), n);
 
   gsl_vector_memcpy(&x_v.vector, X);
-  callback2(Field(parms->closure, 0), x_barr, f_barr);
+  caml_callback2(Field(parms->closure, 0), x_barr, f_barr);
   gsl_vector_memcpy(F, &f_v.vector);
   return GSL_SUCCESS;
 }
@@ -287,7 +287,7 @@ int gsl_multifit_callback_df(const gsl_vector *X, void *params, gsl_matrix *J)
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), n, p);
 
   gsl_vector_memcpy(&x_v.vector, X);
-  res=callback2(Field(parms->closure, 1), x_barr, j_barr);
+  res=caml_callback2(Field(parms->closure, 1), x_barr, j_barr);
   if(Is_exception_result(res))
     return GSL_FAILURE;
   gsl_matrix_memcpy(J, &j_v.matrix);
@@ -313,7 +313,7 @@ int gsl_multifit_callback_fdf(const gsl_vector *X, void *params,
   j_v = gsl_matrix_view_array(Caml_ba_data_val(j_barr), n, p);
 
   gsl_vector_memcpy(&x_v.vector, X);
-  callback3(Field(parms->closure, 2), x_barr, f_barr, j_barr);
+  caml_callback3(Field(parms->closure, 2), x_barr, f_barr, j_barr);
   gsl_vector_memcpy(F, &f_v.vector);
   gsl_matrix_memcpy(J, &j_v.matrix);
   return GSL_SUCCESS;

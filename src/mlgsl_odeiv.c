@@ -32,7 +32,7 @@ static int ml_gsl_odeiv_func(double t, const double y[],
   value vt, res;
   vt  = caml_copy_double(t);
   memcpy(Double_array_val(p->arr1), y, p->dim * sizeof(double));
-  res = callback3_exn(p->closure, vt, p->arr1, p->arr2);
+  res = caml_callback3_exn(p->closure, vt, p->arr1, p->arr2);
   if(Is_exception_result(res))
     return GSL_FAILURE;
   memcpy(dydt, Double_array_val(p->arr2), p->dim * sizeof(double));
