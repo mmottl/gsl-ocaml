@@ -338,7 +338,7 @@ CAMLprim value ml_gsl_monte_vegas_set_params(value state, value params)
       struct channel *chan=Channel(Field(vchan, 0));
       if(s->ostream != stdout && s->ostream != stderr) 
 	fclose(s->ostream);
-      flush(chan);
+      caml_flush(chan);
       s->ostream = fdopen(dup(chan->fd), "w");
       GSLVEGASSTREAM_VAL(state) = vchan;
     }
