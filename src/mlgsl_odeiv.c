@@ -60,7 +60,7 @@ static int ml_gsl_odeiv_jacobian(double t, const double y[],
 
 CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
 {
-  const int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT | BIGARRAY_EXTERNAL;
+  const int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT | CAML_BA_EXTERNAL;
   struct mlgsl_odeiv_params *p;
   gsl_odeiv_system *syst;
   value res;

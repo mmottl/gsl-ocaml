@@ -68,31 +68,31 @@ CAMLprim value ml_gsl_permute_barr(value p, value arr)
 {
   GSL_PERMUT_OF_BIGARRAY(p);
   struct caml_ba_array *barr = Caml_ba_array_val(arr);
-  enum caml_ba_array_kind kind = (barr->flags) & BIGARRAY_KIND_MASK ;
+  enum caml_ba_array_kind kind = (barr->flags) & CAML_BA_KIND_MASK ;
   switch(kind){
-  case BIGARRAY_FLOAT32:
+  case CAML_BA_FLOAT32:
     gsl_permute_float(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_FLOAT64:
+  case CAML_BA_FLOAT64:
     gsl_permute(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_SINT8:
+  case CAML_BA_SINT8:
     gsl_permute_char(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_UINT8:
+  case CAML_BA_UINT8:
     gsl_permute_uchar(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_SINT16:
+  case CAML_BA_SINT16:
     gsl_permute_short(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_UINT16:
+  case CAML_BA_UINT16:
     gsl_permute_ushort(perm_p.data, barr->data, 1, barr->dim[0]); break;
 #ifdef ARCH_SIXTYFOUR
-  case BIGARRAY_INT64:
+  case CAML_BA_INT64:
 #else
-  case BIGARRAY_INT32:
+  case CAML_BA_INT32:
 #endif
-  case BIGARRAY_CAML_INT:
-  case BIGARRAY_NATIVE_INT:
+  case CAML_BA_CAML_INT:
+  case CAML_BA_NATIVE_INT:
     gsl_permute_long(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_COMPLEX32:
+  case CAML_BA_COMPLEX32:
     gsl_permute_complex_float(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_COMPLEX64:
+  case CAML_BA_COMPLEX64:
     gsl_permute_complex(perm_p.data, barr->data, 1, barr->dim[0]); break;
   default: 
     GSL_ERROR("data type not supported", GSL_EUNIMPL);
@@ -123,31 +123,31 @@ CAMLprim value ml_gsl_permute_inverse_barr(value p, value arr)
 {
   GSL_PERMUT_OF_BIGARRAY(p);
   struct caml_ba_array *barr = Caml_ba_array_val(arr);
-  enum caml_ba_array_kind kind = (barr->flags) & BIGARRAY_KIND_MASK ;
+  enum caml_ba_array_kind kind = (barr->flags) & CAML_BA_KIND_MASK ;
   switch(kind){
-  case BIGARRAY_FLOAT32:
+  case CAML_BA_FLOAT32:
     gsl_permute_float_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_FLOAT64:
+  case CAML_BA_FLOAT64:
     gsl_permute_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_SINT8:
+  case CAML_BA_SINT8:
     gsl_permute_char_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_UINT8:
+  case CAML_BA_UINT8:
     gsl_permute_uchar_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_SINT16:
+  case CAML_BA_SINT16:
     gsl_permute_short_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_UINT16:
+  case CAML_BA_UINT16:
     gsl_permute_ushort_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
 #ifdef ARCH_SIXTYFOUR
-  case BIGARRAY_INT64:
+  case CAML_BA_INT64:
 #else
-  case BIGARRAY_INT32:
+  case CAML_BA_INT32:
 #endif
-  case BIGARRAY_CAML_INT:
-  case BIGARRAY_NATIVE_INT:
+  case CAML_BA_CAML_INT:
+  case CAML_BA_NATIVE_INT:
     gsl_permute_long_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_COMPLEX32:
+  case CAML_BA_COMPLEX32:
     gsl_permute_complex_float_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
-  case BIGARRAY_COMPLEX64:
+  case CAML_BA_COMPLEX64:
     gsl_permute_complex_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
   default:
     GSL_ERROR("data type not supported", GSL_EUNIMPL);

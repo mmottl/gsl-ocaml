@@ -91,7 +91,7 @@ double gsl_monte_callback_fast(double *x_arr, size_t dim, void *params)
 /* MULTIROOT CALLBACKS */
 int gsl_multiroot_callback(const gsl_vector *x, void *params, gsl_vector *F)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr, f_barr;
   int len = x->size;
@@ -110,7 +110,7 @@ int gsl_multiroot_callback(const gsl_vector *x, void *params, gsl_vector *F)
 
 int gsl_multiroot_callback_f(const gsl_vector *x, void *params, gsl_vector *F)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr, f_barr;
   int len = x->size;
@@ -129,7 +129,7 @@ int gsl_multiroot_callback_f(const gsl_vector *x, void *params, gsl_vector *F)
 
 int gsl_multiroot_callback_df(const gsl_vector *x, void *params, gsl_matrix *J)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr, j_barr;
   int len = x->size;
@@ -150,7 +150,7 @@ int gsl_multiroot_callback_df(const gsl_vector *x, void *params, gsl_matrix *J)
 int gsl_multiroot_callback_fdf(const gsl_vector *x, void *params, 
 			   gsl_vector *F, gsl_matrix *J)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr, f_barr, j_barr;
   int len = x->size;
@@ -176,7 +176,7 @@ int gsl_multiroot_callback_fdf(const gsl_vector *x, void *params,
 /* MULTIMIN CALLBACKS */
 double gsl_multimin_callback(const gsl_vector *x, void *params)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr;
   int len = x->size;
@@ -193,7 +193,7 @@ double gsl_multimin_callback(const gsl_vector *x, void *params)
 
 double gsl_multimin_callback_f(const gsl_vector *x, void *params)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr;
   int len = x->size;
@@ -210,7 +210,7 @@ double gsl_multimin_callback_f(const gsl_vector *x, void *params)
 
 void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr, g_barr;
   int len = x->size;
@@ -229,7 +229,7 @@ void gsl_multimin_callback_df(const gsl_vector *x, void *params, gsl_vector *G)
 void gsl_multimin_callback_fdf(const gsl_vector *x, void *params, 
 			       double *f, gsl_vector *G)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *p=params;
   value x_barr, g_barr;
   int len = x->size;
@@ -252,7 +252,7 @@ void gsl_multimin_callback_fdf(const gsl_vector *x, void *params,
 /* MULTIFIT CALLBACKS */
 int gsl_multifit_callback_f(const gsl_vector *X, void *params, gsl_vector *F)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *parms=params;
   value x_barr, f_barr;
   size_t p = X->size;
@@ -272,7 +272,7 @@ int gsl_multifit_callback_f(const gsl_vector *X, void *params, gsl_vector *F)
 
 int gsl_multifit_callback_df(const gsl_vector *X, void *params, gsl_matrix *J)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *parms=params;
   value x_barr, j_barr;
   size_t p = X->size;
@@ -297,7 +297,7 @@ int gsl_multifit_callback_df(const gsl_vector *X, void *params, gsl_matrix *J)
 int gsl_multifit_callback_fdf(const gsl_vector *X, void *params, 
 			      gsl_vector *F, gsl_matrix *J)
 {
-  int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT;
+  int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT;
   struct callback_params *parms=params;
   value x_barr, f_barr, j_barr;
   size_t p = X->size;
