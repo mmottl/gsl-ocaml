@@ -48,7 +48,7 @@ CAMLprim value ml_gsl_qrng_sample(value qrng)
   return arr;
 }
 
-ML1(gsl_qrng_name, Qrng_val, copy_string)
+ML1(gsl_qrng_name, Qrng_val, caml_copy_string)
 
 CAMLprim value ml_gsl_qrng_memcpy(value src, value dst)
 {

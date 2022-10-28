@@ -120,8 +120,8 @@ CAMLprim value ml_gsl_root_fdfsolver_free(value s)
   return Val_unit;
 }
 
-ML1(gsl_root_fsolver_name, Fsolver_val, copy_string)
-ML1(gsl_root_fdfsolver_name, FDFsolver_val, copy_string)
+ML1(gsl_root_fsolver_name, Fsolver_val, caml_copy_string)
+ML1(gsl_root_fdfsolver_name, FDFsolver_val, caml_copy_string)
 
 ML1(gsl_root_fsolver_iterate, Fsolver_val, Unit)
 ML1(gsl_root_fdfsolver_iterate, FDFsolver_val, Unit)

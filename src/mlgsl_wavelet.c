@@ -39,7 +39,7 @@ ml_gsl_wavelet_alloc (value ty, value k)
 #define Wavelet_val(v) (gsl_wavelet *)Field(v, 0)
 
 ML1 (gsl_wavelet_free, Wavelet_val, Unit)
-ML1 (gsl_wavelet_name, Wavelet_val, copy_string)
+ML1 (gsl_wavelet_name, Wavelet_val, caml_copy_string)
 
 CAMLprim value
 ml_gsl_wavelet_workspace_alloc (value n)

@@ -126,7 +126,7 @@ CAMLprim value ml_gsl_odeiv_step_alloc(value step_type, value dim)
 
 ML1(gsl_odeiv_step_free, ODEIV_STEP_VAL, Unit)
 ML1(gsl_odeiv_step_reset, ODEIV_STEP_VAL, Unit)
-ML1(gsl_odeiv_step_name, ODEIV_STEP_VAL, copy_string)
+ML1(gsl_odeiv_step_name, ODEIV_STEP_VAL, caml_copy_string)
 ML1(gsl_odeiv_step_order, ODEIV_STEP_VAL, Val_int)
 
 CAMLprim value ml_gsl_odeiv_step_apply(value step, value t, value h, value y,
@@ -218,7 +218,7 @@ CAMLprim value ml_gsl_odeiv_control_scaled_new(value eps_abs, value eps_rel,
 #define ODEIV_CONTROL_VAL(v) ((gsl_odeiv_control *)Field((v), 0))
 
 ML1(gsl_odeiv_control_free, ODEIV_CONTROL_VAL, Unit)
-ML1(gsl_odeiv_control_name, ODEIV_CONTROL_VAL, copy_string)
+ML1(gsl_odeiv_control_name, ODEIV_CONTROL_VAL, caml_copy_string)
 
 CAMLprim value ml_gsl_odeiv_control_hadjust(value c, value s, value y,
 					    value yerr, value dydt, value h)

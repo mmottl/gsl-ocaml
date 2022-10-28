@@ -145,7 +145,7 @@ value ml_gsl_rng_set(value rng, value seed)
 
 value ml_gsl_rng_name(value rng)
 {
-  return copy_string(gsl_rng_name(Rng_val(rng)));
+  return caml_copy_string(gsl_rng_name(Rng_val(rng)));
 }
 
 value ml_gsl_rng_max(value rng)
@@ -183,7 +183,7 @@ value ml_gsl_rng_dump_state(value rng)
   size_t len = gsl_rng_size(Rng_val(rng));
   void *state = gsl_rng_state(Rng_val(rng));
   const char *name = gsl_rng_name(Rng_val(rng));
-  n = copy_string(name);
+  n = caml_copy_string(name);
   s = caml_alloc_initialized_string(len, state);
   v = caml_alloc_small(2, 0);
   Field(v, 0) = n;

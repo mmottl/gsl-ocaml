@@ -77,7 +77,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_free(value S)
   return Val_unit;
 }
 
-ML1(gsl_multimin_fdfminimizer_name, GSLMULTIMINFDFMINIMIZER_VAL, copy_string)
+ML1(gsl_multimin_fdfminimizer_name, GSLMULTIMINFDFMINIMIZER_VAL, caml_copy_string)
 ML1(gsl_multimin_fdfminimizer_iterate, GSLMULTIMINFDFMINIMIZER_VAL, Unit)
 ML1(gsl_multimin_fdfminimizer_restart, GSLMULTIMINFDFMINIMIZER_VAL, Unit)
 
@@ -172,7 +172,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_free(value S)
   return Val_unit;
 }
 
-ML1(gsl_multimin_fminimizer_name, GSLMULTIMINFMINIMIZER_VAL, copy_string)
+ML1(gsl_multimin_fminimizer_name, GSLMULTIMINFMINIMIZER_VAL, caml_copy_string)
 ML1(gsl_multimin_fminimizer_iterate, GSLMULTIMINFMINIMIZER_VAL, Unit)
 
 CAMLprim value ml_gsl_multimin_fminimizer_minimum(value ox, value T)

@@ -15,7 +15,7 @@ static value rep_val(const gsl_ieee_double_rep *r)
 {
   CAMLparam0();
   CAMLlocal2(v, m);
-  m=copy_string(r->mantissa);
+  m=caml_copy_string(r->mantissa);
   v=caml_alloc_small(4, 0);
   Field(v, 0)= Val_int(r->sign);
   Field(v, 1)= m;

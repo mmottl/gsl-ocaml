@@ -47,7 +47,7 @@ CAMLprim value ml_gsl_interp_init(value i, value x, value y, value size)
 
 CAMLprim value ml_gsl_interp_name(value i)
 {
-  return copy_string(gsl_interp_name(Interp_val(i)));
+  return caml_copy_string(gsl_interp_name(Interp_val(i)));
 }
 
 CAMLprim value ml_gsl_interp_min_size(value i)

@@ -130,8 +130,8 @@ CAMLprim value ml_gsl_multiroot_fdfsolver_free(value S)
   return Val_unit;
 }
 
-ML1(gsl_multiroot_fsolver_name, GSLMULTIROOTSOLVER_VAL, copy_string)
-ML1(gsl_multiroot_fdfsolver_name, GSLMULTIROOTFDFSOLVER_VAL, copy_string)
+ML1(gsl_multiroot_fsolver_name, GSLMULTIROOTSOLVER_VAL, caml_copy_string)
+ML1(gsl_multiroot_fdfsolver_name, GSLMULTIROOTFDFSOLVER_VAL, caml_copy_string)
 
 ML1(gsl_multiroot_fsolver_iterate, GSLMULTIROOTSOLVER_VAL, Unit)
 ML1(gsl_multiroot_fdfsolver_iterate, GSLMULTIROOTFDFSOLVER_VAL, Unit)

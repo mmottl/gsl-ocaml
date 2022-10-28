@@ -59,7 +59,7 @@ CAMLprim value ml_gsl_min_fminimizer_free(value s)
   return Val_unit;
 }
 
-ML1(gsl_min_fminimizer_name, Minimizer_val, copy_string)
+ML1(gsl_min_fminimizer_name, Minimizer_val, caml_copy_string)
 
 ML1(gsl_min_fminimizer_iterate, Minimizer_val, Unit)
 
