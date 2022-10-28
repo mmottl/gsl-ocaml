@@ -82,7 +82,7 @@ let print_c_args buf args =
 
 let print_c oc (fun_name, args) =
   fprintf oc
-    "ML%d(gsl_cdf_%s,%a copy_double)\n"
+    "ML%d(gsl_cdf_%s,%a caml_copy_double)\n"
     (List.length args)
     fun_name
     print_c_args args
