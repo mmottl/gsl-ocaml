@@ -109,7 +109,7 @@ value ml_gsl_rng_get_default(value unit)
 
 value ml_gsl_rng_get_default_seed(value unit)
 {
-  return copy_nativeint(gsl_rng_default_seed);
+  return caml_copy_nativeint(gsl_rng_default_seed);
 }
 
 value ml_gsl_rng_set_default(value type)
@@ -150,12 +150,12 @@ value ml_gsl_rng_name(value rng)
 
 value ml_gsl_rng_max(value rng)
 {
-  return copy_nativeint(gsl_rng_max(Rng_val(rng)));
+  return caml_copy_nativeint(gsl_rng_max(Rng_val(rng)));
 }
 
 value ml_gsl_rng_min(value rng)
 {
-  return copy_nativeint(gsl_rng_min(Rng_val(rng)));
+  return caml_copy_nativeint(gsl_rng_min(Rng_val(rng)));
 }
 
 value ml_gsl_rng_get_type(value rng)
@@ -197,16 +197,16 @@ value ml_gsl_rng_set_state(value rng, value v)
   const char *name = String_val(Field(v, 0));
   value state = Field(v, 1);
   if(strcmp(name, gsl_rng_name(r)) != 0 ||
-     gsl_rng_size(r) != string_length(state) )
+     gsl_rng_size(r) != caml_string_length(state) )
     caml_invalid_argument("Gsl.Rng.set_state : wrong rng type");
-  memcpy(r->state, Bp_val(state), string_length(state));
+  memcpy(r->state, Bp_val(state), caml_string_length(state));
   return Val_unit;
 }
 
 /* sampling */
 value ml_gsl_rng_get(value rng)
 {
-  return copy_nativeint(gsl_rng_get(Rng_val(rng))) ;
+  return caml_copy_nativeint(gsl_rng_get(Rng_val(rng))) ;
 }
 
 value ml_gsl_rng_uniform(value rng)
