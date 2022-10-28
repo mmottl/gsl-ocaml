@@ -68,7 +68,7 @@ CAMLprim value ml_gsl_permute_barr(value p, value arr)
 {
   GSL_PERMUT_OF_BIGARRAY(p);
   struct caml_ba_array *barr = Caml_ba_array_val(arr);
-  enum caml_ba_array_kind kind = (barr->flags) & CAML_BA_KIND_MASK ;
+  enum caml_ba_kind kind = (barr->flags) & CAML_BA_KIND_MASK ;
   switch(kind){
   case CAML_BA_FLOAT32:
     gsl_permute_float(perm_p.data, barr->data, 1, barr->dim[0]); break;
@@ -123,7 +123,7 @@ CAMLprim value ml_gsl_permute_inverse_barr(value p, value arr)
 {
   GSL_PERMUT_OF_BIGARRAY(p);
   struct caml_ba_array *barr = Caml_ba_array_val(arr);
-  enum caml_ba_array_kind kind = (barr->flags) & CAML_BA_KIND_MASK ;
+  enum caml_ba_kind kind = (barr->flags) & CAML_BA_KIND_MASK ;
   switch(kind){
   case CAML_BA_FLOAT32:
     gsl_permute_float_inverse(perm_p.data, barr->data, 1, barr->dim[0]); break;
