@@ -117,7 +117,7 @@ CAMLprim value FUNCTION(ml_gsl_vector,minmaxindex)(value a)
   _DECLARE_VECTOR(a);
   _CONVERT_VECTOR(a);
   FUNCTION(gsl_vector,minmax_index)(&v_a, &x, &y);
-  v=alloc_small(2, 0);
+  v=caml_alloc_small(2, 0);
   Field(v, 0) = Val_int(x);
   Field(v, 1) = Val_int(y);
   return v;

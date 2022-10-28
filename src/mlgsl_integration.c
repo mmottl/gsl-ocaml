@@ -30,7 +30,7 @@ CAMLprim value ml_gsl_integration_qng(value fun, value a, value b,
 		      &result, &abserr, &neval);
   r = caml_copy_double(result);
   e = caml_copy_double(abserr);
-  res = alloc_small(3, 0);
+  res = caml_alloc_small(3, 0);
   Field(res, 0) = r;
   Field(res, 1) = e;
   Field(res, 2) = Val_int(neval);

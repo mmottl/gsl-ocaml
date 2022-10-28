@@ -16,7 +16,7 @@ static value rep_val(const gsl_ieee_double_rep *r)
   CAMLparam0();
   CAMLlocal2(v, m);
   m=copy_string(r->mantissa);
-  v=alloc_small(4, 0);
+  v=caml_alloc_small(4, 0);
   Field(v, 0)= Val_int(r->sign);
   Field(v, 1)= m;
   Field(v, 2)= Val_int(r->exponent);
@@ -111,7 +111,7 @@ static value rev_conv_excepts(int e)
   
   for(i = tab_size-2; i >= 0 ; i--)
     if(except_conv[i] & e) {
-      c = alloc_small(2, Tag_cons);
+      c = caml_alloc_small(2, Tag_cons);
       Field(c, 0) = Val_int(i);
       Field(c, 1) = v;
       v = c;

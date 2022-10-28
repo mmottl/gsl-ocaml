@@ -282,7 +282,7 @@ CAMLprim value ml_gsl_stats_minmax_index(value data)
   size_t mi, ma;
   value r;
   gsl_stats_minmax_index(&mi, &ma, Double_array_val(data), 1, len);
-  r = alloc_small(2, 0);
+  r = caml_alloc_small(2, 0);
   Field(r, 0) = Val_int(mi);
   Field(r, 1) = Val_int(ma);
   return r;

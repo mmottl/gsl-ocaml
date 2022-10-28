@@ -49,7 +49,7 @@ CAMLprim value ml_gsl_monte_plain_alloc(value d)
     CAMLparam0();
     CAMLlocal1(res);
 
-    res=alloc_small(2, Abstract_tag);
+    res=caml_alloc_small(2, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     params->gslfun.mf.f = &gsl_monte_callback;
@@ -124,7 +124,7 @@ CAMLprim value ml_gsl_monte_miser_alloc(value d)
   {
     CAMLparam0();
     CAMLlocal1(res);
-    res=alloc_small(2, Abstract_tag);
+    res=caml_alloc_small(2, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     params->gslfun.mf.f = &gsl_monte_callback;
@@ -225,7 +225,7 @@ CAMLprim value ml_gsl_monte_vegas_alloc(value d)
   {
     CAMLparam0();
     CAMLlocal1(res);    
-    res=alloc_small(3, Abstract_tag);
+    res=caml_alloc_small(3, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     Field(res, 2) = Val_none;
@@ -293,7 +293,7 @@ CAMLprim value ml_gsl_monte_vegas_get_info(value state)
 {
   value r;
   gsl_monte_vegas_state *s = GSLVEGASSTATE_VAL(state);
-  r=alloc_small(3 * Double_wosize, Double_array_tag);
+  r=caml_alloc_small(3 * Double_wosize, Double_array_tag);
   Store_double_field(r, 0, s->result);
   Store_double_field(r, 1, s->sigma);
   Store_double_field(r, 2, s->chisq);
@@ -314,7 +314,7 @@ CAMLprim value ml_gsl_monte_vegas_get_params(value state)
   {
     value vchan;
     if(Is_some(GSLVEGASSTREAM_VAL(state))){
-      vchan=alloc_small(1, 0);
+      vchan=caml_alloc_small(1, 0);
       Field(vchan, 0)=GSLVEGASSTREAM_VAL(state);
     }
     else

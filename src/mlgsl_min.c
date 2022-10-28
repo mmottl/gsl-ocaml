@@ -29,7 +29,7 @@ CAMLprim value ml_gsl_min_fminimizer_alloc(value t)
   s=gsl_min_fminimizer_alloc(Minimizertype_val(t));
   params=stat_alloc(sizeof *params);
   
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)s;
   Field(res, 1) = (value)params;
   params->gslfun.gf.function = &gslfun_callback ;

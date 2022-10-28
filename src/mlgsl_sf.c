@@ -24,7 +24,7 @@ static value val_of_result_pair (gsl_sf_result *re, gsl_sf_result *im)
   CAMLlocal3 (v, v_re, v_im);
   v_re = val_of_result (re);
   v_im = val_of_result (im);
-  v = alloc_small (2, 0);
+  v = caml_alloc_small (2, 0);
   Field (v, 0) = v_re;
   Field (v, 1) = v_im;
   CAMLreturn (v);
@@ -36,7 +36,7 @@ static inline value val_of_result_e10(gsl_sf_result_e10 *result)
   CAMLlocal3(r, v, e) ;
   v = caml_copy_double(result->val);
   e = caml_copy_double(result->err);
-  r = alloc_small(3, 0);
+  r = caml_alloc_small(3, 0);
   Field(r, 0) = v;
   Field(r, 1) = e;
   Field(r, 2) = Val_int(result->e10);
@@ -368,7 +368,7 @@ CAMLprim value ml_gsl_sf_lngamma_sgn_e(value x)
     CAMLlocal3(v,r,s);
     r=val_of_result(&res);
     s=caml_copy_double(sgn);
-    v=alloc_small(2, 0);
+    v=caml_alloc_small(2, 0);
     Field(v, 0)=r;
     Field(v, 1)=s;
     CAMLreturn(v);
@@ -401,7 +401,7 @@ CAMLprim value ml_gsl_sf_lnpoch_sgn_e(value a, value x)
     CAMLlocal3(v,r,s);
     r=val_of_result(&res);
     s=caml_copy_double(sgn);
-    v=alloc_small(2, 0);
+    v=caml_alloc_small(2, 0);
     Field(v, 0)=r;
     Field(v, 1)=s;
     CAMLreturn(v);
@@ -423,7 +423,7 @@ CAMLprim value ml_gsl_sf_lnbeta_sgn_e(value x, value y)
     CAMLlocal3(v,r,s);
     r=val_of_result(&res);
     s=caml_copy_double(sgn);
-    v=alloc_small(2, 0);
+    v=caml_alloc_small(2, 0);
     Field(v, 0)=r;
     Field(v, 1)=s;
     CAMLreturn(v);

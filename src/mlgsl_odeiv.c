@@ -232,7 +232,7 @@ CAMLprim value ml_gsl_odeiv_control_hadjust(value c, value s, value y,
     CAMLparam0();
     CAMLlocal2(vh, r);
     vh = caml_copy_double(c_h);
-    r = alloc_small(2, 0);
+    r = caml_alloc_small(2, 0);
     Field(r, 0) = Val_int(status + 1);
     Field(r, 1) = vh;
     CAMLreturn(r);

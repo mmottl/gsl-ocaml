@@ -36,7 +36,7 @@ CAMLprim value ml_gsl_fit_linear(value wo, value x, value y)
 		    Double_array_val(y), 1, N,
 		    &c0, &c1, &cov00, &cov01, &cov11, &sumsq);
   }
-  r=alloc_small(6 * Double_wosize, Double_array_tag);
+  r=caml_alloc_small(6 * Double_wosize, Double_array_tag);
   Store_double_field(r, 0, c0);
   Store_double_field(r, 1, c1);
   Store_double_field(r, 2, cov00);
@@ -80,7 +80,7 @@ CAMLprim value ml_gsl_fit_mul(value wo, value x, value y)
 		 Double_array_val(y), 1, N,
 		 &c1, &cov11, &sumsq);
   }
-  r=alloc_small(3 * Double_wosize, Double_array_tag);
+  r=caml_alloc_small(3 * Double_wosize, Double_array_tag);
   Store_double_field(r, 0, c1);
   Store_double_field(r, 1, cov11);
   Store_double_field(r, 2, sumsq);

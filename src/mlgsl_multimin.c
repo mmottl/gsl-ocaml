@@ -37,7 +37,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_alloc(value type, value d)
   T=gsl_multimin_fdfminimizer_alloc(fdfminimizer_of_value(type), dim);
   params=stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)T;
   Field(res, 1) = (value)params;
 
@@ -136,7 +136,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_alloc(value type, value d)
   T=gsl_multimin_fminimizer_alloc(fminimizer_of_value(type), dim);
   params=stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)T;
   Field(res, 1) = (value)params;
 

@@ -33,7 +33,7 @@ CAMLprim value ml_gsl_multifit_fdfsolver_alloc(value type, value n, value p)
 				 Int_val(n), Int_val(p));
   params=stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)S;
   Field(res, 1) = (value)params;
 

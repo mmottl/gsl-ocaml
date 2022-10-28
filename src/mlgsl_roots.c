@@ -40,7 +40,7 @@ CAMLprim value ml_gsl_root_fsolver_alloc(value t)
   {  
     CAMLparam0();
     CAMLlocal1(res);
-    res=alloc_small(2, Abstract_tag);
+    res=caml_alloc_small(2, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     params->gslfun.gf.function = &gslfun_callback;
@@ -64,7 +64,7 @@ CAMLprim value ml_gsl_root_fdfsolver_alloc(value t)
   {
     CAMLparam0();
     CAMLlocal1(res);
-    res=alloc_small(2, Abstract_tag);
+    res=caml_alloc_small(2, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     params->gslfun.gfdf.f      = &gslfun_callback_f;

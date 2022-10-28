@@ -46,13 +46,13 @@ CAMLprim value ml_gsl_poly_complex_solve_quadratic(value a, value b, value c)
   { 
     CAMLparam0();
     CAMLlocal3(r,rz0,rz1);
-    rz0 = alloc_small(2 * Double_wosize, Double_array_tag);
+    rz0 = caml_alloc_small(2 * Double_wosize, Double_array_tag);
     Store_double_field(rz0, 0, GSL_REAL(z0));
     Store_double_field(rz0, 1, GSL_IMAG(z0));
-    rz1 = alloc_small(2 * Double_wosize, Double_array_tag);
+    rz1 = caml_alloc_small(2 * Double_wosize, Double_array_tag);
     Store_double_field(rz1, 0, GSL_REAL(z1));
     Store_double_field(rz1, 1, GSL_IMAG(z1));
-    r   = alloc_small(2, 0);
+    r   = caml_alloc_small(2, 0);
     Field(r,0) = rz0 ;
     Field(r,1) = rz1 ; 
     CAMLreturn(r);
@@ -95,16 +95,16 @@ CAMLprim value ml_gsl_poly_complex_solve_cubic(value a, value b, value c)
   {
     CAMLparam0();
     CAMLlocal4(r,rz0, rz1, rz2);
-    rz0 = alloc_small(2 * Double_wosize, Double_array_tag);
+    rz0 = caml_alloc_small(2 * Double_wosize, Double_array_tag);
     Store_double_field(rz0, 0, GSL_REAL(z0));
     Store_double_field(rz0, 1, GSL_IMAG(z0));
-    rz1 = alloc_small(2 * Double_wosize, Double_array_tag);
+    rz1 = caml_alloc_small(2 * Double_wosize, Double_array_tag);
     Store_double_field(rz1, 0, GSL_REAL(z1));
     Store_double_field(rz1, 1, GSL_IMAG(z1));
-    rz2 = alloc_small(2 * Double_wosize, Double_array_tag);
+    rz2 = caml_alloc_small(2 * Double_wosize, Double_array_tag);
     Store_double_field(rz2, 0, GSL_REAL(z2));
     Store_double_field(rz2, 1, GSL_IMAG(z2));
-    r   = alloc_small(3, 0);
+    r   = caml_alloc_small(3, 0);
     Field(r,0) = rz0 ;
     Field(r,1) = rz1 ;
     Field(r,2) = rz2 ;
