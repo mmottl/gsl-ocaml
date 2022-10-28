@@ -31,7 +31,7 @@ CAMLprim value ml_gsl_multifit_fdfsolver_alloc(value type, value n, value p)
 
   S=gsl_multifit_fdfsolver_alloc(fdfsolver_of_value(type), 
 				 Int_val(n), Int_val(p));
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)S;
@@ -66,7 +66,7 @@ CAMLprim value ml_gsl_multifit_fdfsolver_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
   remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_stat_free(p);
   gsl_multifit_fdfsolver_free(FDFSOLVER_VAL(S));
   return Val_unit;
 }

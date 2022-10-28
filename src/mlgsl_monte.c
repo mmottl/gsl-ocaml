@@ -43,7 +43,7 @@ CAMLprim value ml_gsl_monte_plain_alloc(value d)
   int dim=Int_val(d);
 
   s=gsl_monte_plain_alloc(dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   {
     CAMLparam0();
@@ -70,7 +70,7 @@ CAMLprim value ml_gsl_monte_plain_free(value s)
 {
   remove_global_root(&(CallbackParams_val(s)->closure));
   remove_global_root(&(CallbackParams_val(s)->dbl));
-  stat_free(CallbackParams_val(s));
+  caml_stat_free(CallbackParams_val(s));
   gsl_monte_plain_free(GSLPLAINSTATE_VAL(s));
   return Val_unit;
 }
@@ -119,7 +119,7 @@ CAMLprim value ml_gsl_monte_miser_alloc(value d)
   int dim=Int_val(d);
 
   s=gsl_monte_miser_alloc(dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   {
     CAMLparam0();
@@ -145,7 +145,7 @@ CAMLprim value ml_gsl_monte_miser_free(value s)
 {
   remove_global_root(&(CallbackParams_val(s)->closure));
   remove_global_root(&(CallbackParams_val(s)->dbl));
-  stat_free(CallbackParams_val(s));
+  caml_stat_free(CallbackParams_val(s));
   gsl_monte_miser_free(GSLMISERSTATE_VAL(s));
   return Val_unit;
 }
@@ -220,7 +220,7 @@ CAMLprim value ml_gsl_monte_vegas_alloc(value d)
   int dim=Int_val(d);
 
   s=gsl_monte_vegas_alloc(dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   {
     CAMLparam0();
@@ -249,7 +249,7 @@ CAMLprim value ml_gsl_monte_vegas_free(value state)
   gsl_monte_vegas_state *s=GSLVEGASSTATE_VAL(state);
   remove_global_root(&(CallbackParams_val(state)->closure));
   remove_global_root(&(CallbackParams_val(state)->dbl));
-  stat_free(CallbackParams_val(state));
+  caml_stat_free(CallbackParams_val(state));
   if(s->ostream != stdout && s->ostream != stderr)
     fclose(s->ostream);
   remove_global_root(&GSLVEGASSTREAM_VAL(state));

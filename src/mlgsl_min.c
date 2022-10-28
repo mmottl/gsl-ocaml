@@ -27,7 +27,7 @@ CAMLprim value ml_gsl_min_fminimizer_alloc(value t)
   gsl_min_fminimizer *s;
 
   s=gsl_min_fminimizer_alloc(Minimizertype_val(t));
-  params=stat_alloc(sizeof *params);
+  params=caml_stat_alloc(sizeof *params);
   
   res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)s;
@@ -54,7 +54,7 @@ CAMLprim value ml_gsl_min_fminimizer_set(value s, value f, value min, value lo, 
 CAMLprim value ml_gsl_min_fminimizer_free(value s)
 {
   remove_global_root(&(Mparams_val(s)->closure));
-  stat_free(Mparams_val(s));
+  caml_stat_free(Mparams_val(s));
   gsl_min_fminimizer_free(Minimizer_val(s));
   return Val_unit;
 }

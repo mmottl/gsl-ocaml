@@ -35,7 +35,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_alloc(value type, value d)
   value res;
 
   T=gsl_multimin_fdfminimizer_alloc(fdfminimizer_of_value(type), dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)T;
@@ -72,7 +72,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
   remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_stat_free(p);
   gsl_multimin_fdfminimizer_free(GSLMULTIMINFDFMINIMIZER_VAL(S));
   return Val_unit;
 }
@@ -134,7 +134,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_alloc(value type, value d)
   value res;
 
   T=gsl_multimin_fminimizer_alloc(fminimizer_of_value(type), dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)T;
@@ -167,7 +167,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
   remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_stat_free(p);
   gsl_multimin_fminimizer_free(GSLMULTIMINFMINIMIZER_VAL(S));
   return Val_unit;
 }

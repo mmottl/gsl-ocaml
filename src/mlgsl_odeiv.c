@@ -64,7 +64,7 @@ CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
   struct mlgsl_odeiv_params *p;
   gsl_odeiv_system *syst;
   value res;
-  p=stat_alloc(sizeof (*p));
+  p=caml_stat_alloc(sizeof (*p));
   p->dim = Int_val(dim);
   p->closure = func;
   register_global_root(&(p->closure));
@@ -80,7 +80,7 @@ CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
     : caml_ba_alloc_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
   register_global_root(&(p->mat));
 
-  syst=stat_alloc(sizeof (*syst));
+  syst=caml_stat_alloc(sizeof (*syst));
   syst->function = ml_gsl_odeiv_func;
   syst->jacobian = ml_gsl_odeiv_jacobian;
   syst->dimension = Int_val(dim);
@@ -100,8 +100,8 @@ CAMLprim value ml_gsl_odeiv_free_system(value vsyst)
   remove_global_root(&(p->arr1));
   remove_global_root(&(p->arr2));
   remove_global_root(&(p->mat));
-  stat_free(p);
-  stat_free(syst);
+  caml_stat_free(p);
+  caml_stat_free(syst);
   return Val_unit;
 }
 
