@@ -252,8 +252,8 @@ CAMLprim value ml_gsl_ran_multinomial(value rng, value n, value p)
 {
   mlsize_t K = Double_array_length(p);
   LOCALARRAY(unsigned int, N, K); 
-  gsl_ran_multinomial(Rng_val(rng), K, Int_val(n), Double_array_val(p), N);
   value r;
+  gsl_ran_multinomial(Rng_val(rng), K, Int_val(n), Double_array_val(p), N);
   {
     mlsize_t i;
     r = caml_alloc(K, 0);
