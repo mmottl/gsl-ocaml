@@ -90,14 +90,14 @@ CAMLprim value ml_gsl_linalg_LU_det(value LU, value sig)
 {
   _DECLARE_MATRIX(LU);
   _CONVERT_MATRIX(LU);
-  return copy_double(gsl_linalg_LU_det(&m_LU, Int_val(sig)));
+  return caml_copy_double(gsl_linalg_LU_det(&m_LU, Int_val(sig)));
 }
 
 CAMLprim value ml_gsl_linalg_LU_lndet(value LU)
 {
   _DECLARE_MATRIX(LU);
   _CONVERT_MATRIX(LU);
-  return copy_double(gsl_linalg_LU_lndet(&m_LU));
+  return caml_copy_double(gsl_linalg_LU_lndet(&m_LU));
 }
 
 CAMLprim value ml_gsl_linalg_LU_sgndet(value LU, value sig)

@@ -45,9 +45,9 @@ CAMLprim value ml_gsl_multiroot_fsolver_alloc(value type, value d)
   value res;
 
   S=gsl_multiroot_fsolver_alloc(fsolver_of_value(type), dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)S;
   Field(res, 1) = (value)params;
   params->gslfun.mrf.f      = &gsl_multiroot_callback;
@@ -55,7 +55,7 @@ CAMLprim value ml_gsl_multiroot_fsolver_alloc(value type, value d)
   params->gslfun.mrf.params = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit; /* not needed actually */
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   return res;
 }
 #define GSLMULTIROOTSOLVER_VAL(v) ((gsl_multiroot_fsolver *)(Field(v, 0)))
@@ -68,9 +68,9 @@ CAMLprim value ml_gsl_multiroot_fdfsolver_alloc(value type, value d)
   value res;
 
   S=gsl_multiroot_fdfsolver_alloc(fdfsolver_of_value(type), dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)S;
   Field(res, 1) = (value)params;
   params->gslfun.mrfdf.f      = &gsl_multiroot_callback_f;  
@@ -80,7 +80,7 @@ CAMLprim value ml_gsl_multiroot_fdfsolver_alloc(value type, value d)
   params->gslfun.mrfdf.params = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit; /* not needed actually */
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   return res;
 }
 #define GSLMULTIROOTFDFSOLVER_VAL(v) ((gsl_multiroot_fdfsolver *)(Field(v, 0)))
@@ -115,8 +115,8 @@ CAMLprim value ml_gsl_multiroot_fdfsolver_set(value S, value fun, value X)
 CAMLprim value ml_gsl_multiroot_fsolver_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
-  remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_remove_global_root(&(p->closure));
+  caml_stat_free(p);
   gsl_multiroot_fsolver_free(GSLMULTIROOTSOLVER_VAL(S));
   return Val_unit;
 }
@@ -124,14 +124,14 @@ CAMLprim value ml_gsl_multiroot_fsolver_free(value S)
 CAMLprim value ml_gsl_multiroot_fdfsolver_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
-  remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_remove_global_root(&(p->closure));
+  caml_stat_free(p);
   gsl_multiroot_fdfsolver_free(GSLMULTIROOTFDFSOLVER_VAL(S));
   return Val_unit;
 }
 
-ML1(gsl_multiroot_fsolver_name, GSLMULTIROOTSOLVER_VAL, copy_string)
-ML1(gsl_multiroot_fdfsolver_name, GSLMULTIROOTFDFSOLVER_VAL, copy_string)
+ML1(gsl_multiroot_fsolver_name, GSLMULTIROOTSOLVER_VAL, caml_copy_string)
+ML1(gsl_multiroot_fdfsolver_name, GSLMULTIROOTFDFSOLVER_VAL, caml_copy_string)
 
 ML1(gsl_multiroot_fsolver_iterate, GSLMULTIROOTSOLVER_VAL, Unit)
 ML1(gsl_multiroot_fdfsolver_iterate, GSLMULTIROOTFDFSOLVER_VAL, Unit)

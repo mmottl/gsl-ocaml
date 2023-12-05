@@ -29,7 +29,7 @@ CAMLprim value ml_gsl_stats_mean(value ow, value data)
     result = gsl_stats_wmean(Double_array_val(w), 1, 
 			     Double_array_val(data), 1, len);
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_variance(value ow, value omean, value data)
@@ -53,7 +53,7 @@ CAMLprim value ml_gsl_stats_variance(value ow, value omean, value data)
 				     Double_array_val(data), 1, len, 
 				     Double_val(Unoption(omean)));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_sd(value ow, value omean, value data)
@@ -77,7 +77,7 @@ CAMLprim value ml_gsl_stats_sd(value ow, value omean, value data)
 			       Double_array_val(data), 1, len, 
 			       Double_val(Unoption(omean)));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_variance_with_fixed_mean(value ow,
@@ -95,7 +95,7 @@ CAMLprim value ml_gsl_stats_variance_with_fixed_mean(value ow,
 						 Double_array_val(data), 1,
 						 len, Double_val(mean));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_sd_with_fixed_mean(value ow,
@@ -113,7 +113,7 @@ CAMLprim value ml_gsl_stats_sd_with_fixed_mean(value ow,
 					   Double_array_val(data), 1,
 					   len, Double_val(mean));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_absdev(value ow, value omean, value data)
@@ -137,7 +137,7 @@ CAMLprim value ml_gsl_stats_absdev(value ow, value omean, value data)
 				   Double_array_val(data), 1, len, 
 				   Double_val(Unoption(omean)));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_skew(value ow, value data)
@@ -152,7 +152,7 @@ CAMLprim value ml_gsl_stats_skew(value ow, value data)
     result = gsl_stats_wskew(Double_array_val(w), 1, 
 			     Double_array_val(data), 1, len);
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_skew_m_sd(value ow, value mean, 
@@ -170,7 +170,7 @@ CAMLprim value ml_gsl_stats_skew_m_sd(value ow, value mean,
 				  Double_array_val(data), 1, len,
 				  Double_val(mean), Double_val(sd));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_kurtosis(value ow, value data)
@@ -185,7 +185,7 @@ CAMLprim value ml_gsl_stats_kurtosis(value ow, value data)
     result = gsl_stats_wkurtosis(Double_array_val(w), 1,
 				 Double_array_val(data), 1, len);
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_kurtosis_m_sd(value ow, value mean, 
@@ -203,7 +203,7 @@ CAMLprim value ml_gsl_stats_kurtosis_m_sd(value ow, value mean,
 				      Double_array_val(data), 1, len,
 				      Double_val(mean), Double_val(sd));
   }
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_lag1_autocorrelation(value omean, value data)
@@ -215,7 +215,7 @@ CAMLprim value ml_gsl_stats_lag1_autocorrelation(value omean, value data)
   else
     result = gsl_stats_lag1_autocorrelation_m(Double_array_val(data), 1, len, 
 					      Double_val(Unoption(omean)));
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_covariance(value data1, value data2)
@@ -225,7 +225,7 @@ CAMLprim value ml_gsl_stats_covariance(value data1, value data2)
   check_array_size(data1, data2);
   result = gsl_stats_covariance(Double_array_val(data1), 1,
 				Double_array_val(data2), 1, len);
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_covariance_m(value mean1, value data1,
@@ -237,21 +237,21 @@ CAMLprim value ml_gsl_stats_covariance_m(value mean1, value data1,
   result = gsl_stats_covariance_m(Double_array_val(data1), 1, 
 				  Double_array_val(data2), 1, len,
 				  Double_val(mean1), Double_val(mean2));
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_max(value data)
 {
   size_t len = Double_array_length(data);
   double result = gsl_stats_max(Double_array_val(data), 1, len);
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_min(value data)
 {
   size_t len = Double_array_length(data);
   double result = gsl_stats_min(Double_array_val(data), 1, len);
-  return copy_double(result);
+  return caml_copy_double(result);
 }
 
 CAMLprim value ml_gsl_stats_minmax(value data)
@@ -282,7 +282,7 @@ CAMLprim value ml_gsl_stats_minmax_index(value data)
   size_t mi, ma;
   value r;
   gsl_stats_minmax_index(&mi, &ma, Double_array_val(data), 1, len);
-  r = alloc_small(2, 0);
+  r = caml_alloc_small(2, 0);
   Field(r, 0) = Val_int(mi);
   Field(r, 1) = Val_int(ma);
   return r;
@@ -293,7 +293,7 @@ CAMLprim value ml_gsl_stats_quantile_from_sorted_data(value data, value f)
   size_t len = Double_array_length(data);
   double r = gsl_stats_quantile_from_sorted_data(Double_array_val(data),
 						 1, len, Double_val(f));
-  return copy_double(r);
+  return caml_copy_double(r);
 }
 
 CAMLprim value ml_gsl_stats_correlation(value data1, value data2)
@@ -303,5 +303,5 @@ CAMLprim value ml_gsl_stats_correlation(value data1, value data2)
   check_array_size(data1, data2);
   r = gsl_stats_correlation(Double_array_val(data1), 1,
                             Double_array_val(data2), 1, len);
-  return copy_double(r);
+  return caml_copy_double(r);
 }

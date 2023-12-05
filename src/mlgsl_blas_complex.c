@@ -35,14 +35,14 @@ CAMLprim value ml_gsl_blas_znrm2(value X)
 {
   _DECLARE_VECTOR(X);
   _CONVERT_VECTOR(X);
-  return copy_double(gsl_blas_dznrm2(&v_X));
+  return caml_copy_double(gsl_blas_dznrm2(&v_X));
 }
 
 CAMLprim value ml_gsl_blas_zasum(value X)
 {
   _DECLARE_VECTOR(X);
   _CONVERT_VECTOR(X);
-  return copy_double(gsl_blas_dzasum(&v_X));
+  return caml_copy_double(gsl_blas_dzasum(&v_X));
 }
 
 CAMLprim value ml_gsl_blas_izamax(value X)

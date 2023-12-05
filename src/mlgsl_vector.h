@@ -14,7 +14,7 @@
 
 static inline void TYPE(mlgsl_vec_of_bigarray)(TYPE(gsl_vector) *cvec, 
 					       value vvec){
-  struct caml_bigarray *bigarr = Bigarray_val(vvec);
+  struct caml_ba_array *bigarr = Caml_ba_array_val(vvec);
   cvec->block = NULL;
   cvec->owner = 0;
   cvec->size   = bigarr->dim[0];

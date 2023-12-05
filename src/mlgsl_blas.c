@@ -19,21 +19,21 @@ CAMLprim value ml_gsl_blas_ddot(value X, value Y)
   _DECLARE_VECTOR2(X, Y);
   _CONVERT_VECTOR2(X, Y);
   gsl_blas_ddot(&v_X, &v_Y, &r);
-  return copy_double(r);
+  return caml_copy_double(r);
 }
 
 CAMLprim value ml_gsl_blas_dnrm2(value X)
 {
   _DECLARE_VECTOR(X);
   _CONVERT_VECTOR(X);
-  return copy_double(gsl_blas_dnrm2(&v_X));
+  return caml_copy_double(gsl_blas_dnrm2(&v_X));
 }
 
 CAMLprim value ml_gsl_blas_dasum(value X)
 {
   _DECLARE_VECTOR(X);
   _CONVERT_VECTOR(X);
-  return copy_double(gsl_blas_dasum(&v_X));
+  return caml_copy_double(gsl_blas_dasum(&v_X));
 }
 
 CAMLprim value ml_gsl_blas_idamax(value X)

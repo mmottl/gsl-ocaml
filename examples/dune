@@ -34,6 +34,6 @@
     sum_ex
     wavelet_ex
   )
-  (libraries gsl)
+  (libraries gsl unix)
   (modes byte exe)
 )

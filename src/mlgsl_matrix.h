@@ -14,7 +14,7 @@
 
 static inline void TYPE(mlgsl_mat_of_bigarray)(TYPE(gsl_matrix) *cmat, 
 					       value vmat){
-  struct caml_bigarray *bigarr = Bigarray_val(vmat);
+  struct caml_ba_array *bigarr = Caml_ba_array_val(vmat);
   cmat->block = NULL;
   cmat->owner = 0;
   cmat->size1 = bigarr->dim[0];

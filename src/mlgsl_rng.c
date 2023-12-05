@@ -99,7 +99,7 @@ static int int_of_rngtype(const gsl_rng_type *rngt)
   if(i < len)
     return i;
   else
-    failwith("should not happen") ;
+    caml_failwith("should not happen") ;
 }
 
 value ml_gsl_rng_get_default(value unit)
@@ -109,7 +109,7 @@ value ml_gsl_rng_get_default(value unit)
 
 value ml_gsl_rng_get_default_seed(value unit)
 {
-  return copy_nativeint(gsl_rng_default_seed);
+  return caml_copy_nativeint(gsl_rng_default_seed);
 }
 
 value ml_gsl_rng_set_default(value type)
@@ -146,17 +146,17 @@ value ml_gsl_rng_set(value rng, value seed)
 
 value ml_gsl_rng_name(value rng)
 {
-  return copy_string(gsl_rng_name(Rng_val(rng)));
+  return caml_copy_string(gsl_rng_name(Rng_val(rng)));
 }
 
 value ml_gsl_rng_max(value rng)
 {
-  return copy_nativeint(gsl_rng_max(Rng_val(rng)));
+  return caml_copy_nativeint(gsl_rng_max(Rng_val(rng)));
 }
 
 value ml_gsl_rng_min(value rng)
 {
-  return copy_nativeint(gsl_rng_min(Rng_val(rng)));
+  return caml_copy_nativeint(gsl_rng_min(Rng_val(rng)));
 }
 
 value ml_gsl_rng_get_type(value rng)
@@ -184,9 +184,9 @@ value ml_gsl_rng_dump_state(value rng)
   size_t len = gsl_rng_size(Rng_val(rng));
   void *state = gsl_rng_state(Rng_val(rng));
   const char *name = gsl_rng_name(Rng_val(rng));
-  n = copy_string(name);
+  n = caml_copy_string(name);
   s = caml_alloc_initialized_string(len, state);
-  v = alloc_small(2, 0);
+  v = caml_alloc_small(2, 0);
   Field(v, 0) = n;
   Field(v, 1) = s;
   CAMLreturn(v);
@@ -198,26 +198,26 @@ value ml_gsl_rng_set_state(value rng, value v)
   const char *name = String_val(Field(v, 0));
   value state = Field(v, 1);
   if(strcmp(name, gsl_rng_name(r)) != 0 ||
-     gsl_rng_size(r) != string_length(state) )
-    invalid_argument("Gsl.Rng.set_state : wrong rng type");
-  memcpy(r->state, Bp_val(state), string_length(state));
+     gsl_rng_size(r) != caml_string_length(state) )
+    caml_invalid_argument("Gsl.Rng.set_state : wrong rng type");
+  memcpy(r->state, Bp_val(state), caml_string_length(state));
   return Val_unit;
 }
 
 /* sampling */
 value ml_gsl_rng_get(value rng)
 {
-  return copy_nativeint(gsl_rng_get(Rng_val(rng))) ;
+  return caml_copy_nativeint(gsl_rng_get(Rng_val(rng))) ;
 }
 
 value ml_gsl_rng_uniform(value rng)
 {
-  return copy_double(gsl_rng_uniform(Rng_val(rng))) ;
+  return caml_copy_double(gsl_rng_uniform(Rng_val(rng))) ;
 }
 
 value ml_gsl_rng_uniform_pos(value rng)
 {
-  return copy_double(gsl_rng_uniform_pos(Rng_val(rng))) ;
+  return caml_copy_double(gsl_rng_uniform_pos(Rng_val(rng))) ;
 }
 
 value ml_gsl_rng_uniform_int(value rng, value n)

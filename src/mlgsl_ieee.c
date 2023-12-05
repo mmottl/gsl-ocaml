@@ -15,8 +15,8 @@ static value rep_val(const gsl_ieee_double_rep *r)
 {
   CAMLparam0();
   CAMLlocal2(v, m);
-  m=copy_string(r->mantissa);
-  v=alloc_small(4, 0);
+  m=caml_copy_string(r->mantissa);
+  v=caml_alloc_small(4, 0);
   Field(v, 0)= Val_int(r->sign);
   Field(v, 1)= m;
   Field(v, 2)= Val_int(r->exponent);
@@ -50,7 +50,7 @@ CAMLprim value ml_gsl_ieee_set_mode(value oprecision, value orounding, value ex_
     GSL_IEEE_MASK_DENORMALIZED, GSL_IEEE_MASK_OVERFLOW,
     GSL_IEEE_MASK_UNDERFLOW, GSL_IEEE_MASK_ALL,
     GSL_IEEE_TRAP_INEXACT } ;
-  int mask = convert_flag_list(ex_list, mask_conv);
+  int mask = caml_convert_flag_list(ex_list, mask_conv);
 
 #define Lookup_precision(v) precision_conv[ Int_val(v) ]
 #define Lookup_round(v)     round_conv[ Int_val(v) ]
@@ -99,7 +99,7 @@ static int except_conv [] = {
 
 static int conv_excepts(value e)
 {
-  return convert_flag_list(e, except_conv);
+  return caml_convert_flag_list(e, except_conv);
 }
 
 static value rev_conv_excepts(int e)
@@ -111,7 +111,7 @@ static value rev_conv_excepts(int e)
   
   for(i = tab_size-2; i >= 0 ; i--)
     if(except_conv[i] & e) {
-      c = alloc_small(2, Tag_cons);
+      c = caml_alloc_small(2, Tag_cons);
       Field(c, 0) = Val_int(i);
       Field(c, 1) = v;
       v = c;

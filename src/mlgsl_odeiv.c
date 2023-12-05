@@ -30,9 +30,9 @@ static int ml_gsl_odeiv_func(double t, const double y[],
 {
   struct mlgsl_odeiv_params *p = params;
   value vt, res;
-  vt  = copy_double(t);
+  vt  = caml_copy_double(t);
   memcpy(Double_array_val(p->arr1), y, p->dim * sizeof(double));
-  res = callback3_exn(p->closure, vt, p->arr1, p->arr2);
+  res = caml_callback3_exn(p->closure, vt, p->arr1, p->arr2);
   if(Is_exception_result(res))
     return GSL_FAILURE;
   memcpy(dydt, Double_array_val(p->arr2), p->dim * sizeof(double));
@@ -45,13 +45,13 @@ static int ml_gsl_odeiv_jacobian(double t, const double y[],
 {
   struct mlgsl_odeiv_params *p = params;
   value res, args[4];
-  args[0] = copy_double(t);
+  args[0] = caml_copy_double(t);
   memcpy(Double_array_val(p->arr1), y, p->dim * sizeof(double));
   args[1] = p->arr1;
-  Data_bigarray_val(p->mat) = dfdy;
+  Caml_ba_data_val(p->mat) = dfdy;
   args[2] = p->mat;
   args[3] = p->arr2;
-  res = callbackN_exn(p->jac_closure, 4, args);
+  res = caml_callbackN_exn(p->jac_closure, 4, args);
   if(Is_exception_result(res))
     return GSL_FAILURE;
   memcpy(dfdt, Double_array_val(p->arr2), p->dim * sizeof(double));
@@ -60,27 +60,27 @@ static int ml_gsl_odeiv_jacobian(double t, const double y[],
 
 CAMLprim value ml_gsl_odeiv_alloc_system(value func, value ojac, value dim)
 {
-  const int barr_flags = BIGARRAY_FLOAT64 | BIGARRAY_C_LAYOUT | BIGARRAY_EXTERNAL;
+  const int barr_flags = CAML_BA_FLOAT64 | CAML_BA_C_LAYOUT | CAML_BA_EXTERNAL;
   struct mlgsl_odeiv_params *p;
   gsl_odeiv_system *syst;
   value res;
-  p=stat_alloc(sizeof (*p));
+  p=caml_stat_alloc(sizeof (*p));
   p->dim = Int_val(dim);
   p->closure = func;
-  register_global_root(&(p->closure));
+  caml_register_global_root(&(p->closure));
   p->jac_closure = (Is_none(ojac) ? Val_unit : Unoption(ojac));
-  register_global_root(&(p->jac_closure));
-  p->arr1 = alloc(Int_val(dim) * Double_wosize, Double_array_tag);
-  register_global_root(&(p->arr1));
-  p->arr2 = alloc(Int_val(dim) * Double_wosize, Double_array_tag);
-  register_global_root(&(p->arr2));
+  caml_register_global_root(&(p->jac_closure));
+  p->arr1 = caml_alloc(Int_val(dim) * Double_wosize, Double_array_tag);
+  caml_register_global_root(&(p->arr1));
+  p->arr2 = caml_alloc(Int_val(dim) * Double_wosize, Double_array_tag);
+  caml_register_global_root(&(p->arr2));
   p->mat =
     Is_none(ojac)
     ? Val_unit
-    : alloc_bigarray_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
-  register_global_root(&(p->mat));
+    : caml_ba_alloc_dims(barr_flags, 2, NULL, Int_val(dim), Int_val(dim));
+  caml_register_global_root(&(p->mat));
 
-  syst=stat_alloc(sizeof (*syst));
+  syst=caml_stat_alloc(sizeof (*syst));
   syst->function = ml_gsl_odeiv_func;
   syst->jacobian = ml_gsl_odeiv_jacobian;
   syst->dimension = Int_val(dim);
@@ -95,13 +95,13 @@ CAMLprim value ml_gsl_odeiv_free_system(value vsyst)
 {
   gsl_odeiv_system *syst = ODEIV_SYSTEM_VAL(vsyst);
   struct mlgsl_odeiv_params *p = syst->params;
-  remove_global_root(&(p->closure));
-  remove_global_root(&(p->jac_closure));
-  remove_global_root(&(p->arr1));
-  remove_global_root(&(p->arr2));
-  remove_global_root(&(p->mat));
-  stat_free(p);
-  stat_free(syst);
+  caml_remove_global_root(&(p->closure));
+  caml_remove_global_root(&(p->jac_closure));
+  caml_remove_global_root(&(p->arr1));
+  caml_remove_global_root(&(p->arr2));
+  caml_remove_global_root(&(p->mat));
+  caml_stat_free(p);
+  caml_stat_free(syst);
   return Val_unit;
 }
 
@@ -126,7 +126,7 @@ CAMLprim value ml_gsl_odeiv_step_alloc(value step_type, value dim)
 
 ML1(gsl_odeiv_step_free, ODEIV_STEP_VAL, Unit)
 ML1(gsl_odeiv_step_reset, ODEIV_STEP_VAL, Unit)
-ML1(gsl_odeiv_step_name, ODEIV_STEP_VAL, copy_string)
+ML1(gsl_odeiv_step_name, ODEIV_STEP_VAL, caml_copy_string)
 ML1(gsl_odeiv_step_order, ODEIV_STEP_VAL, Val_int)
 
 CAMLprim value ml_gsl_odeiv_step_apply(value step, value t, value h, value y,
@@ -218,7 +218,7 @@ CAMLprim value ml_gsl_odeiv_control_scaled_new(value eps_abs, value eps_rel,
 #define ODEIV_CONTROL_VAL(v) ((gsl_odeiv_control *)Field((v), 0))
 
 ML1(gsl_odeiv_control_free, ODEIV_CONTROL_VAL, Unit)
-ML1(gsl_odeiv_control_name, ODEIV_CONTROL_VAL, copy_string)
+ML1(gsl_odeiv_control_name, ODEIV_CONTROL_VAL, caml_copy_string)
 
 CAMLprim value ml_gsl_odeiv_control_hadjust(value c, value s, value y,
 					    value yerr, value dydt, value h)
@@ -231,8 +231,8 @@ CAMLprim value ml_gsl_odeiv_control_hadjust(value c, value s, value y,
   {
     CAMLparam0();
     CAMLlocal2(vh, r);
-    vh = copy_double(c_h);
-    r = alloc_small(2, 0);
+    vh = caml_copy_double(c_h);
+    r = caml_alloc_small(2, 0);
     Field(r, 0) = Val_int(status + 1);
     Field(r, 1) = vh;
     CAMLreturn(r);

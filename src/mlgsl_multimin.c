@@ -35,9 +35,9 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_alloc(value type, value d)
   value res;
 
   T=gsl_multimin_fdfminimizer_alloc(fdfminimizer_of_value(type), dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)T;
   Field(res, 1) = (value)params;
 
@@ -48,7 +48,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_alloc(value type, value d)
   params->gslfun.mmfdf.params = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit;
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   return res;
 }
 #define GSLMULTIMINFDFMINIMIZER_VAL(v) ((gsl_multimin_fdfminimizer *)(Field(v, 0)))
@@ -71,13 +71,13 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_set(value S, value fun, value X,
 CAMLprim value ml_gsl_multimin_fdfminimizer_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
-  remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_remove_global_root(&(p->closure));
+  caml_stat_free(p);
   gsl_multimin_fdfminimizer_free(GSLMULTIMINFDFMINIMIZER_VAL(S));
   return Val_unit;
 }
 
-ML1(gsl_multimin_fdfminimizer_name, GSLMULTIMINFDFMINIMIZER_VAL, copy_string)
+ML1(gsl_multimin_fdfminimizer_name, GSLMULTIMINFDFMINIMIZER_VAL, caml_copy_string)
 ML1(gsl_multimin_fdfminimizer_iterate, GSLMULTIMINFDFMINIMIZER_VAL, Unit)
 ML1(gsl_multimin_fdfminimizer_restart, GSLMULTIMINFDFMINIMIZER_VAL, Unit)
 
@@ -105,7 +105,7 @@ CAMLprim value ml_gsl_multimin_fdfminimizer_minimum(value ox, value odx, value o
       gsl_vector_memcpy(&v_g,  
 			gsl_multimin_fdfminimizer_gradient(t));
   }
-  return copy_double(gsl_multimin_fdfminimizer_minimum(t));
+  return caml_copy_double(gsl_multimin_fdfminimizer_minimum(t));
 }
 
 CAMLprim value ml_gsl_multimin_test_gradient(value S, value epsabs)
@@ -134,9 +134,9 @@ CAMLprim value ml_gsl_multimin_fminimizer_alloc(value type, value d)
   value res;
 
   T=gsl_multimin_fminimizer_alloc(fminimizer_of_value(type), dim);
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)T;
   Field(res, 1) = (value)params;
 
@@ -145,7 +145,7 @@ CAMLprim value ml_gsl_multimin_fminimizer_alloc(value type, value d)
   params->gslfun.mmf.params = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit;
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   return res;
 }
 #define GSLMULTIMINFMINIMIZER_VAL(v) ((gsl_multimin_fminimizer *)(Field(v, 0)))
@@ -166,13 +166,13 @@ CAMLprim value ml_gsl_multimin_fminimizer_set(value S, value fun,
 CAMLprim value ml_gsl_multimin_fminimizer_free(value S)
 {
   struct callback_params *p=CALLBACKPARAMS_VAL(S);
-  remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_remove_global_root(&(p->closure));
+  caml_stat_free(p);
   gsl_multimin_fminimizer_free(GSLMULTIMINFMINIMIZER_VAL(S));
   return Val_unit;
 }
 
-ML1(gsl_multimin_fminimizer_name, GSLMULTIMINFMINIMIZER_VAL, copy_string)
+ML1(gsl_multimin_fminimizer_name, GSLMULTIMINFMINIMIZER_VAL, caml_copy_string)
 ML1(gsl_multimin_fminimizer_iterate, GSLMULTIMINFMINIMIZER_VAL, Unit)
 
 CAMLprim value ml_gsl_multimin_fminimizer_minimum(value ox, value T)
@@ -184,10 +184,10 @@ CAMLprim value ml_gsl_multimin_fminimizer_minimum(value ox, value T)
       _CONVERT_VECTOR(x);
       gsl_vector_memcpy(&v_x, gsl_multimin_fminimizer_x(t));
   }
-  return copy_double(gsl_multimin_fminimizer_minimum(t));
+  return caml_copy_double(gsl_multimin_fminimizer_minimum(t));
 }
 
-ML1(gsl_multimin_fminimizer_size, GSLMULTIMINFMINIMIZER_VAL, copy_double)
+ML1(gsl_multimin_fminimizer_size, GSLMULTIMINFMINIMIZER_VAL, caml_copy_double)
 
 CAMLprim value ml_gsl_multimin_test_size(value S, value epsabs)
 {

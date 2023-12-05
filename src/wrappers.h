@@ -30,9 +30,9 @@ static inline value copy_two_double(double a, double b)
 {
   CAMLparam0();
   CAMLlocal3(r, va, vb);
-  va = copy_double(a);
-  vb = copy_double(b);
-  r = alloc_small(2, 0);
+  va = caml_copy_double(a);
+  vb = caml_copy_double(b);
+  r = caml_alloc_small(2, 0);
   Field(r, 0) = va;
   Field(r, 1) = vb;
   CAMLreturn(r);
@@ -41,14 +41,14 @@ static inline value copy_two_double(double a, double b)
 static inline value copy_two_double_arr(double a, double b)
 {
   value r;
-  r=alloc_small(2 * Double_wosize, Double_array_tag);
+  r=caml_alloc_small(2 * Double_wosize, Double_array_tag);
   Store_double_field(r, 0, a);
   Store_double_field(r, 1, b);
   return r;
 }
 
 #define Abstract_ptr(v, p) \
-  ( v=alloc_small(1, Abstract_tag), Field(v, 0)=Val_bp(p) )
+  ( v=caml_alloc_small(1, Abstract_tag), Field(v, 0)=Val_bp(p) )
 
 #define ML1(name, conv1, convr) \
   CAMLprim value ml_##name(value arg1) \

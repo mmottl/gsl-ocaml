@@ -85,7 +85,7 @@ CAMLprim value ml_gsl_linalg_complex_LU_lndet(value LU)
 {
   _DECLARE_MATRIX(LU);
   _CONVERT_MATRIX(LU);
-  return copy_double(gsl_linalg_complex_LU_lndet(&m_LU));
+  return caml_copy_double(gsl_linalg_complex_LU_lndet(&m_LU));
 }
 
 CAMLprim value ml_gsl_linalg_complex_LU_sgndet(value LU, value sig)

@@ -28,9 +28,9 @@ CAMLprim value ml_gsl_integration_qng(value fun, value a, value b,
   gsl_integration_qng(&gf, Double_val(a), Double_val(b),
 		      Double_val(epsabs), Double_val(epsrel),
 		      &result, &abserr, &neval);
-  r = copy_double(result);
-  e = copy_double(abserr);
-  res = alloc_small(3, 0);
+  r = caml_copy_double(result);
+  e = caml_copy_double(abserr);
+  res = caml_alloc_small(3, 0);
   Field(res, 0) = r;
   Field(res, 1) = e;
   Field(res, 2) = Val_int(neval);
@@ -67,7 +67,7 @@ CAMLprim value ml_gsl_integration_qag(value fun, value a, value b,
   int c_key = key_conv [ Int_val(key) ];
   gsl_integration_workspace *gslws = GSL_WS(ws);
 
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qag(&gf, 
 		      Double_val(a), Double_val(b), 
 		      Double_val(epsabs), Double_val(epsrel),
@@ -91,7 +91,7 @@ CAMLprim value ml_gsl_integration_qags(value fun, value a, value b,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
 
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qags(&gf,
 		       Double_val(a), Double_val(b), 
 		       Double_val(epsabs), Double_val(epsrel),
@@ -116,7 +116,7 @@ CAMLprim value ml_gsl_integration_qagp(value fun, value pts,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qagp(&gf, 
 		       Double_array_val(pts), Double_array_length(pts),
 		       Double_val(epsabs), Double_val(epsrel),
@@ -140,7 +140,7 @@ CAMLprim value ml_gsl_integration_qagi(value fun,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val,gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val,gslws->limit);
   gsl_integration_qagi(&gf,
 		       Double_val(epsabs), Double_val(epsrel),
 		       c_limit, gslws, &result, &abserr);
@@ -157,7 +157,7 @@ CAMLprim value ml_gsl_integration_qagiu(value fun, value a,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qagiu(&gf, Double_val(a),
 			Double_val(epsabs), Double_val(epsrel),
 			c_limit, gslws, &result, &abserr);
@@ -181,7 +181,7 @@ CAMLprim value ml_gsl_integration_qagil(value fun, value b,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qagil(&gf, Double_val(b),
 			Double_val(epsabs), Double_val(epsrel),
 			c_limit, gslws, &result, &abserr);
@@ -208,7 +208,7 @@ CAMLprim value ml_gsl_integration_qawc(value fun, value a, value b, value c,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qawc(&gf,
 		       Double_val(a), Double_val(b), Double_val(c),
 		       Double_val(epsabs), Double_val(epsrel),
@@ -250,7 +250,7 @@ CAMLprim value ml_gsl_integration_qaws(value fun, value a, value b, value table 
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qaws(&gf, 
 		       Double_val(a), Double_val(b), QAWSTABLE_VAL(table),
 		       Double_val(epsabs), Double_val(epsrel),
@@ -299,7 +299,7 @@ CAMLprim value ml_gsl_integration_qawo(value fun, value a,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qawo(&gf, Double_val(a), 
 		       Double_val(epsabs), Double_val(epsrel),
 		       c_limit, gslws, 
@@ -324,7 +324,7 @@ CAMLprim value ml_gsl_integration_qawf(value fun, value a, value epsabs,
   size_t c_limit;
   gsl_integration_workspace *gslws = GSL_WS(ws);
   
-  c_limit = Opt_arg(limit, Int_val, gslws->limit);
+  c_limit = Opt_arg(limit, (size_t)Int_val, gslws->limit);
   gsl_integration_qawf(&gf, Double_val(a), 
 		       Double_val(epsabs), c_limit, 
 		       gslws, GSL_WS(cyclews),

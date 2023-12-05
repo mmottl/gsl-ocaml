@@ -35,12 +35,12 @@ CAMLprim value ml_gsl_root_fsolver_alloc(value t)
   gsl_root_fsolver *s;
   
   s = gsl_root_fsolver_alloc(Fsolvertype_val(t));
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
 
   {  
     CAMLparam0();
     CAMLlocal1(res);
-    res=alloc_small(2, Abstract_tag);
+    res=caml_alloc_small(2, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     params->gslfun.gf.function = &gslfun_callback;
@@ -48,7 +48,7 @@ CAMLprim value ml_gsl_root_fsolver_alloc(value t)
     params->closure = Val_unit;
     params->dbl     = Val_unit;
 
-    register_global_root(&(params->closure));
+    caml_register_global_root(&(params->closure));
     CAMLreturn(res);
   }
 }
@@ -59,12 +59,12 @@ CAMLprim value ml_gsl_root_fdfsolver_alloc(value t)
   gsl_root_fdfsolver *s;
   
   s = gsl_root_fdfsolver_alloc(FDFsolvertype_val(t)); 
-  params=stat_alloc(sizeof(*params));
+  params=caml_stat_alloc(sizeof(*params));
   
   {
     CAMLparam0();
     CAMLlocal1(res);
-    res=alloc_small(2, Abstract_tag);
+    res=caml_alloc_small(2, Abstract_tag);
     Field(res, 0) = (value)s;
     Field(res, 1) = (value)params;
     params->gslfun.gfdf.f      = &gslfun_callback_f;
@@ -74,7 +74,7 @@ CAMLprim value ml_gsl_root_fdfsolver_alloc(value t)
     params->closure = Val_unit;
     params->dbl     = Val_unit;
 
-    register_global_root(&(params->closure));
+    caml_register_global_root(&(params->closure));
     CAMLreturn(res);
   }
 }
@@ -105,8 +105,8 @@ CAMLprim value ml_gsl_root_fdfsolver_set(value s, value f, value r)
 CAMLprim value ml_gsl_root_fsolver_free(value s)
 {
   struct callback_params *p=Fparams_val(s);
-  remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_remove_global_root(&(p->closure));
+  caml_stat_free(p);
   gsl_root_fsolver_free(Fsolver_val(s));
   return Val_unit;
 }
@@ -114,19 +114,19 @@ CAMLprim value ml_gsl_root_fsolver_free(value s)
 CAMLprim value ml_gsl_root_fdfsolver_free(value s)
 {
   struct callback_params *p=Fparams_val(s);
-  remove_global_root(&(p->closure));
-  stat_free(p);
+  caml_remove_global_root(&(p->closure));
+  caml_stat_free(p);
   gsl_root_fdfsolver_free(FDFsolver_val(s));
   return Val_unit;
 }
 
-ML1(gsl_root_fsolver_name, Fsolver_val, copy_string)
-ML1(gsl_root_fdfsolver_name, FDFsolver_val, copy_string)
+ML1(gsl_root_fsolver_name, Fsolver_val, caml_copy_string)
+ML1(gsl_root_fdfsolver_name, FDFsolver_val, caml_copy_string)
 
 ML1(gsl_root_fsolver_iterate, Fsolver_val, Unit)
 ML1(gsl_root_fdfsolver_iterate, FDFsolver_val, Unit)
-ML1(gsl_root_fsolver_root, Fsolver_val, copy_double)
-ML1(gsl_root_fdfsolver_root, FDFsolver_val, copy_double)
+ML1(gsl_root_fsolver_root, Fsolver_val, caml_copy_double)
+ML1(gsl_root_fdfsolver_root, FDFsolver_val, caml_copy_double)
 
 CAMLprim value ml_gsl_root_fsolver_x_interv(value S)
 {

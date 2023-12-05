@@ -39,7 +39,7 @@ ml_gsl_wavelet_alloc (value ty, value k)
 #define Wavelet_val(v) (gsl_wavelet *)Field(v, 0)
 
 ML1 (gsl_wavelet_free, Wavelet_val, Unit)
-ML1 (gsl_wavelet_name, Wavelet_val, copy_string)
+ML1 (gsl_wavelet_name, Wavelet_val, caml_copy_string)
 
 CAMLprim value
 ml_gsl_wavelet_workspace_alloc (value n)
@@ -96,7 +96,7 @@ ml_gsl_wavelet_transform (value w, value dir, value vf, value ws)
 CAMLprim value
 ml_gsl_wavelet_transform_bigarray (value w, value dir, value b, value ws)
 {
-  struct caml_bigarray *bigarr = Bigarray_val(b);
+  struct caml_ba_array *bigarr = Caml_ba_array_val(b);
   double *data  = bigarr->data;
   size_t n      = bigarr->dim[0];
   gsl_wavelet_transform (Wavelet_val (w), data, 1, n,

@@ -37,14 +37,14 @@ CAMLprim value ml_gsl_blas_scnrm2(value X)
 {
   _DECLARE_VECTOR(X);
   _CONVERT_VECTOR(X);
-  return copy_double(gsl_blas_scnrm2(&v_X));
+  return caml_copy_double(gsl_blas_scnrm2(&v_X));
 }
 
 CAMLprim value ml_gsl_blas_scasum(value X)
 {
   _DECLARE_VECTOR(X);
   _CONVERT_VECTOR(X);
-  return copy_double(gsl_blas_scasum(&v_X));
+  return caml_copy_double(gsl_blas_scasum(&v_X));
 }
 
 CAMLprim value ml_gsl_blas_icamax(value X)

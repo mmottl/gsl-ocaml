@@ -27,16 +27,16 @@ CAMLprim value ml_gsl_min_fminimizer_alloc(value t)
   gsl_min_fminimizer *s;
 
   s=gsl_min_fminimizer_alloc(Minimizertype_val(t));
-  params=stat_alloc(sizeof *params);
+  params=caml_stat_alloc(sizeof *params);
   
-  res=alloc_small(2, Abstract_tag);
+  res=caml_alloc_small(2, Abstract_tag);
   Field(res, 0) = (value)s;
   Field(res, 1) = (value)params;
   params->gslfun.gf.function = &gslfun_callback ;
   params->gslfun.gf.params   = params;
   params->closure = Val_unit;
   params->dbl     = Val_unit;
-  register_global_root(&(params->closure));
+  caml_register_global_root(&(params->closure));
   CAMLreturn(res);
 }
 #define Minimizer_val(v) ((gsl_min_fminimizer *)Field((v), 0))
@@ -53,17 +53,17 @@ CAMLprim value ml_gsl_min_fminimizer_set(value s, value f, value min, value lo, 
 
 CAMLprim value ml_gsl_min_fminimizer_free(value s)
 {
-  remove_global_root(&(Mparams_val(s)->closure));
-  stat_free(Mparams_val(s));
+  caml_remove_global_root(&(Mparams_val(s)->closure));
+  caml_stat_free(Mparams_val(s));
   gsl_min_fminimizer_free(Minimizer_val(s));
   return Val_unit;
 }
 
-ML1(gsl_min_fminimizer_name, Minimizer_val, copy_string)
+ML1(gsl_min_fminimizer_name, Minimizer_val, caml_copy_string)
 
 ML1(gsl_min_fminimizer_iterate, Minimizer_val, Unit)
 
-ML1(gsl_min_fminimizer_x_minimum, Minimizer_val, copy_double)
+ML1(gsl_min_fminimizer_x_minimum, Minimizer_val, caml_copy_double)
 
 CAMLprim value ml_gsl_min_fminimizer_x_interv(value S)
 {
