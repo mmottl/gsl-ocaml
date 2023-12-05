@@ -1,3 +1,10 @@
+### 1.25.0 (2023-12-05)
+
+  * Make the GSL bindings compatible with OCaml 5.0.
+
+    Thanks to Florian Angeletti <florian.angeletti@inria.fr> for this
+    large patch!
+
 ### 1.24.3 (2020-08-04)
 
   * Removed `base` and `stdio` build dependencies.
