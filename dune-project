@@ -4,7 +4,7 @@
 (generate_opam_files true)
 
 (source (github mmottl/gsl-ocaml))
-(license "GPL-3.0+")
+(license "GPL-3.0-or-later")
 (homepage "https://mmottl.github.io/gsl-ocaml")
 (documentation "https://mmottl.github.io/gsl-ocaml/api")
 
