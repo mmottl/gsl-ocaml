@@ -4,20 +4,20 @@
 
 (** Random Number Distributions *)
 
-external gaussian : Rng.t -> sigma:float -> float 
+external gaussian : Rng.t -> sigma:float -> float
     = "ml_gsl_ran_gaussian"
 external gaussian_ratio_method : Rng.t -> sigma:float -> float
   = "ml_gsl_ran_gaussian_ratio_method"
-external gaussian_ziggurat : Rng.t -> sigma:float -> float 
+external gaussian_ziggurat : Rng.t -> sigma:float -> float
     = "ml_gsl_ran_gaussian_ziggurat"
 external gaussian_pdf : float -> sigma:float -> float
   = "ml_gsl_ran_gaussian_pdf"
 
-external ugaussian : Rng.t -> float 
+external ugaussian : Rng.t -> float
     = "ml_gsl_ran_ugaussian"
 external ugaussian_ratio_method : Rng.t -> float
   = "ml_gsl_ran_ugaussian_ratio_method"
-external ugaussian_pdf : float -> float 
+external ugaussian_pdf : float -> float
     = "ml_gsl_ran_ugaussian_pdf"
 
 
@@ -62,7 +62,7 @@ external exppow_pdf : float -> a:float -> b:float -> float
   = "ml_gsl_ran_exppow_pdf"
 
 
-external cauchy : Rng.t -> a:float -> float 
+external cauchy : Rng.t -> a:float -> float
     = "ml_gsl_ran_cauchy"
 external cauchy_pdf : float -> a:float -> float
     = "ml_gsl_ran_cauchy_pdf"
@@ -97,7 +97,7 @@ external levy_skew :
 
 external gamma : Rng.t -> a:float -> b:float -> float
   = "ml_gsl_ran_gamma"
-external gamma_int : Rng.t -> a:int -> float 
+external gamma_int : Rng.t -> a:int -> float
     = "ml_gsl_ran_gamma_int"
 external gamma_pdf : float -> a:float -> b:float -> float
   = "ml_gsl_ran_gamma_pdf"
@@ -218,8 +218,9 @@ external binomial_tpe : Rng.t -> p:float -> n:int -> int
 external binomial_pdf : int -> p:float -> n:int -> float
   = "ml_gsl_ran_binomial_pdf"
 
-external multinomial_inplace : Rng.t -> n:int -> p:float array -> ret:int array -> int array
-    = "ml_gsl_ran_multinomial_inplace"
+external multinomial_inplace :
+  Rng.t -> n:int -> p:float array -> ret:int array -> int array
+  = "ml_gsl_ran_multinomial_inplace"
 external multinomial : Rng.t -> n:int -> p:float array -> int array
     = "ml_gsl_ran_multinomial"
 external multinomial_pdf : p:float array -> n:int array -> float
