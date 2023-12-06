@@ -5,6 +5,10 @@
     Thanks to Florian Angeletti <florian.angeletti@inria.fr> for this
     large patch!
 
+  * Added `Randist.multinomial_inplace`
+
+    Thanks to Martynas Sinkievic <tasmartynas@gmail.com> for this contribution!
+
 ### 1.24.3 (2020-08-04)
 
   * Removed `base` and `stdio` build dependencies.
