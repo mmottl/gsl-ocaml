@@ -75,5 +75,5 @@ val string_of_errno : errno -> string
 (** [string_of_errno e] returns the name of [e]. *)
 
 val printer : exn -> string option
-(** [printer] is an exceoption printer for {!Exn}. It is registered by default
+(** [printer exn] is an exception printer for [exn]. It is registered by default
     with [Printexc]. *)

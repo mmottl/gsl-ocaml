@@ -6,12 +6,12 @@
 
 (** The library includes routines for calculating the values of
    {!Airy}, {!Bessel}, {!Clausen}, {!Coulomb}, {!Coupling}, {!Dawson},
-   {!Debye}, {!Dilogarithms}, {!Elliptic}, {!Jacobi}, {!Error},
-   {!Exponential}, {!ExponentialI}, {!FermiDirac}, {!Gamma},
-   {!Gegenbauer}, {!Hermite}, {!Hypergeometric}, {!Laguerre},
-   {!Lambert}, {!Legendre} and {!SphericalH}, {!log}, {!pow}, {!Psi},
-   {!Synchrotron}, {!Transport}, {!Trigonometric} and {!Zeta}.  Each
-   routine also computes an estimate of the numerical error in the
+   {!Debye}, {!Dilogarithms}, {!Elliptic}, {!module-Error}, {!Exponential},
+   {!ExponentialI}, {!FermiDirac}, {!Gamma}, {!Gegenbauer}, {!Hypergeometric},
+   {!Laguerre}, {!Lambert}, {!Legendre} and {!SphericalH}, {!val-log},
+   {!pow}, {!Psi}, {!Synchrotron}, {!Transport}, {!Trigonometric}, and {!Zeta}.
+
+   Each routine also computes an estimate of the numerical error in the
    calculated value of the function. *)
 
 open Fun
@@ -372,9 +372,9 @@ type legendre_t =
 
 <:ext< legendre_array_index@ml_gsl_sf_legendre_array_index,int,int,int >>
 (** [legendre_array_index l m] returns the index into the [result]
-    array of {!legendre_array}, {!legendre_deriv_array},
-    {!legendre_deriv_alt_array}, {!legendre_deriv2_array}, and
-    {!legendre_deriv2_alt_array} corresponding to Pₗᵐ(x), ∂ₓPₗᵐ(x),
+    array of the [legendre_array], [legendre_deriv_array],
+    [legendre_deriv_alt_array], [legendre_deriv2_array], and
+    [!legendre_deriv2_alt_array] corresponding to Pₗᵐ(x), ∂ₓPₗᵐ(x),
     or ∂ₓ²Pₗₗᵐ(x).  The index is given by l(l+1)/2 + m.  *)
 (* FIXME: it would likely be more efficient to implement this function
    directly in OCaml. *)
