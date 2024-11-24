@@ -52,7 +52,7 @@ let () =
         List.filter (fun x -> not (String.equal x "-lgslcblas")) conf.libs
       in
       match Sys.getenv_opt "GSL_CBLAS_LIB" with
-      | Some alt_blas -> { conf with libs = alt_blas :: without_cblas () }
+      | Some alt_blas -> { conf with libs = without_cblas () @ [alt_blas] }
       | None ->
           Option.value_map ~default:conf (C.ocaml_config_var c "system")
             ~f:(function
