@@ -1,23 +1,25 @@
-### TODO
+# To Do Status
 
-  * custom blocks ?
+## To do
 
-  * 2D histograms
-  * complex and double matrices & vectors with a type param ?
-  * finish special functions
-  * remaining modules
-  * polymorphic variants for FFT ?
+- custom blocks ?
 
-### CHECK
+- 2D histograms
+- complex and double matrices & vectors with a type param ?
+- finish special functions
+- remaining modules
+- polymorphic variants for FFT ?
 
-  * complex matrices
-  * BLAS functions
+## Check
 
-### DONE
+- complex matrices
+- BLAS functions
 
-  * put .mli only modules back
-  * complex funs in linalg and eigen
-  * complex funs for vectmat sum types
-  * rewrite siman in ML
-  * drop gsl_fun type: use closures directly
-  * check the "noalloc" directives in externals (removed most of them)
+## Done
+
+- put .mli modules back
+- complex funs in linalg and eigen
+- complex funs for vectmat sum types
+- rewrite siman in ML
+- drop `gsl_fun` type: use closures directly
+- check the "noalloc" directives in externals (removed most of them)

@@ -1,74 +1,54 @@
-### 1.25.0 (2023-12-05)
+## 1.24.3 (2020-08-04)
 
-  * Make the GSL bindings compatible with OCaml 5.0.
+- Removed `base` and `stdio` build dependencies.
 
-    Thanks to Florian Angeletti <florian.angeletti@inria.fr> for this
-    large patch!
+## 1.24.2 (2020-07-30)
 
-  * Added `Randist.multinomial_inplace`
+- Switched to OPAM file generation via `dune-project`
 
-    Thanks to Martynas Sinkievic <tasmartynas@gmail.com> for this contribution!
+- Added support for const char strings in stubs due to stricter handling
+  in newer OCaml runtimes. This eliminates C-compiler warnings.
 
-### 1.24.3 (2020-08-04)
+## 1.24.1 (2019-10-11)
 
-  * Removed `base` and `stdio` build dependencies.
+- Fixed warnings in C-stubs
 
+## 1.24.0 (2018-10-24)
 
-### 1.24.2 (2020-07-30)
+- Updated to OPAM 2.0
 
-  * Switched to OPAM file generation via `dune-project`
+## 1.23.0 (2018-10-06)
 
-  * Added support for const char strings in stubs due to stricter handling
-    in newer OCaml runtimes.  This eliminates C-compiler warnings.
+- Switched to dune and dune-release
 
+## 1.22.0 (2018-06-11)
 
-### 1.24.1 (2019-10-11)
+- Fixed warnings and errors in configuration code due to upstream changes.
 
-  * Fixed warnings in C-stubs
+## 1.21.0 (2017-12-06)
 
+- Added `Randist.multivariate_gaussian`.
 
-### 1.24.0 (2018-10-24)
+  Thanks to Ilias Garnier for this contribution.
 
-  * Updated to OPAM 2.0
+- Added hypergeometric functions.
 
+  Thanks to Christophe Troestler for this contribution.
 
-### 1.23.0 (2018-10-06)
+- Fixed error handler initialization.
 
-  * Switched to dune and dune-release
+## 1.20.2 (2017-10-15)
 
+- Fixed a configuration bug leading to wrong include paths
 
-### 1.22.0 (2018-06-11)
+## 1.20.1 (2017-10-10)
 
-  * Fixed warnings and errors in configuration code due to upstream changes.
+- Fixed automatic generation of special functions
 
+- Improved documentation of configuration options
 
-### 1.21.0 (2017-12-06)
+- Improved automatic configuration of include paths
 
-  * Added `Randist.multivariate_gaussian`.
+## 1.20.0 (2017-08-01)
 
-    Thanks to Ilias Garnier for this contribution!
-
-  * Added hypergeometric functions.
-
-    Thanks to Christophe Troestler for this contribution!
-
-  * Fixed error handler initialization.
-
-
-### 1.20.2 (2017-10-15)
-
-  * Fixed a configuration bug leading to wrong include paths
-
-
-### 1.20.1 (2017-10-10)
-
-  * Fixed automatic generation of special functions
-
-  * Improved documentation of configuration options
-
-  * Improved automatic configuration of include paths
-
-
-### 1.20.0 (2017-08-01)
-
-  * Switched to jbuilder and topkg
+- Switched to jbuilder and topkg
