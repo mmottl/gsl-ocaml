@@ -1,76 +1,47 @@
 (library
-  (public_name gsl)
-  (foreign_stubs
-    (language c)
-    (names
-      mlgsl_blas
-      mlgsl_blas_complex
-      mlgsl_blas_complex_float
-      mlgsl_blas_float
-      mlgsl_bspline
-      mlgsl_cdf
-      mlgsl_cheb
-      mlgsl_combi
-      mlgsl_complex
-      mlgsl_deriv
-      mlgsl_eigen
-      mlgsl_error
-      mlgsl_fft
-      mlgsl_fit
-      mlgsl_fun
-      mlgsl_histo
-      mlgsl_ieee
-      mlgsl_integration
-      mlgsl_interp
-      mlgsl_linalg
-      mlgsl_linalg_complex
-      mlgsl_math
-      mlgsl_matrix_complex
-      mlgsl_matrix_complex_float
-      mlgsl_matrix_double
-      mlgsl_matrix_float
-      mlgsl_min
-      mlgsl_monte
-      mlgsl_multifit
-      mlgsl_multimin
-      mlgsl_multiroots
-      mlgsl_odeiv
-      mlgsl_permut
-      mlgsl_poly
-      mlgsl_qrng
-      mlgsl_randist
-      mlgsl_rng
-      mlgsl_roots
-      mlgsl_sf
-      mlgsl_sort
-      mlgsl_stats
-      mlgsl_sum
-      mlgsl_vector_double
-      mlgsl_vector_float
-      mlgsl_wavelet)
-    (flags
-      (:standard)
-      (:include c_flags.sexp) -fPIC -DPIC
-      ; NOTE: for limiting excessive warning about unused parameters
-      -Wno-unused-parameter))
-  (c_library_flags (:include c_library_flags.sexp))
-  (libraries bigarray))
+ (public_name gsl)
+ (foreign_stubs
+  (language c)
+  (names mlgsl_blas mlgsl_blas_complex mlgsl_blas_complex_float
+    mlgsl_blas_float mlgsl_bspline mlgsl_cdf mlgsl_cheb mlgsl_combi
+    mlgsl_complex mlgsl_deriv mlgsl_eigen mlgsl_error mlgsl_fft mlgsl_fit
+    mlgsl_fun mlgsl_histo mlgsl_ieee mlgsl_integration mlgsl_interp
+    mlgsl_linalg mlgsl_linalg_complex mlgsl_math mlgsl_matrix_complex
+    mlgsl_matrix_complex_float mlgsl_matrix_double mlgsl_matrix_float
+    mlgsl_min mlgsl_monte mlgsl_multifit mlgsl_multimin mlgsl_multiroots
+    mlgsl_odeiv mlgsl_permut mlgsl_poly mlgsl_qrng mlgsl_randist mlgsl_rng
+    mlgsl_roots mlgsl_sf mlgsl_sort mlgsl_stats mlgsl_sum mlgsl_vector_double
+    mlgsl_vector_float mlgsl_wavelet)
+  (flags
+   (:standard)
+   (:include c_flags.sexp)
+   -fPIC
+   -DPIC
+   ; NOTE: for limiting excessive warning about unused parameters
+   -Wno-unused-parameter))
+ (c_library_flags
+  (:include c_library_flags.sexp))
+ (libraries bigarray))
 
 (rule
-  (targets c_flags.sexp c_library_flags.sexp gsl_include.sexp)
-  (action (run config/discover.exe)))
+ (targets c_flags.sexp c_library_flags.sexp gsl_include.sexp)
+ (action
+  (run config/discover.exe)))
 
 (rule
-  (targets cdf.mli cdf.ml mlgsl_cdf.c)
-  (deps gsl_include.sexp)
-  (action (run config/do_cdf.exe)))
+ (targets cdf.mli cdf.ml mlgsl_cdf.c)
+ (deps gsl_include.sexp)
+ (action
+  (run config/do_cdf.exe)))
 
 (rule
-  (targets const.mli const.ml)
-  (deps gsl_include.sexp)
-  (action (run config/do_const.exe)))
+ (targets const.mli const.ml)
+ (deps gsl_include.sexp)
+ (action
+  (run config/do_const.exe)))
 
 (rule
-  (targets sf.mli sf.ml)
-  (deps gsl_include.sexp sf.mli.q)
-  (action (run config/do_sf.exe)))
+ (targets sf.mli sf.ml)
+ (deps gsl_include.sexp sf.mli.q)
+ (action
+  (run config/do_sf.exe)))

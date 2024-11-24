@@ -5,39 +5,38 @@
 (** Polynomials *)
 
 open Gsl_complex
+
 type poly = float array
 
 (** {3 Polynomial Evaluation} *)
 
 external eval : poly -> float -> float = "ml_gsl_poly_eval"
-(** [eval p x] returns [p.(0) +. p.(1) *. x +. p.(2) *. x**2 +. ... +. p.(n)
-    *. x**n] where [n = Array.length p]. *)
+(** [eval p x] returns
+    [p.(0) +. p.(1) *. x +. p.(2) *. x**2 +. ... +. p.(n)
+    *. x**n] where
+    [n = Array.length p]. *)
 
 (** {3 Quadratic Equations} *)
 
-type quad_sol =
-  | Quad_0
-  | Quad_2 of float * float
+type quad_sol = Quad_0 | Quad_2 of float * float
+
 external solve_quadratic : a:float -> b:float -> c:float -> quad_sol
-    = "ml_gsl_poly_solve_quadratic"
+  = "ml_gsl_poly_solve_quadratic"
 
 external complex_solve_quadratic :
-    a:float -> b:float -> c:float -> complex * complex
-	= "ml_gsl_poly_complex_solve_quadratic"
+  a:float -> b:float -> c:float -> complex * complex
+  = "ml_gsl_poly_complex_solve_quadratic"
 
 (** {3 Cubic Equations} *)
 
-type cubic_sol =
-  | Cubic_0
-  | Cubic_1 of float
-  | Cubic_3 of float * float * float
+type cubic_sol = Cubic_0 | Cubic_1 of float | Cubic_3 of float * float * float
+
 external solve_cubic : a:float -> b:float -> c:float -> cubic_sol
-    = "ml_gsl_poly_solve_cubic"
+  = "ml_gsl_poly_solve_cubic"
 
 external complex_solve_cubic :
   a:float -> b:float -> c:float -> complex * complex * complex
-      = "ml_gsl_poly_complex_solve_cubic"
-
+  = "ml_gsl_poly_complex_solve_cubic"
 
 (** {3 General Polynomial Equations} *)
 

@@ -1,39 +1,8 @@
 (executables
-  (names
-    blas_ex
-    blas_speed_test
-    bspline_ex
-    cheb_ex
-    combi_ex
-    const_ex
-    deriv_ex
-    eigen_ex
-    fft_c
-    fft_c2
-    fft_hc
-    fit_ex
-    histo_ex
-    integration_ex
-    interp_ex
-    linalg_ex
-    min_ex
-    monte_ex
-    multifit_data_ex
-    multifit_ex
-    multifit_nlin_ex
-    multimin_ex
-    multiroot_ex
-    odeiv_ex
-    permut_ex
-    qrng_ex
-    rng_ex
-    root_ex
-    siman_ex
-    siman_tsp_ex
-    stats_ex
-    sum_ex
-    wavelet_ex
-  )
-  (libraries gsl unix)
-  (modes byte exe)
-)
+ (names blas_ex blas_speed_test bspline_ex cheb_ex combi_ex const_ex deriv_ex
+   eigen_ex fft_c fft_c2 fft_hc fit_ex histo_ex integration_ex interp_ex
+   linalg_ex min_ex monte_ex multifit_data_ex multifit_ex multifit_nlin_ex
+   multimin_ex multiroot_ex odeiv_ex permut_ex qrng_ex rng_ex root_ex
+   siman_ex siman_tsp_ex stats_ex sum_ex wavelet_ex)
+ (libraries gsl unix)
+ (modes byte exe))

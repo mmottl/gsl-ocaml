@@ -72,40 +72,29 @@ type t
 
 (** {3 Default values} *)
 
-external default : unit -> rng_type 
-    = "ml_gsl_rng_get_default"
-external default_seed : unit -> nativeint 
-    = "ml_gsl_rng_get_default_seed"
-
-external set_default : rng_type -> unit
-    = "ml_gsl_rng_set_default"
-external set_default_seed : nativeint -> unit
-    = "ml_gsl_rng_set_default_seed"
-
-external env_setup : unit -> unit 
-    = "ml_gsl_rng_env_setup"
-
+external default : unit -> rng_type = "ml_gsl_rng_get_default"
+external default_seed : unit -> nativeint = "ml_gsl_rng_get_default_seed"
+external set_default : rng_type -> unit = "ml_gsl_rng_set_default"
+external set_default_seed : nativeint -> unit = "ml_gsl_rng_set_default_seed"
+external env_setup : unit -> unit = "ml_gsl_rng_env_setup"
 
 (** {3 Creating} *)
 
 val make : rng_type -> t
-
-external set  : t -> nativeint -> unit = "ml_gsl_rng_set"
+external set : t -> nativeint -> unit = "ml_gsl_rng_set"
 external name : t -> string = "ml_gsl_rng_name"
-external get_type :  t-> rng_type = "ml_gsl_rng_get_type"
+external get_type : t -> rng_type = "ml_gsl_rng_get_type"
 
-(** warning : the nativeint used for seeds are in fact unsigned but
-   ocaml treats them as signed.
-   But you can still print them using %nu with printf functions. *)
+(** warning : the nativeint used for seeds are in fact unsigned but ocaml treats
+    them as signed. But you can still print them using %nu with printf
+    functions. *)
 
 external max : t -> nativeint = "ml_gsl_rng_max"
 external min : t -> nativeint = "ml_gsl_rng_min"
-
 external memcpy : t -> t -> unit = "ml_gsl_rng_memcpy"
-external clone  : t -> t = "ml_gsl_rng_clone"
-
+external clone : t -> t = "ml_gsl_rng_clone"
 external dump_state : t -> string * string = "ml_gsl_rng_dump_state"
-external set_state  : t -> string * string -> unit = "ml_gsl_rng_set_state"
+external set_state : t -> string * string -> unit = "ml_gsl_rng_set_state"
 
 (** {3 Sampling} *)
 
@@ -116,7 +105,9 @@ external uniform_int : t -> int -> int = "ml_gsl_rng_uniform_int" [@@noalloc]
 
 (** These function fill the array with random numbers : *)
 
-external uniform_arr     : t -> float array -> unit 
-    = "ml_gsl_rng_uniform_arr" [@@noalloc]
-external uniform_pos_arr : t -> float array -> unit 
-    = "ml_gsl_rng_uniform_pos_arr" [@@noalloc]
+external uniform_arr : t -> float array -> unit = "ml_gsl_rng_uniform_arr"
+[@@noalloc]
+
+external uniform_pos_arr : t -> float array -> unit
+  = "ml_gsl_rng_uniform_pos_arr"
+[@@noalloc]

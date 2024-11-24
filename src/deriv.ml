@@ -2,7 +2,6 @@
 (* Copyright (©) 2002-2012 - Olivier Andrieu                *)
 (* Distributed under the terms of the GPL version 3         *)
 
-
 (* C code in mlgsl_deriv.c *)
 
 let () = Error.init ()

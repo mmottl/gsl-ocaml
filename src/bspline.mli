@@ -11,8 +11,10 @@ external ncoeffs : ws -> int = "ml_gsl_bspline_ncoeffs" [@@noalloc]
 
 open Vectmat
 
-external knots : [< vec] -> ws -> unit = "ml_gsl_bspline_knots"
-external knots_uniform : a:float -> b:float -> ws -> unit = "ml_gsl_bspline_knots_uniform"
+external knots : [< vec ] -> ws -> unit = "ml_gsl_bspline_knots"
 
-external _eval : float -> [< vec] -> ws -> unit = "ml_gsl_bspline_eval"
-val eval : ws -> float -> [> vec]
+external knots_uniform : a:float -> b:float -> ws -> unit
+  = "ml_gsl_bspline_knots_uniform"
+
+external _eval : float -> [< vec ] -> ws -> unit = "ml_gsl_bspline_eval"
+val eval : ws -> float -> [> vec ]

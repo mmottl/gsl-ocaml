@@ -1,10 +1,9 @@
 open Gsl
 
-let () =
-  Error.init ()
+let () = Error.init ()
 
 let print_arr arr =
-  Array.iter (fun i -> Printf.printf "% 4d " i) arr ;
+  Array.iter (fun i -> Printf.printf "% 4d " i) arr;
   print_newline ()
 
 let () =

@@ -1,32 +1,27 @@
 (library
-  (name do_common)
-  (modules do_common)
-)
+ (name do_common)
+ (modules do_common))
 
 (executable
-  (name discover)
-  (modules discover)
-  (libraries dune.configurator)
-  (modes byte exe)
-)
+ (name discover)
+ (modules discover)
+ (libraries dune.configurator)
+ (modes byte exe))
 
 (executable
-  (name do_cdf)
-  (modules do_cdf)
-  (libraries do_common str)
-  (modes byte exe)
-)
+ (name do_cdf)
+ (modules do_cdf)
+ (libraries do_common str)
+ (modes byte exe))
 
 (executable
-  (name do_const)
-  (modules do_const)
-  (libraries do_common str)
-  (modes byte exe)
-)
+ (name do_const)
+ (modules do_const)
+ (libraries do_common str)
+ (modes byte exe))
 
 (executable
-  (name do_sf)
-  (modules do_sf)
-  (libraries do_common str)
-  (modes byte exe)
-)
+ (name do_sf)
+ (modules do_sf)
+ (libraries do_common str)
+ (modes byte exe))
