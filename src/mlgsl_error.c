@@ -6,27 +6,24 @@
 #include <gsl/gsl_version.h>
 
 #include <caml/alloc.h>
-#include <caml/memory.h>
 #include <caml/callback.h>
 #include <caml/fail.h>
+#include <caml/memory.h>
 
-CAMLprim value ml_gsl_version(value unit)
-{
+CAMLprim value ml_gsl_version(value unit) {
   return caml_copy_string(gsl_version);
 }
 
-CAMLprim value ml_gsl_strerror(value ml_errno)
-{
+CAMLprim value ml_gsl_strerror(value ml_errno) {
   int c_errno = Int_val(ml_errno);
-  int gsl_errno = (c_errno <= 1) ? (c_errno - 2) : (c_errno - 1) ;
+  int gsl_errno = (c_errno <= 1) ? (c_errno - 2) : (c_errno - 1);
   return caml_copy_string(gsl_strerror(gsl_errno));
 }
 
 static const value *ml_gsl_err_handler = NULL;
 
-static void ml_gsl_error_handler(const char *reason, const char *file,
-                                 int line, int gsl_errno)
-{
+static void ml_gsl_error_handler(const char *reason, const char *file, int line,
+                                 int gsl_errno) {
   value exn_msg;
   int ml_errno;
 
@@ -38,11 +35,10 @@ static void ml_gsl_error_handler(const char *reason, const char *file,
     caml_failwith("invalid GSL error code");
 
   exn_msg = caml_copy_string(reason);
-  caml_callback2(Field(*ml_gsl_err_handler,0), Val_int(ml_errno), exn_msg);
+  caml_callback2(Field(*ml_gsl_err_handler, 0), Val_int(ml_errno), exn_msg);
 }
 
-CAMLprim value ml_gsl_error_init(value init)
-{
+CAMLprim value ml_gsl_error_init(value init) {
   static gsl_error_handler_t *old;
 
   if (ml_gsl_err_handler == NULL)
@@ -53,8 +49,7 @@ CAMLprim value ml_gsl_error_init(value init)
     prev = gsl_set_error_handler(&ml_gsl_error_handler);
     if (prev != ml_gsl_error_handler)
       old = prev;
-  }
-  else
+  } else
     gsl_set_error_handler(old);
 
   return Val_unit;

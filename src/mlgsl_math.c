@@ -4,9 +4,8 @@
 
 #include <gsl/gsl_math.h>
 
-#include <caml/alloc.h>
 #include "wrappers.h"
-
+#include <caml/alloc.h>
 
 ML1(gsl_log1p, Double_val, caml_copy_double)
 ML1(gsl_expm1, Double_val, caml_copy_double)

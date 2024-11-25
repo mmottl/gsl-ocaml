@@ -2,60 +2,51 @@
 /* Copyright (©) 2003 - Paul Pelzl                          */
 /* Distributed under the terms of the GPL version 3         */
 
+#include "mlgsl_complex.h"
 #include <caml/alloc.h>
 #include <gsl/gsl_complex_math.h>
-#include "mlgsl_complex.h"
 
-
-#define _COMPLEX_HANDLER(funct) \
-  CAMLprim value ml_gsl_complex_##funct(value Z) { \
-    _DECLARE_COMPLEX2(Z,temp); \
-    _CONVERT_COMPLEX(Z); \
-    z_temp = gsl_complex_##funct(z_Z); \
-    return copy_complex(&z_temp); \
+#define _COMPLEX_HANDLER(funct)                                                \
+  CAMLprim value ml_gsl_complex_##funct(value Z) {                             \
+    _DECLARE_COMPLEX2(Z, temp);                                                \
+    _CONVERT_COMPLEX(Z);                                                       \
+    z_temp = gsl_complex_##funct(z_Z);                                         \
+    return copy_complex(&z_temp);                                              \
   }
 
-
-#define _COMPLEX_HANDLER2(funct) \
-  CAMLprim value ml_gsl_complex_##funct(value Z, value A) { \
-    _DECLARE_COMPLEX3(Z, A, temp); \
-    _CONVERT_COMPLEX2(Z, A); \
-    z_temp = gsl_complex_##funct(z_Z, z_A); \
-    return copy_complex(&z_temp); \
+#define _COMPLEX_HANDLER2(funct)                                               \
+  CAMLprim value ml_gsl_complex_##funct(value Z, value A) {                    \
+    _DECLARE_COMPLEX3(Z, A, temp);                                             \
+    _CONVERT_COMPLEX2(Z, A);                                                   \
+    z_temp = gsl_complex_##funct(z_Z, z_A);                                    \
+    return copy_complex(&z_temp);                                              \
   }
 
-
-#define _COMPLEX_HANDLER_DOUBLE(funct) \
-  CAMLprim value ml_gsl_complex_##funct(value X) { \
-    gsl_complex temp; \
-    temp = gsl_complex_##funct(Double_val(X)); \
-    return copy_complex(&temp); \
+#define _COMPLEX_HANDLER_DOUBLE(funct)                                         \
+  CAMLprim value ml_gsl_complex_##funct(value X) {                             \
+    gsl_complex temp;                                                          \
+    temp = gsl_complex_##funct(Double_val(X));                                 \
+    return copy_complex(&temp);                                                \
   }
-
 
 /* properties of complex numbers */
-CAMLprim value ml_gsl_complex_logabs(value Z)
-{
+CAMLprim value ml_gsl_complex_logabs(value Z) {
   _DECLARE_COMPLEX(Z);
   _CONVERT_COMPLEX(Z);
   return caml_copy_double(gsl_complex_logabs(z_Z));
 }
 
-
 _COMPLEX_HANDLER(sqrt)
 _COMPLEX_HANDLER_DOUBLE(sqrt_real)
 _COMPLEX_HANDLER2(pow)
 
-
-CAMLprim value ml_gsl_complex_pow_real(value Z, value X)
-{
+CAMLprim value ml_gsl_complex_pow_real(value Z, value X) {
   _DECLARE_COMPLEX2(Z, temp);
   _CONVERT_COMPLEX(Z);
   z_temp = gsl_complex_pow_real(z_Z, Double_val(X));
   return copy_complex(&z_temp);
 }
 
-  
 _COMPLEX_HANDLER(exp)
 _COMPLEX_HANDLER(log)
 _COMPLEX_HANDLER(log10)
