@@ -1,3 +1,21 @@
+## 1.25.1 (2024-11-25)
+
+- Reformatted OCaml and Dune files with `ocamlformat`.
+
+- Reformatted C files with `clang-format`.
+
+- Reformatted and improved Markdown files.
+
+- Added GitHub workflow.
+
+- Improved comment references.
+
+- Link the blas library after gsl.
+
+  Thanks to Jerry James for this contribution.
+
+- Fixed Dune/OPAM license specification.
+
 ## 1.24.3 (2020-08-04)
 
 - Removed `base` and `stdio` build dependencies.
