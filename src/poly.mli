@@ -12,8 +12,7 @@ type poly = float array
 
 external eval : poly -> float -> float = "ml_gsl_poly_eval"
 (** [eval p x] returns
-    [p.(0) +. p.(1) *. x +. p.(2) *. x**2 +. ... +. p.(n)
-    *. x**n] where
+    [p.(0) +. p.(1) *. x +. p.(2) *. x**2 +. ... +. p.(n) *. x**n] where
     [n = Array.length p]. *)
 
 (** {3 Quadratic Equations} *)

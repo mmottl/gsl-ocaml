@@ -46,8 +46,10 @@ let ext_quot =
         List.iter (fun a -> Format.fprintf bh " -> %s" (String.trim a)) argr;
         Format.fprintf bh "@ = ";
         if List.length args > 6 then Format.fprintf bh "\"%s_bc\"" name_c;
-        if (* List.for_all ~f:((=) "float") args && *)
-           name_float <> "" then (
+        if
+          (* List.for_all ~f:((=) "float") args && *)
+          name_float <> ""
+        then (
           if List.length args <= 6 then Format.fprintf bh "\"%s\"" name_c;
           Format.fprintf bh " \"%s\" [%@%@unboxed] [%@%@noalloc]" name_float)
         else Format.fprintf bh "\"%s\"" name_c;
