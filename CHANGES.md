@@ -1,3 +1,5 @@
+# Changelog
+
 ## 1.25.1 (2024-11-25)
 
 - Reformatted OCaml and Dune files with `ocamlformat`.
