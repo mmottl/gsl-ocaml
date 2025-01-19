@@ -1,77 +1,97 @@
 # Changelog
 
-## 1.25.1 (2024-11-25)
+## [1.25.1] - 2024-11-25
+
+### Added
+
+- GitHub workflow.
+
+### Changed
 
 - Reformatted OCaml and Dune files with `ocamlformat`.
-
 - Reformatted C files with `clang-format`.
-
 - Reformatted and improved Markdown files.
-
-- Added GitHub workflow.
-
 - Improved comment references.
 
-- Link the blas library after gsl.
+### Fixed
 
-  Thanks to Jerry James for this contribution.
-
+- Link the `blas` library after `gsl`. Thanks to Jerry James for this contribution.
 - Fixed Dune/OPAM license specification.
 
-## 1.24.3 (2020-08-04)
+## [1.24.3] - 2020-08-04
 
-- Removed `base` and `stdio` build dependencies.
+### Removed
 
-## 1.24.2 (2020-07-30)
+- `base` and `stdio` build dependencies.
 
-- Switched to OPAM file generation via `dune-project`
+## [1.24.2] - 2020-07-30
 
-- Added support for const char strings in stubs due to stricter handling
-  in newer OCaml runtimes. This eliminates C-compiler warnings.
+### Added
 
-## 1.24.1 (2019-10-11)
+- Support for const char strings in stubs due to stricter handling in newer
+  OCaml runtimes, eliminating C-compiler warnings.
 
-- Fixed warnings in C-stubs
+### Changed
 
-## 1.24.0 (2018-10-24)
+- Switched to OPAM file generation via `dune-project`.
 
-- Updated to OPAM 2.0
+## [1.24.1] - 2019-10-11
 
-## 1.23.0 (2018-10-06)
+### Fixed
 
-- Switched to dune and dune-release
+- Warnings in C-stubs.
 
-## 1.22.0 (2018-06-11)
+## [1.24.0] - 2018-10-24
 
-- Fixed warnings and errors in configuration code due to upstream changes.
+### Changed
 
-## 1.21.0 (2017-12-06)
+- Updated to OPAM 2.0.
 
-- Added `Randist.multivariate_gaussian`.
+## [1.23.0] - 2018-10-06
 
-  Thanks to Ilias Garnier for this contribution.
+### Changed
 
-- Added hypergeometric functions.
+- Switched to dune and dune-release.
 
-  Thanks to Christophe Troestler for this contribution.
+## [1.22.0] - 2018-06-11
 
-- Fixed error handler initialization.
+### Fixed
 
-## 1.20.2 (2017-10-15)
+- Warnings and errors in configuration code due to upstream changes.
 
-- Fixed a configuration bug leading to wrong include paths
+## [1.21.0] - 2017-12-06
 
-## 1.20.1 (2017-10-10)
+### Added
 
-- Fixed automatic generation of special functions
+- `Randist.multivariate_gaussian`. Thanks to Ilias Garnier for this contribution.
+- Hypergeometric functions. Thanks to Christophe Troestler for this contribution.
 
-- Improved documentation of configuration options
+### Fixed
 
-- Improved automatic configuration of include paths
+- Error handler initialization.
 
-## 1.20.0 (2017-08-01)
+## [1.20.2] - 2017-10-15
 
-- Switched to jbuilder and topkg
+### Fixed
+
+- Configuration bug leading to wrong include paths.
+
+## [1.20.1] - 2017-10-10
+
+### Fixed
+
+- Automatic generation of special functions.
+
+### Improved
+
+- Documentation of configuration options.
+- Automatic configuration of include paths.
+
+## [1.20.0] - 2017-08-01
+
+### Changed
+
+- Switched to jbuilder and topkg.
 
 ## Changes Before Version 1.20.0
 
