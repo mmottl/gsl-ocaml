@@ -26,6 +26,7 @@
  (depends
   (ocaml
    (>= 4.12))
+  dune-compiledb
   dune-configurator
   (conf-gsl :build)
   (conf-pkg-config :build)))
