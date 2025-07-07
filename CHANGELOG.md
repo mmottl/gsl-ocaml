@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Makefile target to generate `compile_commands.json` for improved LSP support
+  in editors.
+
 ## [1.25.1] - 2024-11-25
 
 ### Added
@@ -15,7 +22,8 @@
 
 ### Fixed
 
-- Link the `blas` library after `gsl`. Thanks to Jerry James for this contribution.
+- Link the `blas` library after `gsl`. Thanks to Jerry James for this
+  contribution.
 - Fixed Dune/OPAM license specification.
 
 ## [1.24.3] - 2020-08-04
@@ -63,8 +71,10 @@
 
 ### Added
 
-- `Randist.multivariate_gaussian`. Thanks to Ilias Garnier for this contribution.
-- Hypergeometric functions. Thanks to Christophe Troestler for this contribution.
+- `Randist.multivariate_gaussian`. Thanks to Ilias Garnier for this
+  contribution.
+- Hypergeometric functions. Thanks to Christophe Troestler for this
+  contribution.
 
 ### Fixed
 
