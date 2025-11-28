@@ -37,10 +37,10 @@ let () =
                 let gsl_include =
                   Option.value ~default:default_gsl_include
                   @@ List.find_map conf.cflags ~f:(fun cflag ->
-                         let len = String.length cflag in
-                         if len >= 2 && cflag.[0] = '-' && cflag.[1] = 'I' then
-                           Some [ String.sub cflag 2 (len - 2) ]
-                         else None)
+                      let len = String.length cflag in
+                      if len >= 2 && cflag.[0] = '-' && cflag.[1] = 'I' then
+                        Some [ String.sub cflag 2 (len - 2) ]
+                      else None)
                 in
                 write_gsl_include gsl_include;
                 conf)
